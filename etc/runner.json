@@ -1,0 +1,29 @@
+{
+    "modules": [
+        "lib.fireh_runner.modules.setup",
+        "lib.fireh_runner.modules.python",
+        "lib.fireh_runner.modules.waf",
+        "lib.fireh_runner.modules.virtualenv",
+        "lib.fireh_runner.modules.sphinx"
+    ],
+    "setup_modules": [
+        "lib.fireh_runner.setup_modules.python",
+        "lib.fireh_runner.setup_modules.pybuildtool"
+    ],
+    "python_version": "3.9",
+    "waf_version": "2.0.23",
+
+    "package_name": "django-carbondesign",
+    "default_project": "carbondesign",
+    "default_variant": "development",
+
+    "configuration": {
+        "development": {
+            "materialweb": {
+                "shell_env": {
+                    "PYTHONPATH": ["."]
+                }
+            }
+        }
+    }
+}

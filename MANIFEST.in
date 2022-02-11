@@ -1,0 +1,14 @@
+include carbondesign/README.rst
+recursive-include carbondesign/static *
+exclude run
+exclude wscript
+exclude requirements.txt
+exclude build.yml
+exclude .git*
+exclude MANIFEST.in
+prune docs
+prune docs_build
+prune docsrc
+prune etc
+prune lib
+prune carbondesign/tests
