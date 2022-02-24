@@ -11,7 +11,8 @@ class Button(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('icon',)
     "Named children."
-    NODE_PROPS = ('disabled', 'variant', 'icon_only', 'field', 'small')
+    NODE_PROPS = ('disabled', 'variant', 'icon_only', 'field', 'small',
+            'icon_size')
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
@@ -37,8 +38,11 @@ class Button(Node):
         if self.eval(self.kwargs.get('small'), context):
             values['class'].append('bx--btn--sm')
 
+        values['icon_size'] = self.eval(self.kwargs.get('icon_size', 16),
+                context)
 
-    def render_default(self, values, context, slots):
+
+    def render_default(self, values, context):
         if self.eval(self.kwargs.get('icon_only'), context):
             template = """
 <{tag} class="bx--btn {class}" {props}>
@@ -53,14 +57,15 @@ class Button(Node):
   {slot_icon}
 </{tag}>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
     def render_slot_icon(self, values, context):
         template = """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-    class="bx--btn__icon {class}" width="16" height="16" viewBox="0 0 16 16"
+    class="bx--btn__icon {class}" width="{icon_size}" height="{icon_size}"
+    viewBox="0 0 {icon_size} {icon_size}"
     aria-hidden="true" {props}>
   {child}
 </svg>
@@ -74,13 +79,13 @@ class ButtonSet(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <{tag} class="bx--btn-set {class}" {props}>
   {child}
 </{tag}>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 components = {

@@ -2,7 +2,7 @@ import logging
 #-
 from django import template
 #-
-from ..tags import base, button, checkbox, data_table, grid, text_area
+from ..tags import base, button, checkbox, data_table, grid, modal, text_area
 from ..tags import text_input, ui_shell
 
 _logger = logging.getLogger(__name__)
@@ -15,6 +15,7 @@ MATERIAL_TAGS = {
     **checkbox.components,
     **data_table.components,
     **grid.components,
+    **modal.components,
     **text_area.components,
     **text_input.components,
     **ui_shell.components,

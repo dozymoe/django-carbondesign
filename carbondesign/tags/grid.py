@@ -25,18 +25,18 @@ class Grid(Node):
             values['class'].append('bx--grid--%s' % gap)
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = '<{tag} class="bx--grid {class}" {props}>{child}</{tag}>'
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
-    def render_bleed(self, values, context, slots):
+    def render_bleed(self, values, context):
         template = """
 <div class="bleed">
   <{tag} class="bx--grid {class}" {props}>{child}</{tag}>
 </div>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 class Row(Node):
@@ -45,9 +45,9 @@ class Row(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = '<{tag} class="bx--row {class}" {props}>{child}</{tag}>'
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 class Column(Node):
@@ -57,19 +57,19 @@ class Column(Node):
     "Template Tag needs closing end tag."
     COL_SIZES = ('sm', 'md', 'lg', 'xlg', 'max')
     "Column sizes."
-    NODE_PROPS = ('auto', *['size_%s' % x for x in COL_SIZES],
-            *['offset_%s' % x for x in COL_SIZES])
+    NODE_PROPS = (*COL_SIZES, *['offset_%s' % x for x in COL_SIZES])
     "Extended Template Tag arguments."
 
     has_size = False
 
     def prepare(self, values, context):
         for size in self.COL_SIZES:
-            width = self.eval(self.kwargs.get('size_%s' % size), context)
+            width = self.eval(self.kwargs.get(size), context)
             if width:
                 self.has_size = True
                 values['class'].append('bx--col-%s-%s' % (size, width))
-        if self.eval(self.kwargs.get('auto'), context):
+        if not self.has_size:
+            values['class'].append('bx--col')
             values['class'].append('bx--col--auto')
 
         for size in self.COL_SIZES:
@@ -78,12 +78,20 @@ class Column(Node):
                 values['class'].append('bx--offset-%s-%s' % (size, width))
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         if self.has_size:
-            template = '<{tag} class="{class}" {props}>{child}</{tag}>'
+            template = """
+<{tag} class="{class}" {props}>
+  <div class="outside">
+    <div class="inside">
+      {child}
+    </div>
+  </div>
+</{tag}>
+"""
         else:
-            template = '<{tag} class="bx--col {class}" {props}>{child}</{tag}>'
-        return self.format(template, values, slots)
+            template = '<{tag} class="{class}" {props}>{child}</{tag}>'
+        return self.format(template, values)
 
 
 class AspectRatio(Node):
@@ -100,7 +108,7 @@ class AspectRatio(Node):
             values['class'].append('bx--aspect-ratio--%s' % ratio)
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <{tag} class="bx--aspect-ratio {class}" {props}>
   <div class="bx--aspect-ratio--object">
@@ -108,7 +116,7 @@ class AspectRatio(Node):
   </div>
 </{tag}>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 components = {

@@ -23,7 +23,14 @@ class CheckBox(FormNode):
                     'mixed'))
 
 
-    def render_default(self, values, context, slots):
+    def prepare_element_attributes(self, attrs, default, context):
+        attrs['class'].append('bx--checkbox')
+
+        if self.eval(self.kwargs.get('mixed'), context):
+            attrs['aria-checked'] = 'mixed'
+
+
+    def render_default(self, values, context):
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
   {element}
@@ -32,10 +39,10 @@ class CheckBox(FormNode):
   </label>
 </div>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
-    def render_inside(self, values, context, slots):
+    def render_inside(self, values, context,):
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
@@ -44,14 +51,7 @@ class CheckBox(FormNode):
   </label>
 </div>
 """
-        return self.format(template, values, slots)
-
-
-    def prepare_element_attributes(self, attrs, default, context):
-        attrs['class'].append('bx--checkbox')
-
-        if self.eval(self.kwargs.get('mixed'), context):
-            attrs['aria-checked'] = 'mixed'
+        return self.format(template, values)
 
 
 components = {

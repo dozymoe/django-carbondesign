@@ -1,4 +1,6 @@
 include carbondesign/README.rst
+recursive-include carbondesign/mithril-js *
+recursive-include carbondesign/sass *
 recursive-include carbondesign/static *
 exclude run
 exclude wscript

@@ -18,6 +18,8 @@ class UiShell(Node):
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'header'
     "Rendered HTML tag."
+    TEMPLATES = ('title', 'hamburger')
+    "Conditional templates."
 
     def prepare(self, values, context):
         values['title'] = self.eval(self.kwargs.get('title'), context)
@@ -36,10 +38,7 @@ class UiShell(Node):
         values['txt_close_menu'] = _("Close menu")
 
 
-    def render_default(self, values, context, slots):
-        values['tmpl_title'] = self.render_tmpl_title(values, context)
-        values['tmpl_hamburger'] = self.render_tmpl_hamburger(values, context)
-
+    def render_default(self, values, context):
         template = """
 <{tag} class="bx--header {class}" role="banner" aria-label="{long_label}"
     data-header {props}>
@@ -59,7 +58,7 @@ class UiShell(Node):
 {slot_navigation}
 <div class="bx--content">{child}</div>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
     def render_slot_navigation(self, values, context):
@@ -153,7 +152,7 @@ class Link(Node):
             context['navlink_submenu'] = True
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         if 'submenu' in self.slots:
             values['cleaned_child'] = strip_tags(values['child'])
 
@@ -173,7 +172,9 @@ class Link(Node):
   </ul>
 </li>
 """
-        elif self.is_submenu:
+            return self.format(template, values, context)
+
+        if self.is_submenu:
             template = """
 <li role="none">
   <a class="bx--header__menu-item {class}" {props}>
@@ -191,7 +192,7 @@ class Link(Node):
   </a>
 </li>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 class Action(Node):
@@ -211,13 +212,13 @@ class Action(Node):
         values['target'] = self.eval(self.kwargs['target'], context)
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <div class="bx--header__global {class}" {props}>
   {child}
 </div>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
     def render_slot_svg_open(self, values, context):
@@ -250,7 +251,7 @@ class NavSection(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <{tag} class="bx--navigation-section {class}" {props}>
   <ul class="bx--navigation-items">
@@ -258,7 +259,7 @@ class NavSection(Node):
   </ul>
 </{tag}>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 class NavItem(Node):
@@ -290,7 +291,7 @@ class NavItem(Node):
             context['navitem_submenu'] = True
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         if 'submenu' in self.slots:
             template = """
 <li class="{class}" {props}>
@@ -310,7 +311,6 @@ class NavItem(Node):
     {slot_submenu}
   </div>
 </li>
-
 """
         else:
             template = """
@@ -321,7 +321,7 @@ class NavItem(Node):
   </a>
 </li>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
     def render_slot_submenu(self, values, context):
@@ -366,7 +366,7 @@ class SideNav(Node):
             values['class'].append('bx--side-nav--fixed')
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <{tag} class="bx--side-nav {class}" data-side-nav {props}>
   <nav class="bx--side-nav__navigation" role="navigation"
@@ -379,7 +379,7 @@ class SideNav(Node):
   </nav>
 </{tag}>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
     def render_slot_header(self, values, context):
@@ -395,7 +395,7 @@ class SideNav(Node):
   </div>
 </header>
 """
-            return self.format(template, values)
+            return self.format(template, values, context)
         return ""
 
 
@@ -426,7 +426,7 @@ class SideNav(Node):
   </button>
 </footer>
 """
-        return self.format(template, values, context)
+        return self.format(template, values)
 
 
     def render_slot_title_icon(self, values, context):
@@ -480,13 +480,13 @@ class SideNavOption(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         template = """
 <option class="bx--side-nav__option {class}" {props}>
   {child}
 </option>
 """
-        return self.format(template, values, slots)
+        return self.format(template, values)
 
 
 class SideNavItem(Node):
@@ -522,7 +522,7 @@ class SideNavItem(Node):
             context['navitem_submenu'] = True
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         if 'submenu' in self.slots:
             template = """
 <li class="{class}">
@@ -552,9 +552,8 @@ class SideNavItem(Node):
     <span class="bx--side-nav__link-text">{child}</span>
   </a>
 </li>
-
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
     def render_slot_icon(self, values, context):

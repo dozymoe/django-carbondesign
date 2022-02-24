@@ -11,6 +11,8 @@ class TextArea(FormNode):
     """
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
+    TEMPLATES = ('icon_invalid', *FormNode.TEMPLATES)
+    "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
         if self.eval(self.kwargs.get('disabled'), context):
@@ -31,16 +33,17 @@ class TextArea(FormNode):
             attrs['class'].append('bx--text-input--invalid')
 
 
-    def render_default(self, values, context, slots):
+    def render_default(self, values, context):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
   <label for="{id}" class="bx--label {label_class}" {label_props}>
     {label}
   </label>
-  {slot_help}
+  {tmpl_help}
   <div class="bx--text-area__wrapper" data-invalid>
-    {slot_icon}
+    {element}
+    {tmpl_icon_invalid}
   </div>
   <div class="bx--form-requirement">
     {form_errors}
@@ -53,17 +56,17 @@ class TextArea(FormNode):
   <label for="{id}" class="bx--label {label_class}" {label_props}>
     {label}
   </label>
-  {slot_help}
+  {tmpl_help}
   <div class="bx--text-area__wrapper">
     {element}
   </div>
 </div>
 
 """
-        return self.format(template, values, slots)
+        return self.format(template, values, context)
 
 
-    def render_slot_icon(self, values, context):
+    def render_tmpl_icon_invalid(self, values, context):
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +75,6 @@ class TextArea(FormNode):
   <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
   <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8  c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
-
 """
 
 

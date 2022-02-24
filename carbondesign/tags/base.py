@@ -1,10 +1,15 @@
 import logging
+import re
 from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
+#-
+from .base_widgets import CustomTextInput
 
 _logger = logging.getLogger(__name__)
+
+SLOT_NAME_PATTERN = re.compile(r'{(tmpl|slot)_(\w+)}')
 
 
 def var_eval(value, context):
@@ -81,6 +86,8 @@ class Node(template.Node):
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'div'
     "Rendered HTML tag."
+    TEMPLATES = ()
+    "Conditional templates. Please sort from outer to inner subtemplates."
 
     # Parent Tags can set html attributes on their childs.
     CATCH_CLASSNAMES = ()
@@ -108,20 +115,24 @@ class Node(template.Node):
 
     def render(self, context):
         values = {}
-        slots = {}
+        #slots = {}
 
         self.before_prepare(values, context)
         self.prepare(values, context)
         self.after_prepare(values, context)
 
-        self.render_slots(slots, values, context)
+        #for tmpl in reversed(self.TEMPLATES):
+        #    method = getattr(self, f'render_tmpl_{tmpl}')
+        #    slots[f'tmpl_{tmpl}'] = method(values, context, slots)
+        #
+        #self.render_slots(values, context, slots)
 
         method = getattr(self, 'render_%s' % self.mode, None)
         if not method:
             raise NotImplementedError("Method is missing: render_%s" %\
                     self.mode)
 
-        return method(values, context, slots) # pylint:disable=not-callable
+        return method(values, context) # pylint:disable=not-callable
 
 
     def id(self, context):
@@ -144,12 +155,47 @@ class Node(template.Node):
         return [x for x in props if bool(x[1]) or x[1] == '']
 
 
-    def render_slots(self, slots, values, context):
+    def tmpl(self, name, values, context, slots):
+        # We don't return values like we do in javascript, not needed.
+        slot_name = f'tmpl_{name}'
+        if slot_name in slots:
+            return
+
+        method = getattr(self, f'render_tmpl_{name}')
+        slots[slot_name] = method(values, context)
+
+
+    def slot(self, name, values, context, slots):
+        # We don't return values like we do in javascript, not needed.
+        slot_name = f'slot_{name}'
+        if slot_name in slots:
+            return
+
+        slot = self.slots.get(name)
+        if slot:
+            method = getattr(self, f'render_slot_{name}', None)
+            if method:
+                slots[slot_name] = method(
+                        {
+                            'child': slot.render(context),
+                            'class': values[name + '_class'],
+                            'props': values[name + '_props'],
+                            'id': values['id'],
+                            'label': slot.label(context),
+                        },
+                        context)
+            else:
+                slots[slot_name] = slot.render(context)
+        else:
+            slots[slot_name] = ''
+
+
+    def render_slots(self, values, context, slots):
         for name in self.SLOTS:
             slot_name = f'slot_{name}'
             slot = self.slots.get(name)
             if slot:
-                method = getattr(self, f'render_slot_{name}')
+                method = getattr(self, f'render_slot_{name}', None)
                 if method:
                     slots[slot_name] = method(
                             {
@@ -159,7 +205,8 @@ class Node(template.Node):
                                 'id': values['id'],
                                 'label': slot.label(context),
                             },
-                            context)
+                            context,
+                            slots)
                 else:
                     slots[slot_name] = slot.render(context)
             else:
@@ -266,18 +313,25 @@ class Node(template.Node):
         return var_eval(value, context)
 
 
-    def format(self, tpl, values, slots=None):
-        if slots:
-            tpl = tpl.format_map(IgnoreMissing(slots))
+    def format(self, tpl, values, context=None):
+        if context:
+            # Assume the caller want to tell us there is sub-templates.
+            slots = {}
+            for typ, nam in SLOT_NAME_PATTERN.findall(tpl):
+                method = getattr(self, typ)
+                method(nam, values, context, slots)
+            if slots:
+                tpl = tpl.format_map(IgnoreMissing(slots))
+
         return tpl.format_map(IgnoreMissing(values))
 
 
 class FormNode(Node):
 
-    SLOTS = ('help', 'icon')
-    "Named children."
-    BASE_NODE_PROPS = ('hidden', 'disabled', *Node.BASE_NODE_PROPS)
+    BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
+    TEMPLATES = ('help',)
+    "Conditional templates. Please sort from outer to inner subtemplates."
 
     bound_field = None
 
@@ -297,7 +351,7 @@ class FormNode(Node):
 
         attrs = dict(values['props'])
         attrs['class'] = widget_attrs.get('class', '').split()
-        if field.help_text:
+        if field.help_text or 'help' in self.slots:
             attrs['aria-controls'] = values['id'] + '-hint'
             attrs['aria-describedby'] = values['id'] + '-hint'
 
@@ -306,6 +360,10 @@ class FormNode(Node):
 
         if var_eval(self.kwargs.get('hidden'), context):
             return self.bound_field.as_hidden(attrs=attrs)
+        widget = self.eval(self.kwargs.get('widget'), context)
+        if widget == 'input':
+            widget = CustomTextInput(attrs=attrs)
+            return field.as_widget(widget=widget, attrs=attrs)
         return field.as_widget(attrs=attrs)
 
 
@@ -315,20 +373,74 @@ class FormNode(Node):
 
     def before_prepare(self, values, context):
         self.bound_field = self.args[0].resolve(context)
-        if 'help' not in self.slots and self.bound_field.help_text:
-            self.slots['help'] = Slot(DummyNodeList(self.bound_field.help_text),
-                    'help')
+        values['help_class'] = []
+        values['help_props'] = []
         super().before_prepare(values, context)
 
 
     def after_prepare(self, values, context):
-        super().after_prepare(values, context)
         values['element'] = self.element(values, context)
+        super().after_prepare(values, context)
 
         if self.bound_field.errors:
             values['form_errors'] = self.bound_field.errors.as_text()
         else:
             values['form_errors'] = ''
+
+
+    def prepare_element_attributes(self, attrs, default, context):
+        pass
+
+
+    def render_tmpl_help(self, values, context):
+        if self.bound_field.help_text:
+            tmpl = """
+<div class="bx--form__helper-text {class}" {props}>
+  {child}
+</div>
+"""
+            help_values = {
+                'child': self.bound_field.help_text,
+                'class': ' '.join(values['help_class']),
+                'props': self.join_attributes(self.prune_attributes(
+                    values['help_props'])),
+            }
+            return tmpl.format(**help_values)
+        return ''
+
+
+class DumbFormNode(Node):
+
+    SLOTS = ('help', 'icon')
+    "Named children."
+    BASE_NODE_PROPS = ('hidden', 'disabled', *Node.BASE_NODE_PROPS)
+    "Base Template Tag arguments."
+
+    def element(self, values, context):
+        attrs = dict(values['props'])
+        attrs['class'] = []
+        if 'help' in self.slots:
+            attrs['aria-controls'] = values['id'] + '-hint'
+            attrs['aria-describedby'] = values['id'] + '-hint'
+
+        self.prepare_element_attributes(attrs, attrs, context)
+        attrs['class'] = ' '.join(attrs['class'])
+
+        if var_eval(self.kwargs.get('hidden'), context):
+            attrs.pop('type')
+            props = self.join_attributes(self.prune_attributes(attrs))
+            return '<input type="hidden" {props}">'.format(props=props)
+        return self.render_element(attrs, context)
+
+
+    def render_element(self, values, context):
+        props = self.join_attributes(self.prune_attributes(values))
+        return '<input {props}">'.format(props=props)
+
+
+    def after_prepare(self, values, context):
+        values['element'] = self.element(values, context)
+        super().after_prepare(values, context)
 
 
     def prepare_element_attributes(self, attrs, default, context):
