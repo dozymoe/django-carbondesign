@@ -1,5 +1,7 @@
+import DOMPurify from 'dompurify';
 import { range } from 'lodash';
 import m from 'mithril/hyperscript';
+import m_tostring from 'mithril-node-render';
 //-
 import { Node } from './base';
 
@@ -571,7 +573,7 @@ m('th',
 
     render_sortable(vnode, values, context)
     {
-        values.cleaned_child = '';//strip_tags(values['child'])
+        values.cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
 
         return (
 //##
