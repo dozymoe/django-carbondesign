@@ -6,7 +6,6 @@ from django.utils.translation import gettext as _
 #-
 from .base import FormNode, DumbFormNode
 
-
 class TextInput(FormNode):
     """Text Input component.
     """

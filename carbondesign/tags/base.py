@@ -235,6 +235,10 @@ class Node(template.Node):
         values['label_class'] = var_eval(self.kwargs.get('label_class', ''),
                 context)\
                 .split()
+        values['wrapper_props'] = []
+        values['wrapper_class'] = var_eval(self.kwargs.get('wrapper_class', ''),
+                context)\
+                .split()
 
         self.before_prepare_slots(values, context)
 
@@ -271,6 +275,9 @@ class Node(template.Node):
         values['label_props'] = self.join_attributes(self.prune_attributes(
                 values['label_props']))
         values['label_class'] = ' '.join(values['label_class'])
+        values['wrapper_props'] = self.join_attributes(self.prune_attributes(
+                values['wrapper_props']))
+        values['wrapper_class'] = ' '.join(values['wrapper_class'])
 
         self.after_prepare_slots(values, context)
 

@@ -2,8 +2,8 @@ import logging
 #-
 from django import template
 #-
-from ..tags import base, button, checkbox, data_table, grid, modal, text_area
-from ..tags import text_input, ui_shell
+from ..tags import base, button, checkbox, data_table, date_picker, grid, modal
+from ..tags import text_area, text_input, ui_shell
 
 _logger = logging.getLogger(__name__)
 register = template.Library()
@@ -14,6 +14,7 @@ MATERIAL_TAGS = {
     **button.components,
     **checkbox.components,
     **data_table.components,
+    **date_picker.components,
     **grid.components,
     **modal.components,
     **text_area.components,
