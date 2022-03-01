@@ -5,7 +5,7 @@
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import Node
+from .base import Node, modify_svg
 
 class UiShell(Node):
     """UI Shell component.
@@ -269,7 +269,7 @@ class NavItem(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('submenu', 'icon')
     "Named children."
-    NODE_PROPS = ('active',)
+    NODE_PROPS = ('active', 'icon_size')
     "Extended Template Tag arguments."
 
     is_submenu = False
@@ -335,14 +335,20 @@ class NavItem(Node):
 
 
     def render_slot_icon(self, values, context):
-        values['class'].append('bx--navigation-item--icon')
+        size = self.eval(self.kwargs.get('icon_size', 20), context)
+        values['child'] = modify_svg(values['child'], {
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                f'width:{size}px',
+                f'height:{size}px',
+            ]),
+            'aria-hidden': 'true',
+        })
 
         template = """
-<div class="bx--navigation-icon {class}">
-  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32" aria-hidden="true" {props}>
-    {child}
-  </svg>
+<div class="bx--navigation-icon bx--navigation-item--icon {class}">
+  {child}
 </div>
 """
         return self.format(template, values)
@@ -496,7 +502,7 @@ class SideNavItem(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('submenu', 'icon')
     "Named children."
-    NODE_PROPS = ('active',)
+    NODE_PROPS = ('active', 'icon_size')
     "Extended Template Tag arguments."
 
     is_submenu = False
@@ -557,12 +563,20 @@ class SideNavItem(Node):
 
 
     def render_slot_icon(self, values, context):
+        size = self.eval(self.kwargs.get('icon_size', 20), context)
+        values['child'] = modify_svg(values['child'], {
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                f'width:{size}px',
+                f'height:{size}px',
+            ]),
+            'aria-hidden': 'true',
+        })
+
         template = """
 <div class="bx--side-nav__icon bx--side-nav__icon--small {class}">
-  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32" aria-hidden="true" {props}>
-    {child}
-  </svg>
+  {child}
 </div>
 """
         return self.format(template, values)

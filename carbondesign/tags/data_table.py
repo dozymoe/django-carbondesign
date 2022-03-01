@@ -7,7 +7,7 @@ import logging
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import Node
+from .base import Node, modify_svg
 
 _logger = logging.getLogger(__name__)
 
@@ -1074,6 +1074,8 @@ class TdOverflowButton(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('icon',)
     "Named children."
+    NODE_PROPS = ('icon_size',)
+    "Extended Template Tag arguments."
 
     def render_default(self, values, context):
         template = """
@@ -1090,15 +1092,18 @@ class TdOverflowButton(Node):
 
 
     def render_slot_icon(self, values, context):
-        template = """
-<svg focusable="false" preserveAspectRatio="xMidYMid meet"
-    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-    width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class={class}
-    {props}>
-  {child}
-</svg>
-"""
-        return self.format(template, values)
+        size = self.eval(self.kwargs.get('icon_size', 16), context)
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                f'width:{size}px',
+                f'height:{size}px',
+            ]),
+            'aria-hidden': 'true',
+            'class': values['class'],
+        })
 
 
 components = {

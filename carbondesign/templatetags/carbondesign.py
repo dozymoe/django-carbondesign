@@ -1,6 +1,10 @@
 import logging
+import os
+import re
 #-
 from django import template
+from django.conf import settings
+from django.utils.safestring import mark_safe
 #-
 from ..tags import base, button, checkbox, data_table, date_picker, grid, modal
 from ..tags import text_area, text_input, ui_shell
@@ -58,6 +62,20 @@ class TagParser:
             args.insert(0, nodelist)
 
         return cls(*args, **kwargs)
+
+
+@register.simple_tag
+def svg(path):
+    """This template tag will load svg files located in settings.SVG_DIRS.
+    """
+    # Security test.
+    if not path or not re.match(r'^\w.*\.svg$', path):
+        return ''
+    for dirname in settings.SVG_DIRS:
+        if not os.path.exists(dirname/path):
+            continue
+        return mark_safe(open(dirname/path, 'r', encoding='utf-8').read())
+    return ''
 
 
 _parser = TagParser(MATERIAL_TAGS)

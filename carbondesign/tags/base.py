@@ -4,6 +4,7 @@ from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
+from lxml import etree
 #-
 from .base_widgets import CustomTextInput
 
@@ -16,6 +17,13 @@ def var_eval(value, context):
     if isinstance(value, template.Variable):
         return value.resolve(context)
     return value
+
+
+def modify_svg(xml, props):
+    root = etree.fromstring(xml)
+    for key, value in props.items():
+        root.attrib[key] = value
+    return etree.tostring(root).decode()
 
 
 class IgnoreMissing(dict):

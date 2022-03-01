@@ -2,7 +2,7 @@
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from .base import Node
+from .base import Node, modify_svg
 
 class Button(Node):
     """Button component.
@@ -38,9 +38,6 @@ class Button(Node):
         if self.eval(self.kwargs.get('small'), context):
             values['class'].append('bx--btn--sm')
 
-        values['icon_size'] = self.eval(self.kwargs.get('icon_size', 16),
-                context)
-
 
     def render_default(self, values, context):
         if self.eval(self.kwargs.get('icon_only'), context):
@@ -61,16 +58,18 @@ class Button(Node):
 
 
     def render_slot_icon(self, values, context):
-        template = """
-<svg focusable="false" preserveAspectRatio="xMidYMid meet"
-    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-    class="bx--btn__icon {class}" width="{icon_size}" height="{icon_size}"
-    viewBox="0 0 {icon_size} {icon_size}"
-    aria-hidden="true" {props}>
-  {child}
-</svg>
-"""
-        return self.format(template, values)
+        size = self.eval(self.kwargs.get('icon_size', 16), context)
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                f'width:{size}px',
+                f'height:{size}px',
+            ]),
+            'aria-hidden': 'true',
+            'class': 'bx--btn__icon ' + values['class'],
+        })
 
 
 class ButtonSet(Node):
