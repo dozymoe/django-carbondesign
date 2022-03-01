@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-02 04:29+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: carbondesign/tags/data_table.py:35
+msgid "Table Action Bar"
+msgstr "Bagian Aksi Tabel"
+
+#: carbondesign/tags/data_table.py:36
+msgid "items selected"
+msgstr "baris dipilih"
+
+#: carbondesign/tags/data_table.py:37
+msgid "Overflow"
+msgstr "Luapan"
+
+#: carbondesign/tags/data_table.py:180
+msgid "Items per page"
+msgstr "Baris per halaman"
+
+#: carbondesign/tags/data_table.py:181
+msgid "select number of items per page"
+msgstr "pilih jumlah baris per halaman"
+
+#: carbondesign/tags/data_table.py:182
+msgid "select page number to view"
+msgstr "pilih halaman untuk ditampilkan"
+
+#: carbondesign/tags/data_table.py:183
+msgid "Backward button"
+msgstr "Tombol mundur"
+
+#: carbondesign/tags/data_table.py:184
+msgid "Forward button"
+msgstr "Tombol maju"
+
+#: carbondesign/tags/data_table.py:320
+#, python-format
+msgid "%s of %s items"
+msgstr "%s dari %s baris"
+
+#: carbondesign/tags/data_table.py:329
+#, python-format
+msgid "of %s pages"
+msgstr "dari %s halaman"
+
+#: carbondesign/tags/data_table.py:982 carbondesign/tags/ui_shell.py:37
+msgid "Open menu"
+msgstr "Buka menu"
+
+#: carbondesign/tags/data_table.py:1018
+msgid "Search"
+msgstr "Pencarian"
+
+#: carbondesign/tags/data_table.py:1019
+msgid "Clear search input"
+msgstr "Bersihkan pencarian"
+
+#: carbondesign/tags/modal.py:19
+msgid "close modal"
+msgstr "tutup dialog"
+
+#: carbondesign/tags/modal.py:95
+msgid "Show modal"
+msgstr "Buka dialog"
+
+#: carbondesign/tags/text_input.py:87
+msgid "Show password"
+msgstr "Tampilkan kata kunci"
+
+#: carbondesign/tags/ui_shell.py:36
+msgid "Skip to main content"
+msgstr "Langsung ke konten utama"
+
+#: carbondesign/tags/ui_shell.py:38 carbondesign/tags/ui_shell.py:211
+msgid "Close menu"
+msgstr "Tutup menu"
+
+#: carbondesign/tags/ui_shell.py:372
+msgid "Side navigation"
+msgstr "Navigasi samping"
+
+#: carbondesign/tags/ui_shell.py:411
+msgid "Close the side navigation menu"
+msgstr "Tutup navigasi samping"
+
+#: carbondesign/tags/ui_shell.py:412
+msgid "Toggle the expansion state of the navigation"
+msgstr "Buka tutup navigasi"
+
+#: carbondesign/tags/ui_shell.py:464
+msgid "Switcher"
+msgstr "Pemilih"

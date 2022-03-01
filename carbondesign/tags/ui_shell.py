@@ -289,6 +289,8 @@ class NavItem(Node):
 
         if 'submenu' in self.slots:
             context['navitem_submenu'] = True
+        if 'icon' in self.slots:
+            values['class'].append('bx--navigation-item--icon')
 
 
     def render_default(self, values, context):
@@ -347,7 +349,7 @@ class NavItem(Node):
         })
 
         template = """
-<div class="bx--navigation-icon bx--navigation-item--icon {class}">
+<div class="bx--navigation-icon {class}">
   {child}
 </div>
 """

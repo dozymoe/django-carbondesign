@@ -123,17 +123,10 @@ class Node(template.Node):
 
     def render(self, context):
         values = {}
-        #slots = {}
 
         self.before_prepare(values, context)
         self.prepare(values, context)
         self.after_prepare(values, context)
-
-        #for tmpl in reversed(self.TEMPLATES):
-        #    method = getattr(self, f'render_tmpl_{tmpl}')
-        #    slots[f'tmpl_{tmpl}'] = method(values, context, slots)
-        #
-        #self.render_slots(values, context, slots)
 
         method = getattr(self, 'render_%s' % self.mode, None)
         if not method:

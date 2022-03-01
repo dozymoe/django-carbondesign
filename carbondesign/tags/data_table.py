@@ -918,7 +918,7 @@ class Th(Node):
 
 
     def render_sortable(self, values, context):
-        values['cleaned_child'] = strip_tags(values['child'])
+        values['cleaned_child'] = strip_tags(values['child']).strip()
 
         template = """
 <th class="{class}" {props}>
@@ -950,7 +950,7 @@ class Td(Node):
 
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    MODE = ('default', 'checkbox', 'menu')
+    MODES = ('default', 'checkbox', 'menu')
     "Available variants."
     SLOTS = ('secondary',)
     "Named children."
@@ -979,11 +979,13 @@ class Td(Node):
 
 
     def render_menu(self, values, context):
+        values['txt_menu'] = _("Open menu")
+
         template = """
 <td class="bx--table-column-menu {class}" {props}>
   <div data-overflow-menu role="menu" tabindex="0"
       aria-label="{label}" class="bx--overflow-menu {label_class}"
-      {label_props}>
+      {label_props} title="{txt_menu}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
         class="bx--overflow-menu__icon" width="16" height="16"
@@ -1078,9 +1080,12 @@ class TdOverflowButton(Node):
     "Extended Template Tag arguments."
 
     def render_default(self, values, context):
+        values['cleaned_child'] = strip_tags(values['child']).strip()
+
         template = """
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
-  <{tag} class="bx--overflow-menu-options__btn {class}" {props}>
+  <{tag} class="bx--overflow-menu-options__btn {class}"
+      title="{cleaned_child}" {props}>
     <div class="bx--overflow-menu-options__option-content">
       {slot_icon}
       {child}
