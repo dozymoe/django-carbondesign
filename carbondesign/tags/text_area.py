@@ -21,16 +21,16 @@ class TextArea(FormNode):
             values['props'].append(('disabled', 'disabled'))
 
 
-    def prepare_element_attributes(self, attrs, default, context):
-        attrs['class'].extend([
+    def prepare_element_props(self, props, default, context):
+        props['class'].extend([
                 'bx--text-area',
                 'bx--text-area--v2'])
 
         if self.eval(self.kwargs.get('light'), context):
-            attrs['class'].append('bx--text-input--light')
+            props['class'].append('bx--text-input--light')
 
         if self.bound_field.errors:
-            attrs['class'].append('bx--text-input--invalid')
+            props['class'].append('bx--text-input--invalid')
 
 
     def render_default(self, values, context):

@@ -23,11 +23,11 @@ class CheckBox(FormNode):
                     'mixed'))
 
 
-    def prepare_element_attributes(self, attrs, default, context):
-        attrs['class'].append('bx--checkbox')
+    def prepare_element_props(self, props, default, context):
+        props['class'].append('bx--checkbox')
 
         if self.eval(self.kwargs.get('mixed'), context):
-            attrs['aria-checked'] = 'mixed'
+            props['aria-checked'] = 'mixed'
 
 
     def render_default(self, values, context):

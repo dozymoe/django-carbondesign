@@ -362,20 +362,17 @@ class FormNode(Node):
             attrs['aria-controls'] = values['id'] + '-hint'
             attrs['aria-describedby'] = values['id'] + '-hint'
 
-        self.prepare_element_attributes(attrs, widget_attrs, context)
+        self.prepare_element_props(attrs, widget_attrs, context)
         attrs['class'] = ' '.join(attrs['class'])
 
         if var_eval(self.kwargs.get('hidden'), context):
-            return self.bound_field.as_hidden(attrs=attrs)
+            return field.as_hidden(attrs=attrs)
+
         widget = self.eval(self.kwargs.get('widget'), context)
         if widget == 'input':
             widget = CustomTextInput(attrs=attrs)
             return field.as_widget(widget=widget, attrs=attrs)
         return field.as_widget(attrs=attrs)
-
-
-    def element_attributes(self):
-        return self.bound_field.field.widget.attrs
 
 
     def before_prepare(self, values, context):
@@ -395,7 +392,85 @@ class FormNode(Node):
             values['form_errors'] = ''
 
 
-    def prepare_element_attributes(self, attrs, default, context):
+    def prepare_element_props(self, props, default, context):
+        pass
+
+
+    def render_tmpl_help(self, values, context):
+        if self.bound_field.help_text:
+            tmpl = """
+<div class="bx--form__helper-text {class}" {props}>
+  {child}
+</div>
+"""
+            help_values = {
+                'child': self.bound_field.help_text,
+                'class': ' '.join(values['help_class']),
+                'props': self.join_attributes(self.prune_attributes(
+                    values['help_props'])),
+            }
+            return tmpl.format(**help_values)
+        return ''
+
+
+class FormNodes(Node):
+
+    BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
+    "Base Template Tag arguments."
+    TEMPLATES = ('help',)
+    "Conditional templates. Please sort from outer to inner subtemplates."
+
+    bound_fields = None
+
+    def elements(self, values, context):
+        for field in self.bound_fields:
+            widget_attrs = field.field.widget.attrs
+
+            attrs = dict(values['props'])
+            attrs['class'] = widget_attrs.get('class', '').split()
+            if field.help_text or 'help' in self.slots:
+                attrs['aria-controls'] = values['id'] + '-hint'
+                attrs['aria-describedby'] = values['id'] + '-hint'
+
+            self.prepare_element_props(field, attrs, widget_attrs, context)
+            attrs['class'] = ' '.join(attrs['class'])
+
+            if var_eval(self.kwargs.get('hidden'), context):
+                yield field.as_hidden(attrs=attrs)
+                continue
+
+            widget = self.eval(self.kwargs.get('widget'), context)
+            if widget == 'input':
+                widget = CustomTextInput(attrs=attrs)
+                yield field.as_widget(widget=widget, attrs=attrs)
+                continue
+
+            yield field.as_widget(attrs=attrs)
+
+
+    def before_prepare(self, values, context):
+        self.bound_fields = [x.resolve(context) for x in self.args]
+        for ii, field in enumerate(self.bound_fields):
+            values[f'help_class_{ii}'] = []
+            values[f'help_props_{ii}'] = []
+            values[f'id_{ii}'] = field.id_for_label
+            values[f'label_{ii}'] = field.label
+        super().before_prepare(values, context)
+
+
+    def after_prepare(self, values, context):
+        for ii, element in enumerate(self.elements(values, context)):
+            values[f'element_{ii}'] = element
+        super().after_prepare(values, context)
+
+        for ii, field in enumerate(self.bound_fields):
+            if field.errors:
+                values[f'form_errors_{ii}'] = field.errors.as_text()
+            else:
+                values[f'form_errors_{ii}'] = ''
+
+
+    def prepare_element_props(self, field, props, default, context):
         pass
 
 
@@ -430,18 +505,18 @@ class DumbFormNode(Node):
             attrs['aria-controls'] = values['id'] + '-hint'
             attrs['aria-describedby'] = values['id'] + '-hint'
 
-        self.prepare_element_attributes(attrs, attrs, context)
+        self.prepare_element_props(attrs, attrs, context)
         attrs['class'] = ' '.join(attrs['class'])
 
         if var_eval(self.kwargs.get('hidden'), context):
             attrs.pop('type')
-            props = self.join_attributes(self.prune_attributes(attrs))
+            props = self.join_props(self.prune_attributes(attrs))
             return '<input type="hidden" {props}">'.format(props=props)
         return self.render_element(attrs, context)
 
 
     def render_element(self, values, context):
-        props = self.join_attributes(self.prune_attributes(values))
+        props = self.join_props(self.prune_attributes(values))
         return '<input {props}">'.format(props=props)
 
 
@@ -450,7 +525,7 @@ class DumbFormNode(Node):
         super().after_prepare(values, context)
 
 
-    def prepare_element_attributes(self, attrs, default, context):
+    def prepare_element_props(self, attrs, default, context):
         pass
 
 
