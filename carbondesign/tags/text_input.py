@@ -87,11 +87,10 @@ class PasswordInput(TextInput):
         values['txt_show_password'] = _("Show password")
 
 
-    def prepare_element_attributes(self, attrs, default, context):
-        super().prepare_element_attributes(attrs, default, context)
-
-        attrs['class'].append('bx--password-input')
-        attrs['data-toggle-password-visibility'] = ''
+    def prepare_element_props(self, props, default, context):
+        super().prepare_element_props(props, default, context)
+        props['class'].append('bx--password-input')
+        props['data-toggle-password-visibility'] = ''
 
 
     def render_default(self, values, context):

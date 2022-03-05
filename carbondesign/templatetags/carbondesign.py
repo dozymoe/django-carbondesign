@@ -6,23 +6,62 @@ from django import template
 from django.conf import settings
 from django.utils.safestring import mark_safe
 #-
-from ..tags import base, button, checkbox, data_table, date_picker, grid, modal
-from ..tags import text_area, text_input, ui_shell
+from ..tags import accordion, base, breadcrumb, button, checkbox, code_snippet
+from ..tags import combo_box, content_switcher, copy_button, data_table
+from ..tags import date_picker, dropdown, file_uploader, grid, inline_loading
+from ..tags import link, list_, list_box, loading, modal, multi_select
+from ..tags import notification, number_input, overflow_menu, pagination
+from ..tags import pagination_nav, progress_indicator, radio_button, search
+from ..tags import select, slider, structured_list, tabs, tag, text_area
+from ..tags import text_input, tile, time_picker, toggle, toolbar, tooltip
+from ..tags import ui_shell
 
 _logger = logging.getLogger(__name__)
 register = template.Library()
 
 
 MATERIAL_TAGS = {
+    **accordion.components,
     **base.components,
+    **breadcrumb.components,
     **button.components,
     **checkbox.components,
+    **code_snippet.components,
+    **combo_box.components,
+    **content_switcher.components,
+    **copy_button.components,
     **data_table.components,
     **date_picker.components,
+    **dropdown.components,
+    **file_uploader.components,
     **grid.components,
+    **inline_loading.components,
+    **link.components,
+    **list_.components,
+    **list_box.components,
+    **loading.components,
     **modal.components,
+    **multi_select.components,
+    **notification.components,
+    **number_input.components,
+    **overflow_menu.components,
+    **pagination.components,
+    **pagination_nav.components,
+    **progress_indicator.components,
+    **radio_button.components,
+    **search.components,
+    **select.components,
+    **slider.components,
+    **structured_list.components,
+    **tabs.components,
+    **tag.components,
     **text_area.components,
     **text_input.components,
+    **tile.components,
+    **time_picker.components,
+    **toggle.components,
+    **toolbar.components,
+    **tooltip.components,
     **ui_shell.components,
 }
 

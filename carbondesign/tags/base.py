@@ -225,6 +225,7 @@ class Node(template.Node):
         else:
             self.mode = 'default'
 
+        values['mode'] = self.mode
         values['id'] = self.id(context)
         values['tag'] = var_eval(self.kwargs.get('tag', self.DEFAULT_TAG),
                 context)
@@ -340,6 +341,8 @@ class FormNode(Node):
     "Base Template Tag arguments."
     TEMPLATES = ('help',)
     "Conditional templates. Please sort from outer to inner subtemplates."
+    RENDER_ELEMENT = True
+    "Render the form field widget."
 
     bound_field = None
 
@@ -384,7 +387,8 @@ class FormNode(Node):
 
 
     def after_prepare(self, values, context):
-        values['element'] = self.element(values, context)
+        if self.RENDER_ELEMENT:
+            values['element'] = self.element(values, context)
         super().after_prepare(values, context)
 
         if self.bound_field.errors:
@@ -395,6 +399,22 @@ class FormNode(Node):
 
     def prepare_element_props(self, props, default, context):
         pass
+
+
+    def choices(self, context):
+        for option_value, option_label in self.bound_field.field.choices:
+            if option_value is None:
+                option_value = ''
+
+            if isinstance(option_label, (list, tuple)):
+                group_name = option_value
+                choices = option_label
+            else:
+                group_name = None
+                choices = [(option_value, option_label)]
+
+            for subvalue, sublabel in choices:
+                yield (group_name, subvalue, sublabel)
 
 
     def render_tmpl_help(self, values, context):

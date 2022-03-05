@@ -154,7 +154,7 @@ class Link(Node):
 
     def render_default(self, values, context):
         if 'submenu' in self.slots:
-            values['cleaned_child'] = strip_tags(values['child'])
+            values['cleaned_child'] = strip_tags(values['child']).strip()
 
             template = """
 <li class="bx--header__submenu" data-header-submenu>
@@ -222,27 +222,33 @@ class Action(Node):
 
 
     def render_slot_svg_open(self, values, context):
-        template = """
-<svg focusable="false" preserveAspectRatio="xMidYMid meet"
-    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true" class="bx--navigation-menu-panel-expand-icon {class}"
-    width="20" height="20" viewBox="0 0 32 32" {props}>
-  {child}
-</svg>
-"""
-        return self.format(template, values)
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                'width:20px',
+                'height:20px',
+            ]),
+            'aria-hidden': 'true',
+            'class': 'bx--navigation-menu-panel-expand-icon ' +\
+                values['class'],
+        })
 
 
     def render_slot_svg_close(self, values, context):
-        template = """
-<svg focusable="false" preserveAspectRatio="xMidYMid meet"
-    style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon {class}"
-    width="20" height="20" viewBox="0 0 32 32" {props}>
-  {child}
-</svg>
-"""
-        return self.format(template, values)
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                'width:20px',
+                'height:20px',
+            ]),
+            'aria-hidden': 'true',
+            'class': 'bx--navigation-menu-panel-collapse-icon ' +\
+                values['class'],
+        })
 
 
 class NavSection(Node):
@@ -438,19 +444,25 @@ class SideNav(Node):
 
 
     def render_slot_title_icon(self, values, context):
+        values['child'] = modify_svg(values['child'], {
+            'preserveAspectRatio': 'xMidYMid meet',
+            'style': '; '.join([
+                'will-change:transform',
+                'width:20px',
+                'height:20px',
+            ]),
+            'aria-hidden': 'true',
+        })
         template = """
 <div class="bx--side-nav__icon {class}">
-  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32" aria-hidden="true" {props}>
-    {child}
-  </svg>
+  {child}
 </div>
 """
         return self.format(template, values)
 
 
     def render_slot_title(self, values, context):
-        values['cleaned_title'] = strip_tags(self.values['slot_title'])
+        values['cleaned_title'] = strip_tags(self.values['slot_title']).strip()
 
         template = """
 <h2 class="bx--side-nav__title {class}" title="{cleaned_title}" {props}>
@@ -575,7 +587,6 @@ class SideNavItem(Node):
             ]),
             'aria-hidden': 'true',
         })
-
         template = """
 <div class="bx--side-nav__icon bx--side-nav__icon--small {class}">
   {child}
