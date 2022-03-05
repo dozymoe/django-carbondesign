@@ -4,8 +4,10 @@ class CustomNameInput(Input):
 
     def get_context(self, name, value, attrs):
         context = super().get_context(name, value, attrs)
-        if context['widget']['attrs'].get('name') is not None:
-            context['widget']['name'] = context['widget']['attrs']['name']
+        for attr in ('name', 'value'):
+            if context['widget']['attrs'].get(attr) is None:
+                continue
+            context['widget'][attr] = context['widget']['attrs'][attr]
         return context
 
 
