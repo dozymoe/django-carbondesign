@@ -2,6 +2,7 @@
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
+from django.contrib.messages import constants
 from django.utils.translation import gettext as _
 #-
 from .base import Node
@@ -26,6 +27,15 @@ class Notification(Node):
         values['txt_close'] = _("close")
 
         self.variant = self.eval(self.kwargs.get('variant', 'info'), context)
+        if self.variant in (constants.DEBUG, constants.INFO):
+            self.variant = 'info'
+        elif self.variant == constants.SUCCESS:
+            self.variant = 'success'
+        elif self.variant == constants.WARNING:
+            self.variant = 'warning'
+        elif self.variant == constants.ERROR:
+            self.variant = 'error'
+
         values['class'].append(f'bx--{self.mode}-notification--{self.variant}')
 
         if self.eval(self.kwargs.get('low_contrast'), context):

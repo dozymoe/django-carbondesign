@@ -8,4 +8,8 @@ export default function()
     let el;
     el = document.querySelector('button.bx--header__menu-trigger');
     if (el) NavigationMenu.init(el);
+
+    HeaderNav.init();
+    HeaderSubmenu.init();
+    SideNav.init();
 }

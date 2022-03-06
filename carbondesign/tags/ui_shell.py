@@ -159,7 +159,7 @@ class Link(Node):
             template = """
 <li class="bx--header__submenu" data-header-submenu>
   <a class="bx--header__menu-item bx--header__menu-title {class}"
-      aria-haspopup="true" aria-expanded="true" {props}>
+      aria-haspopup="true" aria-expanded="false" {props}>
     {child}
     <svg class="bx--header__menu-arrow" width="12" height="7"
         aria-hidden="true">

@@ -1,0 +1,14 @@
+@import "carbon-components/src/components/notification/inline-notification";
+@import "carbon-components/src/components/notification/toast-notification";
+
+.bx--toast-notification__details
+{
+    > :first-child
+    {
+        margin-top: 1rem;
+    }
+    > :last-child
+    {
+        margin-bottom: 1rem;
+    }
+}
