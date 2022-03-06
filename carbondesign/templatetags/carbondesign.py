@@ -117,6 +117,24 @@ def svg(path):
     return ''
 
 
+@register.simple_tag
+def carbondesign_assets():
+    """This template tag will inject native carbondesign css/js files.
+
+    Don't forget to run collectstatic!
+    """
+    if settings.DEBUG:
+        suffix = ''
+    else:
+        suffix = '.min'
+    template = """
+<link rel="stylesheet" type="text/css" href="{baseurl}carbondesign/carbon-components{suffix}.css">
+<script src="{baseurl}carbondesign/carbon-components{suffix}.js"></script>
+""" # pylint:disable=line-too-long
+    return mark_safe(template.format(baseurl=settings.STATIC_URL,
+            suffix=suffix))
+
+
 _parser = TagParser(MATERIAL_TAGS)
 for name in MATERIAL_TAGS:
     register.tag(name, _parser)

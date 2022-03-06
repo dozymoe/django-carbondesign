@@ -1,0 +1,12 @@
+{
+  "name": "carbondesign",
+  "version": "1.0.0",
+  "description": "CarboDesignSystem for Django (unofficial)",
+  "main": "index.js",
+  "repository": "https://github.com/dozymoe/django-carbondesign",
+  "author": "Fahri Reza <i@dozy.moe>",
+  "license": "MIT",
+  "dependencies": {
+    "carbon-components": "^10.54.0"
+  }
+}
