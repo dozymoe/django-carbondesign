@@ -12,9 +12,10 @@ class UiShell(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('navigation', 'links', 'actions', 'sidenav', 'switcher')
+    SLOTS = ('title', 'title_prefix', 'navigation', 'links', 'actions',
+            'sidenav', 'switcher')
     "Named children."
-    NODE_PROPS = ('href', 'label_prefix', 'title', 'title_prefix')
+    NODE_PROPS = ('href', 'label_prefix')
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'header'
     "Rendered HTML tag."
@@ -22,9 +23,10 @@ class UiShell(Node):
     "Conditional templates."
 
     def prepare(self, values, context):
-        values['title'] = self.eval(self.kwargs.get('title'), context)
-        values['title_prefix'] = self.eval(self.kwargs.get('title_prefix'),
-                context)
+        values['txt_skip_menu'] = _("Skip to main content")
+        values['txt_open_menu'] = _("Open menu")
+        values['txt_close_menu'] = _("Close menu")
+
         values['href'] = self.eval(self.kwargs.get('href', '#'), context)
 
         if 'label_prefix' in self.kwargs:
@@ -32,10 +34,6 @@ class UiShell(Node):
                     self.eval(self.kwargs.get('label_prefix'), context),
                     self.label(context))
         values['long_label'] = self.label(context)
-
-        values['txt_skip_menu'] = _("Skip to main content")
-        values['txt_open_menu'] = _("Open menu")
-        values['txt_close_menu'] = _("Close menu")
 
 
     def render_default(self, values, context):
@@ -91,18 +89,23 @@ class UiShell(Node):
         return self.format(template, values)
 
 
-    def render_tmpl_title(self, values, context):
-        if 'title' in self.kwargs:
-            if 'title_prefix' in self.kwargs:
-                template = """
-<span class="bx--header__name--prefix">{title_prefix} &nbsp;</span>
-{title}
+    def render_slot_title_prefix(self, values, context):
+        template = """
+<span class="bx--header__name--prefix {class}" {props}>{child} &nbsp;</span>
 """
-            else:
-                template = "{title}"
-        else:
-            template = "{label}"
         return self.format(template, values)
+
+
+    def render_tmpl_title(self, values, context):
+        if 'title' in self.slots:
+            title = '{slot_title}'
+        else:
+            title = '{label}'
+        if 'title_prefix' in self.slots:
+            template = '{slot_title_prefix} ' + title
+        else:
+            template = title
+        return self.format(template, values, context)
 
 
     def render_tmpl_hamburger(self, values, context):

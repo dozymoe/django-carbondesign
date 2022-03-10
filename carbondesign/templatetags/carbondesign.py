@@ -127,12 +127,11 @@ def carbondesign_assets():
         suffix = ''
     else:
         suffix = '.min'
-    template = """
+    tmpl = """
 <link rel="stylesheet" type="text/css" href="{baseurl}carbondesign/carbon-components{suffix}.css">
 <script src="{baseurl}carbondesign/carbon-components{suffix}.js"></script>
 """ # pylint:disable=line-too-long
-    return mark_safe(template.format(baseurl=settings.STATIC_URL,
-            suffix=suffix))
+    return mark_safe(tmpl.format(baseurl=settings.STATIC_URL, suffix=suffix))
 
 
 _parser = TagParser(MATERIAL_TAGS)
