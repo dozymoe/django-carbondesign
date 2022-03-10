@@ -17,6 +17,8 @@ class Tooltip(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         # start, center, end
         align = self.eval(self.kwargs.get('align'), context)
         if align:
@@ -29,6 +31,8 @@ class Tooltip(Node):
 
 
     def render_interactive(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div id="label-{id}" class="bx--tooltip__label {label_class}" {label_props}>
   {label}
@@ -53,6 +57,8 @@ class Tooltip(Node):
 
 
     def render_definition(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--tooltip--definition bx--tooltip--a11y" data-tooltip-definition>
   <button aria-describedby="{id}"
@@ -68,6 +74,8 @@ class Tooltip(Node):
 
 
     def render_icon(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <button class="bx--tooltip__trigger bx--tooltip--a11y {class}"
     data-tooltip-icon>
@@ -79,6 +87,8 @@ class Tooltip(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
@@ -92,6 +102,8 @@ class Tooltip(Node):
 
 
     def render_slot_footer(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <div class="bx--tooltip__footer {class}" {props}>
   {child}
@@ -101,10 +113,14 @@ class Tooltip(Node):
 
 
 class TooltipHeading(Node):
+    """Tooltip heading.
+    """
     WANT_CHILDREN = True
     DEFAULT_TAG = 'h4'
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--tooltip__heading {class}" {props}>
   {child}

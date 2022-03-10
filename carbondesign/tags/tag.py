@@ -17,6 +17,8 @@ class Tag(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_clear'] = _("Clear filter")
 
         variant = self.eval(self.kwargs.get('variant'), context)
@@ -25,6 +27,8 @@ class Tag(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <button type="button" class="bx--tag {class]" {props}>
   <span class="bx--tag__label">child}</span>
@@ -34,6 +38,8 @@ class Tag(Node):
 
 
     def render_filter(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--tag bx--tag--filter" title="{txt_clear}">
   <span class="bx--tag__label">{child}</span>

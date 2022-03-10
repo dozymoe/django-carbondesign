@@ -15,6 +15,8 @@ class TextInput(FormNode):
     "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
@@ -22,6 +24,8 @@ class TextInput(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--text-input')
 
         if self.eval(self.kwargs.get('light'), context):
@@ -32,6 +36,8 @@ class TextInput(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item bx--text-input-wrapper">
@@ -64,6 +70,8 @@ class TextInput(FormNode):
 
 
     def render_tmpl_icon_invalid(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
@@ -82,18 +90,23 @@ class PasswordInput(TextInput):
     "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         super().prepare(values, context)
-
         values['txt_show_password'] = _("Show password")
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         super().prepare_element_props(props, default, context)
         props['class'].append('bx--password-input')
         props['data-toggle-password-visibility'] = ''
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div data-text-input
@@ -130,6 +143,8 @@ class PasswordInput(TextInput):
 
 
     def render_tmpl_visibility(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <button type="button"
     class="bx--text-input--password__visibility__toggle bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center">

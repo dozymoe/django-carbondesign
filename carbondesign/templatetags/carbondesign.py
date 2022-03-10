@@ -1,3 +1,9 @@
+"""Template tags provided by carbondesign module.
+
+Provides built-in Carbon Design components template tags,
+svg for loading svg file,
+carbondesign_assets for loading css/js files.
+"""
 import logging
 import os
 import re
@@ -67,7 +73,8 @@ MATERIAL_TAGS = {
 
 
 class TagParser:
-
+    """Parse arguments of Django template tags.
+    """
     def __init__(self, tags):
         self.tags = tags
 

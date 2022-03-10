@@ -11,9 +11,10 @@ class Toggle(FormNode):
     """
     MODES = ('default', 'nolabel')
     "Extended Template Tag arguments."
-    NODE_PROPS = ('nolabel',)
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_off'] = _("Off")
         values['txt_on'] = _("On")
 
@@ -22,13 +23,17 @@ class Toggle(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--toggle-input')
 
-        if self.eval(self.kwargs.get('nolabel'), context):
+        if self.mode == 'nolabel':
             props['class'].append('bx--toggle-input--small')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   {element}
@@ -49,6 +54,8 @@ class Toggle(FormNode):
 
 
     def render_nolabel(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   {element}

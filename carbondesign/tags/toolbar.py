@@ -13,6 +13,8 @@ class Toolbar(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--toolbar {class}" data-toolbar {props}>
   {child}
@@ -25,12 +27,16 @@ class ToolbarSearch(Node):
     """Toolbar search component.
     """
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_search'] = _("Search")
         values['txt_toolbar_search'] = _("Toolbar Search")
         values['txt_clear_search'] = _("Clear search input")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--search bx--search--sm bx--toolbar-search" role="search"
     data-search data-toolbar-search>
@@ -69,10 +75,14 @@ class ToolbarItem(Node):
     "Named children."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_list'] = _("List of options")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-overflow-menu class="bx--overflow-menu" tabindex="0"
     aria-label="{txt_list}">
@@ -86,6 +96,8 @@ class ToolbarItem(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
@@ -103,6 +115,8 @@ class ToolbarItemMultiSelect(FormNode):
     """Toolbar multi select item component.
     """
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--toolbar-menu__option">
   <input id="{id}" class="bx--checkbox" type="checkbox" value="{value}"
@@ -115,7 +129,7 @@ class ToolbarItemMultiSelect(FormNode):
         values = self.bound_field.value()
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices()):
+        for ii, (_, val, txt) in enumerate(self.choices(context)):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
                 'index': ii,
@@ -138,6 +152,8 @@ class ToolbarItemRadioButton(FormNode):
     """Toolbar radio item component.
     """
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <fieldset data-row-height class="bx--radio-button-group">
   <legend class="bx--visually-hidden">{label}</legend>
@@ -148,6 +164,8 @@ class ToolbarItemRadioButton(FormNode):
 
 
     def render_tmpl_items(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <li class="bx--toolbar-menu__option">
   <input id="{id}" class="bx--radio-button" type="radio" value="{value}"
@@ -161,7 +179,7 @@ class ToolbarItemRadioButton(FormNode):
         value = self.bound_field.value()
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices()):
+        for ii, (_, val, txt) in enumerate(self.choices(context)):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
                 'index': ii,
@@ -187,6 +205,8 @@ class ToolbarItemHeading(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--toolbar-menu__title {class}" {props}>{child}</li>
 """
@@ -197,6 +217,8 @@ class ToolbarItemDivider(Node):
     """Toolbar item divider component.
     """
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         return '<hr class="bx--toolbar-menu__divider"/>'
 
 

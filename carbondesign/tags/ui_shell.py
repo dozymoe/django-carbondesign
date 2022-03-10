@@ -23,6 +23,8 @@ class UiShell(Node):
     "Conditional templates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_skip_menu'] = _("Skip to main content")
         values['txt_open_menu'] = _("Open menu")
         values['txt_close_menu'] = _("Close menu")
@@ -37,6 +39,8 @@ class UiShell(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--header {class}" role="banner" aria-label="{long_label}"
     data-header {props}>
@@ -60,6 +64,8 @@ class UiShell(Node):
 
 
     def render_slot_navigation(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <div class="bx--navigation {class}" id="navigation-menu-{id}"
     hidden data-navigation-menu {props}>
@@ -70,6 +76,8 @@ class UiShell(Node):
 
 
     def render_slot_links(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <nav class="bx--header__nav {class}" aria-label="{label}" data-header-nav>
   <ul class="bx--header__menu-bar" aria-label="{label}" {props}>
@@ -81,6 +89,8 @@ class UiShell(Node):
 
 
     def render_slot_actions(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <div class="bx--header__global {class}" {props}>
   {child}
@@ -90,6 +100,8 @@ class UiShell(Node):
 
 
     def render_slot_title_prefix(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <span class="bx--header__name--prefix {class}" {props}>{child} &nbsp;</span>
 """
@@ -97,6 +109,8 @@ class UiShell(Node):
 
 
     def render_tmpl_title(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         if 'title' in self.slots:
             title = '{slot_title}'
         else:
@@ -109,6 +123,8 @@ class UiShell(Node):
 
 
     def render_tmpl_hamburger(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <button class="bx--header__menu-trigger bx--header__action"
     aria-label="{txt_open_menu}" title="{txt_open_menu}"
@@ -145,6 +161,8 @@ class Link(Node):
     is_submenu = False
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         self.is_submenu = context.get('navlink_submenu')
         if self.is_submenu:
             values['props'].append(('tabindex', '-1'))
@@ -156,6 +174,8 @@ class Link(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if 'submenu' in self.slots:
             values['cleaned_child'] = strip_tags(values['child']).strip()
 
@@ -211,11 +231,15 @@ class Action(Node):
     "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_close_menu'] = _("Close menu")
         values['target'] = self.eval(self.kwargs['target'], context)
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--header__global {class}" {props}>
   {child}
@@ -225,6 +249,8 @@ class Action(Node):
 
 
     def render_slot_svg_open(self, values, context):
+        """Render html of the slot.
+        """
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
@@ -240,6 +266,8 @@ class Action(Node):
 
 
     def render_slot_svg_close(self, values, context):
+        """Render html of the slot.
+        """
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
@@ -261,6 +289,8 @@ class NavSection(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--navigation-section {class}" {props}>
   <ul class="bx--navigation-items">
@@ -284,6 +314,8 @@ class NavItem(Node):
     is_submenu = False
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         is_active = self.eval(self.kwargs.get('active'), context)
 
         self.is_submenu = context.get('navitem_submenu')
@@ -303,6 +335,8 @@ class NavItem(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if 'submenu' in self.slots:
             template = """
 <li class="{class}" {props}>
@@ -336,6 +370,8 @@ class NavItem(Node):
 
 
     def render_slot_submenu(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <ul id="category-{id}-menu" class="bx--navigation__category-items {class}"
     {props}>
@@ -346,6 +382,8 @@ class NavItem(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
@@ -378,12 +416,16 @@ class SideNav(Node):
     "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_label'] = _("Side navigation")
         if self.eval(self.kwargs.get('fixed'), context):
             values['class'].append('bx--side-nav--fixed')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--side-nav {class}" data-side-nav {props}>
   <nav class="bx--side-nav__navigation" role="navigation"
@@ -400,6 +442,8 @@ class SideNav(Node):
 
 
     def render_slot_header(self, values, context):
+        """Render html of the slot.
+        """
         if set('title_icon', 'title', 'switcher')\
                 .intersection(self.slots.keys()):
 
@@ -417,6 +461,8 @@ class SideNav(Node):
 
 
     def render_slot_footer(self, values, context):
+        """Render html of the slot.
+        """
         values['txt_close'] = _("Close the side navigation menu")
         values['txt_close_help'] = _("Toggle the expansion state of the navigation") # pylint:disable=line-too-long
 
@@ -447,6 +493,8 @@ class SideNav(Node):
 
 
     def render_slot_title_icon(self, values, context):
+        """Render html of the slot.
+        """
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
             'style': '; '.join([
@@ -465,7 +513,9 @@ class SideNav(Node):
 
 
     def render_slot_title(self, values, context):
-        values['cleaned_title'] = strip_tags(self.values['slot_title']).strip()
+        """Render html of the slot.
+        """
+        values['cleaned_title'] = strip_tags(values['child']).strip()
 
         template = """
 <h2 class="bx--side-nav__title {class}" title="{cleaned_title}" {props}>
@@ -476,6 +526,8 @@ class SideNav(Node):
 
 
     def render_slot_switcher(self, values, context):
+        """Render html of the slot.
+        """
         values['txt_switcher'] = _("Switcher")
 
         template = """
@@ -504,6 +556,8 @@ class SideNavOption(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <option class="bx--side-nav__option {class}" {props}>
   {child}
@@ -525,6 +579,8 @@ class SideNavItem(Node):
     is_submenu = False
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         is_active = self.eval(self.kwargs.get('active'), context)
 
         self.is_submenu = self.context.get('navitem_submenu')
@@ -546,6 +602,8 @@ class SideNavItem(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if 'submenu' in self.slots:
             template = """
 <li class="{class}">
@@ -580,6 +638,8 @@ class SideNavItem(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',

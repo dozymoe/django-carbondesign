@@ -15,6 +15,8 @@ class TextArea(FormNode):
     "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
@@ -22,6 +24,8 @@ class TextArea(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].extend([
                 'bx--text-area',
                 'bx--text-area--v2'])
@@ -34,6 +38,8 @@ class TextArea(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -67,6 +73,8 @@ class TextArea(FormNode):
 
 
     def render_tmpl_icon_invalid(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"

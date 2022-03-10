@@ -13,6 +13,8 @@ class StructuredList(Node):
     "Named children."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <section class="bx--structured-list">
   <div class="bx--structured-list-thead">
@@ -37,10 +39,14 @@ class StructuredListSelection(FormNode):
     "Named children."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         context['bound_field'] = self.bound_field
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <section class="bx--structured-list bx--structured-list--selection"
     data-structured-list>
@@ -64,6 +70,8 @@ class StructuredListTh(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--structured-list-th {class}" {props}>{child}</div>
 """
@@ -78,11 +86,15 @@ class StructuredListTd(Node):
     NODE_PROPS = ('nowrap',)
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('nowrap'), context):
             values['class'].append('bx--structured-list-content--nowrap')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--structured-list-td {class}" {props}>
   {child}
@@ -101,6 +113,8 @@ class StructuredListRow(Node):
     bound_field = None
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         self.bound_field = context.get('bound_field')
         if self.bound_field:
             values['name'] = self.bound_field.name
@@ -115,6 +129,8 @@ class StructuredListRow(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field:
             template = """
 <label aria-label="{label}" class="bx--structured-list-row {label_class}"

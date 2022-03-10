@@ -15,11 +15,15 @@ class Tabs(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('container'), context):
             values['wrapper_class'].append('bx--tabs-container')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-tabs class="bx--tabs {wrapper_class}">
   <div class="bx--tabs-trigger" tabindex="0">
@@ -51,6 +55,8 @@ class TabItem(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         active = self.eval(self.kwargs.get('active'), context)
         if active:
             values['wrapper_class'].append('bx--tabs__nav-item--selected')
@@ -64,6 +70,8 @@ class TabItem(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--tabs__nav-item {wrapper_class}" data-target="{target}" role="tab"
     {wrapper_props}>
@@ -85,6 +93,8 @@ class TabContent(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         active = self.eval(self.kwargs.get('active'), context)
         if active:
             values['props'].append(('aria-hidden', 'false'))
@@ -96,6 +106,8 @@ class TabContent(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div role="tabpanel" aria-labelledby="{target}" aria-hidden="false" {props}>
   <div>{child}</div>

@@ -1,0 +1,46 @@
+carbondesign:
+  options:
+    pylint_config_file: etc/pylint.rc
+    pylint_work_dir: "./"
+
+  pylint:
+    raw_file_in: "{_1}/*.py"
+    raw_depend_in: etc/pylint.rc
+
+  tags:
+    pylint:
+      raw_file_in: "{_1}/{_2}/*.py"
+      raw_depend_in: etc/pylint.rc
+
+  templatetags:
+    pylint:
+      raw_file_in: "{_1}/{_2}/*.py"
+      raw_depend_in: etc/pylint.rc
+
+  tests:
+    pylint:
+      raw_file_in: "{_1}/{_2}/*.py"
+      raw_depend_in: etc/pylint.rc
+
+  unittest:
+    shell:
+      options:
+        command: ./run pybin coverage run --include=./* -m py.test
+      rule_in:
+        - "{_1}/pylint"
+        - "{_1}/tags/pylint"
+        - "{_1}/templatetags/pylint"
+        - "{_1}/tests/pylint"
+      raw_depend_in: build.yml
+
+  coverage:
+    shell:
+      options:
+        command: ./run pybin coverage report -m --skip-covered
+      rule_in:
+        - "{_1}/unittest/shell"
+
+
+mithril-js:
+  dump_timezones:
+    raw_file_out: carbondesign/{_1}/timezones.json

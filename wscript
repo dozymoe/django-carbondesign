@@ -39,6 +39,10 @@ def options(opt):
 
 
 def configure(ctx):
+    # load custom tools
+    custom_tools_dir = './lib/build_tools'                                       
+    ctx.load('dump_timezones', tooldir=custom_tools_dir)
+
     # load predefined tools from pybuildtool
     from imp import find_module
     pybuildtool_dir = find_module('pybuildtool')[1]

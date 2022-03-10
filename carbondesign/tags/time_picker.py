@@ -14,6 +14,8 @@ class TimePicker(FormNode):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_select_ampm'] = _("Select AM/PM")
         values['txt_select_zone'] = _("Select time zone")
 
@@ -32,6 +34,8 @@ class TimePicker(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--text-input')
         props['class'].append('bx--time-picker__input-field')
         props['pattern'] = r'(1[012]|[1-9]):[0-5][0-9](\\s)?'
@@ -43,6 +47,8 @@ class TimePicker(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -78,6 +84,8 @@ class TimePicker(FormNode):
 
 
     def render_tmpl_select_ampm(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div class="bx--time-picker__select bx--select {select_class}">
   <label for="select-ampm-{id}" class="bx--label bx--visually-hidden">
@@ -99,6 +107,8 @@ class TimePicker(FormNode):
 
 
     def render_tmpl_select_zone(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div class="bx--time-picker__select bx--select {select_class}">
   <label for="select-zone-{id}" class="bx--label bx--visually-hidden">
@@ -119,6 +129,8 @@ class TimePicker(FormNode):
 
 
     def render_tmpl_timezones(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <option class="bx--select-option" value="{value}">{label}</option>
 """

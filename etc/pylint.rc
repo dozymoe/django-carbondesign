@@ -140,7 +140,12 @@ disable=print-statement,
         exception-escape,
         comprehension-escape,
         too-many-locals,
-        no-self-use
+        no-self-use,
+        too-few-public-methods,
+        duplicate-code,
+        unused-argument,
+        consider-using-f-string,
+        invalid-name
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

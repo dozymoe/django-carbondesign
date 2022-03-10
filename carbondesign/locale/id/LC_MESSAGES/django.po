@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-10 20:22+0700\n"
+"POT-Creation-Date: 2022-03-11 01:58+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr "Kurangi tampilan"
 
 #: carbondesign/tags/combo_box.py:21 carbondesign/tags/data_table.py:982
 #: carbondesign/tags/list_box.py:22 carbondesign/tags/multi_select.py:20
-#: carbondesign/tags/ui_shell.py:27
+#: carbondesign/tags/ui_shell.py:29
 msgid "Open menu"
 msgstr "Buka menu"
 
@@ -94,12 +94,12 @@ msgid "of %s pages"
 msgstr "dari %s halaman"
 
 #: carbondesign/tags/data_table.py:1018 carbondesign/tags/search.py:18
-#: carbondesign/tags/toolbar.py:28
+#: carbondesign/tags/toolbar.py:32
 msgid "Search"
 msgstr "Pencarian"
 
 #: carbondesign/tags/data_table.py:1019 carbondesign/tags/search.py:19
-#: carbondesign/tags/toolbar.py:30
+#: carbondesign/tags/toolbar.py:34
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
@@ -135,8 +135,8 @@ msgstr "tutup dialog"
 msgid "Show modal"
 msgstr "Buka dialog"
 
-#: carbondesign/tags/multi_select.py:21 carbondesign/tags/ui_shell.py:28
-#: carbondesign/tags/ui_shell.py:214
+#: carbondesign/tags/multi_select.py:21 carbondesign/tags/ui_shell.py:30
+#: carbondesign/tags/ui_shell.py:236
 msgid "Close menu"
 msgstr "Tutup menu"
 
@@ -192,11 +192,11 @@ msgstr "Ambil pilihan"
 msgid "slider"
 msgstr "geser"
 
-#: carbondesign/tags/tag.py:20
+#: carbondesign/tags/tag.py:22
 msgid "Clear filter"
 msgstr "Tampilkan semua"
 
-#: carbondesign/tags/text_input.py:87
+#: carbondesign/tags/text_input.py:96
 msgid "Show password"
 msgstr "Tampilkan kata kunci"
 
@@ -204,46 +204,46 @@ msgstr "Tampilkan kata kunci"
 msgid "tile"
 msgstr "ubin"
 
-#: carbondesign/tags/time_picker.py:17
+#: carbondesign/tags/time_picker.py:19
 msgid "Select AM/PM"
 msgstr "Pilih sebelum/sesudah siang"
 
-#: carbondesign/tags/time_picker.py:18
+#: carbondesign/tags/time_picker.py:20
 msgid "Select time zone"
 msgstr "Pilih zona waktu"
 
-#: carbondesign/tags/toggle.py:17
+#: carbondesign/tags/toggle.py:18
 msgid "Off"
 msgstr "Mati"
 
-#: carbondesign/tags/toggle.py:18
+#: carbondesign/tags/toggle.py:19
 msgid "On"
 msgstr "Menyala"
 
-#: carbondesign/tags/toolbar.py:29
+#: carbondesign/tags/toolbar.py:33
 msgid "Toolbar Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/toolbar.py:72
+#: carbondesign/tags/toolbar.py:80
 msgid "List of options"
 msgstr "Daftar pilihan"
 
-#: carbondesign/tags/ui_shell.py:26
+#: carbondesign/tags/ui_shell.py:28
 msgid "Skip to main content"
 msgstr "Langsung ke konten utama"
 
-#: carbondesign/tags/ui_shell.py:381
+#: carbondesign/tags/ui_shell.py:421
 msgid "Side navigation"
 msgstr "Navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:420
+#: carbondesign/tags/ui_shell.py:466
 msgid "Close the side navigation menu"
 msgstr "Tutup navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:421
+#: carbondesign/tags/ui_shell.py:467
 msgid "Toggle the expansion state of the navigation"
 msgstr "Buka tutup navigasi"
 
-#: carbondesign/tags/ui_shell.py:479
+#: carbondesign/tags/ui_shell.py:531
 msgid "Switcher"
 msgstr "Pemilih"

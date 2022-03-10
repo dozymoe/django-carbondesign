@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 19:02+0700\n"
+"POT-Creation-Date: 2022-03-11 01:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,10 +67,12 @@ msgid " pages"
 msgstr " halaman"
 
 #: carbondesign/mithril-js/data-table.js:761
+#: carbondesign/mithril-js/toolbar.js:34
 msgid "Search"
 msgstr "Pencarian"
 
 #: carbondesign/mithril-js/data-table.js:762
+#: carbondesign/mithril-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
@@ -81,3 +83,65 @@ msgstr "tutup dialog"
 #: carbondesign/mithril-js/modal.js:142
 msgid "Show modal"
 msgstr "Buka dialog"
+
+#: carbondesign/mithril-js/tag.js:13
+msgid "Clear filter"
+msgstr ""
+
+#: carbondesign/mithril-js/tile.js:13
+msgid "tile"
+msgstr ""
+
+#: carbondesign/mithril-js/time_picker.js:12
+msgid "Select AM/PM"
+msgstr ""
+
+#: carbondesign/mithril-js/time_picker.js:13
+msgid "Select time zone"
+msgstr ""
+
+#: carbondesign/mithril-js/toggle.js:11
+msgid "Off"
+msgstr ""
+
+#: carbondesign/mithril-js/toggle.js:12
+msgid "on"
+msgstr ""
+
+#: carbondesign/mithril-js/toolbar.js:30
+#, fuzzy
+#| msgid "Search"
+msgid "Toolbar Search"
+msgstr "Pencarian"
+
+#: carbondesign/mithril-js/toolbar.js:118
+msgid "List of options"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:17
+msgid "Skip to main content"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:18
+msgid "Open menu"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:19
+msgid "Close menu"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:469
+msgid "Side navigation"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:470
+msgid "Close the side navigation menu"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:471
+msgid "Toggle the expansion state of the navigation"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:472
+msgid "Switcher"
+msgstr ""
