@@ -18,6 +18,8 @@ class OverflowMenu(Node):
     "Conditional templates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_overflow'] = _("Overflow")
 
         if self.eval(self.kwargs.get('flip'), context):
@@ -30,6 +32,8 @@ class OverflowMenu(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-overflow-menu class="bx--overflow-menu">
   <button
@@ -53,6 +57,8 @@ class OverflowMenu(Node):
 
 
     def render_tmpl_icon(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -72,6 +78,8 @@ class OverflowMenuItem(Node):
     NODE_PROPS = ('disabled', 'active', 'danger')
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('disabled'), context):
             values['class'].append('bx--overflow-menu-options__option--disabled')
             values['props'].append(('disabled', 'disabled'))
@@ -81,11 +89,13 @@ class OverflowMenuItem(Node):
                     strip_tags(values['child']).strip()))
             values['props'].append(('data-floating-menu-primary-focus', ''))
 
-        if self.eval(self.kwargs.get('active'), context):
-            values['class'].append('bx--overflow-menu-options__option-danger')
+        if self.eval(self.kwargs.get('danger'), context):
+            values['class'].append('bx--overflow-menu-options__option--danger')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--overflow-menu-options__option {class}">
   <button class="bx--overflow-menu-options__btn" role="menuitem" {props}>

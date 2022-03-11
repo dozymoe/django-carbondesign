@@ -158,7 +158,7 @@ export class ToolbarMultiSelect extends FormNode
 
         let items = [];
         let ii = 0;
-        for (let [group, val, txt] of this.choices())
+        for (let [group, val, txt] of this.choices(context))
         {
             let id = `${values.id}-${ii}`, props = {};
             if (!ii)
@@ -218,9 +218,8 @@ m('fieldset.bx--radio-button-group',
     {
         let value = this.bound_field.value();
 
-        let items = [];
-        let ii = 0;
-        for (let [group, val, txt] of this.choices())
+        let items = [], ii = 0;
+        for (let [group, val, txt] of this.choices(context))
         {
             let id = `${values.id}-${ii}`, props = {};
             if (!ii)

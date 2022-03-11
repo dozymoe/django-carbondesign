@@ -12,6 +12,8 @@ class Slider(FormNode):
     NODE_PROPS = ('min', 'max', 'step', 'light')
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_slider'] = _("slider")
         values['min'] = self.eval(self.kwargs.get('min', 0), context)
         values['max'] = self.eval(self.kwargs.get('max', 100), context)
@@ -27,6 +29,8 @@ class Slider(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   <label class="bx--label {label_class}" {label_props}>

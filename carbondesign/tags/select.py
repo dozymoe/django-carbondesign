@@ -21,6 +21,8 @@ class Select(FormNode):
     required = False
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_choose'] = _("Choose an option")
 
         values['props'].append(('id', values['id']))
@@ -41,11 +43,13 @@ class Select(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--invalid {wrapper_class}">
-    <label for="{id}" class="bx--label {label_class}">
+  <div class="bx--select bx--select--invalid {wrapper_class}" {wrapper_props}>
+    <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
     <div class="bx--select-input__wrapper">
@@ -77,7 +81,7 @@ class Select(FormNode):
             template = """
 <div class="bx--form-item">
   <div class="bx--select {wrapper_class}">
-    <label for="{id}" class="bx--label {label_class}">
+    <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
     <div class="bx--select-input__wrapper">
@@ -99,11 +103,14 @@ class Select(FormNode):
 
 
     def render_inline(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--inline bx--select--invalid {wrapper_class}">
-    <label for="{id}" class="bx--label {label_class}">
+  <div class="bx--select bx--select--inline bx--select--invalid {wrapper_class}"
+      {wrapper_props}>
+    <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
     <div class="bx--select-input--inline__wrapper">
@@ -134,8 +141,8 @@ class Select(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--inline {wrapper_class}">
-    <label for="{id}" class="bx--label {label_class}">
+  <div class="bx--select bx--select--inline {wrapper_class}" {wrapper_props}>
+    <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
     <div class="bx--select-input--inline__wrapper">
@@ -157,6 +164,8 @@ class Select(FormNode):
 
 
     def render_tmpl_items(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         group_begin_tmpl = """
 <optgroup class="bx--select-optgroup" label="{label}">
 """

@@ -2,7 +2,6 @@ import m from 'mithril/hyperscript';
 //-
 import { FormNode } from './base';
 
-
 export class TextArea extends FormNode
 {
     NODE_PROPS = ['light']

@@ -13,6 +13,8 @@ class RadioButton(FormNode):
     "Conditional templates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('vertical'), context):
             values['wrapper_class'].append('bx--radio-button-group--vertical')
 
@@ -21,6 +23,8 @@ class RadioButton(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <fieldset class="bx--fieldset">
   <legend class="bx--label {label_class}" {label_props}>{label}</legend>
@@ -35,6 +39,8 @@ class RadioButton(FormNode):
 
 
     def render_tmpl_items(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div class="bx--radio-button-wrapper {class}">
   <input id="{id}" class="bx--radio-button" type="radio" value="{value}"
@@ -49,7 +55,7 @@ class RadioButton(FormNode):
         excludes = self.eval(self.kwargs.get('exclude', []), context)
 
         items = []
-        for ii, (val, txt) in enumerate(self.bound_field.field.choices):
+        for ii, (_, val, txt) in enumerate(self.choices(context)):
             options = {
                 'index': '%s-%s' % (values['id'], ii),
                 'value': val,

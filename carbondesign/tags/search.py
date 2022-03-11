@@ -15,10 +15,14 @@ class Search(Node):
     "Documentation only."
 
     def prepare(self, values, context):
-        values['txt_search'] = _("Search")
+        """Prepare values for rendering the templates.
+        """
         values['txt_clear'] = _("Clear search input")
 
-        style = self.eval(self.kwargs.get('style', 'sm'), context)
+        if not values['label']:
+            values['label'] = _("Search")
+
+        style = self.eval(self.kwargs.get('style'), context)
         if style:
             values['class'].append(f'bx--search--{style}')
 
@@ -27,15 +31,17 @@ class Search(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   <div data-search role="search" class="bx--search {class}">
     <label id="label-{id}" class="bx--label {label_class}" for="{id}"
         {label_props}>
-      {txt_search}
+      {label}
     </label>
     <input class="bx--search-input" type="text" id="{id}"
-        placeholder="{txt_search}">
+        placeholder="{label}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
         class="bx--search-magnifier" width="16" height="16" viewBox="0 0 16 16"

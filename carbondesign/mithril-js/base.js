@@ -283,9 +283,9 @@ export class Node
 
 export class FormNode extends Node
 {
-    WANT_CHILDREN = true
-    SLOTS = ['help', 'icon']
     BASE_NODE_PROPS = ['element', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
+    TEMPLATES = ['help']
+    RENDER_ELEMENT = true
 
     id(vnode)
     {
@@ -301,11 +301,6 @@ export class FormNode extends Node
     {
     }
 
-    element_attributes(vnode)
-    {
-        return this.bound_field.widget.attrs;
-    }
-
     before_prepare(vnode, values, context)
     {
         this.bound_field = vnode.attrs.element;
@@ -318,7 +313,10 @@ export class FormNode extends Node
 
     after_prepare(vnode, values, context)
     {
-        values.element = this.element(vnode, values);
+        if (this.RENDER_ELEMENT)
+        {
+            values.element = this.element(vnode, values);
+        }
         super.after_prepare(vnode, values, context);
 
         if (this.bound_field.errors)
@@ -331,7 +329,7 @@ export class FormNode extends Node
         }
     }
 
-    prepare_element_attributes(vnode, attrs, default_attrs, context)
+    prepare_element_props(vnode, props, default_props, context)
     {
     }
 

@@ -20,6 +20,8 @@ class Pagination(Node):
     pager = None
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         self.pager = self.eval(self.kwargs.get('pager'), context)
 
         values['txt_per_page'] = _("Items per page")
@@ -30,6 +32,8 @@ class Pagination(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if not self.pager:
             return ''
 
@@ -85,7 +89,7 @@ class Pagination(Node):
       </svg>
     </button>
     <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="next page">
+        tabindex="0" data-page-forward aria-label="{txt_next_btn}">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -100,6 +104,8 @@ class Pagination(Node):
 
 
     def render_tmpl_pagination_sizes(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <option class="bx--select-option" value="{value}" {props}>
   {label}
@@ -123,6 +129,8 @@ class Pagination(Node):
 
 
     def render_tmpl_pagination_numbers(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <option class="bx--select-option" value="{value}" {props}>
   {label}
@@ -141,6 +149,8 @@ class Pagination(Node):
 
 
     def render_tmpl_pagination_range(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <span data-displayed-item-range>{range_start}-{range_end}</span>
 """
@@ -160,6 +170,8 @@ class Pagination(Node):
 
 
     def render_tmpl_pagination_num_pages(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         num_pages = _("of %s pages")
         return num_pages % self.pager.num_pages
 

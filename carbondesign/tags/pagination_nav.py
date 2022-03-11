@@ -18,6 +18,8 @@ class PaginationNav(Node):
     count = None
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_pagination'] = _("pagination")
         values['txt_prev'] = _("Previous page")
         values['txt_next'] = _("Next page")
@@ -26,8 +28,26 @@ class PaginationNav(Node):
         self.pager = self.eval(self.kwargs.get('pager'), context)
         self.count = self.eval(self.kwargs.get('count', 5), context)
 
+        if self.pager:
+            if self.pager.has_previous():
+                values['prev_class'] = ''
+                values['prev_props'] = ''
+            else:
+                values['prev_class'] = 'bx--pagination-nav__page--disabled'
+                values['prev_props'] = 'aria-disabled="true"'
+
+            if self.pager.has_next():
+                values['next_class'] = ''
+                values['next_props'] = ''
+            else:
+                values['next_class'] = 'bx--pagination-nav__page--disabled'
+                values['next_props'] = 'aria-disabled="true"'
+
+
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if not self.pager:
             return ''
 
@@ -45,15 +65,13 @@ class PaginationNav(Node):
 
 
     def render_tmpl_prev(self, values, context):
-        if not self.pager.has_previous():
-            values['class'].append('bx--pagination-nav__page--disabled')
-            values['props'].append(('aria-disabled', 'true'))
-
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <li class="bx--pagination-nav__list-item">
   <button
-      class="bx--pagination-nav__page bx--pagination-nav__page--direction {class}"
-      data-page-previous {props}>
+      class="bx--pagination-nav__page bx--pagination-nav__page--direction {prev_class}"
+      data-page-previous {prev_props}>
     <span class="bx--pagination-nav__accessibility-label">{txt_prev}</span>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -68,15 +86,13 @@ class PaginationNav(Node):
 
 
     def render_tmpl_next(self, values, context):
-        if not self.pager.has_next():
-            values['class'].append('bx--pagination-nav__page--disabled')
-            values['props'].append(('aria-disabled', 'true'))
-
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <li class="bx--pagination-nav__list-item">
   <button
-      class="bx--pagination-nav__page bx--pagination-nav__page--direction {class}"
-      data-page-next {props}>
+      class="bx--pagination-nav__page bx--pagination-nav__page--direction {next_class}"
+      data-page-next {next_props}>
     <span class="bx--pagination-nav__accessibility-label">{txt_next}</span>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -91,6 +107,8 @@ class PaginationNav(Node):
 
 
     def render_tmpl_numbers(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         current = self.pager.current_page_number
         begin = max(current - int(self.count / 2), 1)
         end = min(begin + self.count, self.pager.num_pages)
@@ -107,7 +125,7 @@ class PaginationNav(Node):
         items = []
         for ii in range(begin, end + 1):
             options = {'num': ii}
-            if ii == 'current':
+            if ii == current:
                 options['class'] = ' '.join([
                     'bx--pagination-nav__page--active',
                     'bx--pagination-nav__page--disabled',

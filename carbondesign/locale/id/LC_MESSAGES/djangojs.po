@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-11 01:27+0700\n"
+"POT-Creation-Date: 2022-03-12 04:55+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,26 +26,32 @@ msgid "items selected"
 msgstr "baris dipilih"
 
 #: carbondesign/mithril-js/data-table.js:25
+#: carbondesign/mithril-js/overflow_menu.js:13
 msgid "Overflow"
 msgstr "Luapan"
 
 #: carbondesign/mithril-js/data-table.js:279
+#: carbondesign/mithril-js/pagination.js:15
 msgid "Items per page"
 msgstr "Baris per halaman"
 
 #: carbondesign/mithril-js/data-table.js:280
+#: carbondesign/mithril-js/pagination.js:16
 msgid "select number of items per page"
 msgstr "pilih jumlah baris per halaman"
 
 #: carbondesign/mithril-js/data-table.js:281
+#: carbondesign/mithril-js/pagination.js:17
 msgid "select page number to view"
 msgstr "pilihan halaman untuk ditampilkan"
 
 #: carbondesign/mithril-js/data-table.js:282
+#: carbondesign/mithril-js/pagination.js:18
 msgid "Backward button"
 msgstr "Tombol mundur"
 
 #: carbondesign/mithril-js/data-table.js:283
+#: carbondesign/mithril-js/pagination.js:19
 msgid "Forward button"
 msgstr "Tombol maju"
 
@@ -67,12 +72,12 @@ msgid " pages"
 msgstr " halaman"
 
 #: carbondesign/mithril-js/data-table.js:761
-#: carbondesign/mithril-js/toolbar.js:34
+#: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
 msgid "Search"
 msgstr "Pencarian"
 
 #: carbondesign/mithril-js/data-table.js:762
-#: carbondesign/mithril-js/toolbar.js:31
+#: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
@@ -84,64 +89,96 @@ msgstr "tutup dialog"
 msgid "Show modal"
 msgstr "Buka dialog"
 
+#: carbondesign/mithril-js/pagination.js:250
+#, fuzzy, javascript-format
+#| msgid " pages"
+msgid "of %s pages"
+msgstr " halaman"
+
+#: carbondesign/mithril-js/pagination_nav.js:11
+msgid "pagination"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:12
+msgid "Previous page"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:13
+#, fuzzy
+#| msgid " pages"
+msgid "Next page"
+msgstr " halaman"
+
+#: carbondesign/mithril-js/pagination_nav.js:14
+#, fuzzy
+#| msgid " pages"
+msgid "page"
+msgstr " halaman"
+
+#: carbondesign/mithril-js/select.js:14
+msgid "Choose an option"
+msgstr "Pilih satu"
+
+#: carbondesign/mithril-js/slider.js:11
+msgid "slider"
+msgstr ""
+
 #: carbondesign/mithril-js/tag.js:13
 msgid "Clear filter"
-msgstr ""
+msgstr "Hapus filter"
 
 #: carbondesign/mithril-js/tile.js:13
 msgid "tile"
-msgstr ""
+msgstr "ubin"
 
 #: carbondesign/mithril-js/time_picker.js:12
 msgid "Select AM/PM"
-msgstr ""
+msgstr "Pilih sebelum/sesudah siang"
 
 #: carbondesign/mithril-js/time_picker.js:13
 msgid "Select time zone"
-msgstr ""
+msgstr "Pilih zona waktu"
 
 #: carbondesign/mithril-js/toggle.js:11
 msgid "Off"
-msgstr ""
+msgstr "Mati"
 
 #: carbondesign/mithril-js/toggle.js:12
 msgid "on"
-msgstr ""
+msgstr "menyala"
 
 #: carbondesign/mithril-js/toolbar.js:30
-#, fuzzy
-#| msgid "Search"
 msgid "Toolbar Search"
 msgstr "Pencarian"
 
 #: carbondesign/mithril-js/toolbar.js:118
 msgid "List of options"
-msgstr ""
+msgstr "Daftar pilihan"
 
 #: carbondesign/mithril-js/uishell.js:17
 msgid "Skip to main content"
-msgstr ""
+msgstr "Loncat ke konten"
 
 #: carbondesign/mithril-js/uishell.js:18
 msgid "Open menu"
-msgstr ""
+msgstr "Buka menu"
 
 #: carbondesign/mithril-js/uishell.js:19
 msgid "Close menu"
-msgstr ""
+msgstr "Tutup menu"
 
 #: carbondesign/mithril-js/uishell.js:469
 msgid "Side navigation"
-msgstr ""
+msgstr "Navigasi samping"
 
 #: carbondesign/mithril-js/uishell.js:470
 msgid "Close the side navigation menu"
-msgstr ""
+msgstr "Tutup menu navigasi samping"
 
 #: carbondesign/mithril-js/uishell.js:471
 msgid "Toggle the expansion state of the navigation"
-msgstr ""
+msgstr "Tutup buka navigasi"
 
 #: carbondesign/mithril-js/uishell.js:472
 msgid "Switcher"
-msgstr ""
+msgstr "Penampil"
