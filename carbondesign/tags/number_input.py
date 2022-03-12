@@ -15,6 +15,8 @@ class NumberInput(FormNode):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_increase'] = _("increase number input")
         values['txt_decrease'] = _("decrease number input")
 
@@ -29,12 +31,16 @@ class NumberInput(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         if self.bound_field.errors:
             props['role'] = 'alert'
             props['aria-atomic'] = 'true'
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -75,6 +81,8 @@ class NumberInput(FormNode):
 
 
     def render_mobile(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -111,6 +119,8 @@ class NumberInput(FormNode):
 
 
     def render_tmpl_label(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         if self.eval(self.kwargs.get('no_label'), context):
             return ''
 
@@ -123,6 +133,8 @@ class NumberInput(FormNode):
 
 
     def render_tmpl_icon_invalid(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -135,6 +147,8 @@ class NumberInput(FormNode):
 
 
     def render_tmpl_btn_incr(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <button aria-label="{txt_increase}" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
@@ -149,6 +163,8 @@ class NumberInput(FormNode):
 
 
     def render_tmpl_btn_decr(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <button aria-label="{txt_decrease}" class="bx--number__control-btn down-icon"
     type="button" aria-live="polite" aria-atomic="true">

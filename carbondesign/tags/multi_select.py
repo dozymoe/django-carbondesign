@@ -17,6 +17,8 @@ class MultiSelect(FormNode):
     "Conditional templates."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_open'] = _("Open menu")
         values['txt_close'] = _("Close menu")
         values['txt_multi'] = _("Multi select options")
@@ -31,6 +33,8 @@ class MultiSelect(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
@@ -58,6 +62,8 @@ class MultiSelect(FormNode):
 
 
     def render_filterable(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
@@ -85,6 +91,8 @@ class MultiSelect(FormNode):
 
 
     def render_inline(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
@@ -112,6 +120,8 @@ class MultiSelect(FormNode):
 
 
     def render_tmpl_icon_clear(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div role="button"
     class="bx--list-box__selection bx--list-box__selection--multi bx--tag--filter"
@@ -129,6 +139,8 @@ class MultiSelect(FormNode):
 
 
     def render_tmpl_icon_menu(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div class="bx--list-box__menu-icon">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -143,13 +155,15 @@ class MultiSelect(FormNode):
 
 
     def render_tmpl_items(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <div class="bx--list-box__menu-item">
   <div class="bx--list-box__menu-item__option">
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="{child}" class="bx--checkbox-label">
         <input type="checkbox" name="{name}" readonly class="bx--checkbox"
-            id="{id}-{index}" value="{value}" {props}>
+            id="{id}" value="{value}" {props}>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           {child}
@@ -162,9 +176,9 @@ class MultiSelect(FormNode):
         values = self.bound_field.value()
 
         items = []
-        for ii, (val, txt) in enumerate(self.bound_field.field.choices):
+        for ii, (_, val, txt) in enumerate(self.choices(context)):
             options = {
-                'index': ii,
+                'id': '%s-%s' % (values.id, ii),
                 'value': val,
                 'child': txt,
                 'name': self.bound_field.name,

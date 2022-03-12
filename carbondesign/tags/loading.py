@@ -13,10 +13,14 @@ class Loading(Node):
     "Available variants."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_loading'] = _("Loading")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-loading class="bx--loading">
   <svg class="bx--loading__svg" viewBox="0 0 100 100">
@@ -29,6 +33,8 @@ class Loading(Node):
 
 
     def render_overlay(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--loading-overlay">
   <div data-loading class="bx--loading">
@@ -43,6 +49,8 @@ class Loading(Node):
 
 
     def render_small(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-loading class="bx--loading bx--loading--small">
   <svg class="bx--loading__svg" viewBox="0 0 100 100">

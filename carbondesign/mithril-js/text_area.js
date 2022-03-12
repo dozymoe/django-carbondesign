@@ -5,7 +5,6 @@ import { FormNode } from './base';
 export class TextArea extends FormNode
 {
     NODE_PROPS = ['light']
-    TEMPLATES = ['icon_invalid']
 
     prepare(vnode, values, context)
     {
@@ -17,19 +16,19 @@ export class TextArea extends FormNode
         }
     }
 
-    prepare_element_attributes(vnode, attrs, default_attrs, context)
+    prepare_element_props(vnode, props, default_props, context)
     {
-        attrs['class'].push('bx--text-area');
-        attrs['class'].push('bx--text-area--v2');
+        props['class'].push('bx--text-area');
+        props['class'].push('bx--text-area--v2');
 
-        if (vnode.attrs.light)
+        if (vnode.props.light)
         {
-            attrs['class'].push('bx--text-input--light');
+            props['class'].push('bx--text-input--light');
         }
 
         if (this.bound_field.errors)
         {
-            attrs['class'].push('bx--text-input--invalid');
+            props['class'].push('bx--text-input--invalid');
         }
     }
 

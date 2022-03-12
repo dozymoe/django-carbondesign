@@ -13,6 +13,8 @@ class Link(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('visited', False), context):
             values['class'].append('bx--link--visited')
 
@@ -25,6 +27,8 @@ class Link(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <a class="bx--link {class}" {props}>
   {child}

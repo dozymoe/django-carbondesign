@@ -5,7 +5,6 @@ import { FormNode } from './base';
 export class Radio extends FormNode
 {
     NODE_PROPS = ['exclude', 'vertical', 'left']
-    TEMPLATES = ['items', ...FormNode.TEMPLATES]
 
     prepare(vnode, values, context)
     {

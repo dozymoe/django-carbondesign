@@ -56,10 +56,10 @@ export class Node
     WANT_CHILDREN = false
     SLOTS = []
     MODES = []
-    BASE_NODE_PROPS = ['mode', 'tag', 'class', 'label', 'label_class']
+    BASE_NODE_PROPS = ['mode', 'tag', 'class', 'label']
     NODE_PROPS = []
     DEFAULT_TAG = 'div'
-    TEMPLATES = []
+    CLASS_AND_PROPS = ['label', 'wrapper']
 
     // Parent Tags can set html attributes on their childs.
     CATCH_CLASSNAMES = []
@@ -191,16 +191,15 @@ export class Node
         {
             values['class'] = [];
         }
-        values.label_props = [];
-        if (vnode.attrs.label_class)
-        {
-            values.label_class = vnode.attrs.label_class.split(/\s+/);
-        }
-        else
-        {
-            values.label_class = [];
-        }
 
+        for (let name of this.CLASS_AND_PROPS)
+        {
+            if (this.SLOTS.indexOf(name) !== -1)
+            {
+                continue;
+            }
+            this.before_prepare_class_props(name, vnode, values, context);
+        }
         this.before_prepare_slots(vnode, values, context);
 
         // Parent Tags can set html attributes on their childs.
@@ -217,6 +216,19 @@ export class Node
             {
                 values.props.push(...context[ext]);
             }
+        }
+    }
+
+    before_prepare_class_props(name, vnode, values, context)
+    {
+        values[`${name}_props`] = [];
+        if (vnode.attrs[`${name}_class`)
+        {
+            values[`${name}_class`] = vnode.attrs[`${name}_class`].split(/\s+/);
+        }
+        else
+        {
+            values[`${name}_class`] = [];
         }
     }
 
@@ -238,11 +250,23 @@ export class Node
         values.child = this.WANT_CHILDREN ? this.nodelist : null;
 
         values['class'] = values['class'].join(' ');
-        values.label_props = this.join_attributes(this.prune_attributes(
-                values.label_props));
-        values.label_class = values.label_class.join(' ');
 
+        for (let name of this.CLASS_AND_PROPS)
+        {
+            if (this.SLOTS.indexOf(name) !== -1)
+            {
+                continue;
+            }
+            this.after_prepare_class_props(name, vnode, values, context);
+        }
         this.after_prepare_slots(vnode, values, context);
+    }
+
+    after_prepare_class_props(name, vnode, values, context)
+    {
+        values[`${name}_props`] = this.join_attributes(this.prune_attributes(
+                values[`${name}_props`]));
+        values[`${name}_class`] = values[`${name}_class`].join(' ');
     }
 
     after_prepare_slots(vnode, values, context)
@@ -250,9 +274,7 @@ export class Node
         for (let name of this.SLOTS)
         {
             if (!this.slots[name]) continue;
-            values[name + '_class'] = values[name + '_class'].join(' ');
-            values[name + '_props'] = this.join_attributes(
-                    this.prune_attributes(values[name + '_props']));
+            this.after_prepare_class_props(name, vnode, values, context);
         }
     }
 
@@ -284,7 +306,7 @@ export class Node
 export class FormNode extends Node
 {
     BASE_NODE_PROPS = ['element', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
-    TEMPLATES = ['help']
+    CLASS_AND_PROPS = ['help', ...Node.CLASS_AND_PROPS]
     RENDER_ELEMENT = true
 
     id(vnode)

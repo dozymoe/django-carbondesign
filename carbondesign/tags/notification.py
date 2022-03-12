@@ -24,6 +24,8 @@ class Notification(Node):
     variant = None
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_close'] = _("close")
 
         self.variant = self.eval(self.kwargs.get('variant', 'info'), context)
@@ -45,6 +47,8 @@ class Notification(Node):
 
 
     def render_inline(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-notification class="bx--inline-notification {class}" role="alert">
   <div class="bx--inline-notification__details">
@@ -61,6 +65,8 @@ class Notification(Node):
 
 
     def render_toast(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-notification class="bx--toast-notification {class}" role="alert">
   {tmpl_icon}
@@ -74,6 +80,8 @@ class Notification(Node):
 
 
     def render_tmpl_icon(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         if self.variant == 'info':
             template = """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -118,6 +126,8 @@ class Notification(Node):
 
 
     def render_tmpl_close(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <button data-notification-btn class="bx--{mode}-notification__close-button"
     type="button" aria-label="{txt_close}">
@@ -141,6 +151,8 @@ class NotificationButton(Node):
     "Rendered HTML tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} tabindex="0"
     class="bx--inline-notification__action-button bx--btn bx--btn--sm bx--btn--ghost {class}"
@@ -160,6 +172,8 @@ class NotificationTitle(Node):
     "Rendered HTML tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         values['mode'] = context['mode']
         template = """
 <{tag} class="bx--{mode}-notification__title {class}" {props}>{child}</{tag}>
@@ -176,6 +190,8 @@ class NotificationSubtitle(Node):
     "Rendered HTML tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         values['mode'] = context['mode']
         template = """
 <{tag} class="bx--{mode}-notification__subtitle {class}" {props}>{child}</{tag}>
@@ -192,6 +208,8 @@ class NotificationCaption(Node):
     "Rendered HTML tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         values['mode'] = context['mode']
         template = """
 <{tag} class="bx--{mode}-notification__caption {class}" {props}>{child}</{tag}>

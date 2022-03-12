@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-12 04:55+0700\n"
+"POT-Creation-Date: 2022-03-12 14:21+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgid "Show less"
 msgstr "Kurangi tampilan"
 
 #: carbondesign/tags/combo_box.py:21 carbondesign/tags/data_table.py:982
-#: carbondesign/tags/list_box.py:22 carbondesign/tags/multi_select.py:20
+#: carbondesign/tags/list_box.py:22 carbondesign/tags/multi_select.py:22
 #: carbondesign/tags/ui_shell.py:29
 msgid "Open menu"
 msgstr "Buka menu"
@@ -123,48 +123,48 @@ msgstr "Data sudah siap."
 msgid "Loading data failed."
 msgstr "Gagal mengambil data."
 
-#: carbondesign/tags/loading.py:16
+#: carbondesign/tags/loading.py:18
 msgid "Loading"
 msgstr "Persiapan"
 
-#: carbondesign/tags/modal.py:19
+#: carbondesign/tags/modal.py:21
 msgid "close modal"
 msgstr "tutup dialog"
 
-#: carbondesign/tags/modal.py:95
+#: carbondesign/tags/modal.py:110
 msgid "Show modal"
 msgstr "Buka dialog"
 
-#: carbondesign/tags/multi_select.py:21 carbondesign/tags/ui_shell.py:30
+#: carbondesign/tags/multi_select.py:23 carbondesign/tags/ui_shell.py:30
 #: carbondesign/tags/ui_shell.py:236
 msgid "Close menu"
 msgstr "Tutup menu"
 
-#: carbondesign/tags/multi_select.py:22
+#: carbondesign/tags/multi_select.py:24
 msgid "Multi select options"
 msgstr "Pilihan berganda"
 
-#: carbondesign/tags/multi_select.py:23
+#: carbondesign/tags/multi_select.py:25
 msgid "Clear all selected items"
 msgstr "Batalkan pilihan"
 
-#: carbondesign/tags/multi_select.py:24
+#: carbondesign/tags/multi_select.py:26
 msgid "Clear selection"
 msgstr "Bersihkan pencarian"
 
-#: carbondesign/tags/multi_select.py:25
+#: carbondesign/tags/multi_select.py:27
 msgid "Filter..."
 msgstr ""
 
-#: carbondesign/tags/notification.py:27
+#: carbondesign/tags/notification.py:29
 msgid "close"
 msgstr "tutup"
 
-#: carbondesign/tags/number_input.py:18
+#: carbondesign/tags/number_input.py:20
 msgid "increase number input"
 msgstr "tambahkan"
 
-#: carbondesign/tags/number_input.py:19
+#: carbondesign/tags/number_input.py:21
 msgid "decrease number input"
 msgstr "kurangi"
 

@@ -5,7 +5,6 @@ import { FormNode } from './base';
 export class TextInput extends FormNode
 {
     NODE_PROPS = ['light']
-    TEMPLATES = ['icon_invalid']
 
     prepare(vnode, values, context)
     {
@@ -17,18 +16,18 @@ export class TextInput extends FormNode
         }
     }
 
-    prepare_element_attributes(vnode, attrs, default_attrs, context)
+    prepare_element_props(vnode, props, default_props, context)
     {
-        attrs['class'].push('bx--text-input');
+        props['class'].push('bx--text-input');
 
-        if (vnode.attrs.light)
+        if (vnode.props.light)
         {
-            attrs['class'].push('bx--text-input--light');
+            props['class'].push('bx--text-input--light');
         }
 
         if (this.bound_field.errors)
         {
-            attrs['class'].push('bx--text-input--invalid');
+            props['class'].push('bx--text-input--invalid');
         }
     }
 
@@ -121,7 +120,6 @@ m('svg',
 export class PasswordInput extends TextInput
 {
     NODE_PROPS = ['light']
-    TEMPLATES = ['icon_invalid', 'visibility']
 
     prepare(vnode, values, context)
     {
@@ -130,12 +128,12 @@ export class PasswordInput extends TextInput
         values.txt_show_password = "Show password";
     }
 
-    prepare_element_attributes(vnode, attrs, default_attrs, context)
+    prepare_element_props(vnode, props, default_props, context)
     {
-        super.prepare_element_attributes(vnode, attrs, default_attrs, context)
+        super.prepare_element_props(vnode, props, default_props, context)
 
-        attrs['class'].push('bx--password-input');
-        attrs['data-toggle-password-visibility'] = ''
+        props['class'].push('bx--password-input');
+        props['data-toggle-password-visibility'] = ''
     }
 
     render_default(vnode, values, context)

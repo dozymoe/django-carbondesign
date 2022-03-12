@@ -13,8 +13,6 @@ export class Table extends Node
             'toolbar_overflow', 'head', 'foot']
     MODES = ['default', 'sticky']
     NODE_PROPS = ['style', 'pager', 'pager_size', 'sortable']
-    TEMPLATES = ['header', 'toolbar', 'pagination', 'pagination_sizes',
-            'pagination_numbers', 'pagination_range', 'pagination_num_pages']
     AVAILABLE_STYLES = ['compact', 'short', 'tall', 'zebra']
     PAGER_SIZES = [10, 20, 30, 40, 50]
 

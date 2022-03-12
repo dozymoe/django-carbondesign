@@ -42,5 +42,8 @@ carbondesign:
 
 
 mithril-js:
+  dump_messages:
+    raw_file_out: carbondesign/{_1}/messages.json
+
   dump_timezones:
     raw_file_out: carbondesign/{_1}/timezones.json

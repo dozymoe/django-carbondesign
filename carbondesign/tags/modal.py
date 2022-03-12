@@ -16,10 +16,14 @@ class Modal(Node):
     "Named children."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_close'] = _("close modal")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-modal id="{id}" class="bx--modal {class}" role="dialog"
     aria-modal="true" aria-labelledby="{id}-label"
@@ -53,6 +57,8 @@ class Modal(Node):
 
 
     def render_slot_label(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <p class="bx--modal-header__label bx--type-delta {class}" id="{id}-label"
     {props}>
@@ -63,6 +69,8 @@ class Modal(Node):
 
 
     def render_slot_heading(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <p class="bx--modal-header__heading bx--type-beta {class}" id="{id}-heading"
     {props}>
@@ -73,22 +81,29 @@ class Modal(Node):
 
 
     def render_slot_footer(self, values, context):
+        """Render html of the slot.
+        """
         template = '<div class="bx--modal-footer {class}" {props}>{child}</div>'
         return self.format(template, values)
 
 
 class ModalTrigger(Button):
-
+    """Modal trigger button.
+    """
     NODE_PROPS = ('target', *Button.NODE_PROPS)
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         super().prepare(values, context)
 
-        target = self.eval(self.kwargs['target'])
+        target = self.eval(self.kwargs['target'], context)
         values['props'].append(('data-modal-target', f'#{target}'))
 
 
     def after_prepare(self, values, context):
+        """Simplifying values meant for rendering templates.
+        """
         super().after_prepare(values, context)
 
         if not values['child']:

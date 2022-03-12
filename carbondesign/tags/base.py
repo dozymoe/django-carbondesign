@@ -88,14 +88,16 @@ class Node(template.Node):
     "Named children."
     MODES = ()
     "Available variants."
-    BASE_NODE_PROPS = ('mode', 'tag', 'class', 'label', 'label_class')
+    BASE_NODE_PROPS = ('mode', 'tag', 'class', 'label')
     "Base Template Tag arguments."
     NODE_PROPS = ()
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'div'
     "Rendered HTML tag."
+    CLASS_AND_PROPS = ('label', 'wrapper')
+    "Prepare xxx_class and xxx_props values."
     TEMPLATES = ()
-    "Conditional templates. Please sort from outer to inner subtemplates."
+    "Conditional templates. Documentation only."
 
     # Parent Tags can set html attributes on their childs.
     CATCH_CLASSNAMES = ()
@@ -148,10 +150,12 @@ class Node(template.Node):
 
 
     def props(self, context):
-        props = [(key, var_eval(val, context))\
-                for (key, val) in self.kwargs.items()\
+        props = [(key, val) for key, val in self.kwargs.items()\
                 if key not in self.BASE_NODE_PROPS\
-                and key not in self.NODE_PROPS]
+                and key not in self.NODE_PROPS \
+                and key not in (f'{a}_class' for a in self.CLASS_AND_PROPS)\
+                and key not in (f'{a}_props' for a in self.CLASS_AND_PROPS)]
+        props = [(key, var_eval(val, context)) for key, val in props]
         # Ignore properties with falsy value except empty string.
         return [x for x in props if bool(x[1]) or x[1] == '']
 
@@ -233,14 +237,10 @@ class Node(template.Node):
         values['props'] = self.props(context)
         values['class'] = var_eval(self.kwargs.get('class', ''), context)\
                 .split()
-        values['label_props'] = []
-        values['label_class'] = var_eval(self.kwargs.get('label_class', ''),
-                context)\
-                .split()
-        values['wrapper_props'] = []
-        values['wrapper_class'] = var_eval(self.kwargs.get('wrapper_class', ''),
-                context)\
-                .split()
+        for name in self.CLASS_AND_PROPS:
+            if name in this.SLOTS:
+                continue
+            self.before_prepare_class_props(name, values, context)
 
         self.before_prepare_slots(values, context)
 
@@ -251,6 +251,13 @@ class Node(template.Node):
         for ext in self.CATCH_PROPERTIES:
             if ext in context:
                 values['props'].extend(context[ext])
+
+
+    def before_prepare_class_props(self, name, values, context):
+        values[f'{name}_props'] = []
+        values[f'{name}_class'] = var_eval(
+                self.kwargs.get(f'{name}_class', ''), context)\
+                .split()
 
 
     def before_prepare_slots(self, values, context):
@@ -265,23 +272,29 @@ class Node(template.Node):
 
 
     def after_prepare(self, values, context):
+        """Simplifying values meant for rendering templates.
+        """
         values['props'] = self.join_attributes(self.prune_attributes(
                 values['props']))
+        values['class'] = ' '.join(values['class'])
 
         if self.WANT_CHILDREN:
             values['child'] = self.nodelist.render(context)
         else:
             values['child'] = ''
 
-        values['class'] = ' '.join(values['class'])
-        values['label_props'] = self.join_attributes(self.prune_attributes(
-                values['label_props']))
-        values['label_class'] = ' '.join(values['label_class'])
-        values['wrapper_props'] = self.join_attributes(self.prune_attributes(
-                values['wrapper_props']))
-        values['wrapper_class'] = ' '.join(values['wrapper_class'])
+        for name in self.CLASS_AND_PROPS:
+            if name in this.SLOTS:
+                continue
+            self.after_prepare_class_props(name, values, context)
 
         self.after_prepare_slots(values, context)
+
+
+    def after_prepare_class_props(self, name, values, context):
+        values[f'{name}_props'] = self.join_attributes(
+                self.prune_attributes(values[f'{name}_props']))
+        values[f'{name}_class'] = ' '.join(values[f'{name}_class'])
 
 
     def after_prepare_slots(self, values, context):
@@ -289,9 +302,7 @@ class Node(template.Node):
             slot = self.slots.get(name)
             if not slot:
                 continue
-            values[name + '_class'] = ' '.join(values[name + '_class'])
-            values[name + '_props'] = self.join_attributes(
-                    self.prune_attributes(values[name +'_props']))
+            self.after_prepare_class_props(name, values, context)
 
 
     def prune_attributes(self, attrs):
@@ -339,8 +350,10 @@ class FormNode(Node):
 
     BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
+    CLASS_AND_PROPS = ('help', *Node.CLASS_AND_PROPS)
+    "Prepare xxx_class and xxx_props values."
     TEMPLATES = ('help',)
-    "Conditional templates. Please sort from outer to inner subtemplates."
+    "Conditional templates. Documentation only."
     RENDER_ELEMENT = True
     "Render the form field widget."
 
@@ -381,8 +394,6 @@ class FormNode(Node):
 
     def before_prepare(self, values, context):
         self.bound_field = self.args[0].resolve(context)
-        values['help_class'] = []
-        values['help_props'] = []
         super().before_prepare(values, context)
 
 
@@ -426,9 +437,8 @@ class FormNode(Node):
 """
             help_values = {
                 'child': self.bound_field.help_text,
-                'class': ' '.join(values['help_class']),
-                'props': self.join_attributes(self.prune_attributes(
-                    values['help_props'])),
+                'class': values['help_class'],
+                'props': values['help_props'],
             }
             return tmpl.format(**help_values)
         return ''
@@ -438,8 +448,6 @@ class FormNodes(Node):
 
     BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
-    TEMPLATES = ('help',)
-    "Conditional templates. Please sort from outer to inner subtemplates."
 
     bound_fields = None
 
@@ -472,8 +480,6 @@ class FormNodes(Node):
     def before_prepare(self, values, context):
         self.bound_fields = [x.resolve(context) for x in self.args]
         for ii, field in enumerate(self.bound_fields):
-            values[f'help_class_{ii}'] = []
-            values[f'help_props_{ii}'] = []
             values[f'id_{ii}'] = field.id_for_label
             values[f'label_{ii}'] = field.label
         super().before_prepare(values, context)
@@ -493,23 +499,6 @@ class FormNodes(Node):
 
     def prepare_element_props(self, field, props, default, context):
         pass
-
-
-    def render_tmpl_help(self, values, context):
-        if self.bound_field.help_text:
-            tmpl = """
-<div class="bx--form__helper-text {class}" {props}>
-  {child}
-</div>
-"""
-            help_values = {
-                'child': self.bound_field.help_text,
-                'class': ' '.join(values['help_class']),
-                'props': self.join_attributes(self.prune_attributes(
-                    values['help_props'])),
-            }
-            return tmpl.format(**help_values)
-        return ''
 
 
 class DumbFormNode(Node):

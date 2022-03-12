@@ -12,8 +12,9 @@ class List(Node):
     DEFAULT_TAG = 'ul'
     "Rendered HTML tag."
 
-
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if values['tag'] == 'ul':
             values['class'].append('bx--list--unordered')
         else:
@@ -21,11 +22,12 @@ class List(Node):
 
         if context.get('list_nested'):
             values['class'].append('bx--list--nested')
-        else:
-            context['list_nested'] = True
+        context['list_nested'] = True
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="{class}" {props}>
   {child}
@@ -39,10 +41,10 @@ class ListItem(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    NODE_PROPS = ()
-    "Extended Template Tag arguments."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--list__item {class}" {props}>
   {child}

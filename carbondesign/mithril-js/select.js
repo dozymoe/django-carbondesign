@@ -6,7 +6,6 @@ export class Select extends FormNode
 {
     MODEs = ['default', 'inline']
     NODE_PROPS = ['light']
-    TEMPLATES = ['items', ...FormNode.TEMPLATES]
     RENDER_ELEMENT = false
 
     prepare(vnode, values, context)
