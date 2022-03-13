@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-12 14:21+0700\n"
+"POT-Creation-Date: 2022-03-13 08:25+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgid "Show less"
 msgstr "Kurangi tampilan"
 
 #: carbondesign/tags/combo_box.py:21 carbondesign/tags/data_table.py:982
-#: carbondesign/tags/list_box.py:22 carbondesign/tags/multi_select.py:22
+#: carbondesign/tags/list_box.py:24 carbondesign/tags/multi_select.py:22
 #: carbondesign/tags/ui_shell.py:29
 msgid "Open menu"
 msgstr "Buka menu"
@@ -103,23 +103,23 @@ msgstr "Pencarian"
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
-#: carbondesign/tags/file_uploader.py:16
+#: carbondesign/tags/file_uploader.py:15
 msgid "Drag and drop files here or upload"
 msgstr "Tarik berkas-berkas ke sini atau unggah"
 
-#: carbondesign/tags/file_uploader.py:17
+#: carbondesign/tags/file_uploader.py:16
 msgid "Remove uploaded file"
 msgstr "Hapus berkas unggahan"
 
-#: carbondesign/tags/inline_loading.py:14
+#: carbondesign/tags/inline_loading.py:16
 msgid "Loading data..."
 msgstr "Menyiapkan data..."
 
-#: carbondesign/tags/inline_loading.py:15
+#: carbondesign/tags/inline_loading.py:17
 msgid "Data loaded."
 msgstr "Data sudah siap."
 
-#: carbondesign/tags/inline_loading.py:16
+#: carbondesign/tags/inline_loading.py:18
 msgid "Loading data failed."
 msgstr "Gagal mengambil data."
 

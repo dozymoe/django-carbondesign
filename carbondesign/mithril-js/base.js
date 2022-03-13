@@ -222,7 +222,7 @@ export class Node
     before_prepare_class_props(name, vnode, values, context)
     {
         values[`${name}_props`] = [];
-        if (vnode.attrs[`${name}_class`)
+        if (vnode.attrs[`${name}_class`])
         {
             values[`${name}_class`] = vnode.attrs[`${name}_class`].split(/\s+/);
         }

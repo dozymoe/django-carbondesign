@@ -238,7 +238,7 @@ class Node(template.Node):
         values['class'] = var_eval(self.kwargs.get('class', ''), context)\
                 .split()
         for name in self.CLASS_AND_PROPS:
-            if name in this.SLOTS:
+            if name in self.SLOTS:
                 continue
             self.before_prepare_class_props(name, values, context)
 
@@ -284,7 +284,7 @@ class Node(template.Node):
             values['child'] = ''
 
         for name in self.CLASS_AND_PROPS:
-            if name in this.SLOTS:
+            if name in self.SLOTS:
                 continue
             self.after_prepare_class_props(name, values, context)
 

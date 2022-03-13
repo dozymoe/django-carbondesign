@@ -11,12 +11,16 @@ class InlineLoading(Node):
     """
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_loading'] = _("Loading data...")
         values['txt_loaded'] = _("Data loaded.")
         values['txt_failed'] = _("Loading data failed.")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-inline-loading class="bx--inline-loading" role="alert"
     aria-live="assertive">

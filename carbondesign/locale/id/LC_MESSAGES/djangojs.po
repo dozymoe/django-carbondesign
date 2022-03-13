@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-12 14:03+0700\n"
+"POT-Creation-Date: 2022-03-13 08:25+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,6 +80,26 @@ msgstr "Pencarian"
 #: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
+
+#: carbondesign/mithril-js/file_uploader.js:9
+msgid "Drag and drop files here or upload"
+msgstr ""
+
+#: carbondesign/mithril-js/file_uploader.js:10
+msgid "Remove uploaded file"
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:9
+msgid "Loading data..."
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:10
+msgid "Data loaded."
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:11
+msgid "Loading data failed."
+msgstr ""
 
 #: carbondesign/mithril-js/list_box.js:13
 #: carbondesign/mithril-js/multi_select.js:12

@@ -9,21 +9,24 @@ from .base import FormNode
 class FileUploader(FormNode):
     """File Uploader component.
     """
-    NODE_PROPS = ('disabled',)
-    "Extended Template Tag arguments."
-
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_drop'] = _("Drag and drop files here or upload")
         values['txt_clear'] = _("Remove uploaded file")
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--file-input')
         props['data-file-uploader'] = ''
         props['data-target'] = '#container-' + self.id(context)
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         values['filename'] = self.bound_field.value()
 
         if self.bound_field.errors:
@@ -124,6 +127,8 @@ class FileUploader(FormNode):
 
 
     def render_tmpl_help(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         if self.bound_field.help_text:
             tmpl = """
 <p class="bx--label-description {class}" {props}>
@@ -132,9 +137,8 @@ class FileUploader(FormNode):
 """
             help_values = {
                 'child': self.bound_field.help_text,
-                'class': ' '.join(values['help_class']),
-                'props': self.join_attributes(self.prune_attributes(
-                    values['help_props'])),
+                'class': values['help_class'],
+                'props': values['help_props'],
             }
             return tmpl.format(**help_values)
         return ''

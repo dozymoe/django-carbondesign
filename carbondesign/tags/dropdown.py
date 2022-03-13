@@ -17,6 +17,8 @@ class Dropdown(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['value'] = self.eval(self.kwargs.get('value', ''), context)
 
         if self.eval(self.kwargs.get('disabled', False), context):
@@ -41,10 +43,12 @@ class Dropdown(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if 'errors' in self.slots:
             template = """
 <div class="bx--form-item">
-  <div class="bx--dropdown__wrapper">
+  <div class="bx--dropdown__wrapper {wrapper_class}">
     <span id="label-{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </span>
@@ -121,6 +125,8 @@ class Dropdown(Node):
 
 
     def render_slot_help(self, values, context):
+        """Render html of the slot.
+        """
         template = """
 <div class="bx--form__helper-text {class}" {props}>{child}</div>
 """
@@ -138,6 +144,8 @@ class DropdownItem(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['value'] = self.eval(self.kwargs.get('value', ''), context)
 
         if self.eval(self.kwargs.get('active'), context):
@@ -152,6 +160,8 @@ class DropdownItem(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         values['cleaned_child'] = strip_tags(values['child']).strip()
 
         template = """
@@ -167,6 +177,8 @@ class DropdownItem(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
