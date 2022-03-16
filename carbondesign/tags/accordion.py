@@ -13,6 +13,8 @@ class Accordion(Node):
     "Rendered HTML tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} data-accordion class="bx--accordion {class}" {props}>
   {child}
@@ -22,7 +24,7 @@ class Accordion(Node):
 
 
 class AccordionItem(Node):
-    """Accordion item component.
+    """Accordion item.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
@@ -32,6 +34,8 @@ class AccordionItem(Node):
     "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('expanded', False), context):
             values['expanded'] = 'true'
             values['class'].append('bx--accordion__item--active')
@@ -40,6 +44,8 @@ class AccordionItem(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} data-accordion-item class="bx--accordion__item {class}" {props}>
   <button class="bx--accordion__heading" aria-expanded="{expanded}"

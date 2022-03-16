@@ -3,7 +3,6 @@ import m from 'mithril/hyperscript';
 //-
 import { Node } from './base';
 
-
 export class UiShellAction extends Node
 {
     WANT_CHILDREN = true
@@ -23,7 +22,7 @@ export class UiShellAction extends Node
 
     prepare(vnode, values, context)
     {
-        values.txt_close_menu = "Close menu";
+        values.txt_close_menu = gettext("Close menu");
         values.target = vnode.attrs.target;
     }
 
@@ -33,7 +32,7 @@ export class UiShellAction extends Node
 //##
 m(values.tag,
   {
-    'class': 'bx--header__menu-trigger bx--header__action ' + values['class'],
+    'class': `bx--header__menu-trigger bx--header__action ${values['class']}`,
     'aria-label': values.label,
     title: values.label,
     'data-navigation-menu-panel-label-expand': values.label,
@@ -42,8 +41,8 @@ m(values.tag,
     ...values.props,
   },
   [
-    this.slot('svg_open', vnode, values, context),
-    this.slot('svg_close', vnode, values, context),
+    this.slot('svg_open', ...arguments),
+    this.slot('svg_close', ...arguments),
     values.child,
   ])
 //##

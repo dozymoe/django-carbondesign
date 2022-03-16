@@ -36,6 +36,8 @@ class Pagination(Node):
         """
         if not self.pager:
             return ''
+        if not self.pager.has_previous and not self.pager.has_next:
+            return ''
 
         template = """
 <div class="bx--pagination" data-pagination>

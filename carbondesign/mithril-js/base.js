@@ -1,4 +1,4 @@
-import { fromPairs, uniqueId } from 'lodash';
+import { fromPairs, isArray, uniqueId } from 'lodash';
 
 class DummyNodeList
 {
@@ -46,7 +46,7 @@ export class Slot
 
     render(vnode)
     {
-        return vnode.children;
+        return m.fragment(vnode.attrs._context, vnode.children);
     }
 }
 
@@ -56,14 +56,14 @@ export class Node
     WANT_CHILDREN = false
     SLOTS = []
     MODES = []
-    BASE_NODE_PROPS = ['mode', 'tag', 'class', 'label']
+    BASE_NODE_PROPS = ['_context', 'mode', 'tag', 'class', 'label']
     NODE_PROPS = []
     DEFAULT_TAG = 'div'
     CLASS_AND_PROPS = ['label', 'wrapper']
 
-    // Parent Tags can set html attributes on their childs.
-    CATCH_CLASSNAMES = []
-    CATCH_PROPERTIES = []
+    // Parent Tags can set the arguments of their children Tags, in effect
+    // changing their appearance.
+    CATCH_PROPS = []
 
     constructor(app)
     {
@@ -90,7 +90,23 @@ export class Node
             }
         }
 
-        let values = {}, context = {};
+        let values = {};
+        let context = vnode.attrs._context || {};
+
+        // Parent Tags can set the arguments of their children Tags.
+        // You can also set them to children Tags in specific slot.
+        let myslot = context.slot;
+        for (let drop of this.CATCH_PROPS)
+        {
+            if (context[drop])
+            {
+                Object.assign(vnode.attrs, context[drop]);
+            }
+            if (myslot && context[`${myslot}_${drop}`])
+            {
+                Object.assign(vnode.attrs, context[`${myslot}_${drop}`]);
+            }
+        }
 
         this.before_prepare(vnode, values, context);
         this.prepare(vnode, values, context);
@@ -143,6 +159,8 @@ export class Node
         let slot = this.slots[name];
         if (slot)
         {
+            slot.attrs._context = Object.assign({slot: name}, context);
+
             let method = this['render_slot_' + name];
             if (method)
             {
@@ -157,7 +175,7 @@ export class Node
                         },
                         context);
             }
-            return slot.children;
+            return Slot.prototype.render(slot);
         }
     }
 
@@ -247,7 +265,11 @@ export class Node
         values.props = this.join_attributes(this.prune_attributes(
                 values.props));
 
-        values.child = this.WANT_CHILDREN ? this.nodelist : null;
+        if (this.WANT_CHILDREN)
+        {
+            values.child = m.fragment({_context: Object.assign({}, context)},
+                    this.nodelist);
+        }
 
         values['class'] = values['class'].join(' ');
 
@@ -300,12 +322,25 @@ export class Node
     prepare(vnode, values, context)
     {
     }
+
+    set_child_props(context, name, slot, keyval)
+    {
+        if (slot)
+        {
+            name = `${slot}_${name}`;
+        }
+        if (!context[name])
+        {
+            context[name] = {};
+        }
+        Object.assign(context[name], keyval);
+    }
 }
 
 
 export class FormNode extends Node
 {
-    BASE_NODE_PROPS = ['element', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
+    BASE_NODE_PROPS = ['field', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
     CLASS_AND_PROPS = ['help', ...Node.CLASS_AND_PROPS]
     RENDER_ELEMENT = true
 
@@ -325,11 +360,7 @@ export class FormNode extends Node
 
     before_prepare(vnode, values, context)
     {
-        this.bound_field = vnode.attrs.element;
-        if (!this.slots.help && this.bound_field.help_text)
-        {
-            this.slots.help = new DummyNodeList(this.bound_field.help_text);
-        }
+        this.bound_field = vnode.attrs.field;
         super.before_prepare(vode, values, context);
     }
 
@@ -345,51 +376,100 @@ export class FormNode extends Node
         {
             values.form_errors = this.bound_field.errors.as_text()
         }
-        else
-        {
-            values.form_errors = ''
-        }
     }
 
     prepare_element_props(vnode, props, default_props, context)
     {
     }
 
-
-    render_slot_help(vnode, values, context)
+    *choices(vnode, context)
     {
-        return (
+        let group_name, choices;
+
+        for (let [option_value, option_label] of this.bound_field.field.choices)
+        {
+            if (option_value === null)
+            {
+                option_value = '';
+            }
+            if (isArray(option_label))
+            {
+                group_name = option_value;
+                choices = option_label;
+            }
+            else
+            {
+                group_name = null;
+                choices = [[option_value, option_label]];
+            }
+
+            for (let [subvalue, sublabel] of choices)
+            {
+                yield [group_name, subvalue, sublabel];
+            }
+        }
+    }
+
+    render_tmpl_help(vnode, values, context)
+    {
+        if (this.bound_field.help_text)
+        {
+            return (
 //##
 m('div',
   {
-    'class': 'bx--form__helper-text ' + values['class'],
-    ...values.props,
+    'class': `bx--form__helper-text ${values.help_class}`,
+    ...values.help_props,
   },
-  values.child)
+  this.bound_field.help_text)
 //##
-        );
+            );
+        }
+    }
+}
+
+
+export class FormNodes extends Node
+{
+    BASE_NODE_PROPS = ['fields', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
+
+    elements(vnode, values, context)
+    {
     }
 
-
-    render_slot_icon(vnode, values, context)
+    before_prepare(vnode, values, context)
     {
-        return (
-//##
-m('svg',
-  {
-    'focusable': false,
-    'preserveAspectRatio': 'xMidYMid meet',
-    'style': {'will-change': 'transform'},
-    'xmlns': 'http://www.w3.org/2000/svg',
-    'class': 'bx--btn__icon ' + values['class'],
-    'width': 16,
-    'height': 16,
-    'viewBox': '0 0 16 16',
-    'aria-hidden': true,
-    ...values.props,
-  },
-  values.child)
-//##
-        );
+        this.bound_fields = vnode.attrs.fields;
+        for (let ii = 0; ii < this.bound_fields.length; ii++)
+        {
+            let field = this.bound_fields[ii];
+            values[`id_${ii}`] = field.id_for_label;
+            values[`label_${ii}`] = field.label;
+        }
+        super.before_prepare(vnode, values, context);
+    }
+
+    after_prepare(vnode, values, context)
+    {
+        let ii = 0;
+        for (let element of this.elements(vnode, values, context))
+        {
+            values[`element_${ii}`] = element;
+            ii++;
+        }
+        super.after_prepare(vnode, values, context);
+
+        for (ii = 0; ii < this.bound_fields.length; ii++)
+        {
+            let field = this.bound_fields[ii];
+            if (field.errors)
+            {
+                values[`form_errors_${ii}`] = field.errors.as_text();
+            }
+        }
+    }
+
+    prepare_element_props(vnode, field, props, default_props, context)
+    {
     }
 }

@@ -21,7 +21,7 @@ export class TextArea extends FormNode
         props['class'].push('bx--text-area');
         props['class'].push('bx--text-area--v2');
 
-        if (vnode.props.light)
+        if (vnode.attrs.light)
         {
             props['class'].push('bx--text-input--light');
         }

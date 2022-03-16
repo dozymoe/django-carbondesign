@@ -15,6 +15,8 @@ class CodeSnippet(Node):
     "Available variants."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_copied'] = _("Copied!")
         values['txt_copy'] = _("Copy code")
         values['txt_show_more'] = _("Show more")
@@ -23,6 +25,8 @@ class CodeSnippet(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--snippet bx--snippet--multi {class}" data-code-snippet {props}>
   <div class="bx--snippet-container {label_class}" aria-label="{label}"
@@ -59,6 +63,8 @@ class CodeSnippet(Node):
 
 
     def render_single(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--snippet bx--snippet--single {class}" {props}>
   <div tabindex="0"  class="bx--snippet-container {label_class}"
@@ -81,6 +87,8 @@ class CodeSnippet(Node):
 
 
     def render_inline(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <button data-copy-btn type="button"
     class="bx--snippet bx--snippet--inline {class}"

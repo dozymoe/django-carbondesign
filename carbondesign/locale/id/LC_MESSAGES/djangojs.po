@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-13 08:25+0700\n"
+"POT-Creation-Date: 2022-03-16 14:24+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,66 +17,72 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: carbondesign/mithril-js/data-table.js:21
+#: carbondesign/mithril-js/breadcrumb.js:13
+msgid "breadcrumb"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:12
+#: carbondesign/mithril-js/copy_button.js:9
+msgid "Copied!"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:13
+msgid "Copy code"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:14
+#, fuzzy
+#| msgid "Show modal"
+msgid "Show more"
+msgstr "Buka dialog"
+
+#: carbondesign/mithril-js/code_snippet.js:15
+msgid "Show more icon"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:16
+#, fuzzy
+#| msgid "Show modal"
+msgid "Show less"
+msgstr "Buka dialog"
+
+#: carbondesign/mithril-js/combo_box.js:12
+#: carbondesign/mithril-js/data-table.js:596
+#: carbondesign/mithril-js/list_box.js:13
+#: carbondesign/mithril-js/multi_select.js:12
+#: carbondesign/mithril-js/uishell.js:18
+msgid "Open menu"
+msgstr "Buka menu"
+
+#: carbondesign/mithril-js/combo_box.js:13
+#, fuzzy
+#| msgid "Clear filter"
+msgid "Clear all"
+msgstr "Hapus filter"
+
+#: carbondesign/mithril-js/data-table.js:23
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Tabel"
 
-#: carbondesign/mithril-js/data-table.js:22
+#: carbondesign/mithril-js/data-table.js:24
+msgid "Cancel"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:25
 msgid "items selected"
 msgstr "baris dipilih"
 
-#: carbondesign/mithril-js/data-table.js:23
+#: carbondesign/mithril-js/data-table.js:26
 #: carbondesign/mithril-js/overflow_menu.js:13
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/mithril-js/data-table.js:277
-#: carbondesign/mithril-js/pagination.js:15
-msgid "Items per page"
-msgstr "Baris per halaman"
-
-#: carbondesign/mithril-js/data-table.js:278
-#: carbondesign/mithril-js/pagination.js:16
-msgid "select number of items per page"
-msgstr "pilih jumlah baris per halaman"
-
-#: carbondesign/mithril-js/data-table.js:279
-#: carbondesign/mithril-js/pagination.js:17
-msgid "select page number to view"
-msgstr "pilihan halaman untuk ditampilkan"
-
-#: carbondesign/mithril-js/data-table.js:280
-#: carbondesign/mithril-js/pagination.js:18
-msgid "Backward button"
-msgstr "Tombol mundur"
-
-#: carbondesign/mithril-js/data-table.js:281
-#: carbondesign/mithril-js/pagination.js:19
-msgid "Forward button"
-msgstr "Tombol maju"
-
-#: carbondesign/mithril-js/data-table.js:491
-msgid " of "
-msgstr " dari "
-
-#: carbondesign/mithril-js/data-table.js:497
-msgid " items"
-msgstr " baris"
-
-#: carbondesign/mithril-js/data-table.js:515
-msgid "of "
-msgstr "dari "
-
-#: carbondesign/mithril-js/data-table.js:517
-msgid " pages"
-msgstr " halaman"
-
-#: carbondesign/mithril-js/data-table.js:759
+#: carbondesign/mithril-js/data-table.js:756
 #: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/mithril-js/data-table.js:760
+#: carbondesign/mithril-js/data-table.js:757
 #: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
@@ -101,12 +107,6 @@ msgstr ""
 msgid "Loading data failed."
 msgstr ""
 
-#: carbondesign/mithril-js/list_box.js:13
-#: carbondesign/mithril-js/multi_select.js:12
-#: carbondesign/mithril-js/uishell.js:18
-msgid "Open menu"
-msgstr "Buka menu"
-
 #: carbondesign/mithril-js/loading.js:11
 msgid "Loading"
 msgstr ""
@@ -120,6 +120,7 @@ msgid "Show modal"
 msgstr "Buka dialog"
 
 #: carbondesign/mithril-js/multi_select.js:13
+#: carbondesign/mithril-js/uishell--action.js:25
 #: carbondesign/mithril-js/uishell.js:19
 msgid "Close menu"
 msgstr "Tutup menu"
@@ -157,6 +158,26 @@ msgstr ""
 #: carbondesign/mithril-js/number_input.js:13
 msgid "decrease number input"
 msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:15
+msgid "Items per page"
+msgstr "Baris per halaman"
+
+#: carbondesign/mithril-js/pagination.js:16
+msgid "select number of items per page"
+msgstr "pilih jumlah baris per halaman"
+
+#: carbondesign/mithril-js/pagination.js:17
+msgid "select page number to view"
+msgstr "pilihan halaman untuk ditampilkan"
+
+#: carbondesign/mithril-js/pagination.js:18
+msgid "Backward button"
+msgstr "Tombol mundur"
+
+#: carbondesign/mithril-js/pagination.js:19
+msgid "Forward button"
+msgstr "Tombol maju"
 
 #: carbondesign/mithril-js/pagination.js:250
 #, fuzzy, javascript-format
@@ -243,3 +264,15 @@ msgstr "Tutup buka navigasi"
 #: carbondesign/mithril-js/uishell.js:472
 msgid "Switcher"
 msgstr "Penampil"
+
+#~ msgid " of "
+#~ msgstr " dari "
+
+#~ msgid " items"
+#~ msgstr " baris"
+
+#~ msgid "of "
+#~ msgstr "dari "
+
+#~ msgid " pages"
+#~ msgstr " halaman"

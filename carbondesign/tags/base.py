@@ -1,3 +1,5 @@
+"""Base classes for carbondesign Template Tags.
+"""
 import logging
 import re
 from uuid import uuid4
@@ -14,12 +16,17 @@ SLOT_NAME_PATTERN = re.compile(r'{(tmpl|slot)_(\w+)}')
 
 
 def var_eval(value, context):
+    """Evaluate argument passed to our Template Tag.
+    """
     if isinstance(value, template.Variable):
         return value.resolve(context)
     return value
 
 
 def modify_svg(xml, props):
+    """Modify xml attributes of an svg image.
+    """
+    # pylint:disable=c-extension-no-member
     root = etree.fromstring(xml)
     for key, value in props.items():
         root.attrib[key] = value
@@ -27,26 +34,40 @@ def modify_svg(xml, props):
 
 
 class IgnoreMissing(dict):
+    """String formatting but the variables are optional.
+    """
     def __missing__(self, key):
+        """Replacement string for missing variables.
+        """
         return '{' + key + '}'
 
 
 class DummyNodeList:
-
+    """Fake Django template node.
+    """
     def __init__(self, text):
         self.text = text
 
 
+    def get_nodes_by_type(self, type_):
+        """Dummy method that returns empty.
+        """
+        return []
+
+
     def render(self, context):
+        """Return the passed in string.
+        """
         return self.text
 
 
 class Slot(template.Node):
     """Implements slots.
 
-    It's very simple, don't inherit from Node class below.
+    It's very simple, so don't inherit from Node class below.
     """
-    WANT_CHILDREN = True # Needed for coordination with the templatetag
+    WANT_CHILDREN = True
+    "Template Tag needs closing end tag."
 
     name = None
 
@@ -59,14 +80,20 @@ class Slot(template.Node):
 
 
     def classList(self, context):
+        """Get class argument as a list.
+        """
         return var_eval(self.kwargs.get('class', ''), context).split()
 
 
     def label(self, context):
+        """Get label argument.
+        """
         return var_eval(self.kwargs.get('label'), context)
 
 
     def props(self, context):
+        """Filter arguments passed to Slot excluding the PROPS.
+        """
         props = []
         for key, val in self.kwargs.items():
             if key == 'class':
@@ -77,11 +104,14 @@ class Slot(template.Node):
 
 
     def render(self, context):
+        """Render the Slot as html.
+        """
         return self.nodelist.render(context)
 
 
 class Node(template.Node):
-
+    """Base class for all carbondesign tags.
+    """
     WANT_CHILDREN = False
     "Template Tag needs closing end tag."
     SLOTS = ()
@@ -99,9 +129,9 @@ class Node(template.Node):
     TEMPLATES = ()
     "Conditional templates. Documentation only."
 
-    # Parent Tags can set html attributes on their childs.
-    CATCH_CLASSNAMES = ()
-    CATCH_PROPERTIES = ()
+    # Parent Tags can set the arguments of their children Tags, in effect
+    # changing their appearance.
+    CATCH_PROPS = ()
 
     context = None
     mode = None
@@ -124,7 +154,18 @@ class Node(template.Node):
 
 
     def render(self, context):
+        """Render the Template Tag as html.
+        """
         values = {}
+
+        # Parent Tags can set the arguments of their children Tags.
+        # You can also set them to children Tags in specific slot.
+        myslot = context.get('slot')
+        for drop in self.CATCH_PROPS:
+            if drop in context:
+                self.kwargs.update(context[drop])
+            if myslot and f'{myslot}_{drop}' in context:
+                self.kwargs.update(context[f'{myslot}_{drop}'])
 
         self.before_prepare(values, context)
         self.prepare(values, context)
@@ -139,6 +180,8 @@ class Node(template.Node):
 
 
     def id(self, context):
+        """Get unique id.
+        """
         if not self._id:
             self._id = var_eval(self.kwargs.get('id', 'node-' + uuid4().hex),
                     context)
@@ -146,10 +189,14 @@ class Node(template.Node):
 
 
     def label(self, context):
+        """Get label argument.
+        """
         return var_eval(self.kwargs.get('label'), context)
 
 
     def props(self, context):
+        """Filter arguments passed to Template Tag excluding the PROPS.
+        """
         props = [(key, val) for key, val in self.kwargs.items()\
                 if key not in self.BASE_NODE_PROPS\
                 and key not in self.NODE_PROPS \
@@ -161,6 +208,8 @@ class Node(template.Node):
 
 
     def tmpl(self, name, values, context, slots):
+        """Render individual templates.
+        """
         # We don't return values like we do in javascript, not needed.
         slot_name = f'tmpl_{name}'
         if slot_name in slots:
@@ -171,6 +220,8 @@ class Node(template.Node):
 
 
     def slot(self, name, values, context, slots):
+        """Render individual slots.
+        """
         # We don't return values like we do in javascript, not needed.
         slot_name = f'slot_{name}'
         if slot_name in slots:
@@ -196,6 +247,8 @@ class Node(template.Node):
 
 
     def render_slots(self, values, context, slots):
+        """Call the rendering methods and format children Template Tags.
+        """
         for name in self.SLOTS:
             slot_name = f'slot_{name}'
             slot = self.slots.get(name)
@@ -204,7 +257,7 @@ class Node(template.Node):
                 if method:
                     slots[slot_name] = method(
                             {
-                                'child': slot.render(context),
+                                'child': slot.render(dict(context, slot=name)),
                                 'class': values[name + '_class'],
                                 'props': values[name + '_props'],
                                 'id': values['id'],
@@ -219,6 +272,8 @@ class Node(template.Node):
 
 
     def before_prepare(self, values, context):
+        """Initialize the values meant for rendering templates.
+        """
         self.mode = self.kwargs.get('mode', None)
         if self.MODES:
             if not self.mode:
@@ -244,16 +299,10 @@ class Node(template.Node):
 
         self.before_prepare_slots(values, context)
 
-        # Parent Tags can set html attributes on their childs.
-        for ext in self.CATCH_CLASSNAMES:
-            if ext in context:
-                values['class'].extend(context[ext])
-        for ext in self.CATCH_PROPERTIES:
-            if ext in context:
-                values['props'].extend(context[ext])
-
 
     def before_prepare_class_props(self, name, values, context):
+        """Initialize variables for storing html classes and attributes.
+        """
         values[f'{name}_props'] = []
         values[f'{name}_class'] = var_eval(
                 self.kwargs.get(f'{name}_class', ''), context)\
@@ -261,14 +310,16 @@ class Node(template.Node):
 
 
     def before_prepare_slots(self, values, context):
+        """Initialize the values meant for rendering slot templates.
+        """
         for name in self.SLOTS:
             slot = self.slots.get(name)
             if slot:
-                values[name + '_class'] = slot.classList(context)
-                values[name + '_props'] = slot.props(context)
+                values[f'{name}_class'] = slot.classList(context)
+                values[f'{name}_props'] = slot.props(context)
             else:
-                values[name + '_class'] = []
-                values[name + '_props'] = []
+                values[f'{name}_class'] = []
+                values[f'{name}_props'] = []
 
 
     def after_prepare(self, values, context):
@@ -292,12 +343,16 @@ class Node(template.Node):
 
 
     def after_prepare_class_props(self, name, values, context):
+        """Join html classes and html attributes into single strings.
+        """
         values[f'{name}_props'] = self.join_attributes(
                 self.prune_attributes(values[f'{name}_props']))
         values[f'{name}_class'] = ' '.join(values[f'{name}_class'])
 
 
     def after_prepare_slots(self, values, context):
+        """Simplifying values meant for rendering slot templates.
+        """
         for name in self.SLOTS:
             slot = self.slots.get(name)
             if not slot:
@@ -306,7 +361,7 @@ class Node(template.Node):
 
 
     def prune_attributes(self, attrs):
-        """Cleanup duplicate attributes.
+        """Cleanup duplicate html attributes.
         """
         added_props = set()
 
@@ -322,18 +377,25 @@ class Node(template.Node):
 
 
     def join_attributes(self, attrs):
+        """Format html attributes.
+        """
         return ' '.join('%s="%s"' % x for x in attrs)
 
 
     def prepare(self, values, context):
-        pass
+        """Prepare values for rendering the templates.
+        """
 
 
     def eval(self, value, context):
+        """Evaluate argument passed to our Template Tag.
+        """
         return var_eval(value, context)
 
 
     def format(self, tpl, values, context=None):
+        """Apply the prepared values to the templates.
+        """
         if context:
             # Assume the caller want to tell us there is sub-templates.
             slots = {}
@@ -346,8 +408,20 @@ class Node(template.Node):
         return tpl.format_map(IgnoreMissing(values))
 
 
-class FormNode(Node):
+    def set_child_props(self, context, name, slot=None, **kwargs):
+        """Use context to set arguments for all children Template Tags.
+        """
+        if slot:
+            name = f'{slot}_{name}'
+        context.setdefault(name, {})
+        context[name].update(kwargs)
 
+
+class FormNode(Node):
+    """Base class for form field tags.
+
+    The first argument to the tag is the Django form field.
+    """
     BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
     CLASS_AND_PROPS = ('help', *Node.CLASS_AND_PROPS)
@@ -360,16 +434,22 @@ class FormNode(Node):
     bound_field = None
 
     def id(self, context):
+        """Get Django form field html id.
+        """
         return self.bound_field.id_for_label
 
 
     def label(self, context):
+        """Get Django form field label.
+        """
         if 'label' in self.kwargs:
             return var_eval(self.kwargs['label'], context)
         return self.bound_field.label
 
 
     def element(self, values, context):
+        """Render django form field.
+        """
         field = self.bound_field
         widget_attrs = field.field.widget.attrs
 
@@ -393,11 +473,15 @@ class FormNode(Node):
 
 
     def before_prepare(self, values, context):
+        """Initialize the values meant for rendering templates.
+        """
         self.bound_field = self.args[0].resolve(context)
         super().before_prepare(values, context)
 
 
     def after_prepare(self, values, context):
+        """Simplifying values meant for rendering templates.
+        """
         if self.RENDER_ELEMENT:
             values['element'] = self.element(values, context)
         super().after_prepare(values, context)
@@ -409,10 +493,13 @@ class FormNode(Node):
 
 
     def prepare_element_props(self, props, default, context):
-        pass
+        """Prepare html attributes for rendering the form element.
+        """
 
 
     def choices(self, context):
+        """Get Django form field choices.
+        """
         for option_value, option_label in self.bound_field.field.choices:
             if option_value is None:
                 option_value = ''
@@ -429,6 +516,8 @@ class FormNode(Node):
 
 
     def render_tmpl_help(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         if self.bound_field.help_text:
             tmpl = """
 <div class="bx--form__helper-text {class}" {props}>
@@ -445,13 +534,18 @@ class FormNode(Node):
 
 
 class FormNodes(Node):
+    """Base class for tags with multiple form fields.
 
+    The arguments to the tag are all Django form fields.
+    """
     BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
 
     bound_fields = None
 
     def elements(self, values, context):
+        """Render django form fields.
+        """
         for field in self.bound_fields:
             widget_attrs = field.field.widget.attrs
 
@@ -478,6 +572,8 @@ class FormNodes(Node):
 
 
     def before_prepare(self, values, context):
+        """Initialize the values meant for rendering templates.
+        """
         self.bound_fields = [x.resolve(context) for x in self.args]
         for ii, field in enumerate(self.bound_fields):
             values[f'id_{ii}'] = field.id_for_label
@@ -486,6 +582,8 @@ class FormNodes(Node):
 
 
     def after_prepare(self, values, context):
+        """Simplifying values meant for rendering templates.
+        """
         for ii, element in enumerate(self.elements(values, context)):
             values[f'element_{ii}'] = element
         super().after_prepare(values, context)
@@ -498,17 +596,23 @@ class FormNodes(Node):
 
 
     def prepare_element_props(self, field, props, default, context):
-        pass
+        """Prepare html attributes for rendering the form element.
+        """
 
 
 class DumbFormNode(Node):
+    """For rendering html elements without the associated Django form fields.
 
+    Experimental.
+    """
     SLOTS = ('help', 'icon')
     "Named children."
     BASE_NODE_PROPS = ('hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
 
     def element(self, values, context):
+        """Render html of the form control.
+        """
         attrs = dict(values['props'])
         attrs['class'] = []
         if 'help' in self.slots:
@@ -520,26 +624,33 @@ class DumbFormNode(Node):
 
         if var_eval(self.kwargs.get('hidden'), context):
             attrs.pop('type')
-            props = self.join_props(self.prune_attributes(attrs))
+            props = self.join_attributes(self.prune_attributes(attrs))
             return '<input type="hidden" {props}">'.format(props=props)
-        return self.render_element(attrs, context)
+        return self.render_form_control(attrs, context)
 
 
-    def render_element(self, values, context):
-        props = self.join_props(self.prune_attributes(values))
+    def render_form_control(self, values, context):
+        """Default to rendering input, need to be overridden by subclass.
+        """
+        props = self.join_attributes(self.prune_attributes(values))
         return '<input {props}">'.format(props=props)
 
 
     def after_prepare(self, values, context):
+        """Post-process the values for rendering templates.
+        """
         values['element'] = self.element(values, context)
         super().after_prepare(values, context)
 
 
-    def prepare_element_props(self, attrs, default, context):
-        pass
+    def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
 
 
     def render_slot_help(self, values, context):
+        """Render html of the slot.
+        """
         tmpl = """
 <div class="bx--form__helper-text {class}" {props}>
   {child}
@@ -549,6 +660,8 @@ class DumbFormNode(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         tmpl = """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"

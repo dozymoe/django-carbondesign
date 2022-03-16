@@ -11,7 +11,7 @@ class NumberInput(FormNode):
     """
     MODES = ('default', 'mobile')
     "Available variants."
-    NODE_PROPS = ('no_label', 'light')
+    NODE_PROPS = ('nolabel', 'light')
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
@@ -20,7 +20,7 @@ class NumberInput(FormNode):
         values['txt_increase'] = _("increase number input")
         values['txt_decrease'] = _("decrease number input")
 
-        if self.eval(self.kwargs.get('no_label'), context):
+        if self.eval(self.kwargs.get('nolabel'), context):
             values['class'].append('bx--number--nolabel')
 
         if self.eval(self.kwargs.get('light'), context):
@@ -121,7 +121,7 @@ class NumberInput(FormNode):
     def render_tmpl_label(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        if self.eval(self.kwargs.get('no_label'), context):
+        if self.eval(self.kwargs.get('nolabel'), context):
             return ''
 
         template = """

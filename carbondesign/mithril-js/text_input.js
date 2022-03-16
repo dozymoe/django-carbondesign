@@ -20,7 +20,7 @@ export class TextInput extends FormNode
     {
         props['class'].push('bx--text-input');
 
-        if (vnode.props.light)
+        if (vnode.attrs.light)
         {
             props['class'].push('bx--text-input--light');
         }

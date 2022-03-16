@@ -2,7 +2,6 @@ import m from 'mithril/hyperscript';
 //-
 import { FormNode } from './base';
 
-
 export class CheckBox extends FormNode
 {
     MODES = ['default', 'inside']
@@ -21,13 +20,13 @@ export class CheckBox extends FormNode
         }
     }
 
-    prepare_element_attributes(vnode, attrs, default_attrs, context)
+    prepare_element_props(vnode, props, default_props, context)
     {
-        attrs['class'].push('bx--checkbox');
+        props['class'].push('bx--checkbox');
 
         if (vnode.attrs.mixed)
         {
-            attrs['aria-checked'] = 'mixed';
+            props['aria-checked'] = 'mixed';
         }
     }
 
@@ -41,7 +40,7 @@ m('div.bx--form-item.bx--checkbox-wrapper', null,
     m('label',
       {
         'for': values.id,
-        'class': 'bx--checkbox-label ' + values.label_class,
+        'class': `bx--checkbox-label ${values.label_class}`,
         ...values.label_props,
       },
       values.label),
@@ -59,7 +58,7 @@ m('div.bx--form-item.bx--checkbox-wrapper', null,
     m('label',
       {
         'for': values.id,
-        'class': 'bx--checkbox-label ' + values.label_class,
+        'class': `bx--checkbox-label ${values.label_class}`,
         ...values.label_props,
       },
       [

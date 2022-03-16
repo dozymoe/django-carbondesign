@@ -1,7 +1,6 @@
 import m from 'mithril/hyperscript';
 //-
-import { Node } from './base';
-
+import { Node, modify_svg } from './base';
 
 export class Button extends Node
 {
@@ -10,6 +9,8 @@ export class Button extends Node
     NODE_PROPS = ['disabled', 'variant', 'icon_only', 'field', 'small',
             'icon_size']
     DEFAULT_TAG = 'button'
+
+    CATCH_PROPS = ['button_props']
 
     prepare(vnode, values, context)
     {
@@ -37,8 +38,6 @@ export class Button extends Node
         {
             values['class'].push('bx--btn--sm');
         }
-
-        values.icon_size = vnode.attrs.icon_size || 16;
     }
 
     render_default(vnode, values, context)
@@ -49,26 +48,27 @@ export class Button extends Node
 //##
 m(values.tag,
   {
-    'class': 'bx--btn ' + values['class'],
+    'class': `bx--btn ${values['class']}`,
     ...values.props,
   },
   [
-    m('span.bx--assistive-text', {}, values.child),
-    this.slot('icon', vnode, values, context),
+    m('span.bx--assistive-text', null, values.child),
+    this.slot('icon', ...arguments),
   ])
 //##
             );
         }
+
         return (
 //##
 m(values.tag,
   {
-    'class': 'bx--btn ' + values['class'],
+    'class': `bx--btn ${values['class']}`,
     ...values.props,
   },
   [
     values.child,
-    this.slot('icon', vnode, values, context),
+    this.slot('icon', ...arguments),
   ])
 //##
         );
@@ -76,23 +76,20 @@ m(values.tag,
 
     render_slot_icon(values, context)
     {
-        return (
-//##
-m('svg.bx--btn__icon',
-  {
-    focusable: false,
-    preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
-    xmlns: 'http://www.w3.org/2000/svg',
-    width: values.icon_size,
-    height: values.icon_size,
-    viewBox: '0 0 ' + values.icon_size + ' ' + values.icon_size,
-    'aria-hidden': true,
-    ...values.props,
-  },
-  values.child)
-//##
-        );
+        let size = vnode.attrs.icon_size || 16;
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                style: {
+                    'will-change': 'transform',
+                    width: `${size}px`,
+                    height: `${size}px`,
+                },
+                'aria-hidden': true,
+                'class': `bx--btn__icon ${values['class']}`,
+                ...values.props,
+            });
     }
 }
 

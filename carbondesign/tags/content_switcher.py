@@ -11,6 +11,8 @@ class ContentSwitcher(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div data-content-switcher class="bx--content-switcher {class}" role="tablist"
     aria-label="{label}" {props}>
@@ -21,7 +23,7 @@ class ContentSwitcher(Node):
 
 
 class ContentSwitcherItem(Node):
-    """Content Switcher item component.
+    """Content Switcher item.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
@@ -31,6 +33,8 @@ class ContentSwitcherItem(Node):
     "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['target'] = self.eval(self.kwargs['target'], context)
 
         if self.eval(self.kwargs.get('active'), context):
@@ -42,7 +46,8 @@ class ContentSwitcherItem(Node):
 
 
     def render_default(self, values, context):
-
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--content-switcher-btn {class}" data-target="{target}"
     role="tab" {props}>
@@ -54,4 +59,5 @@ class ContentSwitcherItem(Node):
 
 components = {
     'ContentSwitcher': ContentSwitcher,
+    'ContentSwitcherItem': ContentSwitcherItem,
 }

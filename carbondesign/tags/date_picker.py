@@ -13,11 +13,15 @@ class DatePicker(FormNode):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('light'), context):
             values['wrapper_class'].append('bx--date-picker--light')
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--date-picker__input')
         props['data-date-picker-input'] = ''
         props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4}'
@@ -28,6 +32,8 @@ class DatePicker(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -179,16 +185,21 @@ class RangeDatePicker(FormNodes):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('light'), context):
             values['wrapper_class'].append('bx--date-picker--light')
 
 
     def prepare_element_props(self, field, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         index = self.bound_fields.index(field)
 
         props['class'].append('bx--date-picker__input')
         props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4}'
         props['placeholder'] = 'mm/dd/yyyy'
+
         if index:
             props['data-date-picker-input-to'] = ''
         else:
@@ -199,12 +210,14 @@ class RangeDatePicker(FormNodes):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         has_errors = any(x.errors for x in self.bound_fields)
         if has_errors:
             template = """
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="range"
-      class="bx--date-picker bx--date-picker--range {wrapper-class}"
+      class="bx--date-picker bx--date-picker--range {wrapper_class}"
       {wrapper_props}>
 
     <div class="bx--date-picker-container">
@@ -248,7 +261,7 @@ class RangeDatePicker(FormNodes):
             template = """
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="range"
-      class="bx--date-picker bx--date-picker--range {wrapper-class}"
+      class="bx--date-picker bx--date-picker--range {wrapper_class}"
       {wrapper_props}>
 
     <div class="bx--date-picker-container">

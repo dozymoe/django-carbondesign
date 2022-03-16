@@ -13,6 +13,8 @@ class CheckBox(FormNode):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('disabled'), context):
             values['props'].append(('disabled', 'disabled'))
 
@@ -24,6 +26,8 @@ class CheckBox(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--checkbox')
 
         if self.eval(self.kwargs.get('mixed'), context):
@@ -31,6 +35,8 @@ class CheckBox(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
   {element}
@@ -43,6 +49,8 @@ class CheckBox(FormNode):
 
 
     def render_inside(self, values, context,):
+        """Output html of the component.
+        """
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>

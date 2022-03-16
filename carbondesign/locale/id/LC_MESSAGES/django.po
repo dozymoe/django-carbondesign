@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-13 08:25+0700\n"
+"POT-Creation-Date: 2022-03-16 16:04+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,88 +17,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: carbondesign/tags/breadcrumb.py:20
+#: carbondesign/tags/breadcrumb.py:22
 msgid "breadcrumb"
 msgstr "remahan"
 
-#: carbondesign/tags/code_snippet.py:18 carbondesign/tags/copy_button.py:14
+#: carbondesign/tags/code_snippet.py:20 carbondesign/tags/copy_button.py:16
 msgid "Copied!"
 msgstr "Tersalin!"
 
-#: carbondesign/tags/code_snippet.py:19
+#: carbondesign/tags/code_snippet.py:21
 msgid "Copy code"
 msgstr "Salin kode"
 
-#: carbondesign/tags/code_snippet.py:20
+#: carbondesign/tags/code_snippet.py:22
 msgid "Show more"
 msgstr "Tampilkan lebih"
 
-#: carbondesign/tags/code_snippet.py:21
+#: carbondesign/tags/code_snippet.py:23
 msgid "Show more icon"
 msgstr "Tampilkan tambahan icon"
 
-#: carbondesign/tags/code_snippet.py:22
+#: carbondesign/tags/code_snippet.py:24
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:21 carbondesign/tags/data_table.py:982
+#: carbondesign/tags/combo_box.py:23 carbondesign/tags/data_table.py:406
 #: carbondesign/tags/list_box.py:24 carbondesign/tags/multi_select.py:22
 #: carbondesign/tags/ui_shell.py:29
 msgid "Open menu"
 msgstr "Buka menu"
 
-#: carbondesign/tags/combo_box.py:22
+#: carbondesign/tags/combo_box.py:24
 msgid "Clear all"
 msgstr "Hapus bersih"
 
-#: carbondesign/tags/data_table.py:35
+#: carbondesign/tags/data_table.py:38
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Tabel"
 
-#: carbondesign/tags/data_table.py:36
+#: carbondesign/tags/data_table.py:39
+msgid "Cancel"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:40
 msgid "items selected"
 msgstr "baris dipilih"
 
-#: carbondesign/tags/data_table.py:37 carbondesign/tags/overflow_menu.py:23
+#: carbondesign/tags/data_table.py:41 carbondesign/tags/overflow_menu.py:23
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/tags/data_table.py:180 carbondesign/tags/pagination.py:27
-msgid "Items per page"
-msgstr "Baris per halaman"
-
-#: carbondesign/tags/data_table.py:181 carbondesign/tags/pagination.py:28
-msgid "select number of items per page"
-msgstr "pilih jumlah baris per halaman"
-
-#: carbondesign/tags/data_table.py:182 carbondesign/tags/pagination.py:29
-msgid "select page number to view"
-msgstr "pilih halaman untuk ditampilkan"
-
-#: carbondesign/tags/data_table.py:183 carbondesign/tags/pagination.py:30
-msgid "Backward button"
-msgstr "Tombol mundur"
-
-#: carbondesign/tags/data_table.py:184 carbondesign/tags/pagination.py:31
-msgid "Forward button"
-msgstr "Tombol maju"
-
-#: carbondesign/tags/data_table.py:320 carbondesign/tags/pagination.py:168
-#, python-format
-msgid "%s of %s items"
-msgstr "%s dari %s baris"
-
-#: carbondesign/tags/data_table.py:329 carbondesign/tags/pagination.py:175
-#, python-format
-msgid "of %s pages"
-msgstr "dari %s halaman"
-
-#: carbondesign/tags/data_table.py:1018 carbondesign/tags/search.py:23
+#: carbondesign/tags/data_table.py:506 carbondesign/tags/search.py:23
 #: carbondesign/tags/toolbar.py:32
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:1019 carbondesign/tags/search.py:20
+#: carbondesign/tags/data_table.py:507 carbondesign/tags/search.py:20
 #: carbondesign/tags/toolbar.py:34
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
@@ -167,6 +141,36 @@ msgstr "tambahkan"
 #: carbondesign/tags/number_input.py:21
 msgid "decrease number input"
 msgstr "kurangi"
+
+#: carbondesign/tags/pagination.py:27
+msgid "Items per page"
+msgstr "Baris per halaman"
+
+#: carbondesign/tags/pagination.py:28
+msgid "select number of items per page"
+msgstr "pilih jumlah baris per halaman"
+
+#: carbondesign/tags/pagination.py:29
+msgid "select page number to view"
+msgstr "pilih halaman untuk ditampilkan"
+
+#: carbondesign/tags/pagination.py:30
+msgid "Backward button"
+msgstr "Tombol mundur"
+
+#: carbondesign/tags/pagination.py:31
+msgid "Forward button"
+msgstr "Tombol maju"
+
+#: carbondesign/tags/pagination.py:170
+#, python-format
+msgid "%s of %s items"
+msgstr "%s dari %s baris"
+
+#: carbondesign/tags/pagination.py:177
+#, python-format
+msgid "of %s pages"
+msgstr "dari %s halaman"
 
 #: carbondesign/tags/pagination_nav.py:23
 msgid "pagination"

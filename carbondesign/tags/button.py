@@ -17,7 +17,11 @@ class Button(Node):
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
 
+    CATCH_PROPS = ('button_props',)
+
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         variant = self.eval(self.kwargs.get('variant', 'primary'), context)
         values['class'].append(f'bx--btn--{variant}')
 
@@ -40,6 +44,8 @@ class Button(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.eval(self.kwargs.get('icon_only'), context):
             template = """
 <{tag} class="bx--btn {class}" {props}>
@@ -58,6 +64,8 @@ class Button(Node):
 
 
     def render_slot_icon(self, values, context):
+        """Render html of the slot.
+        """
         size = self.eval(self.kwargs.get('icon_size', 16), context)
         return modify_svg(values['child'], {
             'focusable': 'false',
@@ -79,6 +87,8 @@ class ButtonSet(Node):
     "Template Tag needs closing end tag."
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--btn-set {class}" {props}>
   {child}

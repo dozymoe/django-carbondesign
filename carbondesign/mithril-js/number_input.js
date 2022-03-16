@@ -5,14 +5,14 @@ import { FormNode } from './base';
 export class NumberInput extends FormNode
 {
     MODES = ['default', 'mobile']
-    NODE_PROPS = ['no_label', 'light']
+    NODE_PROPS = ['nolabel', 'light']
 
     prepare(vnode, values, context)
     {
         values.txt_increase = gettext("increase number input");
         values.txt_decrease = gettext("decrease number input");
 
-        if (vnode.attrs.no_label)
+        if (vnode.attrs.nolabel)
         {
             values['class'].push('bx--number--nolabel');
         }
@@ -144,7 +144,7 @@ m('div.bx--form-item', null,
 
     render_tmpl_label(vnode, values, context)
     {
-        if (!vnode.attrs.no_label)
+        if (!vnode.attrs.nolabel)
         {
             return (
 //##

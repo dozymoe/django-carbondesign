@@ -15,9 +15,11 @@ class ComboBox(FormNode):
     "Extended Template Tag arguments."
     TEMPLATES = ('label', 'icon_invalid', 'icon_menu', 'icon_clear',
             *FormNode.TEMPLATES)
-    "Conditional templates. Please sort from outer to inner subtemplates."
+    "Conditional templates. Documentation only."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_open'] = _("Open menu")
         values['txt_clear'] = _("Clear all")
 
@@ -33,7 +35,8 @@ class ComboBox(FormNode):
 
 
     def prepare_element_props(self, props, default, context):
-        super().prepare_element_props(props, default, context)
+        """Prepare html attributes for rendering the form element.
+        """
         props['class'].append('bx--text-input')
         props['aria-autocomplete'] = 'list'
         props['aria-expanded'] = 'false'
@@ -42,6 +45,8 @@ class ComboBox(FormNode):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
@@ -92,6 +97,8 @@ class ComboBox(FormNode):
 
 
     def render_tmpl_label(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         template = """
 <label for="{id}" class="bx--label {label_class}" {label_props}>
   {label}
@@ -101,6 +108,8 @@ class ComboBox(FormNode):
 
 
     def render_tmpl_icon_invalid(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -113,6 +122,8 @@ class ComboBox(FormNode):
 
 
     def render_tmpl_icon_menu(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <div class="bx--list-box__menu-icon">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -126,6 +137,8 @@ class ComboBox(FormNode):
 
 
     def render_tmpl_icon_clear(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
         return """
 <div class="bx--list-box__selection" role="button">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -139,7 +152,7 @@ class ComboBox(FormNode):
 
 
 class ComboBoxItem(Node):
-    """Combo Box item component.
+    """Combo Box item.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
@@ -147,11 +160,15 @@ class ComboBoxItem(Node):
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('active'), context):
             values['class'].append('bx--list-box__menu-item--highlighted')
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <li class="bx--list-box__menu-item {class}" {props}>
   <div class="bx--list-box__menu-item__option" tabindex="0">

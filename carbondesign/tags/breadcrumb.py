@@ -17,6 +17,8 @@ class Breadcrumb(Node):
     "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_breadcrumb'] = _("breadcrumb")
 
         if self.eval(self.kwargs.get('current', False), context):
@@ -24,6 +26,8 @@ class Breadcrumb(Node):
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--breadcrumb {class}" aria-label="{txt_breadcrumb}" {props}>
   {child}
@@ -33,21 +37,23 @@ class Breadcrumb(Node):
 
 
 class BreadcrumbItem(Node):
-    """Breadcrumb item component.
+    """Breadcrumb item.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    NODE_PROPS = ('current',)
+    NODE_PROPS = ('href', 'current',)
     "Extended Template Tag arguments."
-    DEFAULT_TAG = 'div'
-    "Rendered HTML tag."
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         if self.eval(self.kwargs.get('current', False), context):
             values['props'].append(('aria-current', 'page'))
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <{tag} class="bx--breadcrumb-item {class}" {props}>
   <a href="{href}" class="bx--link">

@@ -3,22 +3,25 @@ import { range } from 'lodash';
 import m from 'mithril/hyperscript';
 import m_tostring from 'mithril-node-render';
 //-
-import { Node } from './base';
+import { Node, modify_svg } from './base';
+import { Button } from './button';
 
 
 export class Table extends Node
 {
     WANT_CHILDREN = true
-    SLOTS = ['title', 'description', 'batch_actions', 'toolbar',
-            'toolbar_overflow', 'head', 'foot']
+    SLOTS = ['title', 'description', 'batch_actions', 'search', 'toolbar',
+            'toolbar_overflow', 'head', 'foot', 'pagination']
     MODES = ['default', 'sticky']
-    NODE_PROPS = ['style', 'pager', 'pager_size', 'sortable']
+    NODE_PROPS = ['style', 'sortable', 'small_toolbar']
+    CLASS_AND_PROPS = ['toolbar', ...Node.CLASS_AND_PROPS]
     AVAILABLE_STYLES = ['compact', 'short', 'tall', 'zebra']
     PAGER_SIZES = [10, 20, 30, 40, 50]
 
     prepare(vnode, values, context)
     {
         values.txt_batch_actions = gettext("Table Action Bar")
+        values.txt_cancel = gettext("Cancel");
         values.txt_items_selected = gettext("items selected")
         values.txt_overflow = gettext("Overflow")
 
@@ -30,25 +33,34 @@ export class Table extends Node
         {
             values['class'].push('bx--data-table--sort');
         }
+        if (vnode.attrs.small_toolbar)
+        {
+            values.toolbar_class.push('bx--table-toolbar--small');
+
+            this.set_child_props(context, 'button_props', 'batch_actions',
+                    {small: true});
+            this.set_child_props(context, 'search_props', null, {small: true});
+            this.set_child_props(context, 'button_props', 'toolbar',
+                    {small: true});
+        }
     }
 
     render_default(vnode, values, context, slots)
     {
-        return (
+        if (this.has_tmpl_header() || this.has_tmpl_toolbar())
+        {
+            return (
 //##
-m.fragment(null,
+m('div.bx--data-table-container',
+  {
+    'data-table': '',
+  },
   [
-    m('div.bx--data-table-container',
-      {
-        'data-table': '',
-      },
-      [
-        this.tmpl('header', ...arguments),
-        this.tmpl('toolbar', ...arguments),
-      ]),
+    this.tmpl('header', ...arguments),
+    this.tmpl('toolbar', ...arguments),
     m('table',
       {
-        'class': 'bx--data-table ' + values['class'],
+        'class': `bx--data-table ${values['class']}`,
         ...values.props,
       },
       [
@@ -56,7 +68,27 @@ m.fragment(null,
         values.child,
         this.slot('foot', ...arguments),
       ]),
-    this.tmpl('pagination', ...arguments),
+    this.slot('pagination', ...arguments),
+  ])
+//##
+            );
+        }
+
+        return (
+//##
+m.fragment(null,
+  [
+    m('table',
+      {
+        'class': `bx--data-table ${values['class']}`,
+        ...values.props,
+      },
+      [
+        this.slot('head', ...arguments),
+        values.child,
+        this.slot('foot', ...arguments),
+      ]),
+    this.slot('pagination', ...arguments),
   ])
 //##
         );
@@ -64,15 +96,21 @@ m.fragment(null,
 
     render_sticky(vnode, values, context, slots)
     {
-        return (
+        if (this.has_tmpl_header() || this.has_tmpl_toolbar())
+        {
+            return (
 //##
-m.fragment(null,
+m('div.bx--data-table-container',
+  {
+    'data-table': '',
+  },
   [
+    this.tmpl('header', ...arguments),
+    this.tmpl('toolbar', ...arguments),
     m('section.bx--data-table_inner-container', null,
       m('table',
         {
-          'class': 'bx--data-table bx--data-table--sticky-header ' +
-              values['class'],
+          'class': `bx--data-table bx--data-table--sticky-header ${values['class']}`,
           ...values.props,
         },
         [
@@ -80,7 +118,28 @@ m.fragment(null,
           values.child,
           this.slot('foot', ...arguments),
         ])),
-    this.tmpl('pagination', ...arguments),
+    this.slot('pagination', ...arguments),
+  ])
+//##
+            );
+        }
+
+        return (
+//##
+m.fragment(null,
+  [
+    m('section.bx--data-table_inner-container', null,
+      m('table',
+        {
+          'class': `bx--data-table bx--data-table--sticky-header ${values['class']}`,
+          ...values.props,
+        },
+        [
+          this.slot('head', ...arguments),
+          values.child,
+          this.slot('foot', ...arguments),
+        ])),
+    this.slot('pagination', ...arguments),
   ])
 //##
         );
@@ -138,12 +197,22 @@ m('p',
 //##
 m('div',
   {
-    'class': 'bx--batch-actions ' + values['class'],
+    'class': `bx--batch-actions ${values['class']}`,
     'aria-label': values.txt_batch_actions,
     ...values.props,
   },
   [
-    m('div.bx--action-list', null, values.child),
+    m('div.bx--action-list', null,
+      [
+          values.child,
+          m(Button,
+            {
+              variant: 'primary',
+              'data-event': 'action-bar-cancel',
+              'class': 'bx--batch-summary__cancel',
+            },
+            values.txt_cancel),
+      ]),
     m('div.bx--batch-summary', null,
       m('p.bx--batch-summary__para', null,
         [
@@ -161,7 +230,7 @@ m('div',
 //##
 m('div',
   {
-    'class': 'bx--overflow-menu bx--toolbar-action ' + values['class'],
+    'class': `bx--overflow-menu bx--toolbar-action ${values['class']}`,
     'data-overflow-menu': '',
     role: 'button',
     tabindex: 0,
@@ -223,9 +292,14 @@ m('div',
         );
     }
 
+    has_tmpl_header()
+    {
+        return this.slots.title || this.slots.description;
+    }
+
     render_tmpl_header(vnode, values, context)
     {
-        if (!this.slots.title && !this.slots.description)
+        if (!this.has_tmpl_header())
         {
             return;
         }
@@ -240,282 +314,92 @@ m('div.bx--data-table-header', null,
         );
     }
 
+    has_tmpl_toolbar()
+    {
+        return this.slots.batch_actions || this.slots.toolbar_overflow ||
+                this.slots.toolbar;
+    }
+
     render_tmpl_toolbar(vnode, values, context)
     {
-        if (!this.slots.batch_actions && !this.slots.toolbar_overflow &&
-                !this.slots.toolbar)
+        if (!this.has_tmpl_toolbar())
         {
             return;
         }
         return (
 //##
-m('section.bx--table-toolbar', null,
-  [
-    this.slot('batch_actions', vnode, values, context),
-    m('div.bx--toolbar-content', null,
-      [
-        this.slot('toolbar_overflow', vnode, values, context),
-        this.slot('toolbar', vnode, values, context),
-      ]),
-  ])
-//##
-        );
-    }
-
-    render_tmpl_pagination(vnode, values, context)
-    {
-        let pager = vnode.attrs.pager;
-        if (!pager)
-        {
-            return;
-        }
-        if (!pager.has_previous() && !pager.has_next())
-        {
-            return;
-        }
-
-        values.txt_per_page = gettext("Items per page")
-        values.txt_select_per_page = gettext("select number of items per page")
-        values.txt_select_page_num = gettext("select page number to view")
-        values.txt_back_btn = gettext("Backward button")
-        values.txt_forw_btn = gettext("Forward button")
-
-        return (
-//##
-m('div.bx--pagination',
+m('section',
   {
-    'data-pagination': '',
+    'class': `bx--table-toolbar ${values.toolbar_class}`,
+    ...values.toolbar_props,
   },
   [
-    m('div.bx--pagination__left', null,
+    this.slot('batch_actions', ...arguments),
+    m('div.bx--toolbar-content', null,
       [
-        m('label.bx--pagination__text',
-          {
-            id: 'select-' + values.id + '-pagination-count-label',
-            'for': 'select-' + values.id + '-pagination-count',
-          },
-          values.txt_per_page),
-        m('div.bx--select bx--select--inline.bx--select__item-count', null,
-          [
-            m('select.bx--select-input',
-              {
-                id: 'select-' + values.id + '-pagination-count',
-                'aria-label': values.txt_select_per_page,
-                tabindex: 0,
-                'data-items-per-page': '',
-              },
-              this.tmpl('pagination_sizes', vnode, values, context)),
-            m('svg',
-              {
-                focusable: false,
-                preserveAspectRatio: 'xMidYMid meet',
-                style: {'will-change': 'transform'},
-                xmlns: 'http://www.w3.org/2000/svg',
-                'class': 'bx--select__arrow',
-                width: 10,
-                height: 6,
-                viewBox: '0 0 10 6',
-                'aria-hidden': true,
-              },
-              m('path',
-                {
-                  d: 'M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z',
-                }))
-          ]),
-        m('span.bx--pagination__text', null,
-          this.tmpl('pagination_range', vnode, values, context)),
-      ]),
-    m('div.bx--pagination__right', null,
-      [
-        m('div.bx--select.bx--select--inline.bx--select__page-number', null,
-          [
-            m('select.bx--select-input',
-              {
-                id: 'select-' + values.id + '-pagination-page',
-                'aria-label': values.txt_select_page_num,
-                tabindex: '0',
-                'data-page-number-input': '',
-              },
-              this.tmpl('pagination_numbers', vnode, values, context)),
-            m('svg',
-              {
-                focusable: false,
-                preserveAspectRatio: 'xMidYMid meet',
-                style: {'will-change': 'transform'},
-                xmlns: 'http://www.w3.org/2000/svg',
-                'class': 'bx--select__arrow',
-                width: 10,
-                height: 6,
-                viewBox: '0 0 10 6',
-                'aria-hidden': true,
-              },
-              m('path',
-                {
-                  d: 'M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z',
-                })),
-
-          ]),
-        m('label',
-          {
-            id: 'select-' + values.id + '-pagination-page-label',
-            'class': 'bx--pagination__text',
-            'for': 'select-' + values.id + '-pagination-page',
-          },
-          this.tmpl('pagination_num_pages', vnode, values, context)),
-        m('button.bx--pagination__button.bx--pagination__button--backward',
-          {
-            tabindex: 0,
-            'data-page-backward': '',
-            'aria-label': values.txt_back_btn,
-          },
-          m('svg',
-            {
-              focusable: false,
-              preserveAspectRatio: 'xMidYMid meet',
-              style: {'will-change': 'transform'},
-              xmlns: 'http://www.w3.org/2000/svg',
-              'class': 'bx--pagination__nav-arrow',
-              width: 20,
-              height: 20,
-              viewBox: '0 0 32 32',
-              'aria-hidden': true,
-            },
-            m('path',
-              {
-                d: 'M19 23L11 16 19 9 19 23z',
-              }))),
-        m('button.bx--pagination__button.bx--pagination__button--forward',
-          {
-            tabindex: 0,
-            'data-page-forward': '',
-            'aria-label': values.txt_forw_btn,
-          },
-          m('svg',
-            {
-              focusable: false,
-              preserveAspectRatio: 'xMidYMid meet',
-              style: {'will-change': 'transform'},
-              xmlns: 'http://www.w3.org/2000/svg',
-              'class': 'bx--pagination__nav-arrow',
-              width: 20,
-              height: 20,
-              viewBox: '0 0 32 32',
-              'aria-hidden': true,
-            },
-            m('path',
-              {
-                d: 'M13 9L21 16 13 23 13 9z',
-              }))),
+        this.slot('search', ...arguments),
+        this.slot('toolbar_overflow', ...arguments),
+        this.slot('toolbar', ...arguments),
       ]),
   ])
 //##
         );
     }
+}
 
-    render_tmpl_pagination_sizes(vnode, values, context)
+
+export TrExpandable extends Node
+{
+    WANT_CHILDREN = true
+    SLOTS = ['subrow',]
+
+    render_default(vnode, values, context)
     {
-        let pager = vnode.attrs.pager;
-        if (!pager)
-        {
-            return;
-        }
-
-        let options = []
-
-        let pager_sizes = vnode.attrs.pager_size || this.PAGER_SIZES;
-        if (typeof pager_sizes === 'string' || pager_sizes instanceof String)
-        {
-            pager_sizes = pager_sizes.split(',')
-        }
-
-        for (let value of pager_sizes)
-        {
-            if (options.length)
-            {
-                options.push(m('option.bx--select-option', {value: value},
-                        value));
-            }
-            else
-            {
-                options.push(m('option.bx--select-option',
-                        {value: value, selected: ''}, value));
-            }
-        }
-        return m.fragment({}, options)
-    }
-
-    render_tmpl_pagination_numbers(vnode, values, context)
-    {
-        let pager = vnode.attrs.pager;
-        if (!pager)
-        {
-            return;
-        }
-
-        let options = []
-
-        for (let value of range(1, pager.num_pages))
-        {
-            if (value != pager.number)
-            {
-                options.push(m('option.bx--select-option', {value: value},
-                        value));
-            }
-            else
-            {
-                options.push(m('option.bx--select-option',
-                        {value: value, selected: ''}, value));
-            }
-        }
-        return m.fragment({}, options)
-    }
-
-
-    render_tmpl_pagination_range(vnode, values, context)
-    {
-        let pager = vnode.attrs.pager;
-        if (!pager)
-        {
-            return;
-        }
+        let rendered_child = m_tostring(values.child);
+        let total_column = (rendered_child.match(/<td/g) || []).length + 1;
 
         return (
 //##
 m.fragment(null,
   [
-    m('span',
+    m('tr',
       {
-        'data-displayed-item-range': '',
+        'class': `bx--parent-row ${values['class']}`,
+        'data-parent-row': '',
+        ...values.props,
       },
-      pager.start_index() + '-' + pager.end_index()),
-    gettext(' of '),
-    m('span',
+      [
+        m('td.bx--table-expand',
+          {
+            'data-event': 'expand',
+          },
+          m('button.bx--table-expand__button', null,
+            m('svg',
+              {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                xmlns: 'http://www.w3.org/2000/svg',
+                fill: 'currentColor',
+                'class': 'bx--table-expand__svg',
+                width: 16,
+                height: 16,
+                viewBox: '0 0 16 16',
+                'aria-hidden': true,
+              },
+              m('path', {d: 'M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z'})))),
+        values.child,
+      ]),
+    m('tr.bx--expandable-row.bx--expandable-row--hidden',
       {
-        'data-total-items': '',
+        'data-child-row': '',
       },
-      pager.count),
-    gettext(' items'),
-  ])
-//##
-        );
-    }
-
-    render_tmpl_pagination_num_pages(vnode, values, context)
-    {
-        let pager = vnode.attrs.pager;
-        if (!pager)
+      m('td',
         {
-            return;
-        }
-
-        return (
-//##
-m.fragment(null,
-  [
-    gettext('of '),
-    pager.num_pages,
-    gettext(' pages'),
-  ])
+          colspan: total_column,
+        },
+        m('div.bx--child-row-inner-container', null,
+          this.slot('subrow', ...arguments)))),
+  ]),
 //##
         );
     }
@@ -525,7 +409,8 @@ m.fragment(null,
 export class Th extends Node
 {
     WANT_CHILDREN = true
-    MODES = ['default', 'checkbox', 'sortable', 'menu']
+    MODES = ['default', 'checkbox', 'sortable', 'menu', 'expandable',
+            'expand_all', 'row']
 
     render_default(vnode, values, context)
     {
@@ -547,7 +432,7 @@ m('th',
 //##
 m('th',
   {
-    'class': 'bx--table-column-checkbox ' + values['class'],
+    'class': `bx--table-column-checkbox ${values['class']}`,
   },
   [
     m('input.bx--checkbox',
@@ -560,7 +445,7 @@ m('th',
     m('label',
       {
         'for': values.id,
-        'class': 'bx--checkbox-label ' + values.label_class,
+        'class': `bx--checkbox-label ${values.label_class}`,
         'aria-label': values.label,
         ...values.label_props,
       }),
@@ -571,7 +456,7 @@ m('th',
 
     render_sortable(vnode, values, context)
     {
-        values.cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
+        let cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
 
         return (
 //##
@@ -583,7 +468,7 @@ m('th',
   m('button.bx--table-sort',
     {
       'data-event': 'sort',
-      title: values.cleaned_child,
+      title: cleaned_child,
     },
     [
       m('span.bx--table-header-label', null, values.child),
@@ -633,9 +518,67 @@ m('th',
 //##
 m('th',
   {
-    'class': 'bx--table-column-menu ' + values['class'],
+    'class': `bx--table-column-menu ${values['class']}`,
     ...values.props,
   })
+//##
+        );
+    }
+
+    render_expandable(vnode, values, context)
+    {
+        return (
+//##
+m('th',
+  {
+    'class': `bx--table-expand ${values['class']}`,
+    'data-event': 'expandAll',
+    ...values.props,
+  },
+  m('span.bx--table-header-label', null, values.child))
+//##
+        );
+    }
+
+    render_expand_all(vnode, values, context)
+    {
+        return (
+//##
+m('th',
+  {
+    'class': `bx--table-expand ${values['class']}`,
+    'data-event': 'expandAll',
+    ...values.props,
+  },
+  m('button.bx--table-expand__button', null,
+    m('svg',
+      {
+        focusable: false,
+        preserveAspectRatio: 'xMidYMid meet',
+        xmlns: 'http://www.w3.org/2000/svg',
+        fill: 'currentColor',
+        'class': 'bx--table-expand__svg',
+        width: 16,
+        height: 16,
+        viewBox: '0 0 16 16',
+        'aria-hidden': true,
+      },
+      m('path', {d: 'M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z'}))))
+//##
+        );
+    }
+
+    render_row(vnode, values, context)
+    {
+        return (
+//##
+m('th',
+  {
+    scope: 'row',
+    'class': values['class'],
+    ...values.props,
+  },
+  values.child)
 //##
         );
     }
@@ -645,8 +588,13 @@ m('th',
 export class Td extends Node
 {
     WANT_CHILDREN = true
-    MODE = ['default', 'checkbox', 'menu']
+    MODE = ['default', 'checkbox', 'menu', 'menu_visible']
     SLOTS = ['secondary']
+
+    prepare(vnode, values, context)
+    {
+        values.txt_menu = gettext("Open menu");
+    }
 
     render_default(vnode, values, context)
     {
@@ -659,7 +607,7 @@ m('td',
   },
   [
     values.child,
-    this.slot('secondary', vnode, values, context),
+    this.slot('secondary', ...arguments),
   ])
 //##
         );
@@ -671,7 +619,7 @@ m('td',
 //##
 m('td',
   {
-    'class': 'bx--table-column-checkbox ' + values['class'],
+    'class': `bx--table-column-checkbox ${values['class']}`,
   },
   [
     m('input.bx--checkbox',
@@ -684,7 +632,7 @@ m('td',
     m('label',
       {
         'for': values.id,
-        'class': 'bx--checkbox-label ' + values.label_class,
+        'class': `bx--checkbox-label ${values.label_class}`,
         'aria-label': values.label,
         ...values.label_props,
       }),
@@ -699,7 +647,7 @@ m('td',
 //##
 m('td',
   {
-    'class': 'bx--table-column-menu ' + values['class'],
+    'class': `bx--table-column-menu ${values['class']}`,
     ...values.props,
   },
   m('div',
@@ -708,7 +656,8 @@ m('td',
       role: 'menu',
       tabindex: 0,
       'aria-label': values.label,
-      'class': 'bx--overflow-menu ' + values.label_class,
+      'class': `bx--overflow-menu ${values.label_class}`,
+      title: values.txt_menu,
       ...values.label_props,
     },
     [
@@ -717,6 +666,50 @@ m('td',
           focusable: false,
           preserveAspectRatio: 'xMidYMid meet',
           style: {'will-change': 'transform'},
+          xmlns: 'http://www.w3.org/2000/svg',
+          'class': 'bx--overflow-menu__icon',
+          width: 16,
+          height: 16,
+          viewBox: '0 0 16 16',
+          'aria-hidden': true,
+        },
+        [
+          m('circle', {cx: 8, cy: 3, r: 1}),
+          m('circle', {cx: 8, cy: 8, r: 1}),
+          m('circle', {cx: 8, cy: 13, r: 1}),
+        ]),
+      m('ul.bx--overflow-menu-options.bx--overflow-menu--flip', null,
+        values.child),
+    ]))
+//##
+        );
+    }
+
+    render_menu_visible(vnode, values, context)
+    {
+        return (
+//##
+m('td',
+  {
+    'class': `bx--table-column-menu ${values['class']}`,
+    ...values.props,
+  },
+  m('div',
+    {
+      'data-overflow-menu': '',
+      role: 'menu',
+      tabindex: 0,
+      'aria-label': values.label,
+      'class': `bx--overflow-menu ${values.label_class}`,
+      title: values.txt_menu,
+      ...values.label_props,
+    },
+    [
+      m('svg',
+        {
+          focusable: false,
+          preserveAspectRatio: 'xMidYMid meet',
+          fill: 'currentColor',
           xmlns: 'http://www.w3.org/2000/svg',
           'class': 'bx--overflow-menu__icon',
           width: 16,
@@ -754,10 +747,28 @@ m('div',
 
 export class TbSearch extends Node
 {
+    NODE_PROPS = ['expandable', 'small']
+
+    CATCH_PROPS = ['search_props']
+
     prepare(vnode, values, context)
     {
         values.txt_search = gettext("Search");
         values.txt_clear = gettext("Clear search input");
+
+        if (vnode.attrs.expandable)
+        {
+            values.wrapper_class.push('bx--toolbar-search-container-expandable');
+        }
+        else
+        {
+            values.wrapper_class.push('bx--toolbar-search-container-persistent');
+        }
+
+        if (vnode.attrs.small)
+        {
+            values['class'].push('bx--search--sm');
+        }
     }
 
     render_default(vnode, values, context)
@@ -766,14 +777,15 @@ export class TbSearch extends Node
 //##
 m('div',
   {
-    'class': 'bx--toolbar-search-container-persistent ' + values['class'],
-    ...values.props,
+    'class': values.wrapper_class,
+    ...values.wrapper_props,
   },
   m('div',
     {
       'data-search': '',
-      'class': 'bx--search bx--search--sm',
+      'class': `bx--search ${values['class']}`,
       role: 'search',
+      ...values.props,
     },
     [
       m('div.bx--search-magnifier', null,
@@ -797,7 +809,7 @@ m('div',
       m('label',
         {
           id: 'label-' + values.id,
-          'class': 'bx--label ' + values.label_class,
+          'class': `bx--label ${values.label_class}`,
           'for': values.id,
           ...values.label_props,
         },
@@ -808,7 +820,7 @@ m('div',
           id: values.id,
           role: 'search',
           placeholder: values.txt_search,
-          'aria-labelledby': 'label-' + values.id,
+          'aria-labelledby': `label-${values.id}`,
         }),
       m('button.bx--search-close.bx--search-close--hidden',
         {
@@ -852,7 +864,7 @@ m('li.bx--overflow-menu-options__option.bx--overflow-menu--data-table',
   },
   m('button',
     {
-      'class': 'bx--overflow-menu-options__btn ' + values['class'],
+      'class': `bx--overflow-menu-options__btn ${values['class']}`,
       role: 'menuitem',
       ...values.props,
     },
@@ -866,21 +878,25 @@ m('li.bx--overflow-menu-options__option.bx--overflow-menu--data-table',
 export class TdOvButton extends Node
 {
     WANT_CHILDREN = true
-    SLOTS = ['icon',]
+    SLOTS = ['icon']
+    NODE_PROPS = ['icon_size']
 
     render_default(vnode, values, context)
     {
+        let cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
+
         return (
 //##
 m('li.bx--overflow-menu-options__option.bx--table-row--menu-option',
   m(values.tag,
     {
-      'class': 'bx--overflow-menu-options__btn ' + values['class'],
+      'class': `bx--overflow-menu-options__btn ${values['class']}`,
+      title: cleaned_child,
       ...values.props,
     },
     m('div.bx--overflow-menu-options__option-content', null,
       [
-        this.slot('icon', vnode, values, context),
+        this.slot('icon', ...arguments),
         values.child,
       ])))
 //##
@@ -889,23 +905,20 @@ m('li.bx--overflow-menu-options__option.bx--table-row--menu-option',
 
     render_slot_icon(vnode, values, context)
     {
-        return (
-//##
-m('svg',
-  {
-    focusable: false,
-    preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
-    xmlns: 'http://www.w3.org/2000/svg',
-    width: 16,
-    height: 16,
-    viewBox: '0 0 16 16',
-    'aria-hidden': true,
-    'class': values['class'],
-    ...values.props,
-  },
-  values.child)
-//##
+        let size = vnode.attrs.icon_size || 16;
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                style: {
+                    'will-change': 'transform',
+                    width: `${size}px`,
+                    height: `${size}px`,
+                },
+                'aria-hidden': true,
+                'class': values['class'],
+                ...values.props,
+            })
         );
     }
 }

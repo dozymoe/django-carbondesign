@@ -11,10 +11,14 @@ class CopyButton(Node):
     """
 
     def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
         values['txt_copied'] = _("Copied!")
 
 
     def render_default(self, values, context):
+        """Output html of the component.
+        """
         template = """
 <button data-copy-btn class="bx--copy-btn {class}" type="button" tabindex="0"
     {props}>
