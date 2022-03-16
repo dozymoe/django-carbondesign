@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; Django CarbonDesign  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="gen/carbondesign.tags.accordion.html" />
+    <link rel="prev" title="Welcome to Django Carbon Design’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Django CarbonDesign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Django CarbonDesign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>Provides <a class="reference external" href="https://www.carbondesignsystem.com/">Carbon Design System</a> as <a class="reference external" href="https://docs.djangoproject.com/">Django</a> template tags.</p>
+<p>This project only offers the HTML markups as described in
+<a class="reference external" href="https://the-carbon-components.netlify.app/">Carbon Design System Native</a>, but it can be extended easily with your own
+components.</p>
+<p>Some components work with forms and require that you pass the form fields to the
+template tags as its first argument.</p>
+<p>There is the concept of slots, where you can fill in different parts of the
+components.</p>
+<p>The arguments you set for the template tags will be added to the html element’s
+attributes.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install django-carbondesign
+</pre></div>
+</div>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<p>Add <code class="code docutils literal notranslate"><span class="pre">carbondesign</span></code> to your <code class="code docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> setting.</p>
+<p>Set the following in settings.py:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SVG_DIRS</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.carbondesignsystem.com/">Carbon Design System</a> makes heavy use of svg html elements, you have to tell
+the project where to find those svg files, and use them in the templates like
+this:</p>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">carbondesign</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">Button</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">Slot</span> <span class="s1">&#39;icon&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">svg</span> <span class="s1">&#39;fa/solid/sign-in-alt.svg&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">endSlot</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endButton</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>The project provides template tags that you can use in Django templates.</p>
+<p>There is <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">carbondesign_assets</span> <span class="pre">%}</span></code> that you can use in html head to
+include built-in carbon design assets (css/js) in your templates.</p>
+<p>There is <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">svg</span> <span class="pre">%}</span></code> that you can use to embed svg files.</p>
+<p>And template tags that represents <a class="reference external" href="https://www.carbondesignsystem.com/">Carbon Design System</a>’s components.</p>
+<p>How to use them in your templates is simple:</p>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">i18n</span> <span class="nv">carbondesign</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">  &lt;head&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">carbondesign_assets</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;/head&gt;</span>
+<span class="x">  &lt;body&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;home&#39;</span> <span class="k">as</span> <span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">UiShell</span> <span class="nv">label</span><span class="o">=</span><span class="nv">request.site.name</span> <span class="nv">href</span><span class="o">=</span><span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      </span><span class="cp">{%</span> <span class="k">Slot</span> <span class="s1">&#39;navigation&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">UiNavSection</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">          </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">user.is_authenticated</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;account_logout&#39;</span> <span class="k">as</span> <span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">UiNavItem</span> <span class="nv">href</span><span class="o">=</span><span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">Slot</span> <span class="s1">&#39;icon&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                </span><span class="cp">{%</span> <span class="k">svg</span> <span class="s1">&#39;fa/solid/sign-out-alt.svg&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">endSlot</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">trans</span> <span class="s2">&quot;Sign Out&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endUiNavItem</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">          </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;account_login&#39;</span> <span class="k">as</span> <span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">UiNavItem</span> <span class="nv">href</span><span class="o">=</span><span class="nv">url</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">Slot</span> <span class="s1">&#39;icon&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                </span><span class="cp">{%</span> <span class="k">svg</span> <span class="s1">&#39;fa/solid/sign-in-alt.svg&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">endSlot</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">              </span><span class="cp">{%</span> <span class="k">trans</span> <span class="s2">&quot;Sign In&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endUiNavItem</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">          </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endUiNavSection</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      </span><span class="cp">{%</span> <span class="k">endSlot</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endUiShell</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">msg</span> <span class="k">in</span> <span class="nv">messages</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      </span><span class="cp">{%</span> <span class="k">Notification</span> <span class="nv">mode</span><span class="o">=</span><span class="s1">&#39;toast&#39;</span> <span class="nv">variant</span><span class="o">=</span><span class="nv">msg.level</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">NotificationSubtitle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">          </span><span class="cp">{{</span><span class="nv">msg.message</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endNotificationSubtitle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      </span><span class="cp">{%</span> <span class="k">endNotification</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    &lt;main&gt;</span>
+<span class="x">      &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">csrf_token</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">        &lt;div class=&quot;form-group&quot;&gt;</span>
+<span class="x">          </span><span class="cp">{%</span> <span class="k">TextInput</span> <span class="nv">form.address</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+
+<span class="x">        </span><span class="cp">{%</span> <span class="k">Button</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">          </span><span class="cp">{%</span> <span class="k">trans</span> <span class="s2">&quot;Search&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endButton</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">      &lt;/form&gt;</span>
+<span class="x">    &lt;/main&gt;</span>
+<span class="x">  &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>In the above code, argument <code class="code docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code> that you set for the Button
+component will create html attribute type for the button element.</p>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline"></a></h2>
+<p>How to extends this project with your own components.</p>
+<p>Checkout the <a class="reference external" href="https://github.com/dozymoe/django-carbondesign/tree/main/carbondesign/tags/">tags</a> and <a class="reference external" href="https://github.com/dozymoe/django-carbondesign/tree/main/carbondesign/templatetags/">templatetags</a> directories.</p>
+<p>Write your own components in your module’s <code class="code docutils literal notranslate"><span class="pre">tags</span></code> directory, following the
+examples in this project`s <a class="reference external" href="https://github.com/dozymoe/django-carbondesign/tree/main/carbondesign/tags/">tags</a>.</p>
+<p>Create a file in your module’s <code class="code docutils literal notranslate"><span class="pre">templatetags</span></code> directory, for example
+<strong>website_carbondesign.py</strong>.</p>
+<p>Example code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
+<span class="kn">from</span> <span class="nn">carbondesign.templatetags.carbondesign</span> <span class="kn">import</span> <span class="n">TagParser</span>
+<span class="c1">#-</span>
+<span class="kn">from</span> <span class="nn">..tags</span> <span class="kn">import</span> <span class="n">mycomponent</span>
+
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="n">CARBON_TAGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">**</span><span class="n">mycomponent</span><span class="o">.</span><span class="n">components</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">_parser</span> <span class="o">=</span> <span class="n">TagParser</span><span class="p">(</span><span class="n">CARBON_TAGS</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">CARBON_TAGS</span><span class="p">:</span>
+    <span class="n">register</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_parser</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Django Carbon Design’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gen/carbondesign.tags.accordion.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fahri Reza &lt;i@dozy.moe&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

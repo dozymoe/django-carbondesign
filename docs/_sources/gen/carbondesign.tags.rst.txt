@@ -1,0 +1,54 @@
+carbondesign.tags package
+=========================
+
+.. automodule:: carbondesign.tags
+   :members:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carbondesign.tags.accordion
+   carbondesign.tags.base_widgets
+   carbondesign.tags.breadcrumb
+   carbondesign.tags.button
+   carbondesign.tags.checkbox
+   carbondesign.tags.code_snippet
+   carbondesign.tags.combo_box
+   carbondesign.tags.content_switcher
+   carbondesign.tags.copy_button
+   carbondesign.tags.data_table
+   carbondesign.tags.date_picker
+   carbondesign.tags.dropdown
+   carbondesign.tags.file_uploader
+   carbondesign.tags.grid
+   carbondesign.tags.inline_loading
+   carbondesign.tags.link
+   carbondesign.tags.list_
+   carbondesign.tags.list_box
+   carbondesign.tags.loading
+   carbondesign.tags.modal
+   carbondesign.tags.multi_select
+   carbondesign.tags.notification
+   carbondesign.tags.number_input
+   carbondesign.tags.overflow_menu
+   carbondesign.tags.pagination
+   carbondesign.tags.pagination_nav
+   carbondesign.tags.progress_indicator
+   carbondesign.tags.radio_button
+   carbondesign.tags.search
+   carbondesign.tags.select
+   carbondesign.tags.slider
+   carbondesign.tags.structured_list
+   carbondesign.tags.tabs
+   carbondesign.tags.tag
+   carbondesign.tags.text_area
+   carbondesign.tags.text_input
+   carbondesign.tags.tile
+   carbondesign.tags.time_picker
+   carbondesign.tags.toggle
+   carbondesign.tags.toolbar
+   carbondesign.tags.tooltip
+   carbondesign.tags.ui_shell

@@ -1,0 +1,2 @@
+.. automodule:: carbondesign.tags.time_picker
+   :members:

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Django CarbonDesign  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="carbondesign.tags.base_widgets.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="carbondesign.tags.accordion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Django CarbonDesign
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Django CarbonDesign</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/gen/carbondesign.tags.base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="module-carbondesign.tags.base"></span><p>Base classes for carbondesign Template Tags.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="carbondesign.tags.base.var_eval">
+<span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">var_eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.var_eval" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluate argument passed to our Template Tag.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="carbondesign.tags.base.modify_svg">
+<span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">modify_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.modify_svg" title="Permalink to this definition"></a></dt>
+<dd><p>Modify xml attributes of an svg image.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.IgnoreMissing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">IgnoreMissing</span></span><a class="headerlink" href="#carbondesign.tags.base.IgnoreMissing" title="Permalink to this definition"></a></dt>
+<dd><p>String formatting but the variables are optional.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DummyNodeList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">DummyNodeList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DummyNodeList" title="Permalink to this definition"></a></dt>
+<dd><p>Fake Django template node.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DummyNodeList.get_nodes_by_type">
+<span class="sig-name descname"><span class="pre">get_nodes_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DummyNodeList.get_nodes_by_type" title="Permalink to this definition"></a></dt>
+<dd><p>Dummy method that returns empty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DummyNodeList.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DummyNodeList.render" title="Permalink to this definition"></a></dt>
+<dd><p>Return the passed in string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">Slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Slot" title="Permalink to this definition"></a></dt>
+<dd><p>Implements slots.</p>
+<p>It’s very simple, so don’t inherit from Node class below.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot.WANT_CHILDREN">
+<span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.base.Slot.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
+<dd><p>Template Tag needs closing end tag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot.classList">
+<span class="sig-name descname"><span class="pre">classList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Slot.classList" title="Permalink to this definition"></a></dt>
+<dd><p>Get class argument as a list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Slot.label" title="Permalink to this definition"></a></dt>
+<dd><p>Get label argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot.props">
+<span class="sig-name descname"><span class="pre">props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Slot.props" title="Permalink to this definition"></a></dt>
+<dd><p>Filter arguments passed to Slot excluding the PROPS.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Slot.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Slot.render" title="Permalink to this definition"></a></dt>
+<dd><p>Render the Slot as html.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for all carbondesign tags.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.WANT_CHILDREN">
+<span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
+<dd><p>Template Tag needs closing end tag.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.SLOTS">
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.SLOTS" title="Permalink to this definition"></a></dt>
+<dd><p>Named children.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.MODES">
+<span class="sig-name descname"><span class="pre">MODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.MODES" title="Permalink to this definition"></a></dt>
+<dd><p>Available variants.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.BASE_NODE_PROPS">
+<span class="sig-name descname"><span class="pre">BASE_NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('mode',</span> <span class="pre">'tag',</span> <span class="pre">'class',</span> <span class="pre">'label')</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.BASE_NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Base Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.DEFAULT_TAG">
+<span class="sig-name descname"><span class="pre">DEFAULT_TAG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'div'</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.DEFAULT_TAG" title="Permalink to this definition"></a></dt>
+<dd><p>Rendered HTML tag.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('label',</span> <span class="pre">'wrapper')</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.TEMPLATES">
+<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#carbondesign.tags.base.Node.TEMPLATES" title="Permalink to this definition"></a></dt>
+<dd><p>Conditional templates. Documentation only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.render" title="Permalink to this definition"></a></dt>
+<dd><p>Render the Template Tag as html.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.id">
+<span class="sig-name descname"><span class="pre">id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.id" title="Permalink to this definition"></a></dt>
+<dd><p>Get unique id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.label" title="Permalink to this definition"></a></dt>
+<dd><p>Get label argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.props">
+<span class="sig-name descname"><span class="pre">props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.props" title="Permalink to this definition"></a></dt>
+<dd><p>Filter arguments passed to Template Tag excluding the PROPS.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.tmpl">
+<span class="sig-name descname"><span class="pre">tmpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.tmpl" title="Permalink to this definition"></a></dt>
+<dd><p>Render individual templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.slot">
+<span class="sig-name descname"><span class="pre">slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.slot" title="Permalink to this definition"></a></dt>
+<dd><p>Render individual slots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.render_slots">
+<span class="sig-name descname"><span class="pre">render_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.render_slots" title="Permalink to this definition"></a></dt>
+<dd><p>Call the rendering methods and format children Template Tags.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.before_prepare">
+<span class="sig-name descname"><span class="pre">before_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.before_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.before_prepare_class_props">
+<span class="sig-name descname"><span class="pre">before_prepare_class_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.before_prepare_class_props" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize variables for storing html classes and attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.before_prepare_slots">
+<span class="sig-name descname"><span class="pre">before_prepare_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.before_prepare_slots" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the values meant for rendering slot templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.after_prepare">
+<span class="sig-name descname"><span class="pre">after_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.after_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Simplifying values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.after_prepare_class_props">
+<span class="sig-name descname"><span class="pre">after_prepare_class_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.after_prepare_class_props" title="Permalink to this definition"></a></dt>
+<dd><p>Join html classes and html attributes into single strings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.after_prepare_slots">
+<span class="sig-name descname"><span class="pre">after_prepare_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.after_prepare_slots" title="Permalink to this definition"></a></dt>
+<dd><p>Simplifying values meant for rendering slot templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.prune_attributes">
+<span class="sig-name descname"><span class="pre">prune_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.prune_attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Cleanup duplicate html attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.join_attributes">
+<span class="sig-name descname"><span class="pre">join_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.join_attributes" title="Permalink to this definition"></a></dt>
+<dd><p>Format html attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.eval">
+<span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.eval" title="Permalink to this definition"></a></dt>
+<dd><p>Evaluate argument passed to our Template Tag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.format" title="Permalink to this definition"></a></dt>
+<dd><p>Apply the prepared values to the templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.Node.set_child_props">
+<span class="sig-name descname"><span class="pre">set_child_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.Node.set_child_props" title="Permalink to this definition"></a></dt>
+<dd><p>Use context to set arguments for all children Template Tags.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">FormNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for form field tags.</p>
+<p>The first argument to the tag is the Django form field.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.BASE_NODE_PROPS">
+<span class="sig-name descname"><span class="pre">BASE_NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('widget',</span> <span class="pre">'hidden',</span> <span class="pre">'disabled',</span> <span class="pre">'mode',</span> <span class="pre">'tag',</span> <span class="pre">'class',</span> <span class="pre">'label')</span></em><a class="headerlink" href="#carbondesign.tags.base.FormNode.BASE_NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Base Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('help',</span> <span class="pre">'label',</span> <span class="pre">'wrapper')</span></em><a class="headerlink" href="#carbondesign.tags.base.FormNode.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.TEMPLATES">
+<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('help',)</span></em><a class="headerlink" href="#carbondesign.tags.base.FormNode.TEMPLATES" title="Permalink to this definition"></a></dt>
+<dd><p>Conditional templates. Documentation only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.RENDER_ELEMENT">
+<span class="sig-name descname"><span class="pre">RENDER_ELEMENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.base.FormNode.RENDER_ELEMENT" title="Permalink to this definition"></a></dt>
+<dd><p>Render the form field widget.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.id">
+<span class="sig-name descname"><span class="pre">id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.id" title="Permalink to this definition"></a></dt>
+<dd><p>Get Django form field html id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.label" title="Permalink to this definition"></a></dt>
+<dd><p>Get Django form field label.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.element">
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.element" title="Permalink to this definition"></a></dt>
+<dd><p>Render django form field.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.before_prepare">
+<span class="sig-name descname"><span class="pre">before_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.before_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.after_prepare">
+<span class="sig-name descname"><span class="pre">after_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.after_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Simplifying values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.prepare_element_props">
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.prepare_element_props" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare html attributes for rendering the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.choices">
+<span class="sig-name descname"><span class="pre">choices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.choices" title="Permalink to this definition"></a></dt>
+<dd><p>Get Django form field choices.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNode.render_tmpl_help">
+<span class="sig-name descname"><span class="pre">render_tmpl_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNode.render_tmpl_help" title="Permalink to this definition"></a></dt>
+<dd><p>Dynamically render a part of the component’s template.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">FormNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNodes" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for tags with multiple form fields.</p>
+<p>The arguments to the tag are all Django form fields.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes.BASE_NODE_PROPS">
+<span class="sig-name descname"><span class="pre">BASE_NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('widget',</span> <span class="pre">'hidden',</span> <span class="pre">'disabled',</span> <span class="pre">'mode',</span> <span class="pre">'tag',</span> <span class="pre">'class',</span> <span class="pre">'label')</span></em><a class="headerlink" href="#carbondesign.tags.base.FormNodes.BASE_NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Base Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes.elements">
+<span class="sig-name descname"><span class="pre">elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNodes.elements" title="Permalink to this definition"></a></dt>
+<dd><p>Render django form fields.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes.before_prepare">
+<span class="sig-name descname"><span class="pre">before_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNodes.before_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes.after_prepare">
+<span class="sig-name descname"><span class="pre">after_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNodes.after_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Simplifying values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.FormNodes.prepare_element_props">
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.FormNodes.prepare_element_props" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare html attributes for rendering the form element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.base.</span></span><span class="sig-name descname"><span class="pre">DumbFormNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode" title="Permalink to this definition"></a></dt>
+<dd><p>For rendering html elements without the associated Django form fields.</p>
+<p>Experimental.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.SLOTS">
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('help',</span> <span class="pre">'icon')</span></em><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.SLOTS" title="Permalink to this definition"></a></dt>
+<dd><p>Named children.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.BASE_NODE_PROPS">
+<span class="sig-name descname"><span class="pre">BASE_NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('hidden',</span> <span class="pre">'disabled',</span> <span class="pre">'mode',</span> <span class="pre">'tag',</span> <span class="pre">'class',</span> <span class="pre">'label')</span></em><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.BASE_NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Base Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.element">
+<span class="sig-name descname"><span class="pre">element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.element" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the form control.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.render_form_control">
+<span class="sig-name descname"><span class="pre">render_form_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.render_form_control" title="Permalink to this definition"></a></dt>
+<dd><p>Default to rendering input, need to be overridden by subclass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.after_prepare">
+<span class="sig-name descname"><span class="pre">after_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.after_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Post-process the values for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.prepare_element_props">
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.prepare_element_props" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare html attributes for rendering the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.render_slot_help">
+<span class="sig-name descname"><span class="pre">render_slot_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.render_slot_help" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.base.DumbFormNode.render_slot_icon">
+<span class="sig-name descname"><span class="pre">render_slot_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.base.DumbFormNode.render_slot_icon" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
+</dd></dl>
+
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="carbondesign.tags.accordion.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="carbondesign.tags.base_widgets.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fahri Reza &lt;i@dozy.moe&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

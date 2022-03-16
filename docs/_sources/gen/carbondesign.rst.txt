@@ -1,0 +1,13 @@
+carbondesign package
+====================
+
+.. automodule:: carbondesign
+   :members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carbondesign.tags
