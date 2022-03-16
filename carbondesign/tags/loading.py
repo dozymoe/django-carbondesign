@@ -1,4 +1,22 @@
-"""Implements Carbon Design Component: Loading
+"""
+Loading
+=======
+
+See: https://www.carbondesignsystem.com/components/loading/usage/
+
+Loading spinners are used when retrieving data or performing slow computations,
+and help to notify users that loading is underway.
+
+Overview
+--------
+
+Loading spinners are used when retrieving data or performing slow computations.
+They notify to the user that their request is being processed. Although they
+do not provide details about what is occurring on the back-end, they reassure
+the user that their action is being processed.
+
+Use a loading spinner whenever the wait time is anticipated to be longer than
+three seconds.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

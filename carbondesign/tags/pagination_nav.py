@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Pagination Nav
+"""
+Pagination Nav
+==============
+
+See: https://the-carbon-components.netlify.app/?nav=pagination-nav
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

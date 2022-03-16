@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: List Box
+"""
+List Box
+========
+
+See: https://the-carbon-components.netlify.app/?nav=list-box
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

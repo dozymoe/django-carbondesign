@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Code Snippet
+"""
+Code Snippet
+============
+
+See: https://www.carbondesignsystem.com/components/code-snippet/usage/
+
+Code snippets are strings or small blocks of reusable code that can be copied
+and inserted in a code file.
+
+Overview
+--------
+
+There are three different variants of code snippets to help cater to varied
+line length use cases—inline, single line, and multi-line.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

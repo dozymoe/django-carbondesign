@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Text input
+"""
+Text Input
+==========
+
+See: https://www.carbondesignsystem.com/components/text-input/usage/
+
+Text inputs enable the user to interact with and input content and data. This
+component can be used for long and short form entries.
+
+Overview
+--------
+
+There are instances, sometimes in the same form, where you need users to enter
+both short and long form content. Allow the size of the text input box to
+reflect the length of the content you expect the user to enter.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Combo Box
+"""
+Combo Box
+=========
+
+See: https://the-carbon-components.netlify.app/?nav=combo-box
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

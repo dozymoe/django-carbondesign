@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: Structured List
+"""
+Structured List
+===============
+
+See: https://www.carbondesignsystem.com/components/structured-list/usage/
+
+Structured lists group content that is similar or related, such as terms and
+definitions.
+
+Overview
+--------
+
+Structured list displays a simple list with a considerable amount of items of
+read-only values. It helps organize and present grouped information into
+logical and scannable patterns. The content within a list can be stacked to
+create hierarchy within the data.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

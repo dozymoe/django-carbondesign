@@ -1,4 +1,23 @@
-"""Implements Carbon Design Component: Data Table
+"""
+Data Table
+==========
+
+See: https://www.carbondesignsystem.com/components/data-table/usage/
+
+Data tables are used to organize and display data efficiently. The data table
+component allows for customization with additional functionality, as needed by
+your product’s users.
+
+Overview
+--------
+
+The data table’s features are ideal for organizing and displaying data in a UI.
+The column headers can sort data in ascending or descending order, rows can be
+expanded to progressively disclose information, and single or batch actions can
+be taken on rows.
+
+The data table toolbar gives a location for primary buttons, search, filtering,
+table display settings, and other utilities.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

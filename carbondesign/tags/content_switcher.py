@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Content Switcher
+"""
+Content Switcher
+================
+
+See: https://www.carbondesignsystem.com/components/content-switcher/usage/
+
+Content switchers allow users to toggle between two or more content sections
+within the same space on screen.
+
+Overview
+--------
+
+Content switchers allow users to toggle between alternate views of similar or
+related content. Only one content section is shown at a time.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: Pagination
+"""
+Pagination
+==========
+
+See: https://www.carbondesignsystem.com/components/pagination/usage/
+
+Pagination is used for splitting up content or data into several pages, with
+a control for navigating to the next or previous page.
+
+Overview
+--------
+
+Generally, pagination is used if there are more than 25 items displayed in
+one view.
+
+The default number displayed will vary depending on the context.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

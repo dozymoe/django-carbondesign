@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Toolbar
+"""
+Toolbar
+=======
+
+See: https://the-carbon-components.netlify.app/?nav=toolbar
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

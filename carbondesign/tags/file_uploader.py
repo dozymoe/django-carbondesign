@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: File Uploader
+"""
+File Uploader
+=============
+
+See: https://www.carbondesignsystem.com/components/file-uploader/usage/
+
+File uploaders allow users to select one or more files to upload to a specific
+location.
+
+Overview
+--------
+
+File uploaders allow users to upload content of their own. A file uploader is
+commonly found in forms, but can also live as a standalone element. There are
+two variants of file uploaders—our default file uploader and a drag and drop
+file uploader.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Radio Button
+"""
+Radio Button
+============
+
+See: https://www.carbondesignsystem.com/components/radio-button/usage/
+
+Use radio buttons when you have a group of mutually exclusive choices and only
+one selection from the group is allowed.
+
+Overview
+--------
+
+Radio buttons are used for mutually exclusive choices, not for multiple
+choices. Only one radio button can be selected at a time. When a user chooses
+a new item, the previous choice is automatically deselected.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

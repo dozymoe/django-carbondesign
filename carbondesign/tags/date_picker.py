@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: Date Picker
+"""
+Date Picker
+===========
+
+See: https://www.carbondesignsystem.com/components/date-picker/usage/
+
+Date and time pickers allow users to select a single or a range of dates and
+times.
+
+Overview
+--------
+
+Pickers are used to display past, present, or future dates or times. The kind
+of date (exact, approximate, memorable) you are requesting from the user will
+determine which picker is best to use. Each picker’s format can be customized
+depending on location or need.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

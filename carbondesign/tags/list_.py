@@ -1,4 +1,22 @@
-"""Implements Carbon Design Component: List
+"""
+List
+====
+
+See: https://www.carbondesignsystem.com/components/list/usage/
+
+Lists are vertical groupings of related content. List items begin with either
+a number or a bullet.
+
+Overview
+--------
+
+Lists consist of related content grouped together and organized vertically.
+
+Use bulleted lists when you don’t need to convey a specific order for list
+items.
+
+Use numbered lists when you need to convey a priority, hierarchy, or sequence
+between list items.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

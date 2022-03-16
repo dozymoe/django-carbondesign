@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Copy Button
+"""
+Copy Button
+===========
+
+See: https://the-carbon-components.netlify.app/?nav=copy-button
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

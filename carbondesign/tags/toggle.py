@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Toggle
+"""
+Toggle
+======
+
+See: https://www.carbondesignsystem.com/components/toggle/usage/
+
+A toggle is used to quickly switch between two possible states. They are
+commonly used for “on/off” switches.
+
+Overview
+--------
+
+Toggle is a control that is used to quickly switch between two possible states.
+Toggles are only used for these binary actions that occur immediately after
+the user “flips the switch”. They are commonly used for “on/off” switches.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

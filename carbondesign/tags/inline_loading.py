@@ -1,4 +1,23 @@
-"""Implements Carbon Design Component: Inline Loading
+"""
+Inline Loading
+==============
+
+See: https://www.carbondesignsystem.com/components/inline-loading/usage/
+
+The inline loading component provides visual feedback that data is being
+processed.
+
+Overview
+--------
+
+Inline loading spinners are used when performing actions. They notify to
+the user that their request is being processed. Although they do not provide
+details about what is occurring on the back-end, they reassure the user that
+their action is being processed.
+
+Common actions that benefit from inline loading include any create, update,
+or delete actions that may have a lot of data to process. It can be used in
+a table, after a primary or secondary button click, or even in a modal.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

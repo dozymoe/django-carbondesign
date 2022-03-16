@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Search
+"""
+Search
+======
+
+See: https://www.carbondesignsystem.com/components/search/usage/
+
+Search enables users to specify a word or a phrase to find relevant pieces of
+content without the use of navigation.
+
+Overview
+--------
+
+Search offers users a way to explore a website or application using keywords.
+Search can be used as the primary means of discovering content, or as a filter
+to aid the user in finding content.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

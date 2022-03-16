@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: Tag
+"""
+Tag
+===
+
+See: https://www.carbondesignsystem.com/components/tag/usage/
+
+Use tags to label, categorize, or organize items using keywords that describe
+them.
+
+Overview
+--------
+
+Multiple or single tags can be used to categorize items.
+
+Use short labels for easy scanning. Use two words only if necessary to
+describe the status and differentiate it from other tags.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

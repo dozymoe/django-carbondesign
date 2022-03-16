@@ -1,4 +1,22 @@
-"""Implements Carbon Design Component: Tile
+"""
+Tile
+====
+
+See: https://www.carbondesignsystem.com/components/tile/usage/
+
+Tiles are a highly flexible component for displaying a wide variety of
+content, including information, getting started, how-to, next steps, and more.
+
+Overview
+--------
+
+Carbon ships a basic tile structure that responds to the grid. Based on the
+layout structure, tiles can contain type, images and/or a block of color.
+As tiles have no pre-set styles for the content within them, the tile
+component usage guidance is purposefully high-level. It focuses specifically
+on the tile itself, not the structure of the information or interactive
+elements that the tile contains—that type of information will be found in
+the card pattern.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

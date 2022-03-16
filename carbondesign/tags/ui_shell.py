@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: UI Shell
+"""
+UI Shell
+========
+
+See: https://the-carbon-components.netlify.app/?nav=ui-shell
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

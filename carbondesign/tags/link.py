@@ -1,4 +1,20 @@
-"""Implements Carbon Design Component: Link
+"""
+Link
+====
+
+See: https://www.carbondesignsystem.com/components/link/usage/
+
+Links are used as navigational elements. They may appear on their own, within
+a sentence or paragraph, or directly following the content.
+
+Overview
+--------
+
+Links are used as navigational elements and can be used on their own or inline
+with text. They provide a lightweight option for navigation but like other
+interactive elements, too many links will clutter a page and make it difficult
+for users to identify their next steps. This is especially true for inline
+links, which should be used sparingly.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Breadcrumb
+"""
+Breadcrumb
+==========
+
+See: https://www.carbondesignsystem.com/components/breadcrumb/usage/
+
+The breadcrumb is a secondary navigation pattern that helps a user understand
+the hierarchy among levels and navigate back through them.
+
+Overview
+--------
+
+Breadcrumbs show users their current location relative to the information
+architecture and enable them to quickly move up to a parent level or previous
+step.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

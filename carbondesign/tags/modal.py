@@ -1,4 +1,25 @@
-"""Implements Carbon Design Component: Modal
+"""
+Modal
+=====
+
+See: https://www.carbondesignsystem.com/components/modal/usage/
+
+Modals focus the user’s attention exclusively on one task or piece of
+information via a window that sits on top of the page content.
+
+Overview
+--------
+
+Modals are a variant of dialog used to present critical information or request
+user input needed to complete a user’s workflow. Modals interrupt a user’s
+workflow by design. When active, a user is blocked from the on-page content
+and cannot return to their previous workflow until the modal task is completed
+or the user dismisses the modal. While effective when used correctly, modals
+should be used sparingly to limit disruption to the user.
+
+Modal dialogs are commonly used for short and non-frequent tasks, such as
+editing or management tasks. If a user needs to repeatably preform a task,
+consider making the task do-able from the main page.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

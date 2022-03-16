@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Grid
+"""
+Grid
+====
+
+See: https://the-carbon-components.netlify.app/?nav=grid
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

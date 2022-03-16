@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Overflow Menu
+"""
+Overflow Menu
+=============
+
+See: https://www.carbondesignsystem.com/components/overflow-menu/usage/
+
+Use the overflow menu component when additional options are available to the
+user but there is a space constraint.
+
+Overview
+--------
+
+Overflow menu is used when additional options are available to the user and
+there is a space constraint.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

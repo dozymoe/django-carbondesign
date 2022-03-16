@@ -1,4 +1,18 @@
-"""Implements Carbon Design Component: Progress Indicator
+"""
+Progress Indicator
+==================
+
+See: https://www.carbondesignsystem.com/components/progress-indicator/usage/
+
+A progress indicator is a visual representation of a user’s progress through
+a set of steps, guiding toward the completion of a specified process.
+
+Overview
+--------
+
+Use progress indicators to keep the user on track when completing a specific
+task. By dividing the end goal into smaller, sub-tasks, it increases the
+percentage of completeness as each task is completed.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

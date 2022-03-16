@@ -1,4 +1,19 @@
-"""Implements Carbon Design Component: Button
+"""
+Button
+======
+
+See: https://www.carbondesignsystem.com/components/button/usage/
+
+Buttons are used to initialize an action. Button labels express what action
+will occur when the user interacts with it.
+
+Overview
+--------
+
+Buttons are clickable elements that are used to trigger actions. They
+communicate calls to action to the user and allow users to interact with pages
+in a variety of ways. Button labels express what action will occur when
+the user interacts with it.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

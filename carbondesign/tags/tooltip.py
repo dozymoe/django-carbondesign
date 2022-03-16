@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Tooltip
+"""
+Tooltip
+=======
+
+See: https://www.carbondesignsystem.com/components/tooltip/usage/
+
+Tooltips display additional information upon click, hover, or focus. The
+information should be contextual, useful, and nonessential.
+
+Overview
+--------
+
+A tooltip is a message box that is displayed when a user hovers over, clicks
+or gives focus to a UI element such as an icon, a highlighted word, or a button.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

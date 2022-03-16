@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Number Input
+"""
+Number Input
+============
+
+See: https://www.carbondesignsystem.com/components/number-input/usage/
+
+The number input component is used for entering numeric values and includes
+controls for incrementally increasing or decreasing the value.
+
+Overview
+--------
+
+Number inputs are similar to text inputs, but contain controls used to
+increase or decrease an incremental value.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,24 @@
-"""Implements Carbon Design Component: Notification
+"""
+Notification
+============
+
+See: https://www.carbondesignsystem.com/components/notification/usage/
+
+Notifications are messages that communicate information to the user. The two
+main variants of notifications are toast notifications and inline notifications.
+
+Overview
+--------
+
+Use notifications to inform users of updates or changes to system status.
+Communicating with users and providing immediate feedback are important for
+building trust. While notifications are an effective method of communicating
+with users, they are disruptive and should be used sparingly.
+
+For more context on when to use each notification variant, including modals,
+refer to the notifications pattern. Carbon only supports inline, toast, and
+modal notification variants, although some product teams also support banners
+and notification centers.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

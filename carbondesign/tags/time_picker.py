@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Time Picker
+"""
+Time Picker
+===========
+
+See: https://the-carbon-components.netlify.app/?nav=time-picker
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

@@ -1,4 +1,9 @@
-"""Implements Carbon Design Component: Multi Select
+"""
+Multi Select
+============
+
+See: https://the-carbon-components.netlify.app/?nav=multi-select
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

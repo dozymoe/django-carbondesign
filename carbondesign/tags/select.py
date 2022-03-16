@@ -1,4 +1,17 @@
-"""Implements Carbon Design Component: Select
+"""
+Select
+======
+
+See: https://www.carbondesignsystem.com/components/select/usage/
+
+The select component allows users to choose one option from a list. It is used
+in forms for users to submit data.
+
+Overview
+--------
+
+Select is a type of input that is used in forms, where a user is submitting
+data and chooses one option from a list.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 

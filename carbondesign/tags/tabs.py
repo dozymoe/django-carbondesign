@@ -1,4 +1,16 @@
-"""Implements Carbon Design Component: Tabs
+"""
+Tabs
+====
+
+See: https://www.carbondesignsystem.com/components/tabs/usage/
+
+Use tabs to allow users to navigate easily between views within the same
+context.
+
+Overview
+--------
+
+Tabs are used to quickly navigate between views within the same context.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
