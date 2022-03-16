@@ -445,10 +445,11 @@ m('div',
   modify_svg(values.child,
     {
       preserveAspectRation: 'xMidYMid meet',
-      style: [
-        'will-change:transform',
-        `width:${size}px`,
-        `height:${size}px`].join('; '),
+      style: {
+        'will-change': 'transform',
+        width: size,
+        height: size,
+      },
       'aria-hidden': true,
     }))
 //##
@@ -588,13 +589,16 @@ m('div',
   {
     'class': `bx--side-nav__icon ${values['class']}`,
   },
-  modify_svg(values.child, {
-    preserveAspectRatio: 'xMidYMid meet',
-    style: [
-      'will-change:transform',
-      'width:20px',
-      'height:20px'].join('; '),
-    'aria-hidden': true}))
+  modify_svg(values.child,
+    {
+      preserveAspectRatio: 'xMidYMid meet',
+      style: {
+        'will-change': 'transform',
+        width: 20,
+        height: 20,
+      },
+      'aria-hidden': true,
+    }))
 //##
         );
     }

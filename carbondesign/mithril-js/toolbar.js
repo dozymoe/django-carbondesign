@@ -138,14 +138,18 @@ m('div.bx--overflow-menu',
 
     render_slot_icon(vnode, values, context)
     {
-        return modify_svg(values.child, {
-            focusable: false,
-            preserveAspectRatio: 'xMidYMid meet',
-            fill: 'currentColor',
-            'class': 'bx--overflow-menu__icon bx--toolbar-filter-icon',
-            style: 'width:16px; height:16px',
-            'aria-hidden': true,
-        })
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                fill: 'currentColor',
+                'class': 'bx--overflow-menu__icon bx--toolbar-filter-icon',
+                style: {
+                    width: 16,
+                    height: 16,
+                },
+                'aria-hidden': true,
+            })
     }
 }
 

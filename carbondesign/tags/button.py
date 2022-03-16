@@ -70,11 +70,11 @@ class Button(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                f'width:{size}px',
-                f'height:{size}px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': size,
+                'height': size,
+            },
             'aria-hidden': 'true',
             'class': 'bx--btn__icon ' + values['class'],
         })

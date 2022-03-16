@@ -28,8 +28,10 @@ def modify_svg(xml, props):
     """
     # pylint:disable=c-extension-no-member
     root = etree.fromstring(xml)
-    for key, value in props.items():
-        root.attrib[key] = value
+    for attr, value in props.items():
+        if attr == 'style':
+            value = ';'.join('%s:%s' % (x, y) for x, y in value.items())
+        root.attrib[attr] = value
     return etree.tostring(root).decode()
 
 

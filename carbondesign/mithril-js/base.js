@@ -1,4 +1,22 @@
 import { fromPairs, isArray, uniqueId } from 'lodash';
+import m from 'mithril/hyperscript';
+
+export function modify_svg(xml, props)
+{
+    let tmpl = document.createElement('template');
+    tmpl.innerHTML = xml.trim();
+    let svg = tmpl.content.firstChild;
+    for (let attr in props)
+    {
+        let value = props[attr];
+        if (attr === 'style')
+        {
+            value = Object.entries(attr).map(x => x.join(':')).join(';');
+        }
+        svg.setAttribute(attr, value);
+    }
+    return m.trust(tmpl.innerHTML);
+}
 
 class DummyNodeList
 {

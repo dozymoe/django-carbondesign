@@ -1,6 +1,6 @@
 import m from 'mithril/hyperscript';
 //-
-import { Node, modify_svg } from './base';
+import { Node } from './base';
 
 export class Grid extends Node
 {

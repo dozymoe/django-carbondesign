@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 16:04+0700\n"
+"POT-Creation-Date: 2022-03-16 17:35+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,18 +236,18 @@ msgstr "Daftar pilihan"
 msgid "Skip to main content"
 msgstr "Langsung ke konten utama"
 
-#: carbondesign/tags/ui_shell.py:421
+#: carbondesign/tags/ui_shell.py:424
 msgid "Side navigation"
 msgstr "Navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:466
+#: carbondesign/tags/ui_shell.py:469
 msgid "Close the side navigation menu"
 msgstr "Tutup navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:467
+#: carbondesign/tags/ui_shell.py:470
 msgid "Toggle the expansion state of the navigation"
 msgstr "Buka tutup navigasi"
 
-#: carbondesign/tags/ui_shell.py:531
+#: carbondesign/tags/ui_shell.py:534
 msgid "Switcher"
 msgstr "Pemilih"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 14:24+0700\n"
+"POT-Creation-Date: 2022-03-16 17:33+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -249,19 +249,19 @@ msgstr "Daftar pilihan"
 msgid "Skip to main content"
 msgstr "Loncat ke konten"
 
-#: carbondesign/mithril-js/uishell.js:469
+#: carbondesign/mithril-js/uishell.js:470
 msgid "Side navigation"
 msgstr "Navigasi samping"
 
-#: carbondesign/mithril-js/uishell.js:470
+#: carbondesign/mithril-js/uishell.js:471
 msgid "Close the side navigation menu"
 msgstr "Tutup menu navigasi samping"
 
-#: carbondesign/mithril-js/uishell.js:471
+#: carbondesign/mithril-js/uishell.js:472
 msgid "Toggle the expansion state of the navigation"
 msgstr "Tutup buka navigasi"
 
-#: carbondesign/mithril-js/uishell.js:472
+#: carbondesign/mithril-js/uishell.js:473
 msgid "Switcher"
 msgstr "Penampil"
 

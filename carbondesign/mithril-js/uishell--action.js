@@ -1,7 +1,7 @@
 import ProductSwitcher from 'carbon-components/src/components/ui-shell/product-switcher';
 import m from 'mithril/hyperscript';
 //-
-import { Node } from './base';
+import { Node, modify_svg } from './base';
 
 export class UiShellAction extends Node
 {
@@ -23,7 +23,6 @@ export class UiShellAction extends Node
     prepare(vnode, values, context)
     {
         values.txt_close_menu = gettext("Close menu");
-        values.target = vnode.attrs.target;
     }
 
     render_default(vnode, values, context)
@@ -37,7 +36,7 @@ m(values.tag,
     title: values.label,
     'data-navigation-menu-panel-label-expand': values.label,
     'data-navigation-menu-panel-label-collapse': values.txt_close_menu,
-    'data-product-switcher-target': values.target,
+    'data-product-switcher-target': `#${vnode.attrs.target}`,
     ...values.props,
   },
   [
@@ -51,43 +50,33 @@ m(values.tag,
 
     render_slot_svg_close(values, context)
     {
-        return (
-//##
-m('svg.bx--navigation-menu-panel-collapse-icon',
-  {
-    focusable: false,
-    preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
-    xmlns: 'http://www.w3.org/2000/svg',
-    'aria-hidden': true,
-    width: 20,
-    height: 20,
-    viewBox: '0 0 32 32',
-    ...values.props,
-  },
-  values.child)
-//##
-        );
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                style: {
+                    'will-change': 'transform',
+                    width: 20,
+                    height: 20,
+                },
+                'aria-hidden': true,
+                'class': 'bx--navigation-menu-panel-collapse-icon',
+            })
     }
 
     render_slot_svg_open(values, context)
     {
-        return (
-//##
-m('svg.bx--navigation-menu-panel-expand-icon',
-  {
-    focusable: false,
-    preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
-    xmlns: 'http://www.w3.org/2000/svg',
-    'aria-hidden': true,
-    width: 20,
-    height: 20,
-    viewBox: '0 0 32 32',
-    ...values.props,
-  },
-  values.child)
-//##
-        );
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                style: {
+                    'will-change': 'transform',
+                    width: 20,
+                    height: 20,
+                },
+                'aria-hidden': true,
+                'class': 'bx--navigation-menu-panel-expand-icon',
+            })
     }
 }

@@ -103,10 +103,10 @@ class ToolbarItem(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'class': 'bx--overflow-menu__icon bx--toolbar-filter-icon',
-            'style': '; '.join([
-                'width:16px',
-                'height:16px',
-            ]),
+            'style': {
+                'width': 16,
+                'height': 16,
+            },
             'aria-hidden': 'true',
         })
 

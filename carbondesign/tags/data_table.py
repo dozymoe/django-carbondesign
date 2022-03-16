@@ -609,11 +609,11 @@ class TdOverflowButton(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                f'width:{size}px',
-                f'height:{size}px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': size,
+                'height': size,
+            },
             'aria-hidden': 'true',
             'class': values['class'],
         })

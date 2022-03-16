@@ -241,9 +241,14 @@ class Action(Node):
         """Output html of the component.
         """
         template = """
-<div class="bx--header__global {class}" {props}>
-  {child}
-</div>
+<{tag} class="bx--header__menu-trigger bx--header__action {class}"
+    aria-label="{label}" title="{label}"
+    data-navigation-menu-panel-label-expand="{label}"
+    data-navigation-menu-panel-label-collapse="{txt_close_menu}"
+    data-switcher-target="#{target}" {props}>
+  {slot_svg_open}
+  {slot_svg_close}
+</{tag}>
 """
         return self.format(template, values)
 
@@ -254,14 +259,13 @@ class Action(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                'width:20px',
-                'height:20px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': 20,
+                'height': 20,
+            },
             'aria-hidden': 'true',
-            'class': 'bx--navigation-menu-panel-expand-icon ' +\
-                values['class'],
+            'class': 'bx--navigation-menu-panel-expand-icon',
         })
 
 
@@ -271,14 +275,13 @@ class Action(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                'width:20px',
-                'height:20px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': 20,
+                'height': 20,
+            },
             'aria-hidden': 'true',
-            'class': 'bx--navigation-menu-panel-collapse-icon ' +\
-                values['class'],
+            'class': 'bx--navigation-menu-panel-collapse-icon',
         })
 
 
@@ -387,11 +390,11 @@ class NavItem(Node):
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                f'width:{size}px',
-                f'height:{size}px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': size,
+                'height': size,
+            },
             'aria-hidden': 'true',
         })
 
@@ -497,11 +500,11 @@ class SideNav(Node):
         """
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                'width:20px',
-                'height:20px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': 20,
+                'height': 20,
+            },
             'aria-hidden': 'true',
         })
         template = """
@@ -643,11 +646,11 @@ class SideNavItem(Node):
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
-            'style': '; '.join([
-                'will-change:transform',
-                f'width:{size}px',
-                f'height:{size}px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': size,
+                'height': size,
+            },
             'aria-hidden': 'true',
         })
         template = """

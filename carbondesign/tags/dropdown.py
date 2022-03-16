@@ -185,11 +185,11 @@ class DropdownItem(Node):
             'fill': 'currentColor',
             'class': 'bx--list-box__menu-item__selected-icon ' +\
                 values['class'],
-            'style': '; '.join([
-                'will-change:transform',
-                'width:16px',
-                'height:16px',
-            ]),
+            'style': {
+                'will-change': 'transform',
+                'width': 16,
+                'height': 16,
+            },
             'aria-hidden': 'true',
         })
 

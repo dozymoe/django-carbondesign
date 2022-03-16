@@ -291,17 +291,18 @@ m('li',
 
     render_slot_icon(vnode, values, context)
     {
-        return modify_svg(values.child, {
-            'focusable': false,
-            'preserveAspectRatio': 'xMidYMid meet',
-            'fill': 'currentColor',
-            'class': `bx--list-box__menu-item__selected-icon ${values['class']}`,
-            'style': [
-                'will-change:transform',
-                'width:16px',
-                'height:16px',
-            ].join('; '),
-            'aria-hidden': true,
-        })
+        return modify_svg(values.child,
+            {
+                'focusable': false,
+                'preserveAspectRatio': 'xMidYMid meet',
+                'fill': 'currentColor',
+                'class': `bx--list-box__menu-item__selected-icon ${values['class']}`,
+                'style': {
+                    'will-change': 'transform',
+                    width: 16,
+                    height: 16,
+                },
+                'aria-hidden': true,
+            })
     }
 }

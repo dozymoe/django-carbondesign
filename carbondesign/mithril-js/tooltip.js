@@ -117,13 +117,17 @@ m('button',
 
     render_slot_icon(vnode, values, context)
     {
-        return modify_svg(values.child, {
-            focusable: false,
-            preserveAspectRatio: 'xMidYMid meet',
-            fill: 'currentColor',
-            style: 'width:16px; height:16px',
-            'aria-hidden': true,
-        })
+        return modify_svg(values.child,
+            {
+                focusable: false,
+                preserveAspectRatio: 'xMidYMid meet',
+                fill: 'currentColor',
+                style: {
+                    width: 16,
+                    height: 16,
+                },
+                'aria-hidden': true,
+            })
     }
 
     render_slot_footer(vnode, values, context)
