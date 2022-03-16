@@ -40,7 +40,7 @@ export class StructuredListSelect extends FormNode
 //##
 m('section.bx--structured-list.bx--structured-list--selection',
   {
-    'data-structured-list': "',
+    'data-structured-list': '',
   },
   [
     m('div.bx--structured-list-thead', null,

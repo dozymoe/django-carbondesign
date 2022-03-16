@@ -348,10 +348,10 @@ m('section',
 }
 
 
-export TrExpandable extends Node
+export class TrExpandable extends Node
 {
     WANT_CHILDREN = true
-    SLOTS = ['subrow',]
+    SLOTS = ['subrow']
 
     render_default(vnode, values, context)
     {
@@ -399,7 +399,7 @@ m.fragment(null,
         },
         m('div.bx--child-row-inner-container', null,
           this.slot('subrow', ...arguments)))),
-  ]),
+  ])
 //##
         );
     }
@@ -918,7 +918,6 @@ m('li.bx--overflow-menu-options__option.bx--table-row--menu-option',
                 'aria-hidden': true,
                 'class': values['class'],
                 ...values.props,
-            })
-        );
+            });
     }
 }
