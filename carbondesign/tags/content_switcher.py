@@ -64,7 +64,7 @@ class ContentSwitcherItem(Node):
         template = """
 <{tag} class="bx--content-switcher-btn {class}" data-target="{target}"
     role="tab" {props}>
-  <span class=bx--content-switcher__label>{child}</span>
+  <span class="bx--content-switcher__label">{child}</span>
 </{tag}>
 """
         return self.format(template, values)

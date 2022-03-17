@@ -25,8 +25,9 @@ carbondesign:
   unittest:
     shell:
       options:
-        #command: ./run pybin coverage run --include=./carbondesign/tests/* -m py.test
-        command: ./run django-manage test --testrunner="test_runner.UnitTestRunner"
+        command: >
+          ./run pybin coverage run --include=./carbondesign/tags/*
+          ../run django-manage test --testrunner="test_runner.UnitTestRunner"
       rule_in:
         - "{_1}/tags/pylint"
         - "{_1}/templatetags/pylint"

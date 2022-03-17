@@ -3,36 +3,34 @@ from django.test import SimpleTestCase
 #-
 from .base import compare_template
 
-class BreadcrumbTest(SimpleTestCase):
+class ButtonTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% Breadcrumb %}
-{% endBreadcrumb %}
+{% Button %}
+{% endButton %}
 """
         expected = """
-<nav class="bx--breadcrumb" aria-label="breadcrumb">
-</nav>
+<button class="bx--btn bx--btn--primary">
+</button>
 """
         rendered = compare_template(template, expected)
         self.assertEqual(*rendered)
 
 
-class BreadcrumbItemTest(SimpleTestCase):
+class ButtonSetTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% BreadcrumbItem %}
-{% endBreadcrumbItem %}
+{% ButtonSet %}
+{% endButtonSet %}
 """
         expected = """
-<div class="bx--breadcrumb-item">
-  <a href="{href}" class="bx--link">
-  </a>
+<div class="bx--btn-set">
 </div>
 """
         rendered = compare_template(template, expected)

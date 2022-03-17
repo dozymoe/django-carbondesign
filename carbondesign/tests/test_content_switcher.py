@@ -3,37 +3,39 @@ from django.test import SimpleTestCase
 #-
 from .base import compare_template
 
-class BreadcrumbTest(SimpleTestCase):
+class ContentSwitcherTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% Breadcrumb %}
-{% endBreadcrumb %}
+{% ContentSwitcher %}
+{% endContentSwitcher %}
 """
         expected = """
-<nav class="bx--breadcrumb" aria-label="breadcrumb">
-</nav>
+<div data-content-switcher class="bx--content-switcher" role="tablist"
+    aria-label="None">
+</div>
 """
         rendered = compare_template(template, expected)
         self.assertEqual(*rendered)
 
 
-class BreadcrumbItemTest(SimpleTestCase):
+class ContentSwitcherItemTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% BreadcrumbItem %}
-{% endBreadcrumbItem %}
+{% ContentSwitcherItem target='uid' %}
+{% endContentSwitcherItem %}
 """
         expected = """
-<div class="bx--breadcrumb-item">
-  <a href="{href}" class="bx--link">
-  </a>
-</div>
+<button class="bx--content-switcher-btn" data-target="uid"
+    role="tab">
+  <span class="bx--content-switcher__label">
+</span>
+</button>
 """
         rendered = compare_template(template, expected)
         self.assertEqual(*rendered)
