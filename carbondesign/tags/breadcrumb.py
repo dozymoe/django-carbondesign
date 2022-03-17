@@ -55,13 +55,16 @@ class BreadcrumbItem(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    NODE_PROPS = ('href', 'current',)
+    NODE_PROPS = ('href', 'current')
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
+        values['href'] = self.eval(self.kwargs.get('href', '#'), context)
+
         if self.eval(self.kwargs.get('current', False), context):
+            values['wrapper_class'].append('bx--breadcrumb-item--current')
             values['props'].append(('aria-current', 'page'))
 
 
@@ -69,8 +72,8 @@ class BreadcrumbItem(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--breadcrumb-item {class}" {props}>
-  <a href="{href}" class="bx--link">
+<{tag} class="bx--breadcrumb-item {wrapper_class}" {wrapper_props}>
+  <a href="{href}" class="bx--link {class}" {props}>
     {child}
   </a>
 </{tag}>
