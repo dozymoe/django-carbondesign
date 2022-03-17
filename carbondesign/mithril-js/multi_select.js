@@ -227,13 +227,13 @@ m('div.bx--list-box__menu-icon', null,
 
     render_tmpl_items(vnode, values, context)
     {
-        let values = this.bound_field.value();
+        let selected = this.bound_field.value();
 
         let items = [], ii = 0;
         for (let [group, val, txt] of this.choices(context))
         {
             let props = {};
-            if (values.indexOf(val) != -1)
+            if (selected.indexOf(val) != -1)
             {
                 props['checked'] = '';
             }

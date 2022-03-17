@@ -26,7 +26,7 @@ class AccordionItemTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% AccordionItem id='uid' %}
+{% AccordionItem id="uid" %}
 {% endAccordionItem %}
 """
         expected = """

@@ -11,7 +11,7 @@ class DatePickerTest(SimpleTestCase):
 {% load carbondesign %}
 {% DatePicker form.started_at %}
 """
-        expected = """
+        expected = r"""
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="single"
       class="bx--date-picker bx--date-picker--single">
@@ -44,7 +44,7 @@ class RangeDatePickerTest(SimpleTestCase):
 {% load carbondesign %}
 {% RangeDatePicker form.started_at form.stopped_at %}
 """
-        expected = """
+        expected = r"""
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="range"
       class="bx--date-picker bx--date-picker--range">

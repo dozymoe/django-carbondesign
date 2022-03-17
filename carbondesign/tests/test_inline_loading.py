@@ -1,46 +1,17 @@
-"""
-Inline Loading
-==============
-
-See: https://www.carbondesignsystem.com/components/inline-loading/usage/
-
-The inline loading component provides visual feedback that data is being
-processed.
-
-Overview
---------
-
-Inline loading spinners are used when performing actions. They notify to
-the user that their request is being processed. Although they do not provide
-details about what is occurring on the back-end, they reassure the user that
-their action is being processed.
-
-Common actions that benefit from inline loading include any create, update,
-or delete actions that may have a lot of data to process. It can be used in
-a table, after a primary or secondary button click, or even in a modal.
-""" # pylint:disable=line-too-long
-# pylint:disable=too-many-lines
-
-from django.utils.translation import gettext as _
+# pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
+from django.test import SimpleTestCase
 #-
-from .base import Node
+from .base import compare_template
 
-class InlineLoading(Node):
-    """Inline Loading component.
-    """
+class InlineLoadingTest(SimpleTestCase):
+    maxDiff = None
 
-    def prepare(self, values, context):
-        """Prepare values for rendering the templates.
-        """
-        values['txt_loading'] = _("Loading data...")
-        values['txt_loaded'] = _("Data loaded.")
-        values['txt_failed'] = _("Loading data failed.")
-
-
-    def render_default(self, values, context):
-        """Output html of the component.
-        """
+    def test_rendered(self):
         template = """
+{% load carbondesign %}
+{% InlineLoading %}
+"""
+        expected = """
 <div data-inline-loading class="bx--inline-loading" role="alert"
     aria-live="assertive">
   <div class="bx--inline-loading__animation">
@@ -66,19 +37,15 @@ class InlineLoading(Node):
     </svg>
   </div>
   <p data-inline-loading-text-active class="bx--inline-loading__text">
-    {txt_loading}
+    Loading data...
   </p>
   <p data-inline-loading-text-finished hidden class="bx--inline-loading__text">
-    {txt_loaded}
+    Data loaded.
   </p>
   <p data-inline-loading-text-error hidden class="bx--inline-loading__text">
-    {txt_failed}
+    Loading data failed.
   </p>
 </div>
 """
-        return self.format(template, values)
-
-
-components = {
-    'InlineLoading': InlineLoading,
-}
+        rendered = compare_template(template, expected)
+        self.assertEqual(*rendered)

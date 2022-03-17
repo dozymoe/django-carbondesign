@@ -187,7 +187,7 @@ class DropdownItem(Node):
   {slot_icon}
 </li>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_slot_icon(self, values, context):

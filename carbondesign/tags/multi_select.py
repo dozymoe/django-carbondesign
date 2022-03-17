@@ -178,18 +178,18 @@ class MultiSelect(FormNode):
   </div>
 </div>
 """
-        values = self.bound_field.value()
+        selected = self.bound_field.value()
 
         items = []
         for ii, (_, val, txt) in enumerate(self.choices(context)):
             options = {
-                'id': '%s-%s' % (values.id, ii),
+                'id': '%s-%s' % (values['id'], ii),
                 'value': val,
                 'child': txt,
                 'name': self.bound_field.name,
             }
             props = []
-            if val in values:
+            if val in selected:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))
