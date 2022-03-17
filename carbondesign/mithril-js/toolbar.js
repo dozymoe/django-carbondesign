@@ -158,7 +158,7 @@ export class ToolbarMultiSelect extends FormNode
 {
     render_default(vnode, values, context)
     {
-        let values = this.bound_field.value();
+        let selected = this.bound_field.value();
 
         let items = [];
         let ii = 0;
@@ -169,7 +169,7 @@ export class ToolbarMultiSelect extends FormNode
             {
                 props['data-floating-menu-primary-focus'] = '';
             }
-            if (values.indexOf(val) != -1)
+            if (selected.indexOf(val) != -1)
             {
                 props['checked'] = '';
             }
@@ -220,7 +220,7 @@ m('fieldset.bx--radio-button-group',
 
     render_tmpl_items(vnode, values, context)
     {
-        let value = this.bound_field.value();
+        let selected = this.bound_field.value();
 
         let items = [], ii = 0;
         for (let [group, val, txt] of this.choices(context))
@@ -230,7 +230,7 @@ m('fieldset.bx--radio-button-group',
             {
                 props['data-floating-menu-primary-focus'] = '';
             }
-            if (val === value)
+            if (val === selected)
             {
                 props['checked'] = '';
             }

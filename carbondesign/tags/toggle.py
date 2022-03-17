@@ -64,7 +64,7 @@ class Toggle(FormNode):
   {tmpl_help}
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_nolabel(self, values, context):
@@ -86,7 +86,7 @@ class Toggle(FormNode):
   {tmpl_help}
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
 components = {

@@ -106,7 +106,7 @@ class Pagination(Node):
       </svg>
     </button>
     <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="{txt_next_btn}">
+        tabindex="0" data-page-forward aria-label="{txt_forw_btn}">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -155,7 +155,7 @@ class Pagination(Node):
 """
         options = []
 
-        for value in (x + 1 for x in range(self.pager.num_pages)):
+        for value in (x + 1 for x in range(self.pager.paginator.num_pages)):
             if value != self.pager.number:
                 options.append(template.format(value=value, label=value,
                         props=''))
@@ -172,15 +172,10 @@ class Pagination(Node):
 <span data-displayed-item-range>{range_start}-{range_end}</span>
 """
         page_range = template.format(
-                {
-                    'range_start': self.pager.page_range[0],
-                    'range_end': self.pager.page_range[1],
-                })
+                range_start=self.pager.paginator.page_range[0],
+                range_end=self.pager.paginator.page_range[1])
         template = '<span data-total-items>{total}</span>'
-        page_total = template.format(
-                {
-                    'total': self.pager.count,
-                })
+        page_total = template.format(total=self.pager.paginator.count)
 
         range_of_items = _("%s of %s items")
         return range_of_items % (page_range, page_total)
@@ -190,7 +185,7 @@ class Pagination(Node):
         """Dynamically render a part of the component's template.
         """
         num_pages = _("of %s pages")
-        return num_pages % self.pager.num_pages
+        return num_pages % self.pager.paginator.num_pages
 
 
 components = {

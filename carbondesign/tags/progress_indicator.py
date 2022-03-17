@@ -60,7 +60,8 @@ class ProgressIndicatorItem(Node):
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        self.variant = variant = self.eval(self.kwargs['variant'], context)
+        self.variant = variant = self.eval(
+                self.kwargs.get('variant', 'current'), context)
         values['class'].append(f'bx--progress-step--{variant}')
 
         if variant == 'invalid':

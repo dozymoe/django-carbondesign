@@ -114,9 +114,9 @@ class PaginationNav(Node):
     def render_tmpl_numbers(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        current = self.pager.current_page_number
+        current = self.pager.number
         begin = max(current - int(self.count / 2), 1)
-        end = min(begin + self.count, self.pager.num_pages)
+        end = min(begin + self.count, self.pager.paginator.num_pages)
 
         template = """
 <li class="bx--pagination-nav__list-item">

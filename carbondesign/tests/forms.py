@@ -5,6 +5,9 @@ class DummyForm(forms.Form):
     text = forms.CharField()
     text_missing = forms.CharField()
 
+    number = forms.IntegerField()
+    number_missing = forms.IntegerField()
+
     choice = forms.ChoiceField(
             choices=(('val1', "Value One"), ('val2', "Value Two")))
     choice_missing = forms.ChoiceField(

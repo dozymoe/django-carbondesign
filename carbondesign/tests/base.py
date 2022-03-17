@@ -2,6 +2,7 @@
 from datetime import datetime
 import re
 #-
+from django.core.paginator import Paginator
 from django.template import Context, Template
 #-
 from .forms import DummyForm
@@ -23,10 +24,15 @@ def compare_template(template, expected):
                 DATETIME_PATTERN),
             'stopped_at': datetime.strptime('2022-10-04 11:30:40',
                 DATETIME_PATTERN),
-            'image': 'path/image.jpeg'})
+            'image': 'path/image.jpeg',
+            'number': 24})
 
+    pager = Paginator(range(100), 10)
     context = Context({
-            'form': form})
+            'form': form,
+            'page': pager.page(3),
+            'page_first': pager.page(1),
+            'page_last': pager.page(10)})
 
     return (
         strip_space(expected),

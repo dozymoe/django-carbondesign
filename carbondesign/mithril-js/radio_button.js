@@ -43,14 +43,14 @@ m('fieldset.bx--fieldset', null,
 
     render_tmpl_items(vnode, values, context)
     {
-        let value = this.bound_field.value();
+        let selected = this.bound_field.value();
         let excludes = vnode.attrs.exclude || [];
 
         let items = [], ii = 0;
         for (let [group, val, txt] of this.choices(context))
         {
             let props = {};
-            if (val === value)
+            if (val === selected)
             {
                 props['checked'] = '';
             }

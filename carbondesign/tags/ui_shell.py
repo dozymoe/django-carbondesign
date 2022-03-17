@@ -255,7 +255,7 @@ class Action(Node):
   {slot_svg_close}
 </{tag}>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_slot_svg_open(self, values, context):
@@ -591,7 +591,7 @@ class SideNavItem(Node):
         """
         is_active = self.eval(self.kwargs.get('active'), context)
 
-        self.is_submenu = self.context.get('navitem_submenu')
+        self.is_submenu = context.get('navitem_submenu')
         if self.is_submenu:
             values['class'].append('bx--side-nav__menu-item')
             if is_active:

@@ -131,7 +131,7 @@ class ToolbarItemMultiSelect(FormNode):
   </label>
 </li>
 """
-        values = self.bound_field.value()
+        selected = self.bound_field.value()
 
         items = []
         for ii, (_, val, txt) in enumerate(self.choices(context)):
@@ -145,7 +145,7 @@ class ToolbarItemMultiSelect(FormNode):
             props = []
             if ii == 0:
                 props.append('data-floating-menu-primary-focus')
-            if val in values:
+            if val in selected:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))
@@ -181,7 +181,7 @@ class ToolbarItemRadioButton(FormNode):
   </label>
 </li>
 """
-        value = self.bound_field.value()
+        selected = self.bound_field.value()
 
         items = []
         for ii, (_, val, txt) in enumerate(self.choices(context)):
@@ -195,7 +195,7 @@ class ToolbarItemRadioButton(FormNode):
             props = []
             if ii == 0:
                 props.append('data-floating-menu-primary-focus')
-            if val == value:
+            if val == selected:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))
@@ -232,7 +232,7 @@ components = {
     'ToolbarSearch': ToolbarSearch,
     'ToolbarItem': ToolbarItem,
     'ToolbarMultiSelect': ToolbarItemMultiSelect,
-    'ToolbarRadioButton': ToolbarItemRadioButton,
+    'ToolbarRadio': ToolbarItemRadioButton,
     'ToolbarHeading': ToolbarItemHeading,
     'ToolbarDivider': ToolbarItemDivider,
 }

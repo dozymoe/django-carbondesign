@@ -65,7 +65,7 @@ class RadioButton(FormNode):
   </label>
 </div>
 """
-        value = self.bound_field.value()
+        selected = self.bound_field.value()
         excludes = self.eval(self.kwargs.get('exclude', []), context)
 
         items = []
@@ -78,7 +78,7 @@ class RadioButton(FormNode):
                 'class': values['class'],
             }
             props = []
-            if val == value:
+            if val == selected:
                 props.append('checked')
             if val in excludes:
                 props.append('disabled')

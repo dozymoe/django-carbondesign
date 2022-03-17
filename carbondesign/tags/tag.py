@@ -45,8 +45,8 @@ class Tag(Node):
         """Output html of the component.
         """
         template = """
-<button type="button" class="bx--tag {class]" {props}>
-  <span class="bx--tag__label">child}</span>
+<button type="button" class="bx--tag {class}" {props}>
+  <span class="bx--tag__label">{child}</span>
 </button>
 """
         return self.format(template, values)
