@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 13:20+0700\n"
+"POT-Creation-Date: 2022-03-17 18:25+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Bagian Aksi Tabel"
 
 #: carbondesign/tags/data_table.py:58
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: carbondesign/tags/data_table.py:59
 msgid "items selected"
@@ -136,7 +136,7 @@ msgstr "tutup"
 
 #: carbondesign/tags/number_input.py:33
 msgid "increase number input"
-msgstr "tambahkan"
+msgstr "tambah"
 
 #: carbondesign/tags/number_input.py:34
 msgid "decrease number input"
@@ -163,14 +163,13 @@ msgid "Forward button"
 msgstr "Tombol maju"
 
 #: carbondesign/tags/pagination.py:180
-#, python-format
-msgid "%s of %s items"
-msgstr "%s dari %s baris"
+#, python-brace-format
+msgid "{range} of {total} items"
+msgstr "{range} dari {total} baris"
 
 #: carbondesign/tags/pagination.py:187
-#, python-format
-msgid "of %s pages"
-msgstr "dari %s halaman"
+msgid "of {total} pages"
+msgstr "dari {total} halaman"
 
 #: carbondesign/tags/pagination_nav.py:28
 msgid "pagination"
@@ -234,7 +233,7 @@ msgstr "Daftar pilihan"
 
 #: carbondesign/tags/ui_shell.py:33
 msgid "Skip to main content"
-msgstr "Langsung ke konten utama"
+msgstr "Loncat ke konten"
 
 #: carbondesign/tags/ui_shell.py:429
 msgid "Side navigation"
@@ -250,4 +249,4 @@ msgstr "Buka tutup navigasi"
 
 #: carbondesign/tags/ui_shell.py:539
 msgid "Switcher"
-msgstr "Pemilih"
+msgstr "Penampil"

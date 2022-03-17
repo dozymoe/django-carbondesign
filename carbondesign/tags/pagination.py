@@ -177,15 +177,15 @@ class Pagination(Node):
         template = '<span data-total-items>{total}</span>'
         page_total = template.format(total=self.pager.paginator.count)
 
-        range_of_items = _("%s of %s items")
-        return range_of_items % (page_range, page_total)
+        range_of_items = _("{range} of {total} items")
+        return range_of_items.format(range=page_range, total=page_total)
 
 
     def render_tmpl_pagination_num_pages(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        num_pages = _("of %s pages")
-        return num_pages % self.pager.paginator.num_pages
+        num_pages = _("of {total} pages")
+        return num_pages.format(total=self.pager.paginator.num_pages)
 
 
 components = {

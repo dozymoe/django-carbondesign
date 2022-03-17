@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 08:46+0700\n"
+"POT-Creation-Date: 2022-03-17 18:29+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,32 +19,28 @@ msgstr ""
 
 #: carbondesign/mithril-js/breadcrumb.js:13
 msgid "breadcrumb"
-msgstr ""
+msgstr "remahan"
 
 #: carbondesign/mithril-js/code_snippet.js:12
 #: carbondesign/mithril-js/copy_button.js:9
 msgid "Copied!"
-msgstr ""
+msgstr "Tersalin!"
 
 #: carbondesign/mithril-js/code_snippet.js:13
 msgid "Copy code"
-msgstr ""
+msgstr "Salin kode"
 
 #: carbondesign/mithril-js/code_snippet.js:14
-#, fuzzy
-#| msgid "Show modal"
 msgid "Show more"
-msgstr "Buka dialog"
+msgstr "Tampilkan lebih"
 
 #: carbondesign/mithril-js/code_snippet.js:15
 msgid "Show more icon"
-msgstr ""
+msgstr "Tampilkan tambahan icon"
 
 #: carbondesign/mithril-js/code_snippet.js:16
-#, fuzzy
-#| msgid "Show modal"
 msgid "Show less"
-msgstr "Buka dialog"
+msgstr "Kurangi tampilan"
 
 #: carbondesign/mithril-js/combo_box.js:12
 #: carbondesign/mithril-js/data-table.js:596
@@ -55,10 +51,8 @@ msgid "Open menu"
 msgstr "Buka menu"
 
 #: carbondesign/mithril-js/combo_box.js:13
-#, fuzzy
-#| msgid "Clear filter"
 msgid "Clear all"
-msgstr "Hapus filter"
+msgstr "Hapus bersih"
 
 #: carbondesign/mithril-js/data-table.js:23
 msgid "Table Action Bar"
@@ -66,7 +60,7 @@ msgstr "Bagian Aksi Tabel"
 
 #: carbondesign/mithril-js/data-table.js:24
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: carbondesign/mithril-js/data-table.js:25
 msgid "items selected"
@@ -89,27 +83,27 @@ msgstr "Bersihkan pencarian"
 
 #: carbondesign/mithril-js/file_uploader.js:9
 msgid "Drag and drop files here or upload"
-msgstr ""
+msgstr "Tarik berkas-berkas ke sini atau unggah"
 
 #: carbondesign/mithril-js/file_uploader.js:10
 msgid "Remove uploaded file"
-msgstr ""
+msgstr "Hapus berkas unggahan"
 
 #: carbondesign/mithril-js/inline_loading.js:9
 msgid "Loading data..."
-msgstr ""
+msgstr "Menyiapkan data..."
 
 #: carbondesign/mithril-js/inline_loading.js:10
 msgid "Data loaded."
-msgstr ""
+msgstr "Data sudah siap."
 
 #: carbondesign/mithril-js/inline_loading.js:11
 msgid "Loading data failed."
-msgstr ""
+msgstr "Gagal mengambil data."
 
 #: carbondesign/mithril-js/loading.js:11
 msgid "Loading"
-msgstr ""
+msgstr "Persiapan"
 
 #: carbondesign/mithril-js/modal.js:14
 msgid "close modal"
@@ -126,18 +120,14 @@ msgid "Close menu"
 msgstr "Tutup menu"
 
 #: carbondesign/mithril-js/multi_select.js:14
-#, fuzzy
-#| msgid "List of options"
 msgid "Multi select options"
-msgstr "Daftar pilihan"
+msgstr "Pilihan berganda"
 
 #: carbondesign/mithril-js/multi_select.js:15
 msgid "Clear all selected items"
-msgstr ""
+msgstr "Batalkan pilihan"
 
 #: carbondesign/mithril-js/multi_select.js:16
-#, fuzzy
-#| msgid "Clear search input"
 msgid "Clear selection"
 msgstr "Bersihkan pencarian"
 
@@ -146,18 +136,16 @@ msgid "Filter..."
 msgstr ""
 
 #: carbondesign/mithril-js/notification.js:15
-#, fuzzy
-#| msgid "close modal"
 msgid "close"
-msgstr "tutup dialog"
+msgstr "tutup"
 
 #: carbondesign/mithril-js/number_input.js:12
 msgid "increase number input"
-msgstr ""
+msgstr "tambah"
 
 #: carbondesign/mithril-js/number_input.js:13
 msgid "decrease number input"
-msgstr ""
+msgstr "kurangi"
 
 #: carbondesign/mithril-js/pagination.js:15
 msgid "Items per page"
@@ -180,10 +168,8 @@ msgid "Forward button"
 msgstr "Tombol maju"
 
 #: carbondesign/mithril-js/pagination.js:250
-#, fuzzy, javascript-format
-#| msgid " pages"
-msgid "of %s pages"
-msgstr " halaman"
+msgid "of {total} pages"
+msgstr " dari {total} halaman"
 
 #: carbondesign/mithril-js/pagination_nav.js:11
 msgid "pagination"
@@ -191,19 +177,15 @@ msgstr ""
 
 #: carbondesign/mithril-js/pagination_nav.js:12
 msgid "Previous page"
-msgstr ""
+msgstr "Halaman sebelumnya"
 
 #: carbondesign/mithril-js/pagination_nav.js:13
-#, fuzzy
-#| msgid " pages"
 msgid "Next page"
-msgstr " halaman"
+msgstr "Halaman berikutnya"
 
 #: carbondesign/mithril-js/pagination_nav.js:14
-#, fuzzy
-#| msgid " pages"
 msgid "page"
-msgstr " halaman"
+msgstr "halaman"
 
 #: carbondesign/mithril-js/select.js:13
 msgid "Choose an option"
@@ -255,24 +237,12 @@ msgstr "Navigasi samping"
 
 #: carbondesign/mithril-js/uishell.js:471
 msgid "Close the side navigation menu"
-msgstr "Tutup menu navigasi samping"
+msgstr "Tutup navigasi samping"
 
 #: carbondesign/mithril-js/uishell.js:472
 msgid "Toggle the expansion state of the navigation"
-msgstr "Tutup buka navigasi"
+msgstr "Buka tutup navigasi"
 
 #: carbondesign/mithril-js/uishell.js:473
 msgid "Switcher"
 msgstr "Penampil"
-
-#~ msgid " of "
-#~ msgstr " dari "
-
-#~ msgid " items"
-#~ msgstr " baris"
-
-#~ msgid "of "
-#~ msgstr "dari "
-
-#~ msgid " pages"
-#~ msgstr " halaman"

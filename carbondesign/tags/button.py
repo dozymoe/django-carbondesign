@@ -26,8 +26,7 @@ class Button(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('icon',)
     "Named children."
-    NODE_PROPS = ('disabled', 'variant', 'icon_only', 'field', 'small',
-            'icon_size')
+    NODE_PROPS = ('disabled', 'variant', 'field', 'small', 'icon_size')
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
@@ -42,14 +41,8 @@ class Button(Node):
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['props'].append(('disabled', 'disabled'))
-
-        if self.eval(self.kwargs.get('icon_only'), context):
-            values['class'].extend([
-                    'bx--btn--icon-only',
-                    'bx--tooltip__trigger',
-                    'bx--tooltip--a11y',
-                    'bx--tooltip--bottom',
-                    'bx--tooltip--align-center'])
+            if context.get('button_set'):
+                values['class'].append('bx--btn--disabled')
 
         if self.eval(self.kwargs.get('field'), context):
             values['class'].append('bx--btn--field')
@@ -57,19 +50,14 @@ class Button(Node):
         if self.eval(self.kwargs.get('small'), context):
             values['class'].append('bx--btn--sm')
 
+        if values['label']:
+            values['props'].append(('aria-label', values['label']))
+
 
     def render_default(self, values, context):
         """Output html of the component.
         """
-        if self.eval(self.kwargs.get('icon_only'), context):
-            template = """
-<{tag} class="bx--btn {class}" {props}>
-  <span class="bx--assistive-text">{child}</span>
-  {slot_icon}
-</{tag}>
-"""
-        else:
-            template = """
+        template = """
 <{tag} class="bx--btn {class}" {props}>
   {child}
   {slot_icon}
@@ -85,8 +73,8 @@ class Button(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
                 'width': size,
                 'height': size,
             },
@@ -95,11 +83,44 @@ class Button(Node):
         })
 
 
+class IconButton(Button):
+    """Button icon only component.
+    """
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        super().prepare(values, context)
+        values['class'].extend([
+                'bx--btn--icon-only',
+                'bx--tooltip__trigger',
+                'bx--tooltip--a11y',
+                'bx--tooltip--bottom',
+                'bx--tooltip--align-center'])
+
+
+    def render_default(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<{tag} class="bx--btn {class}" {props}>
+  <span class="bx--assistive-text">{child}</span>
+  {slot_icon}
+</{tag}>
+"""
+        return self.format(template, values, context)
+
+
 class ButtonSet(Node):
     """Button set component.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        context['button_set'] = True
+
 
     def render_default(self, values, context):
         """Output html of the component.
@@ -115,4 +136,5 @@ class ButtonSet(Node):
 components = {
     'Button': Button,
     'ButtonSet': ButtonSet,
+    'IconButton': IconButton,
 }
