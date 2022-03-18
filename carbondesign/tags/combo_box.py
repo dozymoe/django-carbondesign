@@ -16,15 +16,18 @@ class ComboBox(FormNode):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('light', 'expanded')
     "Extended Template Tag arguments."
-    CLASS_AND_PROPS = ('label', 'help', 'combo', 'list')
+    CLASS_AND_PROPS = ('label', 'help', 'combo', 'list', 'icon')
     "Prepare xxx_class and xxx_props values."
+
+    expanded = None
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         values['txt_open'] = _("Open menu")
+        values['txt_close'] = _("Close menu")
         values['txt_clear'] = _("Clear all")
 
         if self.eval(self.kwargs.get('disabled'), context):
@@ -40,15 +43,29 @@ class ComboBox(FormNode):
         if self.eval(self.kwargs.get('light'), context):
             values['combo_class'].append('bx--list-box--light')
 
+        self.expanded = self.eval(self.kwargs.get('expanded'), context)
+        if self.expanded:
+            values['txt_menu'] = values['txt_close']
+            values['combo_class'].append('bx--list-box--expanded')
+            values['list_props'].append(('aria-expanded', 'true'))
+            values['icon_class'].append('bx--list-box__menu-icon--open')
+        else:
+            values['txt_menu'] = values['txt_open']
+            values['list_props'].append(('aria-expanded', 'false'))
+
 
     def prepare_element_props(self, props, default, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
         props['aria-autocomplete'] = 'list'
-        props['aria-expanded'] = 'false'
         props['autocomplete'] = 'off'
         props['aria-owns'] = 'menu-' + self._id
+
+        if self.expanded:
+            props['aria-expanded'] = 'true'
+        else:
+            props['aria-expanded'] = 'false'
 
 
     def render_default(self, values, context):
@@ -60,8 +77,8 @@ class ComboBox(FormNode):
   <div class="bx--list-box__wrapper">
     {tmpl_label}
     <div class="bx--combo-box bx--list-box {combo_class}" data-invalid>
-      <div role="combobox" class="bx--list-box__field" aria-label="{txt_open}"
-          aria-expanded="false" {list_props}>
+      <div role="combobox" class="bx--list-box__field" aria-label="{txt_menu}"
+          {list_props}>
         {element}
         {tmpl_icon_invalid}
         {tmpl_icon_clear}
@@ -85,8 +102,8 @@ class ComboBox(FormNode):
   <div class="bx--list-box__wrapper">
     {tmpl_label}
     <div class="bx--combo-box bx--list-box {combo_class}">
-      <div role="combobox" class="bx--list-box__field" aria-label="{txt_open}"
-          aria-expanded="false" {list_props}>
+      <div role="combobox" class="bx--list-box__field" aria-label="{txt_menu}"
+          {list_props}>
         {element}
         {tmpl_icon_clear}
         {tmpl_icon_menu}
@@ -109,9 +126,9 @@ class ComboBox(FormNode):
         if not self.bound_value:
             return ''
         return """
-<div class="bx--list-box__selection" role="button">
+<div class="bx--list-box__selection" role="button" title="{txt_clear}">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-      xmlns="http://www.w3.org/2000/svg" fill="currentColor" title="{txt_clear}"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       aria-label="{txt_clear}" width="16" height="16" viewBox="0 0 32 32"
       role="img">
     <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
@@ -124,10 +141,10 @@ class ComboBox(FormNode):
         """Dynamically render a part of the component's template.
         """
         return """
-<div class="bx--list-box__menu-icon">
+<div class="bx--list-box__menu-icon {icon_class}" {icon_props}>
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-      aria-label="{txt_open}" width="16" height="16" viewBox="0 0 16 16"
+      aria-label="{txt_menu}" width="16" height="16" viewBox="0 0 16 16"
       role="img">
     <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
   </svg>

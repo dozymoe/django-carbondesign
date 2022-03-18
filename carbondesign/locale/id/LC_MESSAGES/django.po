@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 18:28+0700\n"
+"POT-Creation-Date: 2022-03-19 06:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,13 +46,18 @@ msgstr "Tampilkan tambahan icon"
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:27 carbondesign/tags/data_table.py:425
+#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:425
 #: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
 #: carbondesign/tags/ui_shell.py:32
 msgid "Open menu"
 msgstr "Buka menu"
 
-#: carbondesign/tags/combo_box.py:28
+#: carbondesign/tags/combo_box.py:30 carbondesign/tags/multi_select.py:28
+#: carbondesign/tags/ui_shell.py:33 carbondesign/tags/ui_shell.py:250
+msgid "Close menu"
+msgstr "Tutup menu"
+
+#: carbondesign/tags/combo_box.py:31
 msgid "Clear all"
 msgstr "Hapus bersih"
 
@@ -113,11 +118,6 @@ msgstr "tutup dialog"
 #: carbondesign/tags/modal.py:131
 msgid "Show modal"
 msgstr "Buka dialog"
-
-#: carbondesign/tags/multi_select.py:28 carbondesign/tags/ui_shell.py:33
-#: carbondesign/tags/ui_shell.py:250
-msgid "Close menu"
-msgstr "Tutup menu"
 
 #: carbondesign/tags/multi_select.py:29
 msgid "Multi select options"

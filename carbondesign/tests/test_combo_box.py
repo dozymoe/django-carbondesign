@@ -20,14 +20,14 @@ class ComboBoxTest(SimpleTestCase):
 </label>
     <div class="bx--combo-box bx--list-box">
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
-          aria-expanded="false" aria-haspopup="listbox">
-        <select name="choice" class="bx--text-input" aria-autocomplete="list" aria-expanded="false" autocomplete="off" aria-owns="menu-id_choice" id="id_choice">
+          aria-haspopup="listbox" aria-expanded="false">
+        <select name="choice" class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-id_choice" aria-expanded="false" id="id_choice">
   <option value="val1" selected>Value One</option>
   <option value="val2">Value Two</option>
 </select>
-<div class="bx--list-box__selection" role="button">
+<div class="bx--list-box__selection" role="button" title="Clear all">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-      xmlns="http://www.w3.org/2000/svg" fill="currentColor" title="Clear all"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       aria-label="Clear all" width="16" height="16" viewBox="0 0 32 32"
       role="img">
     <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>

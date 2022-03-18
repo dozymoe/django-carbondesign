@@ -23,12 +23,19 @@ class ContentSwitcher(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
 
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        if values['label']:
+            values['props'].append(('aria-label', values['label']))
+
+
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
 <div data-content-switcher class="bx--content-switcher {class}" role="tablist"
-    aria-label="{label}" {props}>
+    {props}>
   {child}
 </div>
         """
@@ -55,7 +62,7 @@ class ContentSwitcherItem(Node):
             values['props'].append(('aria-selected', 'true'))
 
         if self.eval(self.kwargs.get('disabled'), context):
-            values['props'].append(('disabled', 'disabled'))
+            values['props'].append(('disabled', ''))
 
 
     def render_default(self, values, context):

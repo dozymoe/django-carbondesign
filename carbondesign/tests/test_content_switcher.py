@@ -13,8 +13,7 @@ class ContentSwitcherTest(SimpleTestCase):
 {% endContentSwitcher %}
 """
         expected = """
-<div data-content-switcher class="bx--content-switcher" role="tablist"
-    aria-label="">
+<div data-content-switcher class="bx--content-switcher" role="tablist">
 </div>
 """
         rendered = compare_template(template, expected)
