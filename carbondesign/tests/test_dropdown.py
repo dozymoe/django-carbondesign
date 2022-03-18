@@ -16,7 +16,6 @@ class DropdownTest(SimpleTestCase):
 <div class="bx--form-item">
   <div class="bx--dropdown__wrapper">
     <span id="label-uid" class="bx--label">
-      None
     </span>
     <div data-dropdown data-value class="bx--dropdown">
       <button class="bx--dropdown-text" aria-haspopup="true"

@@ -16,8 +16,6 @@ class TextArea(FormNode):
     """
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('icon_invalid', *FormNode.TEMPLATES)
-    "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.

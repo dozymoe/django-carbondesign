@@ -32,6 +32,9 @@ class Slider(FormNode):
     """Slider component.
     """
     NODE_PROPS = ('min', 'max', 'step', 'light')
+    "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label', 'slider')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -47,7 +50,7 @@ class Slider(FormNode):
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
-            values['wrapper_class'].append('bx--slider--disabled')
+            values['slider_class'].append('bx--slider--disabled')
 
 
     def render_default(self, values, context):
@@ -63,8 +66,8 @@ class Slider(FormNode):
         class="bx--slider__range-label">
       {min}
     </label>
-    <div class="bx--slider {wrapper_class}"
-        data-slider data-slider-input-box="#{id}">
+    <div class="bx--slider {slider_class}"
+        data-slider data-slider-input-box="#{id}" {slider_props}>
       <div class="bx--slider__thumb" tabindex="0"></div>
       <div class="bx--slider__track"></div>
       <div class="bx--slider__filled-track"></div>
@@ -79,7 +82,7 @@ class Slider(FormNode):
     <input id="{id}"
         aria-labelledby="slider-input-box_bottom-range-label-{id} slider-input-box_top-range-label-{id}"
         type="number" class="bx--text-input bx--slider-text-input {class}"
-        placeholder="{min}" value="{value}">
+        placeholder="{min}" value="{value}" {props}>
   </div>
 </div>
 """

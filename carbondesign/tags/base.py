@@ -1,11 +1,13 @@
 """Base classes for carbondesign Template Tags.
 """
+from copy import copy
 import logging
 import re
 from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
+from django.utils.translation import gettext as _
 from lxml import etree
 #-
 from .base_widgets import CustomTextInput
@@ -124,12 +126,12 @@ class Node(template.Node):
     "Base Template Tag arguments."
     NODE_PROPS = ()
     "Extended Template Tag arguments."
+    REQUIRED_PROPS = ()
+    "Will raise Exception if not set."
     DEFAULT_TAG = 'div'
     "Rendered HTML tag."
-    CLASS_AND_PROPS = ('label', 'wrapper')
+    CLASS_AND_PROPS = ()
     "Prepare xxx_class and xxx_props values."
-    TEMPLATES = ()
-    "Conditional templates. Documentation only."
 
     # Parent Tags can set the arguments of their children Tags, in effect
     # changing their appearance.
@@ -158,8 +160,6 @@ class Node(template.Node):
     def render(self, context):
         """Render the Template Tag as html.
         """
-        values = {}
-
         # Parent Tags can set the arguments of their children Tags.
         # You can also set them to children Tags in specific slot.
         myslot = context.get('slot')
@@ -168,6 +168,14 @@ class Node(template.Node):
                 self.kwargs.update(context[drop])
             if myslot and f'{myslot}_{drop}' in context:
                 self.kwargs.update(context[f'{myslot}_{drop}'])
+
+        for prop in self.REQUIRED_PROPS:
+            if prop not in self.kwargs:
+                raise template.exceptions.TemplateSyntaxError(
+                        _("Argument {prop} for template tag is required.")\
+                        .format(prop=prop))
+
+        values = {}
 
         self.before_prepare(values, context)
         self.prepare(values, context)
@@ -181,19 +189,10 @@ class Node(template.Node):
         return method(values, context) # pylint:disable=not-callable
 
 
-    def id(self, context):
+    def default_id(self):
         """Get unique id.
         """
-        if not self._id:
-            self._id = var_eval(self.kwargs.get('id', 'node-' + uuid4().hex),
-                    context)
-        return self._id
-
-
-    def label(self, context):
-        """Get label argument.
-        """
-        return var_eval(self.kwargs.get('label'), context)
+        return 'node-' + uuid4().hex
 
 
     def props(self, context):
@@ -235,7 +234,12 @@ class Node(template.Node):
             if method:
                 slots[slot_name] = method(
                         {
-                            'child': slot.render(context),
+                            # Use context to tell slot's children in which slot
+                            # they are, for example when catching props from
+                            # parent tags.
+                            # It is set here to mimic javascript.
+                            'child': slot.render(copy(context).update(
+                                {'slot': name})),
                             'class': values[name + '_class'],
                             'props': values[name + '_props'],
                             'id': values['id'],
@@ -246,31 +250,6 @@ class Node(template.Node):
                 slots[slot_name] = slot.render(context)
         else:
             slots[slot_name] = ''
-
-
-    def render_slots(self, values, context, slots):
-        """Call the rendering methods and format children Template Tags.
-        """
-        for name in self.SLOTS:
-            slot_name = f'slot_{name}'
-            slot = self.slots.get(name)
-            if slot:
-                method = getattr(self, f'render_slot_{name}', None)
-                if method:
-                    slots[slot_name] = method(
-                            {
-                                'child': slot.render(dict(context, slot=name)),
-                                'class': values[name + '_class'],
-                                'props': values[name + '_props'],
-                                'id': values['id'],
-                                'label': slot.label(context),
-                            },
-                            context,
-                            slots)
-                else:
-                    slots[slot_name] = slot.render(context)
-            else:
-                slots[slot_name] = ''
 
 
     def before_prepare(self, values, context):
@@ -287,13 +266,14 @@ class Node(template.Node):
             self.mode = 'default'
 
         values['mode'] = self.mode
-        values['id'] = self.id(context)
         values['tag'] = var_eval(self.kwargs.get('tag', self.DEFAULT_TAG),
                 context)
-        values['label'] = self.label(context)
         values['props'] = self.props(context)
         values['class'] = var_eval(self.kwargs.get('class', ''), context)\
                 .split()
+        values['label'] = var_eval(self.kwargs.get('label', ''), context)
+        self._id = var_eval(self.kwargs.get('id', self.default_id()), context)
+        values['id'] = self._id
         for name in self.CLASS_AND_PROPS:
             if name in self.SLOTS:
                 continue
@@ -426,26 +406,22 @@ class FormNode(Node):
     """
     BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
-    CLASS_AND_PROPS = ('help', *Node.CLASS_AND_PROPS)
+    CLASS_AND_PROPS = ('label', 'help')
     "Prepare xxx_class and xxx_props values."
-    TEMPLATES = ('help',)
-    "Conditional templates. Documentation only."
     RENDER_ELEMENT = True
     "Render the form field widget."
 
     bound_field = None
 
-    def id(self, context):
+    def default_id(self):
         """Get Django form field html id.
         """
         return self.bound_field.id_for_label
 
 
-    def label(self, context):
+    def label(self):
         """Get Django form field label.
         """
-        if 'label' in self.kwargs:
-            return var_eval(self.kwargs['label'], context)
         return self.bound_field.label
 
 
@@ -479,6 +455,8 @@ class FormNode(Node):
         """
         self.bound_field = self.args[0].resolve(context)
         super().before_prepare(values, context)
+        if not values['label']:
+            values['label'] = self.label()
 
 
     def after_prepare(self, values, context):
@@ -499,7 +477,7 @@ class FormNode(Node):
         """
 
 
-    def choices(self, context):
+    def choices(self):
         """Get Django form field choices.
         """
         for option_value, option_label in self.bound_field.field.choices:

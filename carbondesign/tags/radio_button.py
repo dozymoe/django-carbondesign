@@ -16,6 +16,8 @@ a new item, the previous choice is automatically deselected.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
+from typing import Sequence
+#-
 from .base import FormNode
 
 class RadioButton(FormNode):
@@ -23,14 +25,14 @@ class RadioButton(FormNode):
     """
     NODE_PROPS = ('exclude', 'vertical', 'left')
     "Extended Template Tag arguments."
-    TEMPLATES = ('items', *FormNode.TEMPLATES)
-    "Conditional templates."
+    CLASS_AND_PROPS = ('radio',)
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         if self.eval(self.kwargs.get('vertical'), context):
-            values['wrapper_class'].append('bx--radio-button-group--vertical')
+            values['radio_class'].append('bx--radio-button-group--vertical')
 
         if self.eval(self.kwargs.get('left'), context):
             values['class'].append('bx--radio-button-wrapper--label-left')
@@ -41,9 +43,9 @@ class RadioButton(FormNode):
         """
         template = """
 <fieldset class="bx--fieldset">
-  <legend class="bx--label {label_class}" {label_props}>{label}</legend>
+  <legend class="bx--label">{label}</legend>
   <div class="bx--form-item">
-    <div class="bx--radio-button-group {wrapper_class}">
+    <div class="bx--radio-button-group {radio_class}">
       {tmpl_items}
     </div>
   </div>
@@ -67,9 +69,11 @@ class RadioButton(FormNode):
 """
         selected = self.bound_field.value()
         excludes = self.eval(self.kwargs.get('exclude', []), context)
+        if not isinstance(excludes, Sequence):
+            excludes = [x.strip() for x in excludes.split(';')]
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices(context)):
+        for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
                 'index': '%s-%s' % (values['id'], ii),
                 'value': val,

@@ -36,7 +36,7 @@ class FileUploader(FormNode):
         """
         props['class'].append('bx--file-input')
         props['data-file-uploader'] = ''
-        props['data-target'] = '#container-' + self.id(context)
+        props['data-target'] = '#container-' + self._id
 
 
     def render_default(self, values, context):

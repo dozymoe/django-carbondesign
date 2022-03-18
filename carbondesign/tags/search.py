@@ -25,7 +25,9 @@ class Search(Node):
     """
     NODE_PROPS = ('style', 'light')
     "Extended Template Tag arguments."
-    AVAILABLE_STYLES = ('sm', 'lg', 'xl')
+    CLASS_AND_PROPS = ('label',)
+    "Prepare xxx_class and xxx_props values."
+    POSSIBLE_STYLES = ('sm', 'lg', 'xl')
     "Documentation only."
 
     def prepare(self, values, context):

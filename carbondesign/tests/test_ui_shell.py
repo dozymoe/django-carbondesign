@@ -13,13 +13,12 @@ class UiShellTest(SimpleTestCase):
 {% endUiShell %}
 """
         expected = """
-<header class="bx--header" role="banner" aria-label="None"
+<header class="bx--header" role="banner" aria-label=""
     data-header>
   <a class="bx--skip-to-content" href="#main-content" tabindex="0">
     Skip to main content
   </a>
   <a class="bx--header__name" href="#" title="">
-    None
   </a>
 </header>
 <div class="bx--content">
@@ -59,8 +58,8 @@ class UiActionTest(SimpleTestCase):
 """
         expected = """
 <button class="bx--header__menu-trigger bx--header__action"
-    aria-label="None" title="None"
-    data-navigation-menu-panel-label-expand="None"
+    aria-label="" title=""
+    data-navigation-menu-panel-label-expand=""
     data-navigation-menu-panel-label-collapse="Close menu"
     data-switcher-target="#uid">
 </button>

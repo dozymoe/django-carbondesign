@@ -33,9 +33,7 @@ class ProgressTest(SimpleTestCase):
 <svg>
   <path d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"></path>
 </svg>
-  <p tabindex="0" class="bx--progress-label"
-      aria-describedby="uid">
-    None
+  <p tabindex="0" class="bx--progress-label" aria-describedby="uid">
   </p>
   <div id="uid" role="tooltip" data-floating-menu-direction="bottom"
       class="bx--tooltip" data-avoid-focus-on-open>

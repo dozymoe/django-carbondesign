@@ -26,20 +26,28 @@ class Tooltip(Node):
     "Named children."
     MODES = ('interactive', 'definition', 'icon')
     "Available variants."
-    NODE_PROPS = ('align', 'position')
+    NODE_PROPS = ('id', 'align', 'position')
     "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('label',)
+    "Will raise Exception if not set."
+    CLASS_AND_PROPS = ('label',)
+    "Prepare xxx_class and xxx_props values."
+    POSSIBLE_ALIGN = ('start', 'center', 'end')
+    "Documentation only."
+    POSSIBLE_POSITION = ('top', 'right', 'bottom', 'left')
+    "Documentation only."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        # start, center, end
+        values['label'] = self.eval(self.kwargs['label'], context)
+
         align = self.eval(self.kwargs.get('align'), context)
-        if align:
+        if align and align in self.POSSIBLE_ALIGN:
             values['class'].append(f'bx--tooltip--align-{align}')
 
-        # top, right, bottom, left
         position = self.eval(self.kwargs.get('position'), context)
-        if position:
+        if position and position in self.POSSIBLE_POSITION:
             values['class'].append(f'bx--tooltip--{position}')
 
 
@@ -47,11 +55,11 @@ class Tooltip(Node):
         """Output html of the component.
         """
         template = """
-<div id="label-{id}" class="bx--tooltip__label {label_class}" {label_props}>
+<div id="label-{id}" class="bx--tooltip__label">
   {label}
   <button aria-expanded="false" aria-labelledby="label-{id}"
       data-tooltip-trigger data-tooltip-target="#{id}"
-      class="bx--tooltip__trigger {class}" aria-controls="{id}">
+      class="bx--tooltip__trigger {class}" aria-controls="{id}" {props}>
     {slot_icon}
   </button>
 </div>
@@ -75,7 +83,8 @@ class Tooltip(Node):
         template = """
 <div class="bx--tooltip--definition bx--tooltip--a11y" data-tooltip-definition>
   <button aria-describedby="{id}"
-      class="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition {class}">
+      class="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition {class}"
+      {props}>
     {label}
   </button>
   <div class="bx--assistive-text" id="{id}" role="tooltip">
@@ -91,7 +100,7 @@ class Tooltip(Node):
         """
         template = """
 <button class="bx--tooltip__trigger bx--tooltip--a11y {class}"
-    data-tooltip-icon>
+    data-tooltip-icon {props}>
   <span class="bx--assistive-text">{child}</span>
   {slot_icon}
 </button>

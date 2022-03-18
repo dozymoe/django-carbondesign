@@ -9,12 +9,12 @@ class TooltipTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% Tooltip id="uid" %}
+{% Tooltip id="uid" label="Text" %}
 {% endTooltip %}
 """
         expected = """
 <div id="label-uid" class="bx--tooltip__label">
-  None
+  Text
   <button aria-expanded="false" aria-labelledby="label-uid"
       data-tooltip-trigger data-tooltip-target="#uid"
       class="bx--tooltip__trigger" aria-controls="uid">

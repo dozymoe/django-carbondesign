@@ -57,6 +57,8 @@ class BreadcrumbItem(Node):
     "Template Tag needs closing end tag."
     NODE_PROPS = ('href', 'current')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('wrapper',)
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.

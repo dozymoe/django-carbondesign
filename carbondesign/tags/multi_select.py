@@ -18,8 +18,8 @@ class MultiSelect(FormNode):
     "Available variants."
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('items', 'icon_menu', 'icon_clear', *FormNode.TEMPLATES)
-    "Conditional templates."
+    CLASS_AND_PROPS = ('list',)
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -34,7 +34,7 @@ class MultiSelect(FormNode):
         values['values_count'] = len(self.bound_field.value())
 
         if self.eval(self.kwargs.get('light'), context):
-            values['wrapper_class'].append('bx--list-box-light')
+            values['list_class'].append('bx--list-box-light')
 
 
     def render_default(self, values, context):
@@ -43,10 +43,10 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box {wrapper_class}">
+    <div class="bx--multi-select bx--list-box {list_class}">
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
         <span class="bx--list-box__label">{txt_multi}</span>
@@ -72,10 +72,10 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box bx--combo-box bx--multi-select-filterable {wrapper_class}">
+    <div class="bx--multi-select bx--list-box bx--combo-box bx--multi-select-filterable {list_class}">
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
         <input class="bx--text-input" placeholder="{txt_filter}">
@@ -101,10 +101,10 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box bx--list-box--inline {wrapper_class}">
+    <div class="bx--multi-select bx--list-box bx--list-box--inline {list_class}">
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
         <span class="bx--list-box__label">{txt_multi}</span>
@@ -181,7 +181,7 @@ class MultiSelect(FormNode):
         selected = self.bound_field.value()
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices(context)):
+        for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
                 'value': val,

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 18:25+0700\n"
+"POT-Creation-Date: 2022-03-18 11:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: carbondesign/tags/base.py:175
+#, python-brace-format
+msgid "Argument {prop} for template tag is required."
+msgstr "Argumen {prop} harus diset untuk template tag."
 
 #: carbondesign/tags/breadcrumb.py:36
 msgid "breadcrumb"
@@ -41,13 +46,13 @@ msgstr "Tampilkan tambahan icon"
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:28 carbondesign/tags/data_table.py:425
+#: carbondesign/tags/combo_box.py:27 carbondesign/tags/data_table.py:425
 #: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
-#: carbondesign/tags/ui_shell.py:34
+#: carbondesign/tags/ui_shell.py:32
 msgid "Open menu"
 msgstr "Buka menu"
 
-#: carbondesign/tags/combo_box.py:29
+#: carbondesign/tags/combo_box.py:28
 msgid "Clear all"
 msgstr "Hapus bersih"
 
@@ -67,12 +72,12 @@ msgstr "baris dipilih"
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/tags/data_table.py:525 carbondesign/tags/search.py:37
+#: carbondesign/tags/data_table.py:528 carbondesign/tags/search.py:39
 #: carbondesign/tags/toolbar.py:37
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:526 carbondesign/tags/search.py:34
+#: carbondesign/tags/data_table.py:529 carbondesign/tags/search.py:36
 #: carbondesign/tags/toolbar.py:39
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
@@ -109,8 +114,8 @@ msgstr "tutup dialog"
 msgid "Show modal"
 msgstr "Buka dialog"
 
-#: carbondesign/tags/multi_select.py:28 carbondesign/tags/ui_shell.py:35
-#: carbondesign/tags/ui_shell.py:241
+#: carbondesign/tags/multi_select.py:28 carbondesign/tags/ui_shell.py:33
+#: carbondesign/tags/ui_shell.py:250
 msgid "Close menu"
 msgstr "Tutup menu"
 
@@ -168,6 +173,7 @@ msgid "{range} of {total} items"
 msgstr "{range} dari {total} baris"
 
 #: carbondesign/tags/pagination.py:187
+#, python-brace-format
 msgid "of {total} pages"
 msgstr "dari {total} halaman"
 
@@ -191,7 +197,7 @@ msgstr "halaman"
 msgid "Choose an option"
 msgstr "Pilih satu"
 
-#: carbondesign/tags/slider.py:39
+#: carbondesign/tags/slider.py:42
 msgid "slider"
 msgstr ""
 
@@ -199,7 +205,7 @@ msgstr ""
 msgid "Clear filter"
 msgstr "Hapus filter"
 
-#: carbondesign/tags/text_input.py:110
+#: carbondesign/tags/text_input.py:105
 msgid "Show password"
 msgstr "Tampilkan kata kunci"
 
@@ -207,11 +213,11 @@ msgstr "Tampilkan kata kunci"
 msgid "tile"
 msgstr "ubin"
 
-#: carbondesign/tags/time_picker.py:24
+#: carbondesign/tags/time_picker.py:26
 msgid "Select AM/PM"
 msgstr "Pilih sebelum/sesudah siang"
 
-#: carbondesign/tags/time_picker.py:25
+#: carbondesign/tags/time_picker.py:27
 msgid "Select time zone"
 msgstr "Pilih zona waktu"
 
@@ -231,22 +237,22 @@ msgstr "Pencarian"
 msgid "List of options"
 msgstr "Daftar pilihan"
 
-#: carbondesign/tags/ui_shell.py:33
+#: carbondesign/tags/ui_shell.py:31
 msgid "Skip to main content"
 msgstr "Loncat ke konten"
 
-#: carbondesign/tags/ui_shell.py:429
+#: carbondesign/tags/ui_shell.py:438
 msgid "Side navigation"
 msgstr "Navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:474
+#: carbondesign/tags/ui_shell.py:484
 msgid "Close the side navigation menu"
 msgstr "Tutup navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:475
+#: carbondesign/tags/ui_shell.py:485
 msgid "Toggle the expansion state of the navigation"
 msgstr "Buka tutup navigasi"
 
-#: carbondesign/tags/ui_shell.py:539
+#: carbondesign/tags/ui_shell.py:549
 msgid "Switcher"
 msgstr "Penampil"

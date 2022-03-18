@@ -26,8 +26,8 @@ class Select(FormNode):
     "Available variants."
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('items', *FormNode.TEMPLATES)
-    "Conditional templates."
+    CLASS_AND_PROPS = ('label', 'select')
+    "Prepare xxx_class and xxx_props values."
     RENDER_ELEMENT = False
     "Render the form field widget."
 
@@ -49,10 +49,10 @@ class Select(FormNode):
         if self.bound_field.field.disabled:
             values['props'].append(('disabled', ''))
             values['label_class'].append('bx--label--disabled')
-            values['wrapper_class'].append('bx--select--disabled')
+            values['select_class'].append('bx--select--disabled')
 
         if self.eval(self.kwargs.get('light'), context):
-            values['wrapper_class'].append('bx--select--light')
+            values['select_class'].append('bx--select--light')
 
 
     def render_default(self, values, context):
@@ -61,7 +61,7 @@ class Select(FormNode):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--invalid {wrapper_class}" {wrapper_props}>
+  <div class="bx--select bx--select--invalid {select_class}" {select_props}>
     <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
@@ -93,7 +93,7 @@ class Select(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select {wrapper_class}">
+  <div class="bx--select {select_class}" {select_props}>
     <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
@@ -121,8 +121,8 @@ class Select(FormNode):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--inline bx--select--invalid {wrapper_class}"
-      {wrapper_props}>
+  <div class="bx--select bx--select--inline bx--select--invalid {select_class}"
+      {select_props}>
     <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
@@ -154,7 +154,7 @@ class Select(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <div class="bx--select bx--select--inline {wrapper_class}" {wrapper_props}>
+  <div class="bx--select bx--select--inline {select_class}" {select_props}>
     <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
@@ -198,7 +198,7 @@ class Select(FormNode):
             })
 
         current_group = None
-        for group, value, label in self.choices(context):
+        for group, value, label in self.choices():
             if group != current_group:
                 if current_group:
                     items.append(group_end_tmpl)

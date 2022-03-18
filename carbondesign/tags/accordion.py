@@ -93,7 +93,7 @@ class AccordionItem(Node):
         if not values['label']:
             return ''
         template = """
-<div class="bx--accordion__title {label_class}" {label_props}>
+<div class="bx--accordion__title">
   {label}
 </div>
 """

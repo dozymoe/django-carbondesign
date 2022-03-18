@@ -25,8 +25,6 @@ class TextInput(FormNode):
     """
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('icon_invalid', *FormNode.TEMPLATES)
-    "Conditional templates. Please sort from outer to inner subtemplates."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -100,9 +98,6 @@ class TextInput(FormNode):
 class PasswordInput(TextInput):
     """Password Input component.
     """
-    TEMPLATES = ('visibility', *TextInput.TEMPLATES)
-    "Conditional templates. Please sort from outer to inner subtemplates."
-
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
@@ -187,8 +182,6 @@ class DumbTextInput(DumbFormNode):
     """
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('help', 'icon_invalid',)
-    "Conditional templates. Please sort from outer to inner subtemplates."
 
 
 components = {

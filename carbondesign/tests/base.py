@@ -16,23 +16,26 @@ def strip_space(value):
     return re.sub(r'\n\s*\n', r'\n', value)
 
 
-def compare_template(template, expected):
-    form = DummyForm(initial={
-            'text': "a text",
-            'choice': "val1",
-            'started_at': datetime.strptime('2022-02-03 01:02:03',
-                DATETIME_PATTERN),
-            'stopped_at': datetime.strptime('2022-10-04 11:30:40',
-                DATETIME_PATTERN),
-            'image': 'path/image.jpeg',
-            'number': 24})
+def compare_template(template, expected, context=None):
+    if context is None:
+        form = DummyForm(initial={
+                'text': "a text",
+                'choice': "val1",
+                'started_at': datetime.strptime('2022-02-03 01:02:03',
+                    DATETIME_PATTERN),
+                'stopped_at': datetime.strptime('2022-10-04 11:30:40',
+                    DATETIME_PATTERN),
+                'image': 'path/image.jpeg',
+                'number': 24})
 
-    pager = Paginator(range(100), 10)
-    context = Context({
-            'form': form,
-            'page': pager.page(3),
-            'page_first': pager.page(1),
-            'page_last': pager.page(10)})
+        pager = Paginator(range(100), 10)
+        context = Context({
+                'form': form,
+                'page': pager.page(3),
+                'page_first': pager.page(1),
+                'page_last': pager.page(10)})
+    else:
+        context = Context(context)
 
     return (
         strip_space(expected),

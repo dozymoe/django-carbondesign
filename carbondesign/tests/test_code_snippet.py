@@ -14,7 +14,7 @@ class CodeSnippetTest(SimpleTestCase):
 """
         expected = """
 <div class="bx--snippet bx--snippet--multi" data-code-snippet>
-  <div class="bx--snippet-container" aria-label="None">
+  <div class="bx--snippet-container" aria-label="">
     <pre><code>
 </code></pre>
   </div>

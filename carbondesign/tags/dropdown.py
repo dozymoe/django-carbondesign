@@ -29,6 +29,8 @@ class Dropdown(Node):
     "Named children."
     NODE_PROPS = ('value', 'disabled', 'up', 'light', 'inline')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label', 'help', 'wrapper', 'dropdown')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -52,7 +54,7 @@ class Dropdown(Node):
 
         if self.eval(self.kwargs.get('inline', False), context):
             values['wrapper_class'].append('bx--dropdown__wrapper--inline')
-            values['wrapper_props'].append(('data-dropdown-type', 'inline'))
+            values['dropdown_props'].append(('data-dropdown-type', 'inline'))
             values['class'].append('bx--dropdown--inline')
 
 
@@ -68,7 +70,7 @@ class Dropdown(Node):
     </span>
     <div data-dropdown data-value
         class="bx--dropdown bx--dropdown--invalid {class}" data-invalid
-        {wrapper_props}>
+        {dropdown_props}>
       <button class="bx--dropdown-text" aria-haspopup="true"
           aria-expanded="false" aria-controls="menu-{id}"
           aria-labelledby="label-{id} value-{id}" type="button" {props}>
@@ -110,7 +112,7 @@ class Dropdown(Node):
     <span id="label-{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </span>
-    <div data-dropdown data-value class="bx--dropdown {class}" {wrapper_props}>
+    <div data-dropdown data-value class="bx--dropdown {class}" {dropdown_props}>
       <button class="bx--dropdown-text" aria-haspopup="true"
           aria-expanded="false" aria-controls="menu-{id}"
           aria-labelledby="label-{id} value-{id}" type="button" {props}>

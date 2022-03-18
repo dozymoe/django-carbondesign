@@ -42,8 +42,7 @@ class CodeSnippet(Node):
         """
         template = """
 <{tag} class="bx--snippet bx--snippet--multi {class}" data-code-snippet {props}>
-  <div class="bx--snippet-container {label_class}" aria-label="{label}"
-      {label_props}>
+  <div class="bx--snippet-container" aria-label="{label}">
     <pre><code>{child}</code></pre>
   </div>
   <button data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
@@ -80,8 +79,7 @@ class CodeSnippet(Node):
         """
         template = """
 <{tag} class="bx--snippet bx--snippet--single {class}" {props}>
-  <div tabindex="0"  class="bx--snippet-container {label_class}"
-      aria-label="{label}" {label_props}>
+  <div tabindex="0"  class="bx--snippet-container" aria-label="{label}">
     <pre><code>{child}</code></pre>
   </div>
   <button data-copy-btn class="bx--copy-btn" type="button" tabindex="0">

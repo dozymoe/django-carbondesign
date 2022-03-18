@@ -30,14 +30,14 @@ class Tabs(Node):
         """Prepare values for rendering the templates.
         """
         if self.eval(self.kwargs.get('container'), context):
-            values['wrapper_class'].append('bx--tabs-container')
+            values['class'].append('bx--tabs-container')
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<div data-tabs class="bx--tabs {wrapper_class}">
+<div data-tabs class="bx--tabs {class}" {props}>
   <div class="bx--tabs-trigger" tabindex="0">
     <a href="javascript:void(0)" class="bx--tabs-trigger-text" tabindex="-1">
     </a>
@@ -65,28 +65,30 @@ class TabItem(Node):
     "Template Tag needs closing end tag."
     NODE_PROPS = ('active', 'target', 'disabled')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('tab',)
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         active = self.eval(self.kwargs.get('active'), context)
         if active:
-            values['wrapper_class'].append('bx--tabs__nav-item--selected')
-            values['wrapper_props'].append(('aria-selected', 'true'))
+            values['tab_class'].append('bx--tabs__nav-item--selected')
+            values['tab_props'].append(('aria-selected', 'true'))
 
         values['target'] = self.eval(self.kwargs.get('target'), context)
 
         if self.eval(self.kwargs.get('disabled'), context):
-            values['wrapper_class'].append('bx--tabs__nav-item--disabled')
-            values['wrapper_props'].append(('aria-disabled', 'true'))
+            values['tab_class'].append('bx--tabs__nav-item--disabled')
+            values['tab_props'].append(('aria-disabled', 'true'))
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<li class="bx--tabs__nav-item {wrapper_class}" data-target="{target}" role="tab"
-    {wrapper_props}>
+<li class="bx--tabs__nav-item {tab_class}" data-target="{target}" role="tab"
+    {tab_props}>
   <a tabindex="0" class="bx--tabs__nav-link {class}" href="javascript:void(0)"
       role="tab" aria-controls="{target}" {props}>
     {child}

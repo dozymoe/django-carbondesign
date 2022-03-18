@@ -9,13 +9,14 @@ class CheckBoxTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% CheckBox form.text %}
+{% CheckBox form.choice value="val1" %}
 """
         expected = """
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input type="text" name="text" value="a text" class="bx--checkbox" required id="id_text">
-  <label for="id_text" class="bx--checkbox-label">
-    Text
+  <input name="choice" value="val1" type="checkbox" id="id_choice-0"
+      class="bx--checkbox" required="" checked="">
+  <label for="id_choice-0" class="bx--checkbox-label">
+    Value One
   </label>
 </div>
 """

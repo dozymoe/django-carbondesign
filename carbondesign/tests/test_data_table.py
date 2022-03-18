@@ -119,7 +119,6 @@ class TbSearchTest(SimpleTestCase):
       </svg>
     </div>
     <label id="label-uid" class="bx--label" for="uid">
-      None
     </label>
     <input class="bx--search-input" type="text" id="uid" role="search"
         placeholder="Search" aria-labelledby="label-uid">

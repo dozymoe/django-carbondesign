@@ -78,8 +78,7 @@ class ProgressIndicatorItem(Node):
         template = """
 <li class="bx--progress-step {class}" {props}>
   {tmpl_icon}
-  <p tabindex="0" class="bx--progress-label {label_class}"
-      aria-describedby="{id}" {label_props}>
+  <p tabindex="0" class="bx--progress-label" aria-describedby="{id}">
     {label}
   </p>
   <div id="{id}" role="tooltip" data-floating-menu-direction="bottom"

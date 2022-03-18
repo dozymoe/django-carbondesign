@@ -134,7 +134,7 @@ class ToolbarItemMultiSelect(FormNode):
         selected = self.bound_field.value()
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices(context)):
+        for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
                 'index': ii,
@@ -184,7 +184,7 @@ class ToolbarItemRadioButton(FormNode):
         selected = self.bound_field.value()
 
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices(context)):
+        for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
                 'index': ii,

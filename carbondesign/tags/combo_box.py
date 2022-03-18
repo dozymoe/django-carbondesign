@@ -18,9 +18,8 @@ class ComboBox(FormNode):
     "Template Tag needs closing end tag."
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('label', 'icon_invalid', 'icon_menu', 'icon_clear',
-            *FormNode.TEMPLATES)
-    "Conditional templates. Documentation only."
+    CLASS_AND_PROPS = ('label', 'help', 'combo', 'list')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -31,12 +30,12 @@ class ComboBox(FormNode):
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
-            values['wrapper_class'].append('bx--list-box--disabled')
-            values['wrapper_props'].append(('disabled', 'disabled'))
+            values['combo_class'].append('bx--list-box--disabled')
+            values['list_props'].append(('disabled', 'disabled'))
             values['props'].append(('disabled', 'disabled'))
 
         if self.eval(self.kwargs.get('light'), context):
-            values['wrapper_class'].append('bx--list-box--light')
+            values['combo_class'].append('bx--list-box--light')
 
 
     def prepare_element_props(self, props, default, context):
@@ -46,7 +45,7 @@ class ComboBox(FormNode):
         props['aria-autocomplete'] = 'list'
         props['aria-expanded'] = 'false'
         props['autocomplete'] = 'off'
-        props['aria-owns'] = 'menu-' + self.id(context)
+        props['aria-owns'] = 'menu-' + self._id
 
 
     def render_default(self, values, context):
@@ -57,9 +56,9 @@ class ComboBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     {tmpl_label}
-    <div class="bx--combo-box bx--list-box {wrapper_class}" data-invalid>
+    <div class="bx--combo-box bx--list-box {combo_class}" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="{txt_open}"
-          aria-expanded="false" aria-haspopup="listbox" {wrapper_props}>
+          aria-expanded="false" aria-haspopup="listbox" {list_props}>
         {element}
         {tmpl_icon_invalid}
         {tmpl_icon_clear}
@@ -82,9 +81,9 @@ class ComboBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     {tmpl_label}
-    <div class="bx--combo-box bx--list-box {wrapper_class}">
+    <div class="bx--combo-box bx--list-box {combo_class}">
       <div role="combobox" class="bx--list-box__field" aria-label="{txt_open}"
-          aria-expanded="false" aria-haspopup="listbox" {wrapper_props}>
+          aria-expanded="false" aria-haspopup="listbox" {list_props}>
         {element}
         {tmpl_icon_clear}
         {tmpl_icon_menu}

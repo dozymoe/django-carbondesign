@@ -24,8 +24,6 @@ class UiShell(Node):
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'header'
     "Rendered HTML tag."
-    TEMPLATES = ('title', 'hamburger')
-    "Conditional templates."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -39,8 +37,9 @@ class UiShell(Node):
         if 'label_prefix' in self.kwargs:
             values['long_label'] = '%s %s' % (
                     self.eval(self.kwargs.get('label_prefix'), context),
-                    self.label(context))
-        values['long_label'] = self.label(context)
+                    values['label'])
+        else:
+            values['long_label'] = values['label']
 
 
     def render_default(self, values, context):
@@ -130,6 +129,9 @@ class UiShell(Node):
     def render_tmpl_hamburger(self, values, context):
         """Dynamically render a part of the component's template.
         """
+        if 'navigation' not in self.slots:
+            return ''
+
         template = """
 <button class="bx--header__menu-trigger bx--header__action"
     aria-label="{txt_open_menu}" title="{txt_open_menu}"
@@ -150,9 +152,7 @@ class UiShell(Node):
   </svg>
 </button>
 """
-        if 'navigation' in self.slots:
-            return self.format(template, values)
-        return ""
+        return self.format(template, values)
 
 
 class Link(Node):
@@ -183,7 +183,6 @@ class Link(Node):
         """
         if 'submenu' in self.slots:
             values['cleaned_child'] = strip_tags(values['child']).strip()
-
             template = """
 <li class="bx--header__submenu" data-header-submenu>
   <a class="bx--header__menu-item bx--header__menu-title {class}"
@@ -194,10 +193,7 @@ class Link(Node):
       <path d="M6.002 5.55L11.27 0l.726.685L6.003 7 0 .685.726 0z" />
     </svg>
   </a>
-  <ul class="bx--header__menu" aria-label="{cleaned_child}"
-      {slot_submenu_props}>
-    {slot_submenu}
-  </ul>
+  {slot_submenu}
 </li>
 """
             return self.format(template, values, context)
@@ -223,6 +219,17 @@ class Link(Node):
         return self.format(template, values)
 
 
+    def render_slot_submenu(self, values, context):
+        """Render html of the slot.
+        """
+        template = """
+<ul class="bx--header__menu {class}" aria-label="{cleaned_child}" {props}>
+  {child}
+</ul>
+"""
+        return self.format(template, values)
+
+
 class Action(Node):
     """Topbar action buttons.
     """
@@ -232,6 +239,8 @@ class Action(Node):
     "Named children."
     NODE_PROPS = ('target',)
     "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('target',)
+    "Will raise Exception if not set."
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
 
@@ -427,6 +436,7 @@ class SideNav(Node):
         """Prepare values for rendering the templates.
         """
         values['txt_label'] = _("Side navigation")
+
         if self.eval(self.kwargs.get('fixed'), context):
             values['class'].append('bx--side-nav--fixed')
 

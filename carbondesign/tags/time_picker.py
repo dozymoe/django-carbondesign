@@ -17,6 +17,8 @@ class TimePicker(FormNode):
     """
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label', 'select')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -27,15 +29,11 @@ class TimePicker(FormNode):
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['props'].append(('disabled', ''))
-            values['select_props'] = 'disabled'
-        else:
-            values['select_props'] = ''
+            values['select_props'].append(('disabled', ''))
 
         if self.eval(self.kwargs.get('light'), context):
             values['class'].append('bx--time-picker--light')
-            values['select_class'] = 'bx--select--light'
-        else:
-            values['select_class'] = ''
+            values['select_class'].append('bx--select--light')
 
 
     def prepare_element_props(self, props, default, context):
