@@ -14,7 +14,7 @@ class ButtonDangerTest(SimpleTestCase):
 {% endButton %}
 """
         expected = """
-<button class="bx--btn bx--btn--danger" aria-label="danger" type="button">
+<button class="bx--btn bx--btn--danger" type="button" aria-label="danger">
   Button
 </button>
 """
@@ -30,7 +30,7 @@ class ButtonDangerTest(SimpleTestCase):
 {% endButton %}
 """
         expected = """
-<button class="bx--btn bx--btn--danger" aria-label="danger" disabled="disabled" type="button">
+<button class="bx--btn bx--btn--danger" type="button" disabled="disabled" aria-label="danger">
   Button
 </button>
 """
@@ -53,7 +53,7 @@ class ButtonDangerTest(SimpleTestCase):
 {% endButton %}
 """
         expected = """
-<button class="bx--btn bx--btn--danger" aria-label="danger" type="button">
+<button class="bx--btn bx--btn--danger" type="button" aria-label="danger">
   With icon
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
       <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
@@ -79,7 +79,7 @@ class ButtonDangerTest(SimpleTestCase):
 {% endButton %}
 """
         expected = """
-<button class="bx--btn bx--btn--danger" aria-label="danger" disabled="disabled" type="button">
+<button class="bx--btn bx--btn--danger" type="button" disabled="disabled" aria-label="danger">
   With icon
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
       <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>

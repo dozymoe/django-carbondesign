@@ -18,7 +18,7 @@ class SelectTest(SimpleTestCase):
       Choice
     </label>
     <div class="bx--select-input__wrapper">
-      <select class="bx--select-input" required="" name="choice" id="id_choice">
+      <select class="bx--select-input" id="id_choice" name="choice" required="">
 <option class="bx--select-option" value="val1" selected>
   Value One
 </option>

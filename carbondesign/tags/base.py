@@ -355,7 +355,7 @@ class Node(template.Node):
                 added_props.add(prop_name)
                 yield prop
 
-        return list(_clean_attributes())
+        return reversed(list(_clean_attributes()))
 
 
     def join_attributes(self, attrs):
@@ -412,6 +412,7 @@ class FormNode(Node):
     "Render the form field widget."
 
     bound_field = None
+    bound_value = None
 
     def default_id(self):
         """Get Django form field html id.
@@ -454,6 +455,7 @@ class FormNode(Node):
         """Initialize the values meant for rendering templates.
         """
         self.bound_field = self.args[0].resolve(context)
+        self.bound_value = self.bound_field.value()
         super().before_prepare(values, context)
         if not values['label']:
             values['label'] = self.label()
@@ -493,6 +495,19 @@ class FormNode(Node):
 
             for subvalue, sublabel in choices:
                 yield (group_name, subvalue, sublabel)
+
+
+    def render_tmpl_label(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        if not values['label']:
+            return ''
+        tmpl = """
+<label for="{id}" class="bx--label {label_class}" {label_props}>
+  {label}
+</label>
+"""
+        return self.format(tmpl, values)
 
 
     def render_tmpl_help(self, values, context):

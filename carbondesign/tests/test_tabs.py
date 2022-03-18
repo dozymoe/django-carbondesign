@@ -63,7 +63,7 @@ class TabContentTest(SimpleTestCase):
 {% endTabContent %}
 """
         expected = """
-<div role="tabpanel" aria-labelledby="None" aria-hidden="false" hidden="" aria-hidden="true">
+<div role="tabpanel" aria-labelledby="None" aria-hidden="false" aria-hidden="true" hidden="">
   <div>
 </div>
 </div>

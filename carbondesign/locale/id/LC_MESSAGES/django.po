@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 11:18+0700\n"
+"POT-Creation-Date: 2022-03-18 18:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,23 +26,23 @@ msgstr "Argumen {prop} harus diset untuk template tag."
 msgid "breadcrumb"
 msgstr "remahan"
 
-#: carbondesign/tags/code_snippet.py:33 carbondesign/tags/copy_button.py:21
+#: carbondesign/tags/code_snippet.py:35 carbondesign/tags/copy_button.py:21
 msgid "Copied!"
 msgstr "Tersalin!"
 
-#: carbondesign/tags/code_snippet.py:34
+#: carbondesign/tags/code_snippet.py:36
 msgid "Copy code"
 msgstr "Salin kode"
 
-#: carbondesign/tags/code_snippet.py:35
+#: carbondesign/tags/code_snippet.py:37
 msgid "Show more"
 msgstr "Tampilkan lebih"
 
-#: carbondesign/tags/code_snippet.py:36
+#: carbondesign/tags/code_snippet.py:38
 msgid "Show more icon"
 msgstr "Tampilkan tambahan icon"
 
-#: carbondesign/tags/code_snippet.py:37
+#: carbondesign/tags/code_snippet.py:39
 msgid "Show less"
 msgstr "Kurangi tampilan"
 

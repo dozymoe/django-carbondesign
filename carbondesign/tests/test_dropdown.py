@@ -55,7 +55,7 @@ class DropdownItemTest(SimpleTestCase):
         expected = """
 <li data-option data-value="" class="bx--dropdown-item"
     title="">
-  <a class="bx--dropdown-link" role="menuitemradio" id="item-uid" tabindex="-1" aria-checked="false" id="uid">
+  <a class="bx--dropdown-link" role="menuitemradio" id="item-uid" id="uid" aria-checked="false" tabindex="-1">
   </a>
 </li>
 """

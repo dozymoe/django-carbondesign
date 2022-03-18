@@ -14,10 +14,10 @@ class CheckBoxTest(SimpleTestCase):
         expected = """
 <div class="bx--form-item bx--checkbox-wrapper">
   <input name="choice" value="val1" type="checkbox" id="id_choice-0"
-      class="bx--checkbox" required="" checked="">
-  <label for="id_choice-0" class="bx--checkbox-label">
-    Value One
-  </label>
+      class="bx--checkbox" checked="" required="">
+<label for="id_choice-0" class="bx--checkbox-label">
+  Value One
+</label>
 </div>
 """
         rendered = compare_template(template, expected)

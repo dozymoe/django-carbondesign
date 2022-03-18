@@ -16,8 +16,6 @@ checking an additional box does not affect any other selections.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from typing import Sequence
-#-
 from .base import FormNode
 
 class CheckBox(FormNode):
@@ -74,10 +72,7 @@ class CheckBox(FormNode):
                 values['label_props'].append(('data-contained-checkbox-state',
                         'mixed'))
 
-        selected = self.bound_field.value()
-        if not isinstance(selected, Sequence):
-            selected = [selected]
-        if self.value in selected:
+        if self.value in self.bound_value:
             values['props'].append(('checked', ''))
 
         required = self.bound_field.field.required and\
@@ -93,12 +88,10 @@ class CheckBox(FormNode):
 <div class="bx--form-item bx--checkbox-wrapper">
   <input name="{name}" value="{value}" type="checkbox" id="{id}"
       class="bx--checkbox {class}" {props}>
-  <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_inside(self, values, context,):
@@ -112,6 +105,19 @@ class CheckBox(FormNode):
     {label}
   </label>
 </div>
+"""
+        return self.format(template, values)
+
+
+    def render_tmpl_label(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        if not values['label']:
+            return ''
+        template = """
+<label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
+  {label}
+</label>
 """
         return self.format(template, values)
 

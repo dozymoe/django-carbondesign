@@ -9,7 +9,7 @@ class CodeSnippetTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% Code %}
+{% Code mode="multi" %}
 {% endCode %}
 """
         expected = """
