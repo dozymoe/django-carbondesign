@@ -1,6 +1,6 @@
 """Base classes for carbondesign Template Tags.
 """
-from copy import copy
+#from copy import copy
 import logging
 import re
 from uuid import uuid4
@@ -232,14 +232,15 @@ class Node(template.Node):
         if slot:
             method = getattr(self, f'render_slot_{name}', None)
             if method:
+                slot_context = template.Context(context.flatten())
+                slot_context['slot'] = name
                 slots[slot_name] = method(
                         {
                             # Use context to tell slot's children in which slot
                             # they are, for example when catching props from
                             # parent tags.
                             # It is set here to mimic javascript.
-                            'child': slot.render(copy(context).update(
-                                {'slot': name})),
+                            'child': slot.render(slot_context),
                             'class': values[name + '_class'],
                             'props': values[name + '_props'],
                             'id': values['id'],

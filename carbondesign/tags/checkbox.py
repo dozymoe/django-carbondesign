@@ -25,6 +25,8 @@ class CheckBox(FormNode):
     "Available variants."
     NODE_PROPS = ('value', 'id', 'mixed')
     "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('value',)
+    "Will raise Exception if not set."
     RENDER_ELEMENT = False
     "Render the form field widget."
 
@@ -72,7 +74,7 @@ class CheckBox(FormNode):
                 values['label_props'].append(('data-contained-checkbox-state',
                         'mixed'))
 
-        if self.value in self.bound_value:
+        if self.bound_value and self.value in self.bound_value:
             values['props'].append(('checked', ''))
 
         required = self.bound_field.field.required and\

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-19 06:19+0700\n"
+"POT-Creation-Date: 2022-03-19 19:56+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Tampilkan tambahan icon"
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:425
+#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:431
 #: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
 #: carbondesign/tags/ui_shell.py:32
 msgid "Open menu"
@@ -61,13 +61,9 @@ msgstr "Tutup menu"
 msgid "Clear all"
 msgstr "Hapus bersih"
 
-#: carbondesign/tags/data_table.py:57
+#: carbondesign/tags/data_table.py:58
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Tabel"
-
-#: carbondesign/tags/data_table.py:58
-msgid "Cancel"
-msgstr "Batal"
 
 #: carbondesign/tags/data_table.py:59
 msgid "items selected"
@@ -77,12 +73,16 @@ msgstr "baris dipilih"
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/tags/data_table.py:528 carbondesign/tags/search.py:39
+#: carbondesign/tags/data_table.py:179
+msgid "Cancel"
+msgstr "Batal"
+
+#: carbondesign/tags/data_table.py:575 carbondesign/tags/search.py:39
 #: carbondesign/tags/toolbar.py:37
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:529 carbondesign/tags/search.py:36
+#: carbondesign/tags/data_table.py:576 carbondesign/tags/search.py:36
 #: carbondesign/tags/toolbar.py:39
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
