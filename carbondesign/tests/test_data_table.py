@@ -112,11 +112,12 @@ class TbSearchTest(SimpleTestCase):
 <div class="bx--toolbar-search-container-persistent">
   <div data-search class="bx--search" role="search">
     <div class="bx--search-magnifier">
-      <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-          xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-          width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
-      </svg>
+<svg focusable="false" preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+    class="bx--toolbar-action__icon" width="16" height="16" viewBox="0 0 16 16"
+    aria-hidden="true">
+  <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
+</svg>
     </div>
     <label id="label-uid" class="bx--label" for="uid">
       Search

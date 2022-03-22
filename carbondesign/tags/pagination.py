@@ -17,9 +17,13 @@ The default number displayed will vary depending on the context.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
+import logging
+#-
 from django.utils.translation import gettext as _
 #-
 from .base import Node
+
+_logger = logging.getLogger(__name__)
 
 
 class Pagination(Node):
@@ -93,7 +97,7 @@ class Pagination(Node):
       </svg>
     </div>
     <label id="select-{id}-pagination-page-label" class="bx--pagination__text"
-        for="select-id-pagination-page">
+        for="select-{id}-pagination-page">
       {tmpl_pagination_num_pages}
     </label>
     <button class="bx--pagination__button bx--pagination__button--backward"
@@ -173,7 +177,7 @@ class Pagination(Node):
 """
         page_range = template.format(
                 range_start=self.pager.paginator.page_range[0],
-                range_end=self.pager.paginator.page_range[1])
+                range_end=self.pager.paginator.page_range[-1])
         template = '<span data-total-items>{total}</span>'
         page_total = template.format(total=self.pager.paginator.count)
 

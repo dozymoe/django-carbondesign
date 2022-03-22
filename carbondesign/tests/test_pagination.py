@@ -57,7 +57,7 @@ class PaginationTest(SimpleTestCase):
       </svg>
     </div>
     <span class="bx--pagination__text">
-<span data-displayed-item-range>1-2</span>
+<span data-displayed-item-range>1-10</span>
  of <span data-total-items>100</span> items
     </span>
   </div>
@@ -105,7 +105,7 @@ class PaginationTest(SimpleTestCase):
       </svg>
     </div>
     <label id="select-uid-pagination-page-label" class="bx--pagination__text"
-        for="select-id-pagination-page">
+        for="select-uid-pagination-page">
       of 10 pages
     </label>
     <button class="bx--pagination__button bx--pagination__button--backward"
