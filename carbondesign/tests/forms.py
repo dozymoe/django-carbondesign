@@ -3,6 +3,7 @@ from django import forms
 
 class DummyForm(forms.Form):
     text = forms.CharField()
+    text_empty = forms.CharField(required=False)
     text_missing = forms.CharField()
 
     number = forms.IntegerField()

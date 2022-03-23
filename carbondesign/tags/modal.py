@@ -35,11 +35,43 @@ class Modal(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('label', 'heading', 'footer')
     "Named children."
+    NODE_PROPS = ('id', 'variant', 'has_form', 'size', 'can_scroll')
+    "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('container', 'content', 'close')
+    "Prepare xxx_class and xxx_props values."
+    POSSIBLE_VARIANT = ('danger',)
+    "Documentation only."
+    POSSIBLE_SIZE = ('xs', 'sm', 'lg')
+    "Documentation only."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         values['txt_close'] = _("close modal")
+
+        variant = self.eval(self.kwargs.get('variant'), context)
+        if variant:
+            values['class'].append(f'bx--modal--{variant}')
+
+        id_ = values['id']
+        if 'label' in self.slots:
+            values['props'].append(('aria-labelledby', f'label-{id_}'))
+        if 'heading' in self.slots:
+            values['props'].append(('aria-describedby', f'heading-{id_}'))
+
+        has_form = self.eval(self.kwargs.get('has_form'), context)
+        if has_form:
+            values['content_class'].append('bx--modal-content--with-form')
+
+        size = self.eval(self.kwargs.get('size'), context)
+        if size:
+            values['container_class'].append(f'bx--modal-container--{size}')
+
+        if not has_form and 'footer' not in self.slots:
+            values['close_props'].append(('data-modal-primary-focus', ''))
+
+        if self.eval(self.kwargs.get('can_scroll'), context):
+            values['content_props'].append(('tabindex', '0'))
 
 
     def render_default(self, values, context):
@@ -47,24 +79,23 @@ class Modal(Node):
         """
         template = """
 <div data-modal id="{id}" class="bx--modal {class}" role="dialog"
-    aria-modal="true" aria-labelledby="{id}-label"
-    aria-describedby="{id}-heading" tabindex="-1" {props}>
-  <div class="bx--modal-container">
+    aria-modal="true" tabindex="-1" {props}>
+  <div class="bx--modal-container {container_class}" {container_props}>
     <div class="bx--modal-header">
       {slot_label}
       {slot_heading}
-      <button class="bx--modal-close" type="button" data-modal-close
-          aria-label="{txt_close}">
+      <button class="bx--modal-close {close_class}" type="button" data-modal-close
+          aria-label="{txt_close}" {close_props}>
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-            style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             class="bx--modal-close__icon" width="16" height="16"
-            viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"></path>
+            viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
         </svg>
       </button>
     </div>
 
-    <div class="bx--modal-content" tabindex="0">
+    <div class="bx--modal-content {content_class}" {content_props}>
       {child}
     </div>
     <div class="bx--modal-content--overflow-indicator"></div>
@@ -81,7 +112,7 @@ class Modal(Node):
         """Render html of the slot.
         """
         template = """
-<p class="bx--modal-header__label bx--type-delta {class}" id="{id}-label"
+<p class="bx--modal-header__label bx--type-delta {class}" id="label-{id}"
     {props}>
   {child}
 </p>
@@ -93,7 +124,7 @@ class Modal(Node):
         """Render html of the slot.
         """
         template = """
-<p class="bx--modal-header__heading bx--type-beta {class}" id="{id}-heading"
+<p class="bx--modal-header__heading bx--type-beta {class}" id="heading-{id}"
     {props}>
   {child}
 </p>
@@ -112,6 +143,7 @@ class ModalTrigger(Button):
     """Modal trigger button.
     """
     NODE_PROPS = ('target', *Button.NODE_PROPS)
+    "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.

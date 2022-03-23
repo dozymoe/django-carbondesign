@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-23 16:40+0700\n"
+"POT-Creation-Date: 2022-03-23 20:43+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,11 +111,11 @@ msgstr "Gagal mengambil data."
 msgid "Loading"
 msgstr "Persiapan"
 
-#: carbondesign/tags/modal.py:42
+#: carbondesign/tags/modal.py:50
 msgid "close modal"
 msgstr "tutup dialog"
 
-#: carbondesign/tags/modal.py:131
+#: carbondesign/tags/modal.py:163
 msgid "Show modal"
 msgstr "Buka dialog"
 
