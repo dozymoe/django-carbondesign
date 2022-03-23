@@ -38,7 +38,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box">
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="listbox" aria-expanded="false">
-        <input type="text" name="text" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="downshift-input-2-hint" aria-describedby="downshift-input-2-hint" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
+        <input type="text" name="text" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="hint-downshift-input-2" aria-describedby="hint-downshift-input-2" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
 <div class="bx--list-box__menu-icon">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -52,7 +52,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
           aria-label="Combo box label">
       </ul>
     </div>
-<div class="bx--form__helper-text">
+<div id="hint-downshift-input-2" class="bx--form__helper-text">
   Optional helper text here
 </div>
   </div>
@@ -79,7 +79,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box">
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="listbox" aria-expanded="false">
-        <input type="text" name="text" value="This is not a value." id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="downshift-input-2-hint" aria-describedby="downshift-input-2-hint" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
+        <input type="text" name="text" value="This is not a value." id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="hint-downshift-input-2" aria-describedby="hint-downshift-input-2" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
 <div class="bx--list-box__selection" role="button" title="Clear all">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -101,7 +101,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
           aria-label="Combo box label">
       </ul>
     </div>
-<div class="bx--form__helper-text">
+<div id="hint-downshift-input-2" class="bx--form__helper-text">
   Optional helper text here
 </div>
   </div>
@@ -150,7 +150,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
       </ul>
     </div>
     <div class="bx--form-requirement">
-      * This field is required.
+      <div class="bx--form-requirement__title">This field is required.</div>
     </div>
   </div>
 </div>
@@ -206,7 +206,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
       </ul>
     </div>
     <div class="bx--form-requirement">
-      * Enter a whole number.
+      <div class="bx--form-requirement__title">Enter a whole number.</div>
     </div>
   </div>
 </div>
@@ -254,7 +254,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
       </ul>
     </div>
     <div class="bx--form-requirement">
-      * This field is required.
+      <div class="bx--form-requirement__title">This field is required.</div>
     </div>
   </div>
 </div>
@@ -310,7 +310,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
       </ul>
     </div>
     <div class="bx--form-requirement">
-      * Enter a whole number.
+      <div class="bx--form-requirement__title">Enter a whole number.</div>
     </div>
   </div>
 </div>
@@ -352,7 +352,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box bx--list-box--expanded">
       <div role="combobox" class="bx--list-box__field" aria-label="Close menu"
           aria-haspopup="listbox" aria-expanded="true">
-        <input type="text" name="text" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="downshift-input-2-hint" aria-describedby="downshift-input-2-hint" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="true">
+        <input type="text" name="text" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="hint-downshift-input-2" aria-describedby="hint-downshift-input-2" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="true">
 <div class="bx--list-box__menu-icon bx--list-box__menu-icon--open">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -392,7 +392,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
 </li>
       </ul>
     </div>
-<div class="bx--form__helper-text">
+<div id="hint-downshift-input-2" class="bx--form__helper-text">
   Optional helper text here
 </div>
   </div>
@@ -435,7 +435,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box bx--list-box--expanded">
       <div role="combobox" class="bx--list-box__field" aria-label="Close menu"
           aria-haspopup="listbox" aria-expanded="true">
-        <input type="text" name="text" value="Option 3" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="downshift-input-2-hint" aria-describedby="downshift-input-2-hint" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="true">
+        <input type="text" name="text" value="Option 3" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-controls="hint-downshift-input-2" aria-describedby="hint-downshift-input-2" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="true">
 <div class="bx--list-box__selection" role="button" title="Clear all">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -483,7 +483,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
 </li>
       </ul>
     </div>
-<div class="bx--form__helper-text">
+<div id="hint-downshift-input-2" class="bx--form__helper-text">
   Optional helper text here
 </div>
   </div>
@@ -582,7 +582,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
       </ul>
     </div>
     <div class="bx--form-requirement">
-      * Enter a whole number.
+      <div class="bx--form-requirement__title">Enter a whole number.</div>
     </div>
   </div>
 </div>

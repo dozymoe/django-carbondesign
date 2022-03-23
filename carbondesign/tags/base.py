@@ -3,6 +3,7 @@
 #from copy import copy
 import logging
 import re
+from typing import ByteString
 from uuid import uuid4
 #-
 from django import template
@@ -15,6 +16,7 @@ from .base_widgets import CustomTextInput
 _logger = logging.getLogger(__name__)
 
 SLOT_NAME_PATTERN = re.compile(r'{(tmpl|slot)_(\w+)}')
+TMPL_MULTI_PATTERN = re.compile(r'(?P<name>\w+)_(?P<index>\d+)$')
 
 
 def var_eval(value, context):
@@ -210,8 +212,9 @@ class Node(template.Node):
 
     def tmpl(self, name, values, context, slots):
         """Render individual templates.
+
+        We don't return values like we do in javascript, not needed.
         """
-        # We don't return values like we do in javascript, not needed.
         slot_name = f'tmpl_{name}'
         if slot_name in slots:
             return
@@ -308,6 +311,7 @@ class Node(template.Node):
     def after_prepare(self, values, context):
         """Simplifying values meant for rendering templates.
         """
+        values['props_raw'] = self.prune_attributes(values['props'])
         values['props'] = self.join_attributes(self.prune_attributes(
                 values['props']))
         values['class'] = ' '.join(values['class'])
@@ -388,7 +392,12 @@ class Node(template.Node):
             if slots:
                 tpl = tpl.format_map(IgnoreMissing(slots))
 
-        return tpl.format_map(IgnoreMissing(values))
+        try:
+            return tpl.format_map(IgnoreMissing(values))
+        except ValueError as e:
+            _logger.error(tpl)
+            _logger.error(values)
+            raise e
 
 
     def set_child_props(self, context, name, slot=None, **kwargs):
@@ -409,8 +418,6 @@ class FormNode(Node):
     "Base Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help')
     "Prepare xxx_class and xxx_props values."
-    RENDER_ELEMENT = True
-    "Render the form field widget."
 
     bound_field = None
     bound_value = None
@@ -427,31 +434,6 @@ class FormNode(Node):
         return self.bound_field.label
 
 
-    def element(self, values, context):
-        """Render django form field.
-        """
-        field = self.bound_field
-        widget_attrs = field.field.widget.attrs
-
-        attrs = dict(values['props'])
-        attrs['class'] = widget_attrs.get('class', '').split()
-        if field.help_text or 'help' in self.slots:
-            attrs['aria-controls'] = values['id'] + '-hint'
-            attrs['aria-describedby'] = values['id'] + '-hint'
-
-        self.prepare_element_props(attrs, widget_attrs, context)
-        attrs['class'] = ' '.join(attrs['class'])
-
-        if var_eval(self.kwargs.get('hidden'), context):
-            return field.as_hidden(attrs=attrs)
-
-        widget = self.eval(self.kwargs.get('widget'), context)
-        if widget == 'input':
-            widget = CustomTextInput(attrs=attrs)
-            return field.as_widget(widget=widget, attrs=attrs)
-        return field.as_widget(attrs=attrs)
-
-
     def before_prepare(self, values, context):
         """Initialize the values meant for rendering templates.
         """
@@ -462,20 +444,7 @@ class FormNode(Node):
             values['label'] = self.label()
 
 
-    def after_prepare(self, values, context):
-        """Simplifying values meant for rendering templates.
-        """
-        if self.RENDER_ELEMENT:
-            values['element'] = self.element(values, context)
-        super().after_prepare(values, context)
-
-        if self.bound_field.errors:
-            values['form_errors'] = self.bound_field.errors.as_text()
-        else:
-            values['form_errors'] = ''
-
-
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
 
@@ -498,6 +467,30 @@ class FormNode(Node):
                 yield (group_name, subvalue, sublabel)
 
 
+    def render_tmpl_element(self, values, context):
+        """Render django form field.
+        """
+        bound_field = self.bound_field
+
+        attrs = dict(values['props_raw'])
+        attrs['class'] = bound_field.field.widget.attrs.get('class', '').split()
+        if bound_field.help_text or 'help' in self.slots:
+            attrs['aria-controls'] = 'hint-' + values['id']
+            attrs['aria-describedby'] = 'hint-' + values['id']
+
+        self.prepare_element_props(attrs, context)
+        attrs['class'] = ' '.join(attrs['class'])
+
+        if var_eval(self.kwargs.get('hidden'), context):
+            return bound_field.as_hidden(attrs=attrs)
+
+        widget = self.eval(self.kwargs.get('widget'), context)
+        if widget == 'input':
+            widget = CustomTextInput(attrs=attrs)
+            return bound_field.as_widget(widget=widget, attrs=attrs)
+        return bound_field.as_widget(attrs=attrs)
+
+
     def render_tmpl_label(self, values, context):
         """Dynamically render a part of the component's template.
         """
@@ -516,7 +509,7 @@ class FormNode(Node):
         """
         if self.bound_field.help_text:
             tmpl = """
-<div class="bx--form__helper-text {class}" {props}>
+<div id="hint-{id}" class="bx--form__helper-text {class}" {props}>
   {child}
 </div>
 """
@@ -524,9 +517,26 @@ class FormNode(Node):
                 'child': self.bound_field.help_text,
                 'class': values['help_class'],
                 'props': values['help_props'],
+                'id': values['id'],
             }
             return tmpl.format(**help_values)
         return ''
+
+
+    def render_tmpl_errors(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        tmpl_t = '<div class="bx--form-requirement__title">{title}.</div>'
+        tmpl_s = '<p class="bx--form-requirement__supplement">{supplement}</p>'
+
+        items = []
+        for error in self.bound_field.errors:
+            title, supplement = error.split('.', 1)
+            supplement = supplement.strip()
+            items.append(tmpl_t.format(title=title))
+            if supplement:
+                items.append(tmpl_s.format(supplement=supplement.strip()))
+        return '\n'.join(items)
 
 
 class FormNodes(Node):
@@ -539,34 +549,6 @@ class FormNodes(Node):
 
     bound_fields = None
 
-    def elements(self, values, context):
-        """Render django form fields.
-        """
-        for field in self.bound_fields:
-            widget_attrs = field.field.widget.attrs
-
-            attrs = dict(values['props'])
-            attrs['class'] = widget_attrs.get('class', '').split()
-            if field.help_text or 'help' in self.slots:
-                attrs['aria-controls'] = values['id'] + '-hint'
-                attrs['aria-describedby'] = values['id'] + '-hint'
-
-            self.prepare_element_props(field, attrs, widget_attrs, context)
-            attrs['class'] = ' '.join(attrs['class'])
-
-            if var_eval(self.kwargs.get('hidden'), context):
-                yield field.as_hidden(attrs=attrs)
-                continue
-
-            widget = self.eval(self.kwargs.get('widget'), context)
-            if widget == 'input':
-                widget = CustomTextInput(attrs=attrs)
-                yield field.as_widget(widget=widget, attrs=attrs)
-                continue
-
-            yield field.as_widget(attrs=attrs)
-
-
     def before_prepare(self, values, context):
         """Initialize the values meant for rendering templates.
         """
@@ -577,23 +559,101 @@ class FormNodes(Node):
         super().before_prepare(values, context)
 
 
-    def after_prepare(self, values, context):
-        """Simplifying values meant for rendering templates.
-        """
-        for ii, element in enumerate(self.elements(values, context)):
-            values[f'element_{ii}'] = element
-        super().after_prepare(values, context)
-
-        for ii, field in enumerate(self.bound_fields):
-            if field.errors:
-                values[f'form_errors_{ii}'] = field.errors.as_text()
-            else:
-                values[f'form_errors_{ii}'] = ''
-
-
-    def prepare_element_props(self, field, props, default, context):
+    def prepare_element_props(self, props, context, bound_field):
         """Prepare html attributes for rendering the form element.
         """
+
+
+    def tmpl(self, name, values, context, slots):
+        """Render individual templates.
+
+        We don't return values like we do in javascript, not needed.
+        """
+        if isinstance(name, (str, ByteString)):
+            method_name = name
+        else:
+            # Trying to facilitate tmpl_label_1 that is used in FormNodes,
+            # where 1 refers to self.bound_fields[1].
+            # In that case the value of name will be ['label_1', 'label']
+            name, method_name = name
+        slot_name = f'tmpl_{name}'
+        if slot_name in slots:
+            return
+
+        method = getattr(self, f'render_tmpl_{method_name}')
+        slots[slot_name] = method(values, context)
+
+
+    def format(self, tpl, values, context=None):
+        """Apply the prepared values to the templates.
+        """
+        # pylint:disable=too-many-nested-blocks
+        if context:
+            # Assume the caller want to tell us there are sub-templates.
+            slots = {}
+            for typ, nam in SLOT_NAME_PATTERN.findall(tpl):
+                tplvalues = values
+                if typ == 'tmpl':
+                    # Trying to facilitate tmpl_label_1 that is used in
+                    # FormNodes, where 1 refers to self.bound_fields[1].
+                    match = TMPL_MULTI_PATTERN.match(nam)
+                    if match:
+                        index = int(match.group('index'))
+                        name = match.group('name')
+                        for ii, field in enumerate(self.bound_fields):
+                            if ii != index:
+                                continue
+                            nam = [nam, name]
+                            tplvalues = values.copy()
+                            tplvalues['_bound_field'] = field
+                            break
+                method = getattr(self, typ)
+                method(nam, tplvalues, context, slots)
+            if slots:
+                tpl = tpl.format_map(IgnoreMissing(slots))
+
+        return tpl.format_map(IgnoreMissing(values))
+
+
+    def render_tmpl_element(self, values, context):
+        """Render django form fields.
+        """
+        bound_field = values['_bound_field']
+
+        attrs = dict(values['props_raw'])
+        attrs['class'] = bound_field.field.widget.attrs.get('class', '').split()
+        if bound_field.help_text or 'help' in self.slots:
+            attrs['aria-controls'] = 'hint-' + values['id']
+            attrs['aria-describedby'] = 'hint-' + values['id']
+
+        self.prepare_element_props(attrs, context, bound_field)
+        attrs['class'] = ' '.join(attrs['class'])
+
+        if var_eval(self.kwargs.get('hidden'), context):
+            return bound_field.as_hidden(attrs=attrs)
+
+        widget = self.eval(self.kwargs.get('widget'), context)
+        if widget == 'input':
+            widget = CustomTextInput(attrs=attrs)
+            return bound_field.as_widget(widget=widget, attrs=attrs)
+        return bound_field.as_widget(attrs=attrs)
+
+
+    def render_tmpl_errors(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        tmpl_t = '<div class="bx--form-requirement__title">{title}.</div>'
+        tmpl_s = '<p class="bx--form-requirement__supplement">{supplement}</p>'
+
+        items = []
+        bound_field = values['_bound_field']
+        for error in bound_field.errors:
+            title, supplement = error.split('.', 1)
+            supplement = supplement.strip()
+            items.append(tmpl_t.format(title=title))
+            if supplement:
+                items.append(tmpl_s.format(supplement=supplement.strip()))
+        return '\n'.join(items)
 
 
 class DumbFormNode(Node):
@@ -609,11 +669,11 @@ class DumbFormNode(Node):
     def element(self, values, context):
         """Render html of the form control.
         """
-        attrs = dict(values['props'])
+        attrs = dict(values['props_raw'])
         attrs['class'] = []
         if 'help' in self.slots:
-            attrs['aria-controls'] = values['id'] + '-hint'
-            attrs['aria-describedby'] = values['id'] + '-hint'
+            attrs['aria-controls'] = 'hint-' + values['id']
+            attrs['aria-describedby'] = 'hint-' + values['id']
 
         self.prepare_element_props(attrs, attrs, context)
         attrs['class'] = ' '.join(attrs['class'])
@@ -648,7 +708,7 @@ class DumbFormNode(Node):
         """Render html of the slot.
         """
         tmpl = """
-<div class="bx--form__helper-text {class}" {props}>
+<div id="hint-{id}" class="bx--form__helper-text {class}" {props}>
   {child}
 </div>
 """

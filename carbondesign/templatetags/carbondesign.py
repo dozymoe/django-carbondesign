@@ -14,7 +14,7 @@ from django.utils.safestring import mark_safe
 #-
 from ..tags import accordion, base, breadcrumb, button, checkbox, code_snippet
 from ..tags import combo_box, content_switcher, copy_button, data_table
-from ..tags import date_picker, dropdown, file_uploader, grid, inline_loading
+from ..tags import date_picker, file_uploader, grid, inline_loading
 from ..tags import link, list_, list_box, loading, modal, multi_select
 from ..tags import notification, number_input, overflow_menu, pagination
 from ..tags import pagination_nav, progress_indicator, radio_button, search
@@ -38,7 +38,6 @@ MATERIAL_TAGS = {
     **copy_button.components,
     **data_table.components,
     **date_picker.components,
-    **dropdown.components,
     **file_uploader.components,
     **grid.components,
     **inline_loading.components,

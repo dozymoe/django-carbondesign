@@ -28,8 +28,6 @@ class Select(FormNode):
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'select')
     "Prepare xxx_class and xxx_props values."
-    RENDER_ELEMENT = False
-    "Render the form field widget."
 
     required = False
 

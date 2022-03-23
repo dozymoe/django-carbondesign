@@ -36,7 +36,7 @@ class TimePicker(FormNode):
             values['select_class'].append('bx--select--light')
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
@@ -55,11 +55,9 @@ class TimePicker(FormNode):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   <div class="bx--time-picker {class}" data-invalid>
-    <div class="bx--time-picker__input">{element}</div>
+    <div class="bx--time-picker__input">{tmpl_element}</div>
     {tmpl_select_ampm}
     {tmpl_select_zone}
   </div>
@@ -72,11 +70,9 @@ class TimePicker(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   <div class="bx--time-picker {class}">
-    <div class="bx--time-picker__input">{element}</div>
+    <div class="bx--time-picker__input">{tmpl_element}</div>
     {tmpl_select_ampm}
     {tmpl_select_zone}
   </div>

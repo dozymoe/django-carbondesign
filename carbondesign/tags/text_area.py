@@ -26,7 +26,7 @@ class TextArea(FormNode):
             values['props'].append(('disabled', 'disabled'))
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].extend([
@@ -46,12 +46,10 @@ class TextArea(FormNode):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-area__wrapper" data-invalid>
-    {element}
+    {tmpl_element}
     {tmpl_icon_invalid}
   </div>
   <div class="bx--form-requirement">
@@ -62,12 +60,10 @@ class TextArea(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-area__wrapper">
-    {element}
+    {tmpl_element}
   </div>
 </div>
 

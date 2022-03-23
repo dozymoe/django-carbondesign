@@ -35,7 +35,7 @@ class TextInput(FormNode):
             values['props'].append(('disabled', 'disabled'))
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
@@ -53,13 +53,11 @@ class TextInput(FormNode):
         if self.bound_field.errors:
             template = """
 <div class="bx--form-item bx--text-input-wrapper">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-input__field-wrapper" data-invalid>
     {tmpl_icon_invalid}
-    {element}
+    {tmpl_element}
   </div>
   <div class="bx--form-requirement">
     {form_errors}
@@ -69,12 +67,10 @@ class TextInput(FormNode):
         else:
             template = """
 <div class="bx--form-item bx--text-input-wrapper">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-input__field-wrapper">
-    {element}
+    {tmpl_element}
   </div>
 </div>
 """
@@ -105,10 +101,10 @@ class PasswordInput(TextInput):
         values['txt_show_password'] = _("Show password")
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
-        super().prepare_element_props(props, default, context)
+        super().prepare_element_props(props, context)
         props['class'].append('bx--password-input')
         props['data-toggle-password-visibility'] = ''
 
@@ -120,13 +116,11 @@ class PasswordInput(TextInput):
             template = """
 <div data-text-input
     class="bx--form-item bx--text-input-wrapper bx--password-input-wrapper">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-input__field-wrapper" data-invalid>
     {tmpl_icon_invalid}
-    {element}
+    {tmpl_element}
     {tmpl_visibility}
   </div>
   <div class="bx--form-requirement">
@@ -138,12 +132,10 @@ class PasswordInput(TextInput):
             template = """
 <div data-text-input
     class="bx--form-item bx--text-input-wrapper bx--password-input-wrapper">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   {tmpl_help}
   <div class="bx--text-input__field-wrapper">
-    {element}
+    {tmpl_element}
     {tmpl_visibility}
   </div>
 </div>

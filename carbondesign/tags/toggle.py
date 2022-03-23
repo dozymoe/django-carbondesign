@@ -36,7 +36,7 @@ class Toggle(FormNode):
             values['props'].append(('disabled', ''))
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--toggle-input')
@@ -50,7 +50,7 @@ class Toggle(FormNode):
         """
         template = """
 <div class="bx--form-item">
-  {element}
+  {tmpl_element}
   <label class="bx--toggle-input__label" for="{id}">
     {label}
     <span class="bx--toggle__switch">
@@ -72,7 +72,7 @@ class Toggle(FormNode):
         """
         template = """
 <div class="bx--form-item">
-  {element}
+  {tmpl_element}
   <label class="bx--toggle-input__label" for="{id}" aria-label="{label}">
     <span class="bx--toggle__switch">
       <svg class="bx--toggle__check" width="6px" height="5px" viewBox="0 0 6 5">

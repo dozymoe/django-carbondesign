@@ -13,9 +13,9 @@ class TextInputTest(SimpleTestCase):
 """
         expected = """
 <div class="bx--form-item bx--text-input-wrapper">
-  <label for="id_text" class="bx--label">
-    Text
-  </label>
+<label for="id_text" class="bx--label">
+  Text
+</label>
   <div class="bx--text-input__field-wrapper">
     <input type="text" name="text" value="a text" class="bx--text-input" required id="id_text">
   </div>
@@ -36,9 +36,9 @@ class PasswordInputTest(SimpleTestCase):
         expected = """
 <div data-text-input
     class="bx--form-item bx--text-input-wrapper bx--password-input-wrapper">
-  <label for="id_text" class="bx--label">
-    Text
-  </label>
+<label for="id_text" class="bx--label">
+  Text
+</label>
   <div class="bx--text-input__field-wrapper">
     <input type="text" name="text" value="a text" class="bx--text-input bx--password-input" data-toggle-password-visibility="" required id="id_text">
 <button type="button"

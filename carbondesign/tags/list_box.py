@@ -38,7 +38,7 @@ class ListBox(FormNode):
             values['list_class'].append('bx--list-box--light')
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')

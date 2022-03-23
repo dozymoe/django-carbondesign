@@ -54,7 +54,7 @@ class ComboBox(FormNode):
             values['list_props'].append(('aria-expanded', 'false'))
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
@@ -79,7 +79,7 @@ class ComboBox(FormNode):
     <div class="bx--combo-box bx--list-box {combo_class}" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="{txt_menu}"
           {list_props}>
-        {element}
+        {tmpl_element}
         {tmpl_icon_invalid}
         {tmpl_icon_clear}
         {tmpl_icon_menu}
@@ -91,7 +91,7 @@ class ComboBox(FormNode):
     </div>
     {tmpl_help}
     <div class="bx--form-requirement">
-      {form_errors}
+      {tmpl_errors}
     </div>
   </div>
 </div>
@@ -104,7 +104,7 @@ class ComboBox(FormNode):
     <div class="bx--combo-box bx--list-box {combo_class}">
       <div role="combobox" class="bx--list-box__field" aria-label="{txt_menu}"
           {list_props}>
-        {element}
+        {tmpl_element}
         {tmpl_icon_clear}
         {tmpl_icon_menu}
       </div>

@@ -16,16 +16,19 @@ class FileTest(SimpleTestCase):
   <strong class="bx--file--label">
     Image
   </strong>
+<p id="hint-id_image" class="bx--label-description">
+  Only .jpg and .png files. 500kb max file size.
+</p>
   <div class="bx--file" data-file>
     <label for="id_image" class="bx--file-browse-btn" role="button" tabindex="0">
       <div data-file-drop-container class="bx--file__drop-container">
         Drag and drop files here or upload
-        <input type="file" name="image" accept="image/*" class="bx--file-input" data-file-uploader="" data-target="#container-id_image" id="id_image">
+        <input type="file" name="image" accept="image/*" class="bx--file-input" aria-controls="hint-id_image" aria-describedby="hint-id_image" data-file-uploader="" data-target="#container-id_image" required id="id_image">
       </div>
     </label>
     <div data-file-container id="container-id_image" class="bx--file-container">
       <div class="bx--file__selected-file">
-        <p class="bx--file-filename">path/image.jpeg</p>
+        <p class="bx--file-filename">image.png</p>
         <span data-for="prepopulated-file-uploader"
             class="bx--file__state-container">
           <svg focusable="false" preserveAspectRatio="xMidYMid meet"

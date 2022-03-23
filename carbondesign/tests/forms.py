@@ -15,8 +15,22 @@ class DummyForm(forms.Form):
 
     started_at = forms.DateTimeField()
     started_at_missing = forms.DateTimeField()
+    started_at_empty = forms.DateTimeField(required=False)
     stopped_at = forms.DateTimeField()
     stopped_at_missing = forms.DateTimeField()
 
-    image = forms.ImageField()
-    image_missing = forms.ImageField()
+    image = forms.ImageField(
+            help_text="Only .jpg and .png files. 500kb max file size.")
+    image_empty = forms.ImageField(
+            required=False,
+            help_text="Only .jpg and .png files. 500kb max file size.")
+    image_multi = forms.ImageField(
+            widget=forms.ClearableFileInput(attrs={'multiple': True}),
+            help_text="Only .jpg and .png files. 500kb max file size.")
+    image_multi_missing = forms.ImageField(
+            widget=forms.ClearableFileInput(attrs={'multiple': True}),
+            help_text="Only .jpg and .png files. 500kb max file size.")
+    image_missing = forms.ImageField(
+            help_text="Only .jpg and .png files. 500kb max file size.")
+    image_invalid = forms.ImageField(
+            help_text="Only .jpg and .png files. 500kb max file size.")

@@ -24,6 +24,9 @@ from .base import FormNode
 class FileUploader(FormNode):
     """File Uploader component.
     """
+    NODE_PROPS = ('is_loading',)
+    "Extended Template Tag arguments."
+
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
@@ -31,7 +34,7 @@ class FileUploader(FormNode):
         values['txt_clear'] = _("Remove uploaded file")
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--file-input')
@@ -42,7 +45,7 @@ class FileUploader(FormNode):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['filename'] = self.bound_field.value()
+        values['filename'] = self.bound_field.value() or ''
 
         if self.bound_field.errors:
             template = """
@@ -55,7 +58,7 @@ class FileUploader(FormNode):
     <label for="{id}" class="bx--file-browse-btn" role="button" tabindex="0">
       <div data-file-drop-container class="bx--file__drop-container">
         {txt_drop}
-        {element}
+        {tmpl_element}
       </div>
     </label>
     <div data-file-container id="container-{id}" class="bx--file-container">
@@ -80,8 +83,40 @@ class FileUploader(FormNode):
           </svg>
         </span>
         <div class="bx--form-requirement">
-          {form_errors}
+          {tmpl_errors}
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+"""
+        elif self.eval(self.kwargs.get('is_loading'), context):
+            template = """
+<div class="bx--form-item">
+  <strong class="bx--file--label {label_class}" {label_props}>
+    {label}
+  </strong>
+  {tmpl_help}
+  <div class="bx--file" data-file>
+    <label for="{id}" class="bx--file-browse-btn" role="button" tabindex="0">
+      <div data-file-drop-container class="bx--file__drop-container">
+        {txt_drop}
+        {tmpl_element}
+      </div>
+    </label>
+    <div data-file-container id="container-{id}" class="bx--file-container">
+      <div class="bx--file__selected-file">
+        <p class="bx--file-filename">{filename}</p>
+        <span data-for="prepopulated-file-uploader" class="bx--file__state-container">
+          <div class="bx--inline-loading__animation">
+            <div data-inline-loading-spinner="" class="bx--loading bx--loading--small">
+              <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+                <circle class="bx--loading__background" cx="0" cy="0" r="26.8125"></circle>
+                <circle class="bx--loading__stroke" cx="0" cy="0" r="26.8125"></circle>
+              </svg>
+            </div>
+          </div>
+        </span>
       </div>
     </div>
   </div>
@@ -98,7 +133,7 @@ class FileUploader(FormNode):
     <label for="{id}" class="bx--file-browse-btn" role="button" tabindex="0">
       <div data-file-drop-container class="bx--file__drop-container">
         {txt_drop}
-        {element}
+        {tmpl_element}
       </div>
     </label>
     <div data-file-container id="container-{id}" class="bx--file-container">
@@ -130,7 +165,7 @@ class FileUploader(FormNode):
     <label for="{id}" class="bx--file-browse-btn" role="button" tabindex="0">
       <div data-file-drop-container class="bx--file__drop-container">
         {txt_drop}
-        {element}
+        {tmpl_element}
       </div>
     </label>
     <div data-file-container id="container-{id}" class="bx--file-container">
@@ -146,12 +181,13 @@ class FileUploader(FormNode):
         """
         if self.bound_field.help_text:
             tmpl = """
-<p class="bx--label-description {class}" {props}>
+<p id="hint-{id}" class="bx--label-description {class}" {props}>
   {child}
 </p>
 """
             help_values = {
                 'child': self.bound_field.help_text,
+                'id': values['id'],
                 'class': values['help_class'],
                 'props': values['help_props'],
             }

@@ -13,9 +13,9 @@ class TextAreaTest(SimpleTestCase):
 """
         expected = """
 <div class="bx--form-item">
-  <label for="id_text" class="bx--label">
-    Text
-  </label>
+<label for="id_text" class="bx--label">
+  Text
+</label>
   <div class="bx--text-area__wrapper">
     <input type="text" name="text" value="a text" class="bx--text-area bx--text-area--v2" required id="id_text">
   </div>

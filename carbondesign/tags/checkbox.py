@@ -27,8 +27,6 @@ class CheckBox(FormNode):
     "Extended Template Tag arguments."
     REQUIRED_PROPS = ('value',)
     "Will raise Exception if not set."
-    RENDER_ELEMENT = False
-    "Render the form field widget."
 
     value = None
 

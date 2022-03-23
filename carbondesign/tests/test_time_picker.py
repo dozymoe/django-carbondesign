@@ -13,9 +13,9 @@ class TimePickerTest(SimpleTestCase):
 """
         expected = r"""
 <div class="bx--form-item">
-  <label for="id_started_at" class="bx--label">
-    Started at
-  </label>
+<label for="id_started_at" class="bx--label">
+  Started at
+</label>
   <div class="bx--time-picker">
     <div class="bx--time-picker__input"><input type="text" name="started_at" value="2022-02-03 01:02:03" class="bx--text-input bx--time-picker__input-field" pattern="(1[012]|[1-9]):[0-5][0-9](\\s)?" placeholder="hh:mm" maxlength="5" required id="id_started_at"></div>
 <div class="bx--time-picker__select bx--select">

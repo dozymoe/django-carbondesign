@@ -24,7 +24,7 @@ class DatePicker(FormNode):
     """
     MODES = ('default', 'basic', 'nolabel')
     "Available variants."
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('short', 'light')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'picker')
     "Prepare xxx_class and xxx_props values."
@@ -35,14 +35,21 @@ class DatePicker(FormNode):
         if self.eval(self.kwargs.get('light'), context):
             values['picker_class'].append('bx--date-picker--light')
 
+        if self.eval(self.kwargs.get('short'), context):
+            values['picker_class'].append('bx--date-picker--short')
 
-    def prepare_element_props(self, props, default, context):
+
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--date-picker__input')
         props['data-date-picker-input'] = ''
-        props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4}'
-        props['placeholder'] = 'mm/dd/yyyy'
+        if self.eval(self.kwargs.get('short'), context):
+            props['pattern'] = r'\d{1,2}/\d{4,4}'
+            props['placeholder'] = 'mm/yyyy'
+        else:
+            props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4,4}'
+            props['placeholder'] = 'mm/dd/yyyy'
 
         if self.bound_field.errors:
             props['data-invalid'] = ''
@@ -59,11 +66,9 @@ class DatePicker(FormNode):
       {picker_props}>
 
     <div class="bx--date-picker-container">
-      <label for="{id}" class="bx--label {label_class}" {label_props}>
-        {label}
-      </label>
+      {tmpl_label}
       <div class="bx--date-picker-input__wrapper">
-        {element}
+        {tmpl_element}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -72,7 +77,7 @@ class DatePicker(FormNode):
         </svg>
       </div>
       <div class="bx--form-requirement">
-        {form_errors}
+        {tmpl_errors}
       </div>
     </div>
   </div>
@@ -86,11 +91,9 @@ class DatePicker(FormNode):
       {picker_props}>
 
     <div class="bx--date-picker-container">
-      <label for="{id}" class="bx--label {label_class}" {label_props}>
-        {label}
-      </label>
+      {tmpl_label}
       <div class="bx--date-picker-input__wrapper">
-        {element}
+        {tmpl_element}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -102,7 +105,7 @@ class DatePicker(FormNode):
   </div>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_nolabel(self, values, context):
@@ -117,7 +120,7 @@ class DatePicker(FormNode):
 
     <div class="bx--date-picker-container">
       <div class="bx--date-picker-input__wrapper">
-        {element}
+        {tmpl_element}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -126,7 +129,7 @@ class DatePicker(FormNode):
         </svg>
       </div>
       <div class="bx--form-requirement">
-        {form_errors}
+        {tmpl_errors}
       </div>
     </div>
   </div>
@@ -141,7 +144,7 @@ class DatePicker(FormNode):
 
     <div class="bx--date-picker-container">
       <div class="bx--date-picker-input__wrapper">
-        {element}
+        {tmpl_element}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -153,7 +156,7 @@ class DatePicker(FormNode):
   </div>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_basic(self, values, context):
@@ -166,12 +169,10 @@ class DatePicker(FormNode):
       {picker_props}>
 
     <div class="bx--date-picker-container">
-      <label for="{id}" class="bx--label {label_class}" {label_props}>
-        {label}
-      </label>
-      {element}
+      {tmpl_label}
+      {tmpl_element}
       <div class="bx--form-requirement">
-        {form_errors}
+        {tmpl_errors}
       </div>
     </div>
   </div>
@@ -180,19 +181,17 @@ class DatePicker(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <div class="bx--date-picker bx--date-picker--simple bx--date-picker--short {picker_class}"
+  <div class="bx--date-picker bx--date-picker--simple {picker_class}"
       {picker_props}>
 
     <div class="bx--date-picker-container">
-      <label for="{id}" class="bx--label {label_class}" {label_props}>
-        {label}
-      </label>
-      {element}
+      {tmpl_label}
+      {tmpl_element}
     </div>
   </div>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
 class RangeDatePicker(FormNodes):
@@ -210,13 +209,13 @@ class RangeDatePicker(FormNodes):
             values['picker_class'].append('bx--date-picker--light')
 
 
-    def prepare_element_props(self, field, props, default, context):
+    def prepare_element_props(self, props, context, bound_field):
         """Prepare html attributes for rendering the form element.
         """
-        index = self.bound_fields.index(field)
+        index = self.bound_fields.index(bound_field)
 
         props['class'].append('bx--date-picker__input')
-        props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4}'
+        props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4,4}'
         props['placeholder'] = 'mm/dd/yyyy'
 
         if index:
@@ -224,7 +223,7 @@ class RangeDatePicker(FormNodes):
         else:
             props['data-date-picker-input-from'] = ''
 
-        if field.errors:
+        if bound_field.errors:
             props['data-invalid'] = ''
 
 
@@ -244,7 +243,7 @@ class RangeDatePicker(FormNodes):
         {label_0}
       </label>
       <div class="bx--date-picker-input__wrapper">
-        {element_0}
+        {tmpl_element_0}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -253,7 +252,7 @@ class RangeDatePicker(FormNodes):
         </svg>
       </div>
       <div class="bx--form-requirement">
-        {form_errors_0}
+        {tmpl_errors_0}
       </div>
     </div>
     <div class="bx--date-picker-container">
@@ -261,7 +260,7 @@ class RangeDatePicker(FormNodes):
         {label_1}
       </label>
       <div class="bx--date-picker-input__wrapper">
-        {element_1}
+        {tmpl_element_1}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -270,7 +269,7 @@ class RangeDatePicker(FormNodes):
         </svg>
       </div>
       <div class="bx--form-requirement">
-        {form_errors_1}
+        {tmpl_errors_1}
       </div>
     </div>
   </div>
@@ -288,7 +287,7 @@ class RangeDatePicker(FormNodes):
         {label_0}
       </label>
       <div class="bx--date-picker-input__wrapper">
-        {element_0}
+        {tmpl_element_0}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -302,7 +301,7 @@ class RangeDatePicker(FormNodes):
         {label_1}
       </label>
       <div class="bx--date-picker-input__wrapper">
-        {element_1}
+        {tmpl_element_1}
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -314,7 +313,7 @@ class RangeDatePicker(FormNodes):
   </div>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
 components = {

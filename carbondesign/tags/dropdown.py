@@ -4,6 +4,9 @@ Dropdown
 
 See: https://www.carbondesignsystem.com/components/dropdown/usage/
 
+This module is currently disabled, it's a weird component that receive input,
+but there is no html input element. Wait and see its progress.
+
 Dropdowns present a list of options from which a user can select one option,
 or several. A selected option can represent a value in a form, or can be used
 as an action to filter or sort existing content.
@@ -27,7 +30,7 @@ class Dropdown(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('help', 'errors')
     "Named children."
-    NODE_PROPS = ('value', 'disabled', 'up', 'light', 'inline')
+    NODE_PROPS = ('id', 'value', 'disabled', 'up', 'light', 'inline')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'wrapper', 'dropdown')
     "Prepare xxx_class and xxx_props values."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-22 12:31+0700\n"
+"POT-Creation-Date: 2022-03-23 13:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: carbondesign/tags/base.py:175
+#: carbondesign/tags/base.py:177
 #, python-brace-format
 msgid "Argument {prop} for template tag is required."
 msgstr "Argumen {prop} harus diset untuk template tag."
@@ -77,21 +77,21 @@ msgstr "Luapan"
 msgid "Cancel"
 msgstr "Batal"
 
-#: carbondesign/tags/data_table.py:584 carbondesign/tags/search.py:39
+#: carbondesign/tags/data_table.py:582 carbondesign/tags/search.py:39
 #: carbondesign/tags/toolbar.py:37
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:585 carbondesign/tags/search.py:36
+#: carbondesign/tags/data_table.py:583 carbondesign/tags/search.py:36
 #: carbondesign/tags/toolbar.py:39
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
-#: carbondesign/tags/file_uploader.py:30
+#: carbondesign/tags/file_uploader.py:33
 msgid "Drag and drop files here or upload"
 msgstr "Tarik berkas-berkas ke sini atau unggah"
 
-#: carbondesign/tags/file_uploader.py:31
+#: carbondesign/tags/file_uploader.py:34
 msgid "Remove uploaded file"
 msgstr "Hapus berkas unggahan"
 
@@ -193,7 +193,7 @@ msgstr "Halaman berikutnya"
 msgid "page"
 msgstr "halaman"
 
-#: carbondesign/tags/select.py:39
+#: carbondesign/tags/select.py:37
 msgid "Choose an option"
 msgstr "Pilih satu"
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Clear filter"
 msgstr "Hapus filter"
 
-#: carbondesign/tags/text_input.py:105
+#: carbondesign/tags/text_input.py:101
 msgid "Show password"
 msgstr "Tampilkan kata kunci"
 
