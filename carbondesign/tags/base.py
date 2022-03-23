@@ -162,6 +162,8 @@ class Node(template.Node):
     def render(self, context):
         """Render the Template Tag as html.
         """
+        # Create a copy.
+        context = template.Context(context.flatten())
         # Parent Tags can set the arguments of their children Tags.
         # You can also set them to children Tags in specific slot.
         myslot = context.get('slot')

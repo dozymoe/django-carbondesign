@@ -16,7 +16,9 @@ DATETIME_PATTERN = '%Y-%m-%d %H:%M:%S'
 def strip_space(value):
     value = re.sub(r'\s+"', '"', value)
     value = re.sub(r'[\n\s]+>', '>', value)
-    return re.sub(r'\n\s*\n', r'\n', value)
+    #value = re.sub(r'>\s+', '>', value)
+    #value = re.sub(r'\n\s+', '\n', value)
+    return re.sub(r'\n\s*\n', '\n', value)
 
 
 def compare_template(template, expected, context=None):
