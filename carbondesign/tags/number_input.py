@@ -68,7 +68,7 @@ class NumberInput(FormNode):
       </div>
     </div>
     <div class="bx--form-requirement">
-      {form_errors}
+      {tmpl_errors}
     </div>
     {tmpl_help}
   </div>
@@ -108,7 +108,7 @@ class NumberInput(FormNode):
       {tmpl_btn_incr}
     </div>
     <div class="bx--form-requirement">
-      {form_errors}
+      {tmpl_errors}
     </div>
     {tmpl_help}
   </div>

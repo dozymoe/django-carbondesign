@@ -40,6 +40,8 @@ class Notification(Node):
     "Extended Template Tag arguments."
     TEMPLATES = ('icon', 'close')
     "Conditional templates."
+    POSSIBLE_VARIANT = ('info', 'success', 'warning', 'error')
+    "Documentation only."
 
     variant = None
 

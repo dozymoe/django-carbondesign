@@ -51,7 +51,10 @@ def compare_template(template, expected, context=None):
                 'stopped_at': datetime.strptime('2022-10-04 11:30:40',
                     DATETIME_PATTERN),
                 'stopped_at_missing': '',
-                'number': 24},
+                'number': 24,
+                'number_help': 1,
+                'number_invalid': 'a',
+                'number_helpinvalid': 'a'},
                 files=files)
 
         pager = Paginator(range(100), 10)

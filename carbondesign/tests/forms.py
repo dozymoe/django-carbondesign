@@ -1,5 +1,6 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 from django import forms
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class DummyForm(forms.Form):
     text = forms.CharField()
@@ -7,12 +8,30 @@ class DummyForm(forms.Form):
     text_missing = forms.CharField()
 
     number = forms.IntegerField()
+    number_empty = forms.IntegerField(required=False)
+    number_help = forms.IntegerField(required=False,
+            label="Number input label",
+            validators=[MaxValueValidator(100), MinValueValidator(0)],
+            help_text="Optional helper text here; if message is more than one "
+                "line text should wrap (~100 character count maximum)")
+    number_invalid = forms.IntegerField(required=False,
+            label="Number input label",
+            validators=[MaxValueValidator(100), MinValueValidator(0)])
+    number_helpinvalid = forms.IntegerField(required=False,
+            label="Number input label",
+            validators=[MaxValueValidator(100), MinValueValidator(0)],
+            help_text="Optional helper text here; if message is more than one "
+                "line text should wrap (~100 character count maximum)")
     number_missing = forms.IntegerField()
 
     choice = forms.ChoiceField(
             choices=(('val1', "Value One"), ('val2', "Value Two")))
     choice_missing = forms.ChoiceField(
             choices=(('val1', "Value One"), ('val2', "Value Two")))
+    choice_empty = forms.ChoiceField(
+            required=False,
+            choices=(('val1', "Value One"), ('val2', "Value Two")),
+            help_text="Optional helper text here")
 
     started_at = forms.DateTimeField()
     started_at_missing = forms.DateTimeField()
