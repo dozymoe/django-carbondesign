@@ -6,6 +6,7 @@ import re
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.paginator import Paginator
 from django.template import Context, Template
+from django.test import SimpleTestCase as BaseTestCase, override_settings
 from PIL import Image
 #-
 from .forms import DummyForm
@@ -70,3 +71,8 @@ def compare_template(template, expected, context=None):
         strip_space(expected),
         strip_space(Template(template).render(context)),
     )
+
+
+@override_settings(LANGUAGE_CODE="en_US", LANGUAGES=(('en', 'English'),))
+class SimpleTestCase(BaseTestCase):
+    pass

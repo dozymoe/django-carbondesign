@@ -1,7 +1,5 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,too-many-lines
-from django.test import SimpleTestCase
-#-
-from .base import compare_template
+from .base import compare_template, SimpleTestCase
 
 class ModalHtmlTest(SimpleTestCase):
     maxDiff = None

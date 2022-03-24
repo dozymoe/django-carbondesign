@@ -16,7 +16,13 @@ checking an additional box does not affect any other selections.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
+import logging
+from typing import Sequence
+#-
 from .base import FormNode
+
+_logger = logging.getLogger(__name__)
+
 
 class CheckBox(FormNode):
     """Checkbox component.
@@ -25,14 +31,25 @@ class CheckBox(FormNode):
     "Available variants."
     NODE_PROPS = ('value', 'id', 'mixed')
     "Extended Template Tag arguments."
-    REQUIRED_PROPS = ('value',)
-    "Will raise Exception if not set."
 
     value = None
 
     def default_id(self):
         """Get Django form field html id.
         """
+        # Somehow this ended up here.
+        # If the user didn't set the value argument, we assume they wanted us to
+        # take it from the bound field.
+        # There is strong assumption that this method is called before the label
+        # method below.
+        if self.value is None:
+            if isinstance(self.bound_value, str):
+                self.value = self.bound_value
+            elif isinstance(self.bound_value, Sequence):
+                self.value = self.bound_value[0]
+            else:
+                self.value = ''
+
         id_ = self.bound_field.id_for_label
         for ii, (_, val, _) in enumerate(self.choices()):
             if val == self.value:
@@ -52,7 +69,7 @@ class CheckBox(FormNode):
     def before_prepare(self, values, context):
         """Initialize the values meant for rendering templates.
         """
-        self.value = self.eval(self.kwargs['value'], context)
+        self.value = self.eval(self.kwargs.get('value'), context)
         super().before_prepare(values, context)
 
 

@@ -1,9 +1,7 @@
 """Base classes for carbondesign Template Tags.
 """
-#from copy import copy
 import logging
 import re
-from typing import ByteString
 from uuid import uuid4
 #-
 from django import template
@@ -162,8 +160,8 @@ class Node(template.Node):
     def render(self, context):
         """Render the Template Tag as html.
         """
-        # Create a copy.
-        context = template.Context(context.flatten())
+        # Create local context.
+        context.push({})
         # Parent Tags can set the arguments of their children Tags.
         # You can also set them to children Tags in specific slot.
         myslot = context.get('slot')
@@ -190,7 +188,10 @@ class Node(template.Node):
             raise NotImplementedError("Method is missing: render_%s" %\
                     self.mode)
 
-        return method(values, context) # pylint:disable=not-callable
+        result = method(values, context) # pylint:disable=not-callable
+        # Destroy local context.
+        context.pop()
+        return result
 
 
     def default_id(self):
@@ -205,8 +206,7 @@ class Node(template.Node):
         props = [(key, val) for key, val in self.kwargs.items()\
                 if key not in self.BASE_NODE_PROPS\
                 and key not in self.NODE_PROPS \
-                and key not in (f'{a}_class' for a in self.CLASS_AND_PROPS)\
-                and key not in (f'{a}_props' for a in self.CLASS_AND_PROPS)]
+                and key not in (f'{a}_class' for a in self.CLASS_AND_PROPS)]
         props = [(key, var_eval(val, context)) for key, val in props]
         # Ignore properties with falsy value except empty string.
         return [x for x in props if bool(x[1]) or x[1] == '']
@@ -237,21 +237,26 @@ class Node(template.Node):
         if slot:
             method = getattr(self, f'render_slot_{name}', None)
             if method:
-                slot_context = template.Context(context.flatten())
-                slot_context['slot'] = name
+                # Process values set in self.before_prepare_slots()
+                self.after_prepare_class_props(name, values, context)
+
+                # Create slot local context.
+                context.push({'slot': name})
                 slots[slot_name] = method(
                         {
                             # Use context to tell slot's children in which slot
                             # they are, for example when catching props from
                             # parent tags.
                             # It is set here to mimic javascript.
-                            'child': slot.render(slot_context),
+                            'child': slot.render(context),
                             'class': values[name + '_class'],
                             'props': values[name + '_props'],
                             'id': values['id'],
                             'label': slot.label(context),
                         },
                         context)
+                # Destroy slot local context.
+                context.pop()
             else:
                 slots[slot_name] = slot.render(context)
         else:
@@ -277,9 +282,9 @@ class Node(template.Node):
         values['props'] = self.props(context)
         values['class'] = var_eval(self.kwargs.get('class', ''), context)\
                 .split()
-        values['label'] = var_eval(self.kwargs.get('label', ''), context)
         self._id = var_eval(self.kwargs.get('id', self.default_id()), context)
         values['id'] = self._id
+        values['label'] = var_eval(self.kwargs.get('label', ''), context)
         for name in self.CLASS_AND_PROPS:
             if name in self.SLOTS:
                 continue
@@ -328,8 +333,6 @@ class Node(template.Node):
                 continue
             self.after_prepare_class_props(name, values, context)
 
-        self.after_prepare_slots(values, context)
-
 
     def after_prepare_class_props(self, name, values, context):
         """Join html classes and html attributes into single strings.
@@ -337,16 +340,6 @@ class Node(template.Node):
         values[f'{name}_props'] = self.join_attributes(
                 self.prune_attributes(values[f'{name}_props']))
         values[f'{name}_class'] = ' '.join(values[f'{name}_class'])
-
-
-    def after_prepare_slots(self, values, context):
-        """Simplifying values meant for rendering slot templates.
-        """
-        for name in self.SLOTS:
-            slot = self.slots.get(name)
-            if not slot:
-                continue
-            self.after_prepare_class_props(name, values, context)
 
 
     def prune_attributes(self, attrs):
@@ -397,8 +390,6 @@ class Node(template.Node):
         try:
             return tpl.format_map(IgnoreMissing(values))
         except ValueError as e:
-            _logger.error(tpl)
-            _logger.error(values)
             raise e
 
 
@@ -423,6 +414,7 @@ class FormNode(Node):
 
     bound_field = None
     bound_value = None
+    _choices = None
 
     def default_id(self):
         """Get Django form field html id.
@@ -454,19 +446,33 @@ class FormNode(Node):
     def choices(self):
         """Get Django form field choices.
         """
-        for option_value, option_label in self.bound_field.field.choices:
+        if self._choices is not None:
+            return self._choices
+        self._choices = []
+        try:
+            # We assume self.bound_field is set, but
+            # self.bound_field.field.choices may not be.
+            choices = self.bound_field.field.choices
+        except AttributeError:
+            # Assume we are dealing with BooleanField
+            default_truthy = self.bound_value or 'on'
+            label = self.bound_field.label
+            choices = (('', label), (default_truthy, label))
+
+        for option_value, option_label in choices:
             if option_value is None:
                 option_value = ''
 
             if isinstance(option_label, (list, tuple)):
                 group_name = option_value
-                choices = option_label
+                subchoices = option_label
             else:
                 group_name = None
-                choices = [(option_value, option_label)]
+                subchoices = [(option_value, option_label)]
 
-            for subvalue, sublabel in choices:
-                yield (group_name, subvalue, sublabel)
+            for subvalue, sublabel in subchoices:
+                self._choices.append((group_name, subvalue, sublabel))
+        return self._choices
 
 
     def render_tmpl_element(self, values, context):
@@ -571,7 +577,7 @@ class FormNodes(Node):
 
         We don't return values like we do in javascript, not needed.
         """
-        if isinstance(name, (str, ByteString)):
+        if isinstance(name, str):
             method_name = name
         else:
             # Trying to facilitate tmpl_label_1 that is used in FormNodes,

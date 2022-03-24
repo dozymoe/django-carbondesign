@@ -1,9 +1,8 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,too-many-lines
 from django import forms
 from django.core.paginator import Paginator
-from django.test import SimpleTestCase
 #-
-from .base import compare_template
+from .base import compare_template, SimpleTestCase
 
 class DummyForm(forms.Form):
     rows = forms.MultipleChoiceField(

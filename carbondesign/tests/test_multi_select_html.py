@@ -1,8 +1,7 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 from django import forms
-from django.test import SimpleTestCase
 #-
-from .base import compare_template
+from .base import compare_template, SimpleTestCase
 
 class DummyForm(forms.Form):
     choice1 = forms.ChoiceField(

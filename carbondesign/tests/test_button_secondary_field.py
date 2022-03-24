@@ -1,7 +1,5 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
-from django.test import SimpleTestCase
-#-
-from .base import compare_template
+from .base import compare_template, SimpleTestCase
 
 class ButtonSecondaryFieldTest(SimpleTestCase):
     maxDiff = None
