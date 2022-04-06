@@ -7,10 +7,9 @@ See: https://the-carbon-components.netlify.app/?nav=ui-shell
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import Node, modify_svg
+from .base import Node, clean_attr_value, modify_svg
 
 class UiShell(Node):
     """UI Shell component.
@@ -182,7 +181,7 @@ class Link(Node):
         """Output html of the component.
         """
         if 'submenu' in self.slots:
-            values['cleaned_child'] = strip_tags(values['child']).strip()
+            values['cleaned_child'] = clean_attr_value(values['child'])
             template = """
 <li class="bx--header__submenu" data-header-submenu>
   <a class="bx--header__menu-item bx--header__menu-title {class}"
@@ -533,7 +532,7 @@ class SideNav(Node):
     def render_slot_title(self, values, context):
         """Render html of the slot.
         """
-        values['cleaned_title'] = strip_tags(values['child']).strip()
+        values['cleaned_title'] = clean_attr_value(values['child'])
 
         template = """
 <h2 class="bx--side-nav__title {class}" title="{cleaned_title}" {props}>

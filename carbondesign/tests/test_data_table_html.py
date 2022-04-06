@@ -1879,7 +1879,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -1890,7 +1890,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -1901,7 +1901,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -1912,7 +1912,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -1964,7 +1964,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -1975,7 +1975,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -1986,7 +1986,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -1997,7 +1997,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -2049,7 +2049,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -2060,7 +2060,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -2071,7 +2071,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -2082,7 +2082,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -2134,7 +2134,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -2145,7 +2145,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -2156,7 +2156,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -2167,7 +2167,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -2219,7 +2219,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -2230,7 +2230,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -2241,7 +2241,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -2252,7 +2252,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -2874,7 +2874,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -2885,7 +2885,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -2896,7 +2896,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -2907,7 +2907,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -2959,7 +2959,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -2970,7 +2970,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -2981,7 +2981,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -2992,7 +2992,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -3044,7 +3044,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -3055,7 +3055,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -3066,7 +3066,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -3077,7 +3077,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -3129,7 +3129,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -3140,7 +3140,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -3151,7 +3151,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -3162,7 +3162,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -3214,7 +3214,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -3225,7 +3225,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -3236,7 +3236,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -3247,7 +3247,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -4058,7 +4058,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -4069,7 +4069,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -4080,7 +4080,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -4091,7 +4091,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -4143,7 +4143,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -4154,7 +4154,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -4165,7 +4165,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -4176,7 +4176,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -4228,7 +4228,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -4239,7 +4239,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -4250,7 +4250,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -4261,7 +4261,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -4313,7 +4313,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -4324,7 +4324,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -4335,7 +4335,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -4346,7 +4346,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -4398,7 +4398,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -4409,7 +4409,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -4420,7 +4420,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -4431,7 +4431,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -5053,7 +5053,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -5064,7 +5064,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -5075,7 +5075,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -5086,7 +5086,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -5138,7 +5138,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -5149,7 +5149,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -5160,7 +5160,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -5171,7 +5171,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -5223,7 +5223,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -5234,7 +5234,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -5245,7 +5245,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -5256,7 +5256,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -5308,7 +5308,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -5319,7 +5319,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -5330,7 +5330,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -5341,7 +5341,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -5393,7 +5393,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -5404,7 +5404,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -5415,7 +5415,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -5426,7 +5426,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -6252,7 +6252,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -6263,7 +6263,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -6274,7 +6274,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -6285,7 +6285,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -6340,7 +6340,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -6351,7 +6351,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -6362,7 +6362,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -6373,7 +6373,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -6425,7 +6425,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -6436,7 +6436,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -6447,7 +6447,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -6458,7 +6458,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -6510,7 +6510,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -6521,7 +6521,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -6532,7 +6532,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -6543,7 +6543,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -6595,7 +6595,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -6606,7 +6606,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -6617,7 +6617,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -6628,7 +6628,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7459,7 +7459,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -7470,7 +7470,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -7481,7 +7481,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -7492,7 +7492,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7544,7 +7544,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -7555,7 +7555,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -7566,7 +7566,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -7577,7 +7577,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7630,7 +7630,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -7641,7 +7641,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -7652,7 +7652,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -7663,7 +7663,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7715,7 +7715,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -7726,7 +7726,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -7737,7 +7737,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -7748,7 +7748,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7800,7 +7800,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -7811,7 +7811,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -7822,7 +7822,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -7833,7 +7833,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -7860,21 +7860,11 @@ class TableHtmlTest(SimpleTestCase):
       <select class="bx--select-input" id="select-uid-pagination-count"
           aria-label="select number of items per page" tabindex="0"
           data-items-per-page>
-<option class="bx--select-option" value="10" selected>
-  10
-</option>
-<option class="bx--select-option" value="20">
-  20
-</option>
-<option class="bx--select-option" value="30">
-  30
-</option>
-<option class="bx--select-option" value="40">
-  40
-</option>
-<option class="bx--select-option" value="50">
-  50
-</option>
+<option class="bx--select-option" selected>10</option>
+<option class="bx--select-option">20</option>
+<option class="bx--select-option">30</option>
+<option class="bx--select-option">40</option>
+<option class="bx--select-option">50</option>
       </select>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -7884,7 +7874,7 @@ class TableHtmlTest(SimpleTestCase):
       </svg>
     </div>
     <span class="bx--pagination__text">
-<span data-displayed-item-range>1-5</span>
+<span data-displayed-item-range>1 – 5</span>
  of <span data-total-items>50</span> items
     </span>
   </div>
@@ -7893,21 +7883,11 @@ class TableHtmlTest(SimpleTestCase):
       <select class="bx--select-input" id="select-uid-pagination-page"
           aria-label="select page number to view" tabindex="0"
           data-page-number-input>
-<option class="bx--select-option" value="1" selected>
-  1
-</option>
-<option class="bx--select-option" value="2">
-  2
-</option>
-<option class="bx--select-option" value="3">
-  3
-</option>
-<option class="bx--select-option" value="4">
-  4
-</option>
-<option class="bx--select-option" value="5">
-  5
-</option>
+<option class="bx--select-option" selected>1</option>
+<option class="bx--select-option">2</option>
+<option class="bx--select-option">3</option>
+<option class="bx--select-option">4</option>
+<option class="bx--select-option">5</option>
       </select>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -7921,7 +7901,7 @@ class TableHtmlTest(SimpleTestCase):
       of 5 pages
     </label>
     <button class="bx--pagination__button bx--pagination__button--backward"
-        tabindex="0" data-page-backward aria-label="Backward button">
+        tabindex="0" data-page-backward aria-label="previous page">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -7930,7 +7910,7 @@ class TableHtmlTest(SimpleTestCase):
       </svg>
     </button>
     <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="Forward button">
+        tabindex="0" data-page-forward aria-label="next page">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -8546,7 +8526,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -8557,7 +8537,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -8568,7 +8548,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -8579,7 +8559,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -8631,7 +8611,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -8642,7 +8622,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -8653,7 +8633,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -8664,7 +8644,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -8716,7 +8696,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -8727,7 +8707,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -8738,7 +8718,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -8749,7 +8729,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -8801,7 +8781,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -8812,7 +8792,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -8823,7 +8803,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -8834,7 +8814,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
@@ -8886,7 +8866,7 @@ class TableHtmlTest(SimpleTestCase):
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Edit" onclick="console.log('keyboard action')">
+      title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
@@ -8897,7 +8877,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Download" onclick="console.log('keyboard action')">
+      title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
@@ -8908,7 +8888,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Save" onclick="console.log('keyboard action')">
+      title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
@@ -8919,7 +8899,7 @@ class TableHtmlTest(SimpleTestCase):
 </li>
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
   <button class="bx--overflow-menu-options__btn"
-      title="Delete" onclick="console.log('keyboard action')">
+      title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>

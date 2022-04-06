@@ -35,8 +35,8 @@ class ComboBox(FormNode):
             values['help_class'].append('bx--form__helper-text--disabled')
             values['combo_class'].append('bx--list-box--disabled')
             values['list_props'].append(('aria-haspopup', 'true'))
-            values['list_props'].append(('disabled', ''))
-            values['props'].append(('disabled', ''))
+            values['list_props'].append(('disabled', True))
+            values['props'].append(('disabled', True))
         else:
             values['list_props'].append(('aria-haspopup', 'listbox'))
 

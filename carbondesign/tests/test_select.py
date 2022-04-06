@@ -12,17 +12,14 @@ class SelectTest(SimpleTestCase):
         expected = """
 <div class="bx--form-item">
   <div class="bx--select">
-    <label for="id_choice" class="bx--label">
-      Choice
-    </label>
+<label for="id_choice" class="bx--label">
+  Choice
+</label>
     <div class="bx--select-input__wrapper">
-      <select class="bx--select-input" id="id_choice" name="choice" required="">
-<option class="bx--select-option" value="val1" selected>
-  Value One
-</option>
-<option class="bx--select-option" value="val2">
-  Value Two
-</option>
+      <select class="bx--select-input" id="id_choice" name="choice" required>
+<option class="bx--select-option" value="">Choose an option</option>
+<option class="bx--select-option" value="val1" selected>Value One</option>
+<option class="bx--select-option" value="val2">Value Two</option>
       </select>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"

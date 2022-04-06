@@ -31,21 +31,11 @@ class PaginationTest(SimpleTestCase):
       <select class="bx--select-input" id="select-uid-pagination-count"
           aria-label="select number of items per page" tabindex="0"
           data-items-per-page>
-<option class="bx--select-option" value="10" selected>
-  10
-</option>
-<option class="bx--select-option" value="20">
-  20
-</option>
-<option class="bx--select-option" value="30">
-  30
-</option>
-<option class="bx--select-option" value="40">
-  40
-</option>
-<option class="bx--select-option" value="50">
-  50
-</option>
+<option class="bx--select-option" selected>10</option>
+<option class="bx--select-option">20</option>
+<option class="bx--select-option">30</option>
+<option class="bx--select-option">40</option>
+<option class="bx--select-option">50</option>
       </select>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -55,7 +45,7 @@ class PaginationTest(SimpleTestCase):
       </svg>
     </div>
     <span class="bx--pagination__text">
-<span data-displayed-item-range>1-10</span>
+<span data-displayed-item-range>1 – 10</span>
  of <span data-total-items>100</span> items
     </span>
   </div>
@@ -64,36 +54,16 @@ class PaginationTest(SimpleTestCase):
       <select class="bx--select-input" id="select-uid-pagination-page"
           aria-label="select page number to view" tabindex="0"
           data-page-number-input>
-<option class="bx--select-option" value="1" selected>
-  1
-</option>
-<option class="bx--select-option" value="2">
-  2
-</option>
-<option class="bx--select-option" value="3">
-  3
-</option>
-<option class="bx--select-option" value="4">
-  4
-</option>
-<option class="bx--select-option" value="5">
-  5
-</option>
-<option class="bx--select-option" value="6">
-  6
-</option>
-<option class="bx--select-option" value="7">
-  7
-</option>
-<option class="bx--select-option" value="8">
-  8
-</option>
-<option class="bx--select-option" value="9">
-  9
-</option>
-<option class="bx--select-option" value="10">
-  10
-</option>
+<option class="bx--select-option" selected>1</option>
+<option class="bx--select-option">2</option>
+<option class="bx--select-option">3</option>
+<option class="bx--select-option">4</option>
+<option class="bx--select-option">5</option>
+<option class="bx--select-option">6</option>
+<option class="bx--select-option">7</option>
+<option class="bx--select-option">8</option>
+<option class="bx--select-option">9</option>
+<option class="bx--select-option">10</option>
       </select>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -107,7 +77,7 @@ class PaginationTest(SimpleTestCase):
       of 10 pages
     </label>
     <button class="bx--pagination__button bx--pagination__button--backward"
-        tabindex="0" data-page-backward aria-label="Backward button">
+        tabindex="0" data-page-backward aria-label="previous page">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -116,7 +86,7 @@ class PaginationTest(SimpleTestCase):
       </svg>
     </button>
     <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="Forward button">
+        tabindex="0" data-page-forward aria-label="next page">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"

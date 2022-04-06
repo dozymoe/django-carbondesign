@@ -11,8 +11,7 @@ class CheckBoxTest(SimpleTestCase):
 """
         expected = """
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="choice" value="val1" type="checkbox" id="id_choice-0"
-      class="bx--checkbox" checked="" required="">
+  <input type="checkbox" name="choice" value="val1" id="id_choice-0" class="bx--checkbox" required checked>
 <label for="id_choice-0" class="bx--checkbox-label">
   Value One
 </label>

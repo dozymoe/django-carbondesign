@@ -12,6 +12,11 @@ from PIL import Image
 from .forms import DummyForm
 
 DATETIME_PATTERN = '%Y-%m-%d %H:%M:%S'
+TIMEZONES = (
+    ('option-1', "Time zone 1"),
+    ('option-2', "Time zone 2"),
+    ('option-3', "Time zone 3"),
+)
 
 
 def strip_space(value):
@@ -45,7 +50,8 @@ def compare_template(template, expected, context=None):
         }
         form = DummyForm(data={
                 'text': "a text",
-                'choice': "val1",
+                'choice': 'val1',
+                'choice2': 'red',
                 'started_at': datetime.strptime('2022-02-03 01:02:03',
                     DATETIME_PATTERN),
                 'started_at_missing': '',
@@ -63,7 +69,8 @@ def compare_template(template, expected, context=None):
                 'form': form,
                 'page': pager.page(3),
                 'page_first': pager.page(1),
-                'page_last': pager.page(10)})
+                'page_last': pager.page(10),
+                'timezones': TIMEZONES})
     else:
         context = Context(context)
 

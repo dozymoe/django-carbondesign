@@ -68,36 +68,44 @@ class Column(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
+    MODES = ('default', 'inner')
+    "Available variants."
     COL_SIZES = ('sm', 'md', 'lg', 'xlg', 'max')
     "Column sizes."
     NODE_PROPS = (*COL_SIZES, *['offset_%s' % x for x in COL_SIZES])
     "Extended Template Tag arguments."
 
-    has_size = False
-
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
+        if self.mode != 'inner':
+            values['class'].append('bx--col')
+
+        has_size = False
         for size in self.COL_SIZES:
             width = self.eval(self.kwargs.get(size), context)
             if width:
-                self.has_size = True
+                has_size = True
                 values['class'].append('bx--col-%s-%s' % (size, width))
 
             width = self.eval(self.kwargs.get('offset_%s' % size), context)
             if width:
                 values['class'].append('bx--offset-%s-%s' % (size, width))
-
-        if not self.has_size:
-            values['class'].append('bx--col')
+        if not has_size:
             values['class'].append('bx--col--auto')
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
-        if self.has_size:
-            template = """
+        template = '<{tag} class="{class}" {props}>{child}</{tag}>'
+        return self.format(template, values)
+
+
+    def render_inner(self, values, context):
+        """Output html of the component.
+        """
+        template = """
 <{tag} class="{class}" {props}>
   <div class="outside">
     <div class="inside">
@@ -106,8 +114,6 @@ class Column(Node):
   </div>
 </{tag}>
 """
-        else:
-            template = '<{tag} class="{class}" {props}>{child}</{tag}>'
         return self.format(template, values)
 
 

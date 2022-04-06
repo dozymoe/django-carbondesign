@@ -23,12 +23,14 @@ from .base import Node
 class Search(Node):
     """Search component.
     """
-    NODE_PROPS = ('style', 'light')
+    NODE_PROPS = ('id', 'size', 'light')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label',)
     "Prepare xxx_class and xxx_props values."
-    POSSIBLE_STYLES = ('sm', 'lg', 'xl')
+    POSSIBLE_SIZE = ('sm', 'lg', 'xl')
     "Documentation only."
+
+    size = None
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -38,9 +40,14 @@ class Search(Node):
         if not values['label']:
             values['label'] = _("Search")
 
-        style = self.eval(self.kwargs.get('style'), context)
-        if style:
-            values['class'].append(f'bx--search--{style}')
+        self.size = size = self.eval(self.kwargs.get('size', 'sm'), context)
+        if self.size:
+            values['class'].append(f'bx--search--{size}')
+
+        if self.size == 'xl':
+            values['close_icon_width'] = 20
+        else:
+            values['close_icon_width'] = 16
 
         if self.eval(self.kwargs.get('light'), context):
             values['class'].append('bx--search--light')
@@ -50,10 +57,8 @@ class Search(Node):
         """Output html of the component.
         """
         template = """
-<div class="bx--form-item">
   <div data-search role="search" class="bx--search {class}">
-    <label id="label-{id}" class="bx--label {label_class}" for="{id}"
-        {label_props}>
+    <label for="{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </label>
     <input class="bx--search-input" type="text" id="{id}"
@@ -68,14 +73,16 @@ class Search(Node):
         title="{txt_clear}" aria-label="{txt_clear}">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-          class="bx--search-clear" width="16" height="16" viewBox="0 0 32 32"
-          aria-hidden="true">
+          class="bx--search-clear" width="{close_icon_width}"
+          height="{close_icon_width}" viewBox="0 0 32 32" aria-hidden="true">
         <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
       </svg>
     </button>
   </div>
-</div>
 """
+        sm_template = f'<div class="bx--form-item">\n{template}\n</div>'
+        if self.size == 'sm':
+            return self.format(sm_template, values)
         return self.format(template, values)
 
 

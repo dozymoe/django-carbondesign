@@ -64,19 +64,19 @@ class ContentSwitcherHtmlTest(SimpleTestCase):
 <div data-content-switcher class="bx--content-switcher" role="tablist"
     aria-label="Demo switch content">
 <button class="bx--content-switcher-btn bx--content-switcher--selected" data-target=".demo--panel--opt-1"
-    role="tab" aria-selected="true" disabled="">
+    role="tab" aria-selected="true" disabled>
   <span class="bx--content-switcher__label">
     First section
   </span>
 </button>
 <button class="bx--content-switcher-btn" data-target=".demo--panel--opt-2"
-    role="tab" disabled="">
+    role="tab" disabled>
   <span class="bx--content-switcher__label">
     Second section
   </span>
 </button>
 <button class="bx--content-switcher-btn" data-target=".demo--panel--opt-3"
-    role="tab" disabled="">
+    role="tab" disabled>
   <span class="bx--content-switcher__label">
     Third section
   </span>

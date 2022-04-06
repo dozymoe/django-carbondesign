@@ -214,7 +214,7 @@ class MultiSelect(FormNode):
         items = []
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
-                'id': '%s-%s' % (values['id'], ii),
+                'id': '%s-%s' % (values['id'], ii + 1),
                 'value': val,
                 'child': txt,
                 'name': self.bound_field.name,

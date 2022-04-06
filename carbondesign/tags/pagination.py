@@ -31,9 +31,8 @@ class Pagination(Node):
     """
     NODE_PROPS = ('pager', 'pager_sizes', 'disabled')
     "Extended Template Tag arguments."
-    TEMPLATES = ('pagination_sizes', 'pagination_numbers', 'pagination_range',
-            'pagination_num_pages')
-    "Conditional templates."
+    CLASS_AND_PROPS = ('navbtn',)
+    "Prepare xxx_class and xxx_props values."
     PAGER_SIZES = (10, 20, 30, 40, 50)
 
     pager = None
@@ -46,8 +45,11 @@ class Pagination(Node):
         values['txt_per_page'] = _("Items per page")
         values['txt_select_per_page'] = _("select number of items per page")
         values['txt_select_page_num'] = _("select page number to view")
-        values['txt_back_btn'] = _("Backward button")
-        values['txt_forw_btn'] = _("Forward button")
+        values['txt_back_btn'] = _("previous page")
+        values['txt_forw_btn'] = _("next page")
+
+        if self.eval(self.kwargs.get('disabled'), context):
+            values['navbtn_class'].append('bx--pagination__button--no-index')
 
 
     def render_default(self, values, context):
@@ -100,8 +102,8 @@ class Pagination(Node):
         for="select-{id}-pagination-page">
       {tmpl_pagination_num_pages}
     </label>
-    <button class="bx--pagination__button bx--pagination__button--backward"
-        tabindex="0" data-page-backward aria-label="{txt_back_btn}">
+    <button class="bx--pagination__button bx--pagination__button--backward {navbtn_class}"
+        tabindex="0" data-page-backward aria-label="{txt_back_btn}" {navbtn_props}>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -109,8 +111,8 @@ class Pagination(Node):
         <path d="M20 24L10 16 20 8z"></path>
       </svg>
     </button>
-    <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="{txt_forw_btn}">
+    <button class="bx--pagination__button bx--pagination__button--forward {navbtn_class}"
+        tabindex="0" data-page-forward aria-label="{txt_forw_btn}" {navbtn_props}>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -127,11 +129,7 @@ class Pagination(Node):
     def render_tmpl_pagination_sizes(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        template = """
-<option class="bx--select-option" value="{value}" {props}>
-  {label}
-</option>
-"""
+        template = '<option class="bx--select-option" {props}>{value}</option>'
         options = []
 
         pager_sizes = self.eval(self.kwargs.get('pager_sizes',
@@ -141,39 +139,31 @@ class Pagination(Node):
 
         for ii, value in enumerate(pager_sizes):
             if ii:
-                options.append(template.format(value=value, label=value,
-                        props=''))
+                options.append(template.format(value=value, props=''))
             else:
-                options.append(template.format(value=value, label=value,
-                        props='selected'))
-        return ''.join(options)
+                options.append(template.format(value=value, props='selected'))
+        return '\n' + '\n'.join(options)
 
 
     def render_tmpl_pagination_numbers(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        template = """
-<option class="bx--select-option" value="{value}" {props}>
-  {label}
-</option>
-"""
+        template = '<option class="bx--select-option" {props}>{value}</option>'
         options = []
 
         for value in (x + 1 for x in range(self.pager.paginator.num_pages)):
             if value != self.pager.number:
-                options.append(template.format(value=value, label=value,
-                        props=''))
+                options.append(template.format(value=value, props=''))
             else:
-                options.append(template.format(value=value, label=value,
-                        props='selected'))
-        return ''.join(options)
+                options.append(template.format(value=value, props='selected'))
+        return '\n' + '\n'.join(options)
 
 
     def render_tmpl_pagination_range(self, values, context):
         """Dynamically render a part of the component's template.
         """
         template = """
-<span data-displayed-item-range>{range_start}-{range_end}</span>
+<span data-displayed-item-range>{range_start} – {range_end}</span>
 """
         page_range = template.format(
                 range_start=self.pager.paginator.page_range[0],

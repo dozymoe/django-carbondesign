@@ -31,6 +31,9 @@ class Toolbar(Node):
 class ToolbarSearch(Node):
     """Toolbar search component.
     """
+    NODE_PROPS = ('id',)
+    "Extended Template Tag arguments."
+
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
@@ -45,17 +48,17 @@ class ToolbarSearch(Node):
         template = """
 <div class="bx--search bx--search--sm bx--toolbar-search" role="search"
     data-search data-toolbar-search>
-  <label for="search__input-{id}" class="bx--label">
+  <label for="{id}" class="bx--label">
     {txt_search}
   </label>
-  <input type="text" class="bx--search-input" id="search__input-{id}"
+  <input type="text" class="bx--search-input" id="{id}"
       placeholder="{txt_search}">
   <button class="bx--toolbar-search__btn" aria-label="{txt_toolbar_search}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
         class="bx--search-magnifier" width="16" height="16"
         viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5   C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
+      <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
     </svg>
   </button>
   <button class="bx--search-close bx--search-close--hidden"
@@ -78,6 +81,8 @@ class ToolbarItem(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('icon',)
     "Named children."
+    NODE_PROPS = ('filter',)
+    "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -103,11 +108,15 @@ class ToolbarItem(Node):
     def render_slot_icon(self, values, context):
         """Render html of the slot.
         """
+        classname = ['bx--overflow-menu__icon']
+        if self.eval(self.kwargs.get('filter'), context):
+            classname.append('bx--toolbar-filter-icon')
+
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
-            'class': 'bx--overflow-menu__icon bx--toolbar-filter-icon',
+            'class': ' '.join(classname),
             'style': {
                 'width': 16,
                 'height': 16,
@@ -122,6 +131,9 @@ class ToolbarItemMultiSelect(FormNode):
     def render_default(self, values, context):
         """Output html of the component.
         """
+        template_header = """
+<li class="bx--toolbar-menu__title">{label}</li>
+"""
         template = """
 <li class="bx--toolbar-menu__option">
   <input id="{id}" class="bx--checkbox" type="checkbox" value="{value}"
@@ -131,9 +143,10 @@ class ToolbarItemMultiSelect(FormNode):
   </label>
 </li>
 """
-        selected = self.bound_field.value()
-
         items = []
+
+        items.append(self.format(template_header, values))
+
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
                 'id': '%s-%s' % (values['id'], ii),
@@ -145,7 +158,7 @@ class ToolbarItemMultiSelect(FormNode):
             props = []
             if ii == 0:
                 props.append('data-floating-menu-primary-focus')
-            if val in selected:
+            if self.bound_value and val in self.bound_value:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))
@@ -156,12 +169,23 @@ class ToolbarItemMultiSelect(FormNode):
 class ToolbarItemRadioButton(FormNode):
     """Toolbar radio item component.
     """
+    NODE_PROPS = ('legend',)
+    "Extended Template Tag arguments."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        legend = self.eval(self.kwargs.get('legend'), context)
+        values['legend'] = legend or values['label']
+
+
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
+<li class="bx--toolbar-menu__title">{label}</li>
 <fieldset data-row-height class="bx--radio-button-group">
-  <legend class="bx--visually-hidden">{label}</legend>
+  <legend class="bx--visually-hidden">{legend}</legend>
   {tmpl_items}
 </fieldset>
 """
@@ -181,8 +205,6 @@ class ToolbarItemRadioButton(FormNode):
   </label>
 </li>
 """
-        selected = self.bound_field.value()
-
         items = []
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
@@ -195,7 +217,7 @@ class ToolbarItemRadioButton(FormNode):
             props = []
             if ii == 0:
                 props.append('data-floating-menu-primary-focus')
-            if val == selected:
+            if val == self.bound_value:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))
@@ -203,17 +225,23 @@ class ToolbarItemRadioButton(FormNode):
         return '\n'.join(items)
 
 
-class ToolbarItemHeading(Node):
+class ToolbarItemButton(Node):
     """Toolbar item heading component.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
+    DEFAULT_TAG = 'button'
+    "Rendered HTML tag."
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<li class="bx--toolbar-menu__title {class}" {props}>{child}</li>
+<li class="bx--overflow-menu-options__option">
+  <{tag} class="bx--overflow-menu-options__btn {class}" {props}>
+    {child}
+  </{tag}>
+</li>
 """
         return self.format(template, values)
 
@@ -233,6 +261,6 @@ components = {
     'ToolbarItem': ToolbarItem,
     'ToolbarMultiSelect': ToolbarItemMultiSelect,
     'ToolbarRadio': ToolbarItemRadioButton,
-    'ToolbarHeading': ToolbarItemHeading,
+    'ToolbarButton': ToolbarItemButton,
     'ToolbarDivider': ToolbarItemDivider,
 }

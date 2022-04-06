@@ -62,7 +62,7 @@ class ContentSwitcherItem(Node):
             values['props'].append(('aria-selected', 'true'))
 
         if self.eval(self.kwargs.get('disabled'), context):
-            values['props'].append(('disabled', ''))
+            values['props'].append(('disabled', True))
 
 
     def render_default(self, values, context):

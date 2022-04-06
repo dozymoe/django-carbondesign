@@ -11,7 +11,7 @@ class TagTest(SimpleTestCase):
 {% endTag %}
 """
         expected = """
-<button type="button" class="bx--tag">
+<button class="bx--tag">
   <span class="bx--tag__label">
 </span>
 </button>

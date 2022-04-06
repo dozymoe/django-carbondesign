@@ -11,8 +11,8 @@ class SearchTest(SimpleTestCase):
 """
         expected = """
 <div class="bx--form-item">
-  <div data-search role="search" class="bx--search">
-    <label id="label-uid" class="bx--label" for="uid">
+  <div data-search role="search" class="bx--search bx--search--sm">
+    <label for="uid" class="bx--label">
       Search
     </label>
     <input class="bx--search-input" type="text" id="uid"
@@ -27,8 +27,8 @@ class SearchTest(SimpleTestCase):
         title="Clear search input" aria-label="Clear search input">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-          class="bx--search-clear" width="16" height="16" viewBox="0 0 32 32"
-          aria-hidden="true">
+          class="bx--search-clear" width="16"
+          height="16" viewBox="0 0 32 32" aria-hidden="true">
         <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
       </svg>
     </button>

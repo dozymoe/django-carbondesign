@@ -7,8 +7,8 @@ class TooltipTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% Tooltip id="uid" label="Text" %}
-{% endTooltip %}
+{% InteractiveTooltip id="uid" label="Text" %}
+{% endInteractiveTooltip %}
 """
         expected = """
 <div id="label-uid" class="bx--tooltip__label">
@@ -23,28 +23,11 @@ class TooltipTest(SimpleTestCase):
   <span class="bx--tooltip__caret"></span>
   <div class="bx--tooltip__content" tabindex="-1" role="dialog"
       aria-describedby="body-uid" aria-labelledby="label-uid">
-    <div id="body-uid">
-</div>
+    <p id="body-uid">
+</p>
   </div>
   <span tabindex="0"></span>
 </div>
-"""
-        rendered = compare_template(template, expected)
-        self.assertEqual(*rendered)
-
-
-class TooltipHeadingTest(SimpleTestCase):
-    maxDiff = None
-
-    def test_rendered(self):
-        template = """
-{% load carbondesign %}
-{% TooltipHeading %}
-{% endTooltipHeading %}
-"""
-        expected = """
-<h4 class="bx--tooltip__heading">
-</h4>
 """
         rendered = compare_template(template, expected)
         self.assertEqual(*rendered)

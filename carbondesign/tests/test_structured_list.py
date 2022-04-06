@@ -7,8 +7,8 @@ class StructuredListTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% StructuredList %}
-{% endStructuredList %}
+{% Sl %}
+{% endSl %}
 """
         expected = """
 <section class="bx--structured-list">
@@ -30,8 +30,8 @@ class StructuredListTrTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% StructuredListTr %}
-{% endStructuredListTr %}
+{% SlTr %}
+{% endSlTr %}
 """
         expected = """
 <div class="bx--structured-list-row">
@@ -47,8 +47,8 @@ class StructuredListThTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% StructuredListTh %}
-{% endStructuredListTh %}
+{% SlTh %}
+{% endSlTh %}
 """
         expected = """
 <div class="bx--structured-list-th">
@@ -64,8 +64,8 @@ class StructuredListTdTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% StructuredListTd %}
-{% endStructuredListTd %}
+{% SlTd %}
+{% endSlTd %}
 """
         expected = """
 <div class="bx--structured-list-td">
@@ -81,8 +81,8 @@ class StructuredListSelectTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% StructuredListSelect form.choice %}
-{% endStructuredListSelect %}
+{% SlSelect form.choice %}
+{% endSlSelect %}
 """
         expected = """
 <section class="bx--structured-list bx--structured-list--selection"

@@ -109,7 +109,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 1" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-0" value="one" checked>
+            id="id_choice2-1" value="one" checked>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 1
@@ -123,7 +123,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 2" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-1" value="two">
+            id="id_choice2-2" value="two">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 2
@@ -137,7 +137,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 3" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-2" value="three">
+            id="id_choice2-3" value="three">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 3
@@ -151,7 +151,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 4" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-3" value="four">
+            id="id_choice2-4" value="four">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 4
@@ -165,7 +165,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="An example option that is really long to show what should be done to handle long text" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-4" value="five" >
+            id="id_choice2-5" value="five" >
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           An example option that is really long to show what should be done to handle long text
@@ -274,7 +274,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 1" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-0" value="one" checked>
+            id="id_choice2-1" value="one" checked>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 1
@@ -288,7 +288,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 2" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-1" value="two">
+            id="id_choice2-2" value="two">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 2
@@ -302,7 +302,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 3" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-2" value="three">
+            id="id_choice2-3" value="three">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 3
@@ -316,7 +316,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 4" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-3" value="four">
+            id="id_choice2-4" value="four">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 4
@@ -330,7 +330,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="An example option that is really long to show what should be done to handle long text" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-4" value="five">
+            id="id_choice2-5" value="five">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           An example option that is really long to show what should be done to handle long text
@@ -439,7 +439,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 1" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-0" value="one" checked>
+            id="id_choice2-1" value="one" checked>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 1
@@ -453,7 +453,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 2" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-1" value="two">
+            id="id_choice2-2" value="two">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 2
@@ -467,7 +467,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 3" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-2" value="three">
+            id="id_choice2-3" value="three">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 3
@@ -481,7 +481,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 4" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-3" value="four">
+            id="id_choice2-4" value="four">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 4
@@ -495,7 +495,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="An example option that is really long to show what should be done to handle long text" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-4" value="five" >
+            id="id_choice2-5" value="five" >
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           An example option that is really long to show what should be done to handle long text
@@ -604,7 +604,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 1" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-0" value="one" checked>
+            id="id_choice2-1" value="one" checked>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 1
@@ -618,7 +618,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 2" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-1" value="two">
+            id="id_choice2-2" value="two">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 2
@@ -632,7 +632,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 3" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-2" value="three">
+            id="id_choice2-3" value="three">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 3
@@ -646,7 +646,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Option 4" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-3" value="four">
+            id="id_choice2-4" value="four">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Option 4
@@ -660,7 +660,7 @@ class MultiSelectHtmlTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="An example option that is really long to show what should be done to handle long text" class="bx--checkbox-label">
         <input type="checkbox" name="choice2" readonly class="bx--checkbox"
-            id="id_choice2-4" value="five">
+            id="id_choice2-5" value="five">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           An example option that is really long to show what should be done to handle long text

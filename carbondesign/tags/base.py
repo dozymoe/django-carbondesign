@@ -1,15 +1,18 @@
 """Base classes for carbondesign Template Tags.
 """
+import html
 import logging
 import re
+from typing import Sequence
 from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
+from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 from lxml import etree
 #-
-from .base_widgets import CustomTextInput
+from .base_widgets import CustomCheckboxInput, CustomTextarea, CustomTextInput
 
 _logger = logging.getLogger(__name__)
 
@@ -35,6 +38,13 @@ def modify_svg(xml, props):
             value = ';'.join('%s:%s' % (x, y) for x, y in value.items())
         root.attrib[attr] = value
     return etree.tostring(root).decode()
+
+
+def clean_attr_value(value):
+    """Strip html of its tags and prepare it to be used as html attribute value.
+    """
+    value = strip_tags(value).strip().replace('\n', ' ')
+    return html.escape(re.sub(r'\s\s+', ' ', value))
 
 
 class IgnoreMissing(dict):
@@ -181,6 +191,12 @@ class Node(template.Node):
 
         self.before_prepare(values, context)
         self.prepare(values, context)
+
+        if self.WANT_CHILDREN:
+            values['child'] = self.nodelist.render(context)
+        else:
+            values['child'] = ''
+
         self.after_prepare(values, context)
 
         method = getattr(self, 'render_%s' % self.mode, None)
@@ -323,11 +339,6 @@ class Node(template.Node):
                 values['props']))
         values['class'] = ' '.join(values['class'])
 
-        if self.WANT_CHILDREN:
-            values['child'] = self.nodelist.render(context)
-        else:
-            values['child'] = ''
-
         for name in self.CLASS_AND_PROPS:
             if name in self.SLOTS:
                 continue
@@ -361,7 +372,16 @@ class Node(template.Node):
     def join_attributes(self, attrs):
         """Format html attributes.
         """
-        return ' '.join('%s="%s"' % x for x in attrs)
+        result = []
+        for att, val in attrs:
+            if val is None or val is False:
+                continue
+            if val is True:
+                result.append(att)
+            else:
+                val = html.escape(str(val))
+                result.append(f'{att}="{val}"')
+        return ' '.join(result)
 
 
     def prepare(self, values, context):
@@ -495,8 +515,11 @@ class FormNode(Node):
         widget = self.eval(self.kwargs.get('widget'), context)
         if widget == 'input':
             widget = CustomTextInput(attrs=attrs)
-            return bound_field.as_widget(widget=widget, attrs=attrs)
-        return bound_field.as_widget(attrs=attrs)
+        elif widget == 'textarea':
+            widget = CustomTextarea(attrs=attrs)
+        else:
+            return bound_field.as_widget(attrs=attrs)
+        return bound_field.as_widget(widget=widget, attrs=attrs)
 
 
     def render_tmpl_label(self, values, context):
@@ -662,6 +685,78 @@ class FormNodes(Node):
             if supplement:
                 items.append(tmpl_s.format(supplement=supplement.strip()))
         return '\n'.join(items)
+
+
+class ChoiceFormNode(FormNode):
+    """Base class for a single choice from form field with multiple choices.
+
+    The first argument to the tag is the Django form field.
+    """
+    BASE_NODE_PROPS = ('value', *FormNode.BASE_NODE_PROPS)
+    "Base Template Tag arguments."
+
+    value = None
+    widget_class = CustomCheckboxInput
+
+    def default_id(self):
+        """Get Django form field html id.
+        """
+        # Somehow this ended up here.
+        # If the user didn't set the value argument, we assume they wanted us to
+        # take it from the bound field.
+        # There is strong assumption that this method is called before the label
+        # method below.
+        if self.value is None:
+            if isinstance(self.bound_value, str):
+                self.value = self.bound_value
+            elif isinstance(self.bound_value, Sequence):
+                self.value = self.bound_value[0]
+            else:
+                self.value = ''
+
+        id_ = self.bound_field.id_for_label
+        for ii, (_, val, _) in enumerate(self.choices()):
+            if val == self.value:
+                return f'{id_}-{ii}'
+        return id_
+
+
+    def label(self):
+        """Get Django form field label.
+        """
+        for _, val, txt in self.choices():
+            if val == self.value:
+                return txt
+        return ''
+
+
+    def before_prepare(self, values, context):
+        """Initialize the values meant for rendering templates.
+        """
+        self.value = self.eval(self.kwargs.get('value', ''), context)
+        super().before_prepare(values, context)
+
+        self.bound_field.field.widget = self.widget_class(
+                self.bound_field.field.widget.attrs,
+                check_test=self.check_test)
+
+        values['props'].append(('id', self._id))
+        values['props'].append(('value', self.value))
+
+
+    def check_test(self, value):
+        """ Test checked attribute
+
+        check_test is a callable that takes a value and returns True if the
+        checkbox should be checked for that value.
+        """
+        if not value:
+            return False
+        if isinstance(self.bound_value, str):
+            return value == self.bound_value
+        if isinstance(self.bound_value, Sequence):
+            return value in self.bound_value
+        return False
 
 
 class DumbFormNode(Node):

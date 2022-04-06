@@ -38,14 +38,14 @@ class Tag(Node):
 
         variant = self.eval(self.kwargs.get('variant'), context)
         if variant:
-            values['class'].append(f'bx-tag--{variant}')
+            values['class'].append(f'bx--tag--{variant}')
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<button type="button" class="bx--tag {class}" {props}>
+<button class="bx--tag {class}" {props}>
   <span class="bx--tag__label">{child}</span>
 </button>
 """

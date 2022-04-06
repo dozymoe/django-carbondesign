@@ -32,12 +32,22 @@ class DummyForm(forms.Form):
             required=False,
             choices=(('val1', "Value One"), ('val2', "Value Two")),
             help_text="Optional helper text here")
+    choice2 = forms.ChoiceField(
+            required=False,
+            choices=(
+                ('red', "Radio button label"),
+                ('green', "Radio button label"),
+                ('blue', "Radio button label"),
+            ))
 
     started_at = forms.DateTimeField()
     started_at_missing = forms.DateTimeField()
     started_at_empty = forms.DateTimeField(required=False)
     stopped_at = forms.DateTimeField()
     stopped_at_missing = forms.DateTimeField()
+
+    time_tm = forms.TimeField(required=False)
+    time_tm_missing = forms.TimeField(required=True)
 
     image = forms.ImageField(
             help_text="Only .jpg and .png files. 500kb max file size.")
@@ -54,3 +64,6 @@ class DummyForm(forms.Form):
             help_text="Only .jpg and .png files. 500kb max file size.")
     image_invalid = forms.ImageField(
             help_text="Only .jpg and .png files. 500kb max file size.")
+
+    toggle = forms.BooleanField(required=False,
+            label="example toggle with state indicator text")

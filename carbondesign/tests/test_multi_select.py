@@ -48,7 +48,7 @@ class MultiSelectTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Value One" class="bx--checkbox-label">
         <input type="checkbox" name="choice" readonly class="bx--checkbox"
-            id="id_choice-0" value="val1" checked>
+            id="id_choice-1" value="val1" checked>
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Value One
@@ -62,7 +62,7 @@ class MultiSelectTest(SimpleTestCase):
     <div class="bx--form-item bx--checkbox-wrapper">
       <label title="Value Two" class="bx--checkbox-label">
         <input type="checkbox" name="choice" readonly class="bx--checkbox"
-            id="id_choice-1" value="val2">
+            id="id_choice-2" value="val2">
         <span class="bx--checkbox-appearance"></span>
         <span class="bx--checkbox-label-text">
           Value Two

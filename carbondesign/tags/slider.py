@@ -31,7 +31,7 @@ from .base import FormNode
 class Slider(FormNode):
     """Slider component.
     """
-    NODE_PROPS = ('min', 'max', 'step', 'light')
+    NODE_PROPS = ('id', 'min', 'max', 'step', 'light')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'slider')
     "Prepare xxx_class and xxx_props values."
@@ -46,7 +46,7 @@ class Slider(FormNode):
         values['value'] = self.bound_field.value()
 
         if self.eval(self.kwargs.get('light'), context):
-            values['class'].append('bx--slider-text-input--light')
+            values['class'].append('bx--text-input--light')
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
@@ -58,16 +58,13 @@ class Slider(FormNode):
         """
         template = """
 <div class="bx--form-item">
-  <label class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   <div class="bx--slider-container">
-    <label id="slider-input-box_bottom-range-label-{id}"
-        class="bx--slider__range-label">
+    <label id="bottom_range-label-{id}" class="bx--slider__range-label">
       {min}
     </label>
-    <div class="bx--slider {slider_class}"
-        data-slider data-slider-input-box="#{id}" {slider_props}>
+    <div class="bx--slider {slider_class}" data-slider
+        data-slider-input-box="#{id}" {slider_props}>
       <div class="bx--slider__thumb" tabindex="0"></div>
       <div class="bx--slider__track"></div>
       <div class="bx--slider__filled-track"></div>
@@ -75,12 +72,11 @@ class Slider(FormNode):
           class="bx--slider__input" type="range" step="{step}" min="{min}"
           max="{max}" value="{value}">
     </div>
-    <label id="slider-input-box_top-range-label-{id}"
-        class="bx--slider__range-label">
+    <label id="top_range-label-{id}" class="bx--slider__range-label">
       {max}
     </label>
     <input id="{id}"
-        aria-labelledby="slider-input-box_bottom-range-label-{id} slider-input-box_top-range-label-{id}"
+        aria-labelledby="bottom_range-label-{id} top_range-label-{id}"
         type="number" class="bx--text-input bx--slider-text-input {class}"
         placeholder="{min}" value="{value}" {props}>
   </div>

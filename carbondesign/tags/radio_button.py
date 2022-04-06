@@ -16,8 +16,6 @@ a new item, the previous choice is automatically deselected.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from typing import Sequence
-#-
 from .base import FormNode
 
 class RadioButton(FormNode):
@@ -69,13 +67,13 @@ class RadioButton(FormNode):
 """
         selected = self.bound_field.value()
         excludes = self.eval(self.kwargs.get('exclude', []), context)
-        if not isinstance(excludes, Sequence):
+        if isinstance(excludes, str):
             excludes = [x.strip() for x in excludes.split(';')]
 
         items = []
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
-                'index': '%s-%s' % (values['id'], ii),
+                'id': '%s-%s' % (values['id'], ii + 1),
                 'value': val,
                 'child': txt,
                 'name': self.bound_field.name,

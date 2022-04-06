@@ -14,10 +14,10 @@ class GridHtmlTest(SimpleTestCase):
     {% endCol %}
   {% endRow %}
   {% Row %}
-    {% Col sm=1 %}1{% endCol %}
-    {% Col sm=1 %}1{% endCol %}
-    {% Col sm=1 %}1{% endCol %}
-    {% Col sm=1 %}1{% endCol %}
+    {% Col mode="inner" sm=1 %}1{% endCol %}
+    {% Col mode="inner" sm=1 %}1{% endCol %}
+    {% Col mode="inner" sm=1 %}1{% endCol %}
+    {% Col mode="inner" sm=1 %}1{% endCol %}
   {% endRow %}
   {% Row %}
     {% Col %}
@@ -25,14 +25,14 @@ class GridHtmlTest(SimpleTestCase):
     {% endCol %}
   {% endRow %}
   {% Row %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
-    {% Col md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
+    {% Col mode="inner" md=1 %}1{% endCol %}
   {% endRow %}
   {% Row %}
     {% Col %}
@@ -40,18 +40,18 @@ class GridHtmlTest(SimpleTestCase):
     {% endCol %}
   {% endRow %}
   {% Row %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
-    {% Col lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
+    {% Col mode="inner" lg=1 %}1{% endCol %}
   {% endRow %}
   {% Row %}
     {% Col %}
@@ -59,18 +59,18 @@ class GridHtmlTest(SimpleTestCase):
     {% endCol %}
   {% endRow %}
   {% Row %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
-    {% Col xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
+    {% Col mode="inner" xlg=1 %}1{% endCol %}
   {% endRow %}
   {% Row %}
     {% Col %}
@@ -78,18 +78,18 @@ class GridHtmlTest(SimpleTestCase):
     {% endCol %}
   {% endRow %}
   {% Row %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
-    {% Col max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
+    {% Col mode="inner" max=1 %}1{% endCol %}
   {% endRow %}
 {% endGrid %}
 """

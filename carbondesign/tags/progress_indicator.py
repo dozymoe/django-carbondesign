@@ -47,11 +47,15 @@ class ProgressIndicator(Node):
 class ProgressIndicatorItem(Node):
     """Progress Indicator item component.
     """
-    SLOTS = ('optional',)
+    WANT_CHILDREN = True
+    "Template Tag needs closing end tag."
+    SLOTS = ('help', 'optional')
     "Named children."
-    NODE_PROPS = ('variant',)
+    NODE_PROPS = ('id', 'variant',)
     "Extended Template Tag arguments."
-    AVAILABLE_VARIANTS = ('current', 'complete', 'incomplete', 'invalid',
+    CLASS_AND_PROPS = ('list',)
+    "Prepare xxx_class and xxx_props values."
+    POSSIBLE_VARIANT = ('current', 'complete', 'incomplete', 'invalid',
             'disabled')
     "Documentation only."
 
@@ -62,35 +66,49 @@ class ProgressIndicatorItem(Node):
         """
         self.variant = variant = self.eval(
                 self.kwargs.get('variant', 'current'), context)
-        values['class'].append(f'bx--progress-step--{variant}')
 
         if variant == 'invalid':
-            values['props'].append(('data-invalid', ''))
+            values['list_class'].append('bx--progress-step--incomplete')
+            values['list_props'].append(('data-invalid', ''))
+        else:
+            values['list_class'].append(f'bx--progress-step--{variant}')
 
-        elif variant == 'disabled':
-            values['class'].append('bx--progress-step--incomplete')
-            values['props'].append(('aria-disabled', 'true'))
+        if variant == 'disabled':
+            values['list_class'].append('bx--progress-step--incomplete')
+            values['list_props'].append(('aria-disabled', 'true'))
+
+        if 'help' in self.slots:
+            values['props'].append(('aria-describedby', f'hint-{self._id}'))
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<li class="bx--progress-step {class}" {props}>
+<li class="bx--progress-step {list_class}" {list_props}>
   {tmpl_icon}
-  <p tabindex="0" class="bx--progress-label" aria-describedby="{id}">
-    {label}
+  <p tabindex="0" class="bx--progress-label {class}" id="{id}" {props}>
+    {child}
   </p>
-  <div id="{id}" role="tooltip" data-floating-menu-direction="bottom"
-      class="bx--tooltip" data-avoid-focus-on-open>
-    <span class="bx--tooltip__caret"></span>
-    <p class="bx--tooltip__text">{child}</p>
-  </div>
+  {slot_help}
   {slot_optional}
   <span class="bx--progress-line"></span>
 </li>
 """
         return self.format(template, values, context)
+
+
+    def render_slot_help(self, values, context):
+        """Render html of the slot.
+        """
+        template = """
+<div id="hint-{id}" role="tooltip" data-floating-menu-direction="bottom"
+    class="bx--tooltip {class}" data-avoid-focus-on-open {props}>
+  <span class="bx--tooltip__caret"></span>
+  <p class="bx--tooltip__text">{child}</p>
+</div>
+"""
+        return self.format(template, values)
 
 
     def render_slot_optional(self, values, context):

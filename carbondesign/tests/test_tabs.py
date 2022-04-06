@@ -13,8 +13,7 @@ class TabsTest(SimpleTestCase):
         expected = """
 <div data-tabs class="bx--tabs">
   <div class="bx--tabs-trigger" tabindex="0">
-    <a href="javascript:void(0)" class="bx--tabs-trigger-text" tabindex="-1">
-    </a>
+    <a href="javascript:void(0)" class="bx--tabs-trigger-text" tabindex="-1"></a>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16"
         height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -37,13 +36,14 @@ class TabItemTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% TabItem %}
+{% TabItem target="uid" %}
 {% endTabItem %}
 """
         expected = """
-<li class="bx--tabs__nav-item" data-target="None" role="tab">
+<li class="bx--tabs__nav-item" data-target="#uid"
+    role="tab">
   <a tabindex="0" class="bx--tabs__nav-link" href="javascript:void(0)"
-      role="tab" aria-controls="None">
+      role="tab" aria-controls="uid" id="tab-link-uid">
   </a>
 </li>
 """
@@ -57,11 +57,11 @@ class TabContentTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% TabContent %}
+{% TabContent id="uid" %}
 {% endTabContent %}
 """
         expected = """
-<div role="tabpanel" aria-labelledby="None" aria-hidden="false" aria-hidden="true" hidden="">
+<div id="uid" role="tabpanel" aria-labelledby="tab-link-uid" aria-hidden="true" hidden="">
   <div>
 </div>
 </div>

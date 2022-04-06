@@ -24,10 +24,9 @@ table display settings, and other utilities.
 import logging
 from uuid import uuid4
 #-
-from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import DummyNodeList, FormNode, Node, modify_svg
+from .base import DummyNodeList, FormNode, Node, clean_attr_value, modify_svg
 from .button import Button
 
 _logger = logging.getLogger(__name__)
@@ -358,7 +357,7 @@ class Th(Node):
     def render_sortable(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <th class="{class}" {props}>
@@ -687,7 +686,7 @@ class TdOverflowButton(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">

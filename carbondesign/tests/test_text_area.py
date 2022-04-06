@@ -15,7 +15,8 @@ class TextAreaTest(SimpleTestCase):
   Text
 </label>
   <div class="bx--text-area__wrapper">
-    <input type="text" name="text" value="a text" class="bx--text-area bx--text-area--v2" required id="id_text">
+    <textarea name="text" cols="40" rows="10" class="bx--text-area bx--text-area--v2" required id="id_text">
+a text</textarea>
   </div>
 </div>
 """

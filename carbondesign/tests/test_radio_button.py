@@ -15,17 +15,17 @@ class RadioTest(SimpleTestCase):
   <div class="bx--form-item">
     <div class="bx--radio-button-group">
 <div class="bx--radio-button-wrapper">
-  <input id="id_choice" class="bx--radio-button" type="radio" value="val1"
+  <input id="id_choice-1" class="bx--radio-button" type="radio" value="val1"
       name="choice" tabindex="0" checked>
-  <label for="id_choice" class="bx--radio-button__label">
+  <label for="id_choice-1" class="bx--radio-button__label">
     <span class="bx--radio-button__appearance"></span>
     <span class="bx--radio-button__label-text">Value One</span>
   </label>
 </div>
 <div class="bx--radio-button-wrapper">
-  <input id="id_choice" class="bx--radio-button" type="radio" value="val2"
+  <input id="id_choice-2" class="bx--radio-button" type="radio" value="val2"
       name="choice" tabindex="0">
-  <label for="id_choice" class="bx--radio-button__label">
+  <label for="id_choice-2" class="bx--radio-button__label">
     <span class="bx--radio-button__appearance"></span>
     <span class="bx--radio-button__label-text">Value Two</span>
   </label>

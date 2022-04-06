@@ -44,40 +44,35 @@ class CheckBoxHtmlTest(SimpleTestCase):
 <fieldset class="bx--fieldset">
   <legend class="bx--label">Checkbox (input + label)</legend>
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="checkbox" value="new" type="checkbox" id="bx--checkbox-new"
-      class="bx--checkbox" checked="">
+  <input type="checkbox" name="checkbox" value="new" id="bx--checkbox-new" class="bx--checkbox" checked>
 <label for="bx--checkbox-new" class="bx--checkbox-label">
   Checkbox
 </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="checkbox" value="ind" type="checkbox" id="bx--checkbox-ind"
-      class="bx--checkbox" aria-checked="mixed">
+  <input type="checkbox" name="checkbox" value="ind" id="bx--checkbox-ind" aria-checked="mixed" class="bx--checkbox">
 <label for="bx--checkbox-ind" class="bx--checkbox-label">
   Indeterminate checkbox
 </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="checkbox" value="new" type="checkbox" id="bx--checkbox-new--disabled"
-      class="bx--checkbox" disabled="" checked="">
+  <input type="checkbox" name="checkbox" value="new" id="bx--checkbox-new--disabled" disabled class="bx--checkbox" checked>
 <label for="bx--checkbox-new--disabled" class="bx--checkbox-label">
   Checkbox
 </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="checkbox" value="ind" type="checkbox" id="bx--checkbox-ind--disabled"
-      class="bx--checkbox" disabled="" aria-checked="mixed">
+  <input type="checkbox" name="checkbox" value="ind" id="bx--checkbox-ind--disabled" disabled aria-checked="mixed" class="bx--checkbox">
 <label for="bx--checkbox-ind--disabled" class="bx--checkbox-label">
   Indeterminate checkbox
 </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
-  <input name="checkbox" value="new" type="checkbox" id="bx--checkbox-disabled"
-      class="bx--checkbox" disabled="" checked="">
+  <input type="checkbox" name="checkbox" value="new" id="bx--checkbox-disabled" disabled class="bx--checkbox" checked>
 <label for="bx--checkbox-disabled" class="bx--checkbox-label">
   Disabled checkbox
 </label>
@@ -109,40 +104,35 @@ class CheckBoxHtmlTest(SimpleTestCase):
   <legend class="bx--label">Checkbox (label &gt; input)</legend>
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="bx--checkbox-new2" class="bx--checkbox-label">
-    <input name="checkbox" value="yellow" type="checkbox" id="bx--checkbox-new2"
-        class="bx--checkbox" checked="">
+    <input type="checkbox" name="checkbox" value="yellow" id="bx--checkbox-new2" class="bx--checkbox" checked>
     Checkbox
   </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="bx--checkbox-ind2" class="bx--checkbox-label" data-contained-checkbox-state="mixed">
-    <input name="checkbox" value="ind" type="checkbox" id="bx--checkbox-ind2"
-        class="bx--checkbox" aria-checked="mixed">
+    <input type="checkbox" name="checkbox" value="ind" id="bx--checkbox-ind2" aria-checked="mixed" class="bx--checkbox">
     Indeterminate checkbox
   </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="bx--checkbox-new2--disabled" class="bx--checkbox-label">
-    <input name="checkbox" value="yellow" type="checkbox" id="bx--checkbox-new2--disabled"
-        class="bx--checkbox" disabled="" checked="">
+    <input type="checkbox" name="checkbox" value="yellow" id="bx--checkbox-new2--disabled" disabled class="bx--checkbox" checked>
     Checkbox
   </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="bx--checkbox-ind2--disabled" class="bx--checkbox-label" data-contained-checkbox-state="mixed">
-    <input name="checkbox" value="ind" type="checkbox" id="bx--checkbox-ind2--disabled"
-        class="bx--checkbox" disabled="" aria-checked="mixed">
+    <input type="checkbox" name="checkbox" value="ind" id="bx--checkbox-ind2--disabled" disabled aria-checked="mixed" class="bx--checkbox">
     Indeterminate checkbox
   </label>
 </div>
 
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="bx--checkbox-disabled2" class="bx--checkbox-label">
-    <input name="checkbox" value="yellow" type="checkbox" id="bx--checkbox-disabled2"
-        class="bx--checkbox" disabled="" checked="">
+    <input type="checkbox" name="checkbox" value="yellow" id="bx--checkbox-disabled2" disabled class="bx--checkbox" checked>
     Disabled checkbox
   </label>
 </div>

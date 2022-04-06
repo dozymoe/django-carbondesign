@@ -19,9 +19,7 @@ functionality—dropdown, multiselect, and combo box.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from django.utils.html import strip_tags
-#-
-from .base import Node, modify_svg
+from .base import Node, clean_attr_value, modify_svg
 
 class Dropdown(Node):
     """Dropdown component.
@@ -181,7 +179,7 @@ class DropdownItem(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <li data-option data-value="{value}" class="bx--dropdown-item {class}"

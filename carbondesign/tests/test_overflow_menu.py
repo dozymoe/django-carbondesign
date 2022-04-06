@@ -12,8 +12,7 @@ class OverflowMenuTest(SimpleTestCase):
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
-  <button
-      class="bx--overflow-menu__trigger bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start"
+  <button class="bx--overflow-menu__trigger bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--right bx--tooltip--align-start"
       aria-haspopup="true" aria-expanded="false" id="trigger-uid"
       aria-controls="uid">
     <span class="bx--assistive-text">Overflow</span>
@@ -27,8 +26,7 @@ class OverflowMenuTest(SimpleTestCase):
 </svg>
   </button>
   <div class="bx--overflow-menu-options" tabindex="-1" role="menu"
-      aria-labelledby="trigger-uid" data-floating-menu-direction="bottom"
-      id="uid">
+      aria-labelledby="trigger-uid" id="uid" data-floating-menu-direction="bottom">
     <ul class="bx--overflow-menu-options__content">
     </ul>
     <span tabindex="0"></span>
