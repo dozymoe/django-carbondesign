@@ -182,8 +182,8 @@ class UiShellSwitcherMenuSection(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
         })

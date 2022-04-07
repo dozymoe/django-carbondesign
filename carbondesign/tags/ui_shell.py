@@ -282,8 +282,8 @@ class Action(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
             'class': 'bx--navigation-menu-panel-expand-icon',
@@ -298,8 +298,8 @@ class Action(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
             'class': 'bx--navigation-menu-panel-collapse-icon',
@@ -415,8 +415,8 @@ class NavItem(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
         })
@@ -495,8 +495,8 @@ class SideNav(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
         })
@@ -674,8 +674,8 @@ class SideNavItem(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
         })

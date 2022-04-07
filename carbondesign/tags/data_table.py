@@ -711,8 +711,8 @@ class TdOverflowButton(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
             'class': values['class'],

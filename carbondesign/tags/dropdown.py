@@ -204,8 +204,8 @@ class DropdownItem(Node):
                 values['class'],
             'style': {
                 'will-change': 'transform',
-                'width': 16,
-                'height': 16,
+                'width': '%spx' % 16,
+                'height': '%spx' % 16,
             },
             'aria-hidden': 'true',
         })
