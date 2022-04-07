@@ -20,7 +20,7 @@ from ..tags import notification, number_input, overflow_menu, pagination
 from ..tags import pagination_nav, progress_indicator, radio_button, search
 from ..tags import select, slider, structured_list, tabs, tag, text_area
 from ..tags import text_input, tile, time_picker, toggle, toolbar, tooltip
-from ..tags import ui_shell
+from ..tags import ui_shell, ui_shell_switcher
 
 _logger = logging.getLogger(__name__)
 register = template.Library()
@@ -67,6 +67,7 @@ MATERIAL_TAGS = {
     **toolbar.components,
     **tooltip.components,
     **ui_shell.components,
+    **ui_shell_switcher.components,
 }
 
 

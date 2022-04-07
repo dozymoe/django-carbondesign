@@ -118,7 +118,7 @@ class OverflowMenuItem(Node):
                 values['props'].append(('aria-disabled', 'true'))
 
         if self.eval(self.kwargs.get('active'), context):
-            values['props'].append(('data-floating-menu-primary-focus', ''))
+            values['props'].append(('data-floating-menu-primary-focus', True))
 
         variant = self.eval(self.kwargs.get('variant'), context)
         if variant:
@@ -151,6 +151,6 @@ class OverflowMenuItem(Node):
 
 
 components = {
-    'OverflowMenu': OverflowMenu,
-    'OverflowMenuItem': OverflowMenuItem,
+    'OvMenu': OverflowMenu,
+    'OvMenuItem': OverflowMenuItem,
 }

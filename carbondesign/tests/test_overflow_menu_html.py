@@ -7,21 +7,21 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_default(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" %}
-  {% OverflowMenuItem active=True %}
+{% OvMenu id="uid" %}
+  {% OvMenuItem active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 2{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 3{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 4{% endOverflowMenuItem %}
-  {% OverflowMenuItem disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem %}Option 2{% endOvMenuItem %}
+  {% OvMenuItem %}Option 3{% endOvMenuItem %}
+  {% OvMenuItem %}Option 4{% endOvMenuItem %}
+  {% OvMenuItem disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -95,21 +95,21 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_flip(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" flip=True position="left" %}
-  {% OverflowMenuItem active=True %}
+{% OvMenu id="uid" flip=True position="left" %}
+  {% OvMenuItem active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 2{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 3{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 4{% endOverflowMenuItem %}
-  {% OverflowMenuItem disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem %}Option 2{% endOvMenuItem %}
+  {% OvMenuItem %}Option 3{% endOvMenuItem %}
+  {% OvMenuItem %}Option 4{% endOvMenuItem %}
+  {% OvMenuItem disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -183,27 +183,27 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_flip_link(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" flip=True position="left" %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" active=True %}
+{% OvMenu id="uid" flip=True position="left" %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 2
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 3
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 4
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -277,21 +277,21 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_up(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" direction="top" %}
-  {% OverflowMenuItem active=True %}
+{% OvMenu id="uid" direction="top" %}
+  {% OvMenuItem active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 2{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 3{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 4{% endOverflowMenuItem %}
-  {% OverflowMenuItem disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem %}Option 2{% endOvMenuItem %}
+  {% OvMenuItem %}Option 3{% endOvMenuItem %}
+  {% OvMenuItem %}Option 4{% endOvMenuItem %}
+  {% OvMenuItem disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -365,21 +365,21 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_flip_up(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" flip=True position="left" direction="top" %}
-  {% OverflowMenuItem active=True %}
+{% OvMenu id="uid" flip=True position="left" direction="top" %}
+  {% OvMenuItem active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 2{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 3{% endOverflowMenuItem %}
-  {% OverflowMenuItem %}Option 4{% endOverflowMenuItem %}
-  {% OverflowMenuItem disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem %}Option 2{% endOvMenuItem %}
+  {% OvMenuItem %}Option 3{% endOvMenuItem %}
+  {% OvMenuItem %}Option 4{% endOvMenuItem %}
+  {% OvMenuItem disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -453,27 +453,27 @@ class OverflowMenuHtmlTest(SimpleTestCase):
     def test_flip_link_up(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" flip=True position="left" direction="top" %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" active=True %}
+{% OvMenu id="uid" flip=True position="left" direction="top" %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" active=True %}
     An example option that is really long to show what should be done to handle
     long text
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 2
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 3
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
     Option 4
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
     Disabled
-  {% endOverflowMenuItem %}
-  {% OverflowMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
+  {% endOvMenuItem %}
+  {% OvMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
     Danger option
-  {% endOverflowMenuItem %}
-{% endOverflowMenu %}
+  {% endOvMenuItem %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">

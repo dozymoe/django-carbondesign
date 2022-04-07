@@ -4,6 +4,8 @@ from django import forms
 from .base import compare_template, SimpleTestCase
 
 class DummyForm(forms.Form):
+    search = forms.CharField(required=False, label="Search")
+
     checkbox = forms.ChoiceField(required=False,
             label="FILTER BY",
             choices=(
@@ -29,7 +31,7 @@ class ToolbarHtmlTest(SimpleTestCase):
         template = """
 {% load carbondesign %}
 {% Toolbar %}
-  {% ToolbarSearch id="search__input" %}
+  {% ToolbarSearch form.search id="search__input" %}
   {% ToolbarItem filter=True %}
     {% ToolbarMultiSelect form.checkbox %}
     {% Slot 'icon' %}
@@ -61,7 +63,7 @@ class ToolbarHtmlTest(SimpleTestCase):
   <label for="search__input" class="bx--label">
     Search
   </label>
-  <input type="text" class="bx--search-input" id="search__input"
+  <input type="text" name="search" class="bx--search-input" id="search__input"
       placeholder="Search">
   <button class="bx--toolbar-search__btn" aria-label="Toolbar Search">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"

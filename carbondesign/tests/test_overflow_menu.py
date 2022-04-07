@@ -7,8 +7,8 @@ class OverflowMenuTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenu id="uid" %}
-{% endOverflowMenu %}
+{% OvMenu id="uid" %}
+{% endOvMenu %}
 """
         expected = """
 <div data-overflow-menu class="bx--overflow-menu">
@@ -37,14 +37,14 @@ class OverflowMenuTest(SimpleTestCase):
         self.assertEqual(*rendered)
 
 
-class OverflowMenuItemTest(SimpleTestCase):
+class OvMenuItemTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% OverflowMenuItem %}
-{% endOverflowMenuItem %}
+{% OvMenuItem %}
+{% endOvMenuItem %}
 """
         expected = """
 <li class="bx--overflow-menu-options__option">

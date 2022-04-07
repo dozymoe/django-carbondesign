@@ -549,7 +549,7 @@ class TdCheckBox(FormNode):
         values['name'] = self.bound_field.name
 
         if self.bound_value and self.value in self.bound_value:
-            values['props'].append(('checked', ''))
+            values['props'].append(('checked', True))
 
 
     def render_default(self, values, context):
@@ -650,7 +650,7 @@ class TableToolbarOverflowButton(Node):
         """Prepare values for rendering the templates.
         """
         if self.eval(self.kwargs.get('active'), context):
-            values['props'].append(('data-floating-menu-primary-focus', ''))
+            values['props'].append(('data-floating-menu-primary-focus', True))
 
         if not context.get('compact'):
             values['list_class'].append('bx--overflow-menu--data-table')

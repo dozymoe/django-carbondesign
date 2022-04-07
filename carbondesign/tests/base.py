@@ -1,8 +1,8 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 from datetime import datetime
-from io import BytesIO
-import re
+from io import BytesIO, StringIO
 #-
+from bs4 import BeautifulSoup
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.paginator import Paginator
 from django.template import Context, Template
@@ -18,13 +18,19 @@ TIMEZONES = (
     ('option-3', "Time zone 3"),
 )
 
+def pretty_html(value):
+    soup = BeautifulSoup(value, 'lxml')
+    if soup.html:
+        soup.html.unwrap()
+        if soup.body:
+            soup.body.unwrap()
 
-def strip_space(value):
-    value = re.sub(r'\s+"', '"', value)
-    value = re.sub(r'[\n\s]+>', '>', value)
-    #value = re.sub(r'>\s+', '>', value)
-    #value = re.sub(r'\n\s+', '\n', value)
-    return re.sub(r'\n\s*\n', '\n', value)
+    htmlio = StringIO(soup.prettify())
+    beautiful_html = ''
+    for line in htmlio.readlines():
+        count = len(line) - len(line.lstrip(' ')) # count leading spaces
+        beautiful_html += (count * 2 - count) * ' ' + line
+    return beautiful_html
 
 
 def compare_template(template, expected, context=None):
@@ -75,8 +81,8 @@ def compare_template(template, expected, context=None):
         context = Context(context)
 
     return (
-        strip_space(expected),
-        strip_space(Template(template).render(context)),
+        pretty_html(expected),
+        pretty_html(Template(template).render(context)),
     )
 
 

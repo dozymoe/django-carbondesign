@@ -28,18 +28,26 @@ class Toolbar(Node):
         return self.format(template, values)
 
 
-class ToolbarSearch(Node):
+class ToolbarSearch(FormNode):
     """Toolbar search component.
     """
-    NODE_PROPS = ('id',)
+    NODE_PROPS = ('placeholder',)
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        values['txt_search'] = _("Search")
         values['txt_toolbar_search'] = _("Toolbar Search")
         values['txt_clear_search'] = _("Clear search input")
+
+
+    def prepare_element_props(self, props, context):
+        """Prepare html attributes for rendering the form element.
+        """
+        props['class'].append('bx--search-input')
+
+        placeholder = self.eval(self.kwargs.get('placeholder'), context)
+        props['placeholder'] = placeholder or _("Search")
 
 
     def render_default(self, values, context):
@@ -48,11 +56,8 @@ class ToolbarSearch(Node):
         template = """
 <div class="bx--search bx--search--sm bx--toolbar-search" role="search"
     data-search data-toolbar-search>
-  <label for="{id}" class="bx--label">
-    {txt_search}
-  </label>
-  <input type="text" class="bx--search-input" id="{id}"
-      placeholder="{txt_search}">
+  {tmpl_label}
+  {tmpl_element}
   <button class="bx--toolbar-search__btn" aria-label="{txt_toolbar_search}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -71,7 +76,7 @@ class ToolbarSearch(Node):
   </button>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
 class ToolbarItem(Node):

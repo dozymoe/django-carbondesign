@@ -1,5 +1,11 @@
 # pylint:disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
+from django import forms
+#-
 from .base import compare_template, SimpleTestCase
+
+class DummyForm(forms.Form):
+    search = forms.CharField(required=False, label="Search")
+
 
 class ToolbarTest(SimpleTestCase):
     maxDiff = None
@@ -22,9 +28,12 @@ class ToolbarSearchTest(SimpleTestCase):
     maxDiff = None
 
     def test_rendered(self):
+        form = DummyForm(data={})
+        context = {'form': form}
+
         template = """
 {% load carbondesign %}
-{% ToolbarSearch id="uid" %}
+{% ToolbarSearch form.search id="uid" %}
 """
         expected = """
 <div class="bx--search bx--search--sm bx--toolbar-search" role="search"
@@ -32,7 +41,7 @@ class ToolbarSearchTest(SimpleTestCase):
   <label for="uid" class="bx--label">
     Search
   </label>
-  <input type="text" class="bx--search-input" id="uid"
+  <input type="text" name="search" class="bx--search-input" id="uid"
       placeholder="Search">
   <button class="bx--toolbar-search__btn" aria-label="Toolbar Search">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -52,7 +61,7 @@ class ToolbarSearchTest(SimpleTestCase):
   </button>
 </div>
 """
-        rendered = compare_template(template, expected)
+        rendered = compare_template(template, expected, context)
         self.assertEqual(*rendered)
 
 

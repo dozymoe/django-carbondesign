@@ -68,7 +68,7 @@ class Modal(Node):
             values['container_class'].append(f'bx--modal-container--{size}')
 
         if not has_form and 'footer' not in self.slots:
-            values['close_props'].append(('data-modal-primary-focus', ''))
+            values['close_props'].append(('data-modal-primary-focus', True))
 
         if self.eval(self.kwargs.get('can_scroll'), context):
             values['content_props'].append(('tabindex', '0'))

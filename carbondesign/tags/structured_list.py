@@ -148,7 +148,7 @@ class StructuredListRow(Node):
             if selected and value in selected:
                 values['label_class'].append(
                         'bx--structured-list-row--selected')
-                values['props'].append(('checked', ''))
+                values['props'].append(('checked', True))
 
             choices = context['bound_choices']
             for _, val, txt in choices:

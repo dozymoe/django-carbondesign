@@ -116,7 +116,7 @@ class TabContent(Node):
             values['props'].append(('aria-hidden', 'false'))
         else:
             values['props'].append(('aria-hidden', 'true'))
-            values['props'].append(('hidden', ''))
+            values['props'].append(('hidden', True))
 
         values['target'] = self.eval(self.kwargs.get('target'), context)
 

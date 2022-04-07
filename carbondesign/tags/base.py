@@ -102,7 +102,7 @@ class Slot(template.Node):
     def label(self, context):
         """Get label argument.
         """
-        return var_eval(self.kwargs.get('label'), context)
+        return var_eval(self.kwargs.get('label', ''), context)
 
 
     def props(self, context):
@@ -110,7 +110,7 @@ class Slot(template.Node):
         """
         props = []
         for key, val in self.kwargs.items():
-            if key == 'class':
+            if key in ('class', 'label'):
                 continue
             props.append((key, var_eval(val, context)))
         # Ignore properties with falsy value except empty string.

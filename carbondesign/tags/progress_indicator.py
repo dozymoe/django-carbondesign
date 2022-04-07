@@ -69,7 +69,7 @@ class ProgressIndicatorItem(Node):
 
         if variant == 'invalid':
             values['list_class'].append('bx--progress-step--incomplete')
-            values['list_props'].append(('data-invalid', ''))
+            values['list_props'].append(('data-invalid', True))
         else:
             values['list_class'].append(f'bx--progress-step--{variant}')
 
