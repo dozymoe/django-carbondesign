@@ -29,17 +29,20 @@ _logger = logging.getLogger(__name__)
 class Pagination(Node):
     """Pagination component.
     """
-    NODE_PROPS = ('pager', 'pager_sizes', 'disabled')
+    NODE_PROPS = ('pager', 'pager_sizes', 'disabled', 'page_name',
+            'pagesize_name')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('navbtn',)
     "Prepare xxx_class and xxx_props values."
     PAGER_SIZES = (10, 20, 30, 40, 50)
 
     pager = None
+    pagesize = 10
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
+        request = context.get('request')
         self.pager = self.eval(self.kwargs.get('pager'), context)
 
         values['txt_per_page'] = _("Items per page")
@@ -47,6 +50,15 @@ class Pagination(Node):
         values['txt_select_page_num'] = _("select page number to view")
         values['txt_back_btn'] = _("previous page")
         values['txt_forw_btn'] = _("next page")
+
+        values['page_name'] = self.eval(self.kwargs.get('page_name', 'page'),
+                context)
+        values['pagesize_name'] = self.eval(self.kwargs.get('pagesize_name',
+                'pagesize'), context)
+
+        if request:
+            self.pagesize = request.GET.get(values['pagesize_name'],
+                    self.pagesize)
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['navbtn_class'].append('bx--pagination__button--no-index')
@@ -61,7 +73,8 @@ class Pagination(Node):
             return ''
 
         template = """
-<div class="bx--pagination" data-pagination>
+<div class="bx--pagination" data-pagination data-page-name="{page_name}"
+    data-pagesize-name="{pagesize_name}">
   <div class="bx--pagination__left">
     <label id="select-{id}-pagination-count-label" class="bx--pagination__text"
         for="select-{id}-pagination-count">
@@ -136,12 +149,17 @@ class Pagination(Node):
                 self.PAGER_SIZES), context)
         if isinstance(pager_sizes, str):
             pager_sizes = [int(x) for x in pager_sizes.split(',')]
+        else:
+            # Make sure it's a copy
+            pager_sizes = list(pager_sizes)
+        if self.pagesize not in pager_sizes:
+            pager_sizes.insert(0, self.pagesize)
 
-        for ii, value in enumerate(pager_sizes):
-            if ii:
-                options.append(template.format(value=value, props=''))
-            else:
+        for value in pager_sizes:
+            if value == self.pagesize:
                 options.append(template.format(value=value, props='selected'))
+            else:
+                options.append(template.format(value=value, props=''))
         return '\n' + '\n'.join(options)
 
 
@@ -166,8 +184,8 @@ class Pagination(Node):
 <span data-displayed-item-range>{range_start} – {range_end}</span>
 """
         page_range = template.format(
-                range_start=self.pager.paginator.page_range[0],
-                range_end=self.pager.paginator.page_range[-1])
+                range_start=self.pager.start_index(),
+                range_end=self.pager.end_index())
         template = '<span data-total-items>{total}</span>'
         page_total = template.format(total=self.pager.paginator.count)
 

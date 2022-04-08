@@ -1,0 +1,7 @@
+-r requirements-production.txt
+
+bs4
+coverage
+Pillow
+pybuildtool
+pylint

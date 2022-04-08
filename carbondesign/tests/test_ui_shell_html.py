@@ -604,26 +604,26 @@ class UiShellHtmlTest(SimpleTestCase):
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 1"
       title="Action 1" data-navigation-menu-panel-label-expand="Action 1"
       data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 2"
       title="Action 2" data-navigation-menu-panel-label-expand="Action 2"
       data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 3"
       title="Action 3" data-navigation-menu-panel-label-expand="Action 3"
       data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 4"
       title="Action 4" data-navigation-menu-panel-label-expand="Action 4"
       data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
-      <svg style="width:20;height:20" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
+      <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
   </div>
 </header>
@@ -634,7 +634,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <div class="bx--side-nav__icon">
         <svg
           fill="currentColor" preserveaspectratio="xMidYMid meet"
-          style="width:20;height:20"
+          style="width:20px;height:20px"
           width="20"
           height="20"
           xmlns="http://www.w3.org/2000/svg"
@@ -688,7 +688,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--side-nav__item">
         <a class="bx--side-nav__link" href="javascript:void(0)">
           <div class="bx--side-nav__icon bx--side-nav__icon--small">
-            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -699,7 +699,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--side-nav__item bx--side-nav__item--active">
         <a class="bx--side-nav__link bx--side-nav__link--current" href="javascript:void(0)" aria-current="page">
           <div class="bx--side-nav__icon bx--side-nav__icon--small">
-            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -710,7 +710,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--side-nav__item">
         <a class="bx--side-nav__link" href="javascript:void(0)">
           <div class="bx--side-nav__icon bx--side-nav__icon--small">
-            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -724,7 +724,7 @@ class UiShellHtmlTest(SimpleTestCase):
         <a class="bx--side-nav__link bx--side-nav__link--current" href="javascript:void(0)"
           aria-current="page">
           <div class="bx--side-nav__icon bx--side-nav__icon--small">
-            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -737,7 +737,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--side-nav__item bx--side-nav__item--active">
         <button aria-controls="sidenav-uid-menu" class="bx--side-nav__submenu" type="button" aria-haspopup="true" aria-expanded="true">
           <div class="bx--side-nav__icon">
-            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg preserveaspectratio="xMidYMid meet" fill="currentColor" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -822,7 +822,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--panel-list__item">
         <a class="bx--panel-link" tabindex="0" href="javascript:void(0)">
           <div class="bx--panel-switcher__icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20"
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px"
                 width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -852,7 +852,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--panel-list__item">
         <a class="bx--panel-link" tabindex="0" href="javascript:void(0)">
           <div class="bx--panel-switcher__icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20"
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px"
                 width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -894,7 +894,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--navigation-item bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20"
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px"
                 width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
@@ -906,7 +906,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--navigation-item bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -922,7 +922,7 @@ class UiShellHtmlTest(SimpleTestCase):
         class="bx--navigation-item bx--navigation-item--active bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20"
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px"
                 width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
@@ -934,7 +934,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--navigation-item bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -945,7 +945,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--navigation-item bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -956,7 +956,7 @@ class UiShellHtmlTest(SimpleTestCase):
       <li class="bx--navigation-item bx--navigation-item--icon">
         <a class="bx--navigation-link" href="javascript:void(0)">
           <div class="bx--navigation-icon">
-            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20;height:20" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+            <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet" style="width:20px;height:20px" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
               <path
                 d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
             </svg>
@@ -971,7 +971,7 @@ class UiShellHtmlTest(SimpleTestCase):
               <div class="bx--navigation-icon">
 
                 <svg focusable="false" fill="currentColor" preserveaspectratio="xMidYMid meet"
-                    style="width:20;height:20" aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    style="width:20px;height:20px" aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                   <path
                     d="M8.24 25.14L7 26.67a14 14 0 0 0 4.18 2.44l.68-1.88a12 12 0 0 1-3.62-2.09zm-4.05-7.07l-2 .35A13.89 13.89 0 0 0 3.86 23l1.73-1a11.9 11.9 0 0 1-1.4-3.93zm7.63-13.31l-.68-1.88A14 14 0 0 0 7 5.33l1.24 1.53a12 12 0 0 1 3.58-2.1zM5.59 10L3.86 9a13.89 13.89 0 0 0-1.64 4.54l2 .35A11.9 11.9 0 0 1 5.59 10zM16 2v2a12 12 0 0 1 0 24v2a14 14 0 0 0 0-28z" />
                 </svg>

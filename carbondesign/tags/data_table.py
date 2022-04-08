@@ -261,7 +261,8 @@ class DataTable(Node):
         """Should render toolbar template?
         """
         return 'batch_actions' in self.slots or\
-                'toolbar_overflow' in self.slots or 'toolbar' in self.slots
+                'toolbar_overflow' in self.slots or\
+                'toolbar_actions' in self.slots
 
     def render_tmpl_toolbar(self, values, context):
         """Dynamically render a part of the component's template.

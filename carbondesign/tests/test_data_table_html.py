@@ -335,21 +335,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -432,7 +432,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -787,21 +787,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -884,7 +884,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -1624,21 +1624,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -1721,7 +1721,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -1881,7 +1881,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -1892,7 +1892,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -1903,7 +1903,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -1914,7 +1914,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -1966,7 +1966,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -1977,7 +1977,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -1988,7 +1988,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -1999,7 +1999,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -2051,7 +2051,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -2062,7 +2062,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -2073,7 +2073,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -2084,7 +2084,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -2136,7 +2136,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -2147,7 +2147,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -2158,7 +2158,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -2169,7 +2169,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -2221,7 +2221,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -2232,7 +2232,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -2243,7 +2243,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -2254,7 +2254,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -2619,21 +2619,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -2716,7 +2716,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -2876,7 +2876,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -2887,7 +2887,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -2898,7 +2898,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -2909,7 +2909,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -2961,7 +2961,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -2972,7 +2972,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -2983,7 +2983,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -2994,7 +2994,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -3046,7 +3046,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -3057,7 +3057,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -3068,7 +3068,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -3079,7 +3079,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -3131,7 +3131,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -3142,7 +3142,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -3153,7 +3153,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -3164,7 +3164,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -3216,7 +3216,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -3227,7 +3227,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -3238,7 +3238,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -3249,7 +3249,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -3803,21 +3803,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -3900,7 +3900,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -4060,7 +4060,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -4071,7 +4071,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -4082,7 +4082,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -4093,7 +4093,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -4145,7 +4145,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -4156,7 +4156,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -4167,7 +4167,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -4178,7 +4178,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -4230,7 +4230,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -4241,7 +4241,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -4252,7 +4252,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -4263,7 +4263,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -4315,7 +4315,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -4326,7 +4326,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -4337,7 +4337,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -4348,7 +4348,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -4400,7 +4400,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -4411,7 +4411,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -4422,7 +4422,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -4433,7 +4433,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -4798,21 +4798,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary bx--btn--sm" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary bx--btn--sm" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary bx--btn--sm" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -4895,7 +4895,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -5055,7 +5055,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -5066,7 +5066,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -5077,7 +5077,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -5088,7 +5088,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -5140,7 +5140,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -5151,7 +5151,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -5162,7 +5162,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -5173,7 +5173,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -5225,7 +5225,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -5236,7 +5236,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -5247,7 +5247,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -5258,7 +5258,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -5310,7 +5310,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -5321,7 +5321,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -5332,7 +5332,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -5343,7 +5343,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -5395,7 +5395,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -5406,7 +5406,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -5417,7 +5417,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -5428,7 +5428,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -5994,21 +5994,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -6091,7 +6091,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -6254,7 +6254,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -6265,7 +6265,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -6276,7 +6276,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -6287,7 +6287,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -6342,7 +6342,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -6353,7 +6353,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -6364,7 +6364,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -6375,7 +6375,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -6427,7 +6427,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -6438,7 +6438,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -6449,7 +6449,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -6460,7 +6460,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -6512,7 +6512,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -6523,7 +6523,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -6534,7 +6534,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -6545,7 +6545,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -6597,7 +6597,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -6608,7 +6608,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -6619,7 +6619,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -6630,7 +6630,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7204,21 +7204,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -7301,7 +7301,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -7461,7 +7461,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -7472,7 +7472,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -7483,7 +7483,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -7494,7 +7494,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7546,7 +7546,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -7557,7 +7557,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -7568,7 +7568,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -7579,7 +7579,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7632,7 +7632,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -7643,7 +7643,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -7654,7 +7654,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -7665,7 +7665,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7717,7 +7717,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -7728,7 +7728,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -7739,7 +7739,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -7750,7 +7750,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7802,7 +7802,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -7813,7 +7813,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -7824,7 +7824,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -7835,7 +7835,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -7850,7 +7850,8 @@ class TableHtmlTest(SimpleTestCase):
   </tbody>
   </table>
 
-<div class="bx--pagination" data-pagination>
+<div class="bx--pagination" data-pagination data-page-name="page"
+    data-pagesize-name="pagesize">
   <div class="bx--pagination__left">
     <label id="select-uid-pagination-count-label" class="bx--pagination__text"
         for="select-uid-pagination-count">
@@ -7874,7 +7875,7 @@ class TableHtmlTest(SimpleTestCase):
       </svg>
     </div>
     <span class="bx--pagination__text">
-<span data-displayed-item-range>1 – 5</span>
+<span data-displayed-item-range>1 – 10</span>
  of <span data-total-items>50</span> items
     </span>
   </div>
@@ -8271,21 +8272,21 @@ class TableHtmlTest(SimpleTestCase):
   <div class="bx--action-list">
 <button class="bx--btn bx--btn--primary" type="button">
       Delete
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
           <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Save
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z">
           </path>
         </svg>
 </button>
 <button class="bx--btn bx--btn--primary" type="button">
       Download
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
         </svg>
 </button>
@@ -8368,7 +8369,7 @@ class TableHtmlTest(SimpleTestCase):
 
 <button class="bx--btn bx--btn--primary bx--btn--sm">
       Primary Button
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="bx--btn__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="bx--btn__icon">
           <path d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"/>
         </svg>
 </button>
@@ -8528,7 +8529,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -8539,7 +8540,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -8550,7 +8551,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -8561,7 +8562,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -8613,7 +8614,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -8624,7 +8625,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -8635,7 +8636,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -8646,7 +8647,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -8698,7 +8699,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -8709,7 +8710,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -8720,7 +8721,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -8731,7 +8732,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -8783,7 +8784,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -8794,7 +8795,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -8805,7 +8806,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -8816,7 +8817,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>
@@ -8868,7 +8869,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Edit" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"/>
             </svg>
           Edit
@@ -8879,7 +8880,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Download" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"/>
             </svg>
           Download
@@ -8890,7 +8891,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Save" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M13.9,4.6l-2.5-2.5C11.3,2.1,11.1,2,11,2H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V5      C14,4.9,13.9,4.7,13.9,4.6z M6,3h4v2H6V3z M10,13H6V9h4V13z M11,13V9c0-0.6-0.4-1-1-1H6C5.4,8,5,8.4,5,9v4H3V3h2v2c0,0.6,0.4,1,1,1     h4c0.6,0,1-0.4,1-1V3.2l2,2V13H11z"/>
             </svg>
           Save
@@ -8901,7 +8902,7 @@ class TableHtmlTest(SimpleTestCase):
   <button class="bx--overflow-menu-options__btn"
       title="Delete" onclick="console.log(&#x27;keyboard action&#x27;)">
     <div class="bx--overflow-menu-options__option-content">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16;height:16" aria-hidden="true" class="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" style="width:16px;height:16px" aria-hidden="true" class="">
               <path d="M12 12H14V24H12zM18 12H20V24H18z"/>
               <path d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"/>
             </svg>

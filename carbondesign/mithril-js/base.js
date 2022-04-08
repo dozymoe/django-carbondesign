@@ -239,14 +239,7 @@ export class Node
         this.before_prepare_slots(vnode, values, context);
 
         // Parent Tags can set html attributes on their childs.
-        for (let ext of this.CATCH_CLASSNAMES)
-        {
-            if (context[ext])
-            {
-                values['class'].push(...context[ext]);
-            }
-        }
-        for (let ext of this.CATCH_PROPERTIES)
+        for (let ext of this.CATCH_PROPS)
         {
             if (context[ext])
             {

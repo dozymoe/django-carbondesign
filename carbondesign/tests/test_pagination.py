@@ -21,7 +21,8 @@ class PaginationTest(SimpleTestCase):
 {% Pagination pager=page_first id="uid" %}
 """
         expected = """
-<div class="bx--pagination" data-pagination>
+<div class="bx--pagination" data-pagination data-page-name="page"
+    data-pagesize-name="pagesize">
   <div class="bx--pagination__left">
     <label id="select-uid-pagination-count-label" class="bx--pagination__text"
         for="select-uid-pagination-count">

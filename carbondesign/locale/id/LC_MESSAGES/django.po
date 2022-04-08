@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-07 17:30+0700\n"
+"POT-Creation-Date: 2022-04-08 21:11+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Tampilkan tambahan icon"
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:439
+#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:440
 #: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
 #: carbondesign/tags/ui_shell.py:31
 msgid "Open menu"
@@ -77,12 +77,12 @@ msgstr "Luapan"
 msgid "Cancel"
 msgstr "Batal"
 
-#: carbondesign/tags/data_table.py:581 carbondesign/tags/search.py:41
+#: carbondesign/tags/data_table.py:582 carbondesign/tags/search.py:41
 #: carbondesign/tags/toolbar.py:50 carbondesign/tags/ui_shell_switcher.py:55
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:582 carbondesign/tags/search.py:38
+#: carbondesign/tags/data_table.py:583 carbondesign/tags/search.py:38
 #: carbondesign/tags/toolbar.py:41 carbondesign/tags/ui_shell_switcher.py:46
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
@@ -147,32 +147,32 @@ msgstr "tambah"
 msgid "decrease number input"
 msgstr "kurangi"
 
-#: carbondesign/tags/pagination.py:45
+#: carbondesign/tags/pagination.py:48
 msgid "Items per page"
 msgstr "Baris per halaman"
 
-#: carbondesign/tags/pagination.py:46
+#: carbondesign/tags/pagination.py:49
 msgid "select number of items per page"
 msgstr "pilih jumlah baris per halaman"
 
-#: carbondesign/tags/pagination.py:47
+#: carbondesign/tags/pagination.py:50
 msgid "select page number to view"
 msgstr "pilih halaman untuk ditampilkan"
 
-#: carbondesign/tags/pagination.py:48
+#: carbondesign/tags/pagination.py:51
 msgid "previous page"
 msgstr "halaman sebelumnya"
 
-#: carbondesign/tags/pagination.py:49
+#: carbondesign/tags/pagination.py:52
 msgid "next page"
 msgstr "halaman berikutnya"
 
-#: carbondesign/tags/pagination.py:174
+#: carbondesign/tags/pagination.py:192
 #, python-brace-format
 msgid "{range} of {total} items"
 msgstr "{range} dari {total} baris"
 
-#: carbondesign/tags/pagination.py:181
+#: carbondesign/tags/pagination.py:199
 #, python-brace-format
 msgid "of {total} pages"
 msgstr "dari {total} halaman"
