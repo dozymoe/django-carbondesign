@@ -25,13 +25,16 @@ carbondesign:
   unittest:
     shell:
       options:
-        command: ./run pybin coverage run --include=./* -m py.test
+        command: >
+          ./run pybin coverage run --include=./carbondesign/tags/*
+          ../run django-manage test --testrunner="test_runner.UnitTestRunner"
       rule_in:
-        - "{_1}/pylint"
         - "{_1}/tags/pylint"
         - "{_1}/templatetags/pylint"
         - "{_1}/tests/pylint"
-      raw_depend_in: build.yml
+      raw_depend_in:
+        - build.yml
+        - djangoprj/djangoprj/*.py
 
   coverage:
     shell:

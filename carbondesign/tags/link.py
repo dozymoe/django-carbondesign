@@ -27,16 +27,25 @@ class Link(Node):
     "Template Tag needs closing end tag."
     NODE_PROPS = ('visited', 'disabled', 'inline')
     "Extended Template Tag arguments."
+    DEFAULT_TAG = 'a'
+    "Rendered HTML tag."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
+        is_a = values['tag'] == 'a'
+
+        if is_a:
+            values['class'].append('bx--link')
+
         if self.eval(self.kwargs.get('visited', False), context):
             values['class'].append('bx--link--visited')
 
         if self.eval(self.kwargs.get('disabled', False), context):
-            values['class'].append('bx--link--disabled')
-            values['props'].append(('aria-disabled', 'true'))
+            if is_a:
+                values['props'].append(('aria-disabled', 'true'))
+            else:
+                values['class'].append('bx--link--disabled')
 
         if self.eval(self.kwargs.get('inline', False), context):
             values['class'].append('bx--link--inline')
@@ -45,11 +54,7 @@ class Link(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = """
-<a class="bx--link {class}" {props}>
-  {child}
-</a>
-"""
+        template = '<{tag} class="{class}" {props}>{child}</{tag}>'
         return self.format(template, values)
 
 

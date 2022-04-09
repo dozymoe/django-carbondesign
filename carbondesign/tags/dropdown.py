@@ -4,6 +4,9 @@ Dropdown
 
 See: https://www.carbondesignsystem.com/components/dropdown/usage/
 
+This module is currently disabled, it's a weird component that receive input,
+but there is no html input element. Wait and see its progress.
+
 Dropdowns present a list of options from which a user can select one option,
 or several. A selected option can represent a value in a form, or can be used
 as an action to filter or sort existing content.
@@ -16,9 +19,7 @@ functionality—dropdown, multiselect, and combo box.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from django.utils.html import strip_tags
-#-
-from .base import Node, modify_svg
+from .base import Node, clean_attr_value, modify_svg
 
 class Dropdown(Node):
     """Dropdown component.
@@ -27,8 +28,10 @@ class Dropdown(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('help', 'errors')
     "Named children."
-    NODE_PROPS = ('value', 'disabled', 'up', 'light', 'inline')
+    NODE_PROPS = ('id', 'value', 'disabled', 'up', 'light', 'inline')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label', 'help', 'wrapper', 'dropdown')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -52,7 +55,7 @@ class Dropdown(Node):
 
         if self.eval(self.kwargs.get('inline', False), context):
             values['wrapper_class'].append('bx--dropdown__wrapper--inline')
-            values['wrapper_props'].append(('data-dropdown-type', 'inline'))
+            values['dropdown_props'].append(('data-dropdown-type', 'inline'))
             values['class'].append('bx--dropdown--inline')
 
 
@@ -68,7 +71,7 @@ class Dropdown(Node):
     </span>
     <div data-dropdown data-value
         class="bx--dropdown bx--dropdown--invalid {class}" data-invalid
-        {wrapper_props}>
+        {dropdown_props}>
       <button class="bx--dropdown-text" aria-haspopup="true"
           aria-expanded="false" aria-controls="menu-{id}"
           aria-labelledby="label-{id} value-{id}" type="button" {props}>
@@ -110,7 +113,7 @@ class Dropdown(Node):
     <span id="label-{id}" class="bx--label {label_class}" {label_props}>
       {label}
     </span>
-    <div data-dropdown data-value class="bx--dropdown {class}" {wrapper_props}>
+    <div data-dropdown data-value class="bx--dropdown {class}" {dropdown_props}>
       <button class="bx--dropdown-text" aria-haspopup="true"
           aria-expanded="false" aria-controls="menu-{id}"
           aria-labelledby="label-{id} value-{id}" type="button" {props}>
@@ -176,7 +179,7 @@ class DropdownItem(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <li data-option data-value="{value}" class="bx--dropdown-item {class}"
@@ -187,7 +190,7 @@ class DropdownItem(Node):
   {slot_icon}
 </li>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_slot_icon(self, values, context):
@@ -201,8 +204,8 @@ class DropdownItem(Node):
                 values['class'],
             'style': {
                 'will-change': 'transform',
-                'width': 16,
-                'height': 16,
+                'width': '%spx' % 16,
+                'height': '%spx' % 16,
             },
             'aria-hidden': 'true',
         })

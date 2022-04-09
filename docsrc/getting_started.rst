@@ -98,29 +98,29 @@ How to use them in your templates is simple:
               {% endif %}
             {% endUiNavSection %}
           {% endSlot %}
+
+          {% for msg in messages %}
+            {% Notification mode='toast' variant=msg.level %}
+              {% NotificationSubtitle %}
+                {{msg.message}}
+              {% endNotificationSubtitle %}
+            {% endNotification %}
+          {% endfor %}
+  
+          <main>
+            <form action="" method="post">
+              {% csrf_token %}
+  
+              <div class="form-group">
+                {% TextInput form.address %}
+              </div>
+  
+              {% Button type="submit" %}
+                {% trans "Search" %}
+              {% endButton %}
+            </form>
+          </main>
         {% endUiShell %}
-
-        {% for msg in messages %}
-          {% Notification mode='toast' variant=msg.level %}
-            {% NotificationSubtitle %}
-              {{msg.message}}
-            {% endNotificationSubtitle %}
-          {% endNotification %}
-        {% endfor %}
-
-        <main>
-          <form action="" method="post">
-            {% csrf_token %}
-
-            <div class="form-group">
-              {% TextInput form.address %}
-            </div>
-
-            {% Button type="submit" %}
-              {% trans "Search" %}
-            {% endButton %}
-          </form>
-        </main>
       </body>
     </html>
 

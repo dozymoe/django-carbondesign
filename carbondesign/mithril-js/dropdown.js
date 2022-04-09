@@ -7,7 +7,7 @@ export class DropDown extends Node
 {
     WANT_CHILDREN = true
     SLOTS = ['help', 'errors']
-    CLASS_AND_PROPS = ['help', ...Node.CLASS_AND_PROPS]
+    CLASS_AND_PROPS = ['help']
     NODE_PROPS = ['value', 'disabled', 'up', 'light', 'inline']
 
     prepare(vnode, values, context)

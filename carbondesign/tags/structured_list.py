@@ -57,6 +57,7 @@ class StructuredListSelection(FormNode):
         """Prepare values for rendering the templates.
         """
         context['bound_field'] = self.bound_field
+        context['bound_choices'] = self.choices()
 
 
     def render_default(self, values, context):
@@ -99,6 +100,7 @@ class StructuredListTd(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
     NODE_PROPS = ('nowrap',)
+    "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -124,6 +126,9 @@ class StructuredListRow(Node):
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
     NODE_PROPS = ('value',)
+    "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label',)
+    "Prepare xxx_class and xxx_props values."
 
     bound_field = None
 
@@ -131,16 +136,26 @@ class StructuredListRow(Node):
         """Prepare values for rendering the templates.
         """
         self.bound_field = context.get('bound_field')
+
         if self.bound_field:
             values['name'] = self.bound_field.name
             values['value'] = value = self.eval(self.kwargs.get('value'),
                     context)
 
             selected = self.bound_field.value()
-            if value in selected:
+            if isinstance(selected, str):
+                selected = [selected]
+            if selected and value in selected:
                 values['label_class'].append(
                         'bx--structured-list-row--selected')
-                values['props'].append(('checked', ''))
+                values['props'].append(('checked', True))
+
+            choices = context['bound_choices']
+            for _, val, txt in choices:
+                if val == value:
+                    values['label_props'].append(('aria-label', txt))
+                    values['props'].append(('title', txt))
+                    break
 
 
     def render_default(self, values, context):
@@ -148,11 +163,10 @@ class StructuredListRow(Node):
         """
         if self.bound_field:
             template = """
-<label aria-label="{label}" class="bx--structured-list-row {label_class}"
-    tabindex="0" {label_props}>
+<label class="bx--structured-list-row {label_class}" tabindex="0" {label_props}>
   {child}
   <input tabindex="-1" class="bx--structured-list-input {class}" value="{value}"
-      type="radio" name="{name}" title="{label}" {props}/>
+      type="radio" name="{name}" {props}>
   <div class="bx--structured-list-td">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -174,9 +188,9 @@ class StructuredListRow(Node):
 
 
 components = {
-    'StructuredList': StructuredList,
-    'StructuredListSelect': StructuredListSelection,
-    'StructuredListTh': StructuredListTh,
-    'StructuredListTr': StructuredListRow,
-    'StructuredListTd': StructuredListTd,
+    'Sl': StructuredList,
+    'SlSelect': StructuredListSelection,
+    'SlTh': StructuredListTh,
+    'SlTr': StructuredListRow,
+    'SlTd': StructuredListTd,
 }

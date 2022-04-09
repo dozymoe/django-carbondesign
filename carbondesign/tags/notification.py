@@ -40,6 +40,8 @@ class Notification(Node):
     "Extended Template Tag arguments."
     TEMPLATES = ('icon', 'close')
     "Conditional templates."
+    POSSIBLE_VARIANT = ('info', 'success', 'warning', 'error')
+    "Documentation only."
 
     variant = None
 
@@ -194,7 +196,7 @@ class NotificationTitle(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['mode'] = context['mode']
+        values['mode'] = context.get('mode', 'inline')
         template = """
 <{tag} class="bx--{mode}-notification__title {class}" {props}>{child}</{tag}>
 """
@@ -212,7 +214,7 @@ class NotificationSubtitle(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['mode'] = context['mode']
+        values['mode'] = context.get('mode', 'inline')
         template = """
 <{tag} class="bx--{mode}-notification__subtitle {class}" {props}>{child}</{tag}>
 """
@@ -230,7 +232,7 @@ class NotificationCaption(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['mode'] = context['mode']
+        values['mode'] = context.get('mode', 'inline')
         template = """
 <{tag} class="bx--{mode}-notification__caption {class}" {props}>{child}</{tag}>
 """

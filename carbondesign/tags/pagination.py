@@ -17,33 +17,51 @@ The default number displayed will vary depending on the context.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
+import logging
+#-
 from django.utils.translation import gettext as _
 #-
 from .base import Node
+
+_logger = logging.getLogger(__name__)
 
 
 class Pagination(Node):
     """Pagination component.
     """
-    NODE_PROPS = ('pager', 'pager_sizes', 'disabled')
+    NODE_PROPS = ('pager', 'pager_sizes', 'disabled', 'page_name',
+            'pagesize_name')
     "Extended Template Tag arguments."
-    TEMPLATES = ('pagination_sizes', 'pagination_numbers', 'pagination_range',
-            'pagination_num_pages')
-    "Conditional templates."
+    CLASS_AND_PROPS = ('navbtn',)
+    "Prepare xxx_class and xxx_props values."
     PAGER_SIZES = (10, 20, 30, 40, 50)
 
     pager = None
+    pagesize = 10
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
+        request = context.get('request')
         self.pager = self.eval(self.kwargs.get('pager'), context)
 
         values['txt_per_page'] = _("Items per page")
         values['txt_select_per_page'] = _("select number of items per page")
         values['txt_select_page_num'] = _("select page number to view")
-        values['txt_back_btn'] = _("Backward button")
-        values['txt_forw_btn'] = _("Forward button")
+        values['txt_back_btn'] = _("previous page")
+        values['txt_forw_btn'] = _("next page")
+
+        values['page_name'] = self.eval(self.kwargs.get('page_name', 'page'),
+                context)
+        values['pagesize_name'] = self.eval(self.kwargs.get('pagesize_name',
+                'pagesize'), context)
+
+        if request:
+            self.pagesize = request.GET.get(values['pagesize_name'],
+                    self.pagesize)
+
+        if self.eval(self.kwargs.get('disabled'), context):
+            values['navbtn_class'].append('bx--pagination__button--no-index')
 
 
     def render_default(self, values, context):
@@ -55,7 +73,8 @@ class Pagination(Node):
             return ''
 
         template = """
-<div class="bx--pagination" data-pagination>
+<div class="bx--pagination" data-pagination data-page-name="{page_name}"
+    data-pagesize-name="{pagesize_name}">
   <div class="bx--pagination__left">
     <label id="select-{id}-pagination-count-label" class="bx--pagination__text"
         for="select-{id}-pagination-count">
@@ -93,11 +112,11 @@ class Pagination(Node):
       </svg>
     </div>
     <label id="select-{id}-pagination-page-label" class="bx--pagination__text"
-        for="select-id-pagination-page">
+        for="select-{id}-pagination-page">
       {tmpl_pagination_num_pages}
     </label>
-    <button class="bx--pagination__button bx--pagination__button--backward"
-        tabindex="0" data-page-backward aria-label="{txt_back_btn}">
+    <button class="bx--pagination__button bx--pagination__button--backward {navbtn_class}"
+        tabindex="0" data-page-backward aria-label="{txt_back_btn}" {navbtn_props}>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -105,8 +124,8 @@ class Pagination(Node):
         <path d="M20 24L10 16 20 8z"></path>
       </svg>
     </button>
-    <button class="bx--pagination__button bx--pagination__button--forward"
-        tabindex="0" data-page-forward aria-label="{txt_next_btn}">
+    <button class="bx--pagination__button bx--pagination__button--forward {navbtn_class}"
+        tabindex="0" data-page-forward aria-label="{txt_forw_btn}" {navbtn_props}>
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg" fill="currentColor"
           class="bx--pagination__nav-arrow" width="20" height="20"
@@ -123,74 +142,62 @@ class Pagination(Node):
     def render_tmpl_pagination_sizes(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        template = """
-<option class="bx--select-option" value="{value}" {props}>
-  {label}
-</option>
-"""
+        template = '<option class="bx--select-option" {props}>{value}</option>'
         options = []
 
         pager_sizes = self.eval(self.kwargs.get('pager_sizes',
                 self.PAGER_SIZES), context)
         if isinstance(pager_sizes, str):
             pager_sizes = [int(x) for x in pager_sizes.split(',')]
+        else:
+            # Make sure it's a copy
+            pager_sizes = list(pager_sizes)
+        if self.pagesize not in pager_sizes:
+            pager_sizes.insert(0, self.pagesize)
 
-        for ii, value in enumerate(pager_sizes):
-            if ii:
-                options.append(template.format(value=value, label=value,
-                        props=''))
+        for value in pager_sizes:
+            if value == self.pagesize:
+                options.append(template.format(value=value, props='selected'))
             else:
-                options.append(template.format(value=value, label=value,
-                        props='selected'))
-        return ''.join(options)
+                options.append(template.format(value=value, props=''))
+        return '\n' + '\n'.join(options)
 
 
     def render_tmpl_pagination_numbers(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        template = """
-<option class="bx--select-option" value="{value}" {props}>
-  {label}
-</option>
-"""
+        template = '<option class="bx--select-option" {props}>{value}</option>'
         options = []
 
-        for value in (x + 1 for x in range(self.pager.num_pages)):
+        for value in (x + 1 for x in range(self.pager.paginator.num_pages)):
             if value != self.pager.number:
-                options.append(template.format(value=value, label=value,
-                        props=''))
+                options.append(template.format(value=value, props=''))
             else:
-                options.append(template.format(value=value, label=value,
-                        props='selected'))
-        return ''.join(options)
+                options.append(template.format(value=value, props='selected'))
+        return '\n' + '\n'.join(options)
 
 
     def render_tmpl_pagination_range(self, values, context):
         """Dynamically render a part of the component's template.
         """
         template = """
-<span data-displayed-item-range>{range_start}-{range_end}</span>
+<span data-displayed-item-range>{range_start} – {range_end}</span>
 """
         page_range = template.format(
-                {
-                    'range_start': self.pager.page_range[0],
-                    'range_end': self.pager.page_range[1],
-                })
+                range_start=self.pager.start_index(),
+                range_end=self.pager.end_index())
         template = '<span data-total-items>{total}</span>'
-        page_total = template.format(
-                {
-                    'total': self.pager.count,
-                })
+        page_total = template.format(total=self.pager.paginator.count)
 
-        range_of_items = _("%s of %s items")
-        return range_of_items % (page_range, page_total)
+        range_of_items = _("{range} of {total} items")
+        return range_of_items.format(range=page_range, total=page_total)
 
 
     def render_tmpl_pagination_num_pages(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        num_pages = _("of %s pages")
-        return num_pages % self.pager.num_pages
+        num_pages = _("of {total} pages")
+        return num_pages.format(total=self.pager.paginator.num_pages)
 
 
 components = {

@@ -17,86 +17,28 @@ or gives focus to a UI element such as an icon, a highlighted word, or a button.
 
 from .base import Node, modify_svg
 
-class Tooltip(Node):
-    """Tooltip component.
+class BaseTooltip(Node):
+    """Base tooltip.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('icon', 'footer')
-    "Named children."
-    MODES = ('interactive', 'definition', 'icon')
-    "Available variants."
-    NODE_PROPS = ('align', 'position')
+    NODE_PROPS = ('id', 'align', 'position')
     "Extended Template Tag arguments."
+    POSSIBLE_ALIGN = ('start', 'center', 'end')
+    "Documentation only."
+    POSSIBLE_POSITION = ('top', 'right', 'bottom', 'left')
+    "Documentation only."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        # start, center, end
         align = self.eval(self.kwargs.get('align'), context)
-        if align:
+        if align and align in self.POSSIBLE_ALIGN:
             values['class'].append(f'bx--tooltip--align-{align}')
 
-        # top, right, bottom, left
         position = self.eval(self.kwargs.get('position'), context)
-        if position:
+        if position and position in self.POSSIBLE_POSITION:
             values['class'].append(f'bx--tooltip--{position}')
-
-
-    def render_interactive(self, values, context):
-        """Output html of the component.
-        """
-        template = """
-<div id="label-{id}" class="bx--tooltip__label {label_class}" {label_props}>
-  {label}
-  <button aria-expanded="false" aria-labelledby="label-{id}"
-      data-tooltip-trigger data-tooltip-target="#{id}"
-      class="bx--tooltip__trigger {class}" aria-controls="{id}">
-    {slot_icon}
-  </button>
-</div>
-<div id="{id}" aria-hidden="true" data-floating-menu-direction="bottom"
-    class="bx--tooltip">
-  <span class="bx--tooltip__caret"></span>
-  <div class="bx--tooltip__content" tabindex="-1" role="dialog"
-      aria-describedby="body-{id}" aria-labelledby="label-{id}">
-    <div id="body-{id}">{child}</div>
-    {slot_footer}
-  </div>
-  <span tabindex="0"></span>
-</div>
-"""
-        return self.format(template, values, context)
-
-
-    def render_definition(self, values, context):
-        """Output html of the component.
-        """
-        template = """
-<div class="bx--tooltip--definition bx--tooltip--a11y" data-tooltip-definition>
-  <button aria-describedby="{id}"
-      class="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition {class}">
-    {label}
-  </button>
-  <div class="bx--assistive-text" id="{id}" role="tooltip">
-    {child}
-  </div>
-</div>
-"""
-        return self.format(template, values, context)
-
-
-    def render_icon(self, values, context):
-        """Output html of the component.
-        """
-        template = """
-<button class="bx--tooltip__trigger bx--tooltip--a11y {class}"
-    data-tooltip-icon>
-  <span class="bx--assistive-text">{child}</span>
-  {slot_icon}
-</button>
-"""
-        return self.format(template, values)
 
 
     def render_slot_icon(self, values, context):
@@ -107,11 +49,99 @@ class Tooltip(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': 16,
-                'height': 16,
+                'width': '%spx' % 16,
+                'height': '%spx' % 16,
             },
             'aria-hidden': 'true',
         })
+
+
+class Interactive(BaseTooltip):
+    """Tooltip component.
+    """
+    SLOTS = ('icon', 'footer', 'heading')
+    "Named children."
+    MODES = ('interactive', 'nolabel')
+    "Available variants."
+    REQUIRED_PROPS = ('label',)
+    "Will raise Exception if not set."
+    CLASS_AND_PROPS = ('label', 'content')
+    "Prepare xxx_class and xxx_props values."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        if 'heading' in self.slots:
+            values['content_props'].append(
+                    ('aria-labelledby', 'heading-' + self._id))
+        elif self.mode == 'nolabel':
+            values['content_props'].append(('aria-label', values['label']))
+        else:
+            values['content_props'].append(
+                    ('aria-labelledby', 'label-' + self._id))
+
+
+    def render_interactive(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<div id="label-{id}" class="bx--tooltip__label">
+  {label}
+  <button aria-expanded="false" aria-labelledby="label-{id}"
+      data-tooltip-trigger data-tooltip-target="#{id}"
+      class="bx--tooltip__trigger {class}" aria-controls="{id}" {props}>
+    {slot_icon}
+  </button>
+</div>
+<div id="{id}" aria-hidden="true" data-floating-menu-direction="bottom"
+    class="bx--tooltip">
+  <span class="bx--tooltip__caret"></span>
+  <div class="bx--tooltip__content {content_class}" tabindex="-1" role="dialog"
+      aria-describedby="body-{id}" {content_props}>
+    {slot_heading}
+    <p id="body-{id}">{child}</p>
+    {slot_footer}
+  </div>
+  <span tabindex="0"></span>
+</div>
+"""
+        return self.format(template, values, context)
+
+
+    def render_nolabel(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<div id="label-{id}" class="bx--tooltip__label">
+  {label}
+  <div tabindex="0" aria-expanded="false" aria-labelledby="label-{id}"
+      data-tooltip-trigger data-tooltip-target="#{id}"
+      role="button" class="bx--tooltip__trigger {class}" aria-controls="{id}" {props}>
+    {slot_icon}
+  </div>
+</div>
+<div id="{id}" aria-hidden="true" data-floating-menu-direction="bottom"
+    class="bx--tooltip">
+  <span class="bx--tooltip__caret"></span>
+  <div class="bx--tooltip__content {content_class}" tabindex="-1" role="dialog"
+      aria-describedby="body-{id}" {content_props}>
+    {slot_heading}
+    <p id="body-{id}">{child}</p>
+    {slot_footer}
+  </div>
+  <span tabindex="0"></span>
+</div>
+"""
+        return self.format(template, values, context)
+
+
+    def render_slot_heading(self, values, context):
+        """Render html of the slot.
+        """
+        template = """
+<h4 id="heading-{id}" class="bx--tooltip__heading {class}" {props}>{child}</h4>
+"""
+        return self.format(template, values)
 
 
     def render_slot_footer(self, values, context):
@@ -125,24 +155,51 @@ class Tooltip(Node):
         return self.format(template, values)
 
 
-class TooltipHeading(Node):
-    """Tooltip heading.
+class Definition(BaseTooltip):
+    """Tooltip component.
     """
-    WANT_CHILDREN = True
-    DEFAULT_TAG = 'h4'
+    REQUIRED_PROPS = ('label',)
+    "Will raise Exception if not set."
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--tooltip__heading {class}" {props}>
-  {child}
-</{tag}>
+<div class="bx--tooltip--definition bx--tooltip--a11y" data-tooltip-definition>
+  <button aria-describedby="{id}"
+      class="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition {class}"
+      {props}>
+    {label}
+  </button>
+  <div class="bx--assistive-text" id="{id}" role="tooltip">
+    {child}
+  </div>
+</div>
 """
         return self.format(template, values)
 
 
+class Icon(BaseTooltip):
+    """Tooltip component.
+    """
+    SLOTS = ('icon',)
+    "Named children."
+
+    def render_default(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<button class="bx--tooltip__trigger bx--tooltip--a11y {class}"
+    data-tooltip-icon {props}>
+  <span class="bx--assistive-text">{child}</span>
+  {slot_icon}
+</button>
+"""
+        return self.format(template, values, context)
+
+
 components = {
-    'Tooltip': Tooltip,
-    'TooltipHeading': TooltipHeading,
+    'InteractiveTooltip': Interactive,
+    'DefinitionTooltip': Definition,
+    'IconTooltip': Icon,
 }

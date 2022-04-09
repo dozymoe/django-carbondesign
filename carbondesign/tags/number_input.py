@@ -43,7 +43,7 @@ class NumberInput(FormNode):
             values['class'].append('bx--number--helpertext')
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         if self.bound_field.errors:
@@ -60,7 +60,7 @@ class NumberInput(FormNode):
   <div data-invalid data-numberinput class="bx--number {class}">
     {tmpl_label}
     <div class="bx--number__input-wrapper">
-      {element}
+      {tmpl_element}
       {tmpl_icon_invalid}
       <div class="bx--number__controls">
         {tmpl_btn_incr}
@@ -68,7 +68,7 @@ class NumberInput(FormNode):
       </div>
     </div>
     <div class="bx--form-requirement">
-      {form_errors}
+      {tmpl_errors}
     </div>
     {tmpl_help}
   </div>
@@ -80,7 +80,7 @@ class NumberInput(FormNode):
   <div data-numberinput class="bx--number {class}">
     {tmpl_label}
     <div class="bx--number__input-wrapper">
-      {element}
+      {tmpl_element}
       <div class="bx--number__controls">
         {tmpl_btn_incr}
         {tmpl_btn_decr}
@@ -104,11 +104,11 @@ class NumberInput(FormNode):
     {tmpl_label}
     <div class="bx--number__input-wrapper">
       {tmpl_btn_decr}
-      {element}
+      {tmpl_element}
       {tmpl_btn_incr}
     </div>
     <div class="bx--form-requirement">
-      {form_errors}
+      {tmpl_errors}
     </div>
     {tmpl_help}
   </div>
@@ -121,7 +121,7 @@ class NumberInput(FormNode):
     {tmpl_label}
     <div class="bx--number__input-wrapper">
       {tmpl_btn_decr}
-      {element}
+      {tmpl_element}
       {tmpl_btn_incr}
     </div>
     {tmpl_help}

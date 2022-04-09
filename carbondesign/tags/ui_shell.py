@@ -7,10 +7,9 @@ See: https://the-carbon-components.netlify.app/?nav=ui-shell
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import Node, modify_svg
+from .base import Node, clean_attr_value, modify_svg
 
 class UiShell(Node):
     """UI Shell component.
@@ -20,12 +19,10 @@ class UiShell(Node):
     SLOTS = ('title', 'title_prefix', 'navigation', 'links', 'actions',
             'sidenav', 'switcher')
     "Named children."
-    NODE_PROPS = ('href', 'label_prefix')
+    NODE_PROPS = ('id', 'href', 'label_prefix')
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'header'
     "Rendered HTML tag."
-    TEMPLATES = ('title', 'hamburger')
-    "Conditional templates."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -39,8 +36,9 @@ class UiShell(Node):
         if 'label_prefix' in self.kwargs:
             values['long_label'] = '%s %s' % (
                     self.eval(self.kwargs.get('label_prefix'), context),
-                    self.label(context))
-        values['long_label'] = self.label(context)
+                    values['label'])
+        else:
+            values['long_label'] = values['label']
 
 
     def render_default(self, values, context):
@@ -130,6 +128,9 @@ class UiShell(Node):
     def render_tmpl_hamburger(self, values, context):
         """Dynamically render a part of the component's template.
         """
+        if 'navigation' not in self.slots:
+            return ''
+
         template = """
 <button class="bx--header__menu-trigger bx--header__action"
     aria-label="{txt_open_menu}" title="{txt_open_menu}"
@@ -137,22 +138,20 @@ class UiShell(Node):
     data-navigation-menu-panel-label-collapse="{txt_close_menu}"
     data-navigation-menu-target="#navigation-menu-{id}">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-      style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon"
       width="20" height="20" viewBox="0 0 32 32">
     <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
   </svg>
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-      style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       aria-hidden="true" class="bx--navigation-menu-panel-expand-icon"
       width="20" height="20" viewBox="0 0 20 20">
     <path d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"></path>
   </svg>
 </button>
 """
-        if 'navigation' in self.slots:
-            return self.format(template, values)
-        return ""
+        return self.format(template, values)
 
 
 class Link(Node):
@@ -162,6 +161,8 @@ class Link(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('submenu',)
     "Named children."
+    NODE_PROPS = ('expanded',)
+    "Extended Template Tag arguments."
 
     is_submenu = False
 
@@ -177,27 +178,29 @@ class Link(Node):
         if 'submenu' in self.slots:
             context['navlink_submenu'] = True
 
+        if 'submenu' in self.slots:
+            if self.eval(self.kwargs.get('expanded'), context):
+                values['props'].append(('aria-expanded', 'true'))
+            else:
+                values['props'].append(('aria-expanded', 'false'))
+
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         if 'submenu' in self.slots:
-            values['cleaned_child'] = strip_tags(values['child']).strip()
-
+            values['cleaned_child'] = clean_attr_value(values['child'])
             template = """
 <li class="bx--header__submenu" data-header-submenu>
   <a class="bx--header__menu-item bx--header__menu-title {class}"
-      aria-haspopup="true" aria-expanded="false" {props}>
+      aria-haspopup="true" {props}>
     {child}
     <svg class="bx--header__menu-arrow" width="12" height="7"
         aria-hidden="true">
       <path d="M6.002 5.55L11.27 0l.726.685L6.003 7 0 .685.726 0z" />
     </svg>
   </a>
-  <ul class="bx--header__menu" aria-label="{cleaned_child}"
-      {slot_submenu_props}>
-    {slot_submenu}
-  </ul>
+  {slot_submenu}
 </li>
 """
             return self.format(template, values, context)
@@ -223,6 +226,17 @@ class Link(Node):
         return self.format(template, values)
 
 
+    def render_slot_submenu(self, values, context):
+        """Render html of the slot.
+        """
+        template = """
+<ul class="bx--header__menu {class}" aria-label="{cleaned_child}" {props}>
+  {child}
+</ul>
+"""
+        return self.format(template, values)
+
+
 class Action(Node):
     """Topbar action buttons.
     """
@@ -232,6 +246,8 @@ class Action(Node):
     "Named children."
     NODE_PROPS = ('target',)
     "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('target',)
+    "Will raise Exception if not set."
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
 
@@ -255,7 +271,7 @@ class Action(Node):
   {slot_svg_close}
 </{tag}>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_slot_svg_open(self, values, context):
@@ -264,10 +280,10 @@ class Action(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
             'class': 'bx--navigation-menu-panel-expand-icon',
@@ -280,10 +296,10 @@ class Action(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
             'class': 'bx--navigation-menu-panel-collapse-icon',
@@ -316,7 +332,7 @@ class NavItem(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('submenu', 'icon')
     "Named children."
-    NODE_PROPS = ('active', 'icon_size')
+    NODE_PROPS = ('id', 'active', 'icon_size')
     "Extended Template Tag arguments."
 
     is_submenu = False
@@ -338,6 +354,7 @@ class NavItem(Node):
 
         if 'submenu' in self.slots:
             context['navitem_submenu'] = True
+
         if 'icon' in self.slots:
             values['class'].append('bx--navigation-item--icon')
 
@@ -394,17 +411,18 @@ class NavItem(Node):
         """
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
+            'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
         })
 
         template = """
-<div class="bx--navigation-icon {class}">
+<div class="bx--navigation-icon {class}" {props}>
   {child}
 </div>
 """
@@ -416,9 +434,9 @@ class SideNav(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('header', 'footer', 'title_icon', 'title', 'switcher')
+    SLOTS = ('title_icon', 'title', 'switcher')
     "Named children."
-    NODE_PROPS = ('fixed',)
+    NODE_PROPS = ('id', 'fixed',)
     "Extended Template Tag arguments."
     DEFAULT_TAG = 'aside'
     "Rendered HTML tag."
@@ -427,6 +445,9 @@ class SideNav(Node):
         """Prepare values for rendering the templates.
         """
         values['txt_label'] = _("Side navigation")
+        values['txt_close'] = _("Close the side navigation menu")
+        values['txt_close_help'] = _("Toggle the expansion state of the navigation") # pylint:disable=line-too-long
+
         if self.eval(self.kwargs.get('fixed'), context):
             values['class'].append('bx--side-nav--fixed')
 
@@ -438,66 +459,33 @@ class SideNav(Node):
 <{tag} class="bx--side-nav {class}" data-side-nav {props}>
   <nav class="bx--side-nav__navigation" role="navigation"
       aria-label="{txt_label}">
-    {slot_header}
+    {tmpl_header}
     <ul class="bx--side-nav__items">
       {child}
     </ul>
-    {slot_footer}
+    <footer class="bx--side-nav__footer {class}" {props}>
+      <button type="button" class="bx--side-nav__toggle" title="{txt_close}">
+        <div class="bx--side-nav__icon">
+          <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              class="bx--side-nav__icon--collapse bx--side-nav-collapse-icon"
+              width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
+          </svg>
+          <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              class="bx--side-nav__icon--expand bx--side-nav-expand-icon"
+              width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
+          </svg>
+        </div>
+        <span class="bx--assistive-text">{txt_close_help}</span>
+      </button>
+    </footer>
   </nav>
 </{tag}>
 """
         return self.format(template, values, context)
-
-
-    def render_slot_header(self, values, context):
-        """Render html of the slot.
-        """
-        if set('title_icon', 'title', 'switcher')\
-                .intersection(self.slots.keys()):
-
-            template = """
-<header class="bx--side-nav__header {class}" {props}>
-  {slot_title_icon}
-  <div class="bx--side-nav__details">
-    {slot_title}
-    {slot_switcher}
-  </div>
-</header>
-"""
-            return self.format(template, values, context)
-        return ""
-
-
-    def render_slot_footer(self, values, context):
-        """Render html of the slot.
-        """
-        values['txt_close'] = _("Close the side navigation menu")
-        values['txt_close_help'] = _("Toggle the expansion state of the navigation") # pylint:disable=line-too-long
-
-        template = """
-<footer class="bx--side-nav__footer {class}" {props}>
-  <button type="button" class="bx--side-nav__toggle" title="{txt_close}">
-    <div class="bx--side-nav__icon">
-      <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-          style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          class="bx--side-nav__icon--collapse bx--side-nav-collapse-icon"
-          width="20" height="20" viewBox="0 0 32 32">
-        <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
-      </svg>
-      <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-          style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          class="bx--side-nav__icon--expand bx--side-nav-expand-icon" width="20"
-          height="20" viewBox="0 0 32 32">
-        <path d="M22 16L12 26 10.6 24.6 19.2 16 10.6 7.4 12 6z"></path>
-      </svg>
-    </div>
-    <span class="bx--assistive-text">{txt_close_help}</span>
-  </button>
-</footer>
-"""
-        return self.format(template, values)
 
 
     def render_slot_title_icon(self, values, context):
@@ -505,10 +493,10 @@ class SideNav(Node):
         """
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': 20,
-                'height': 20,
+                'width': '%spx' % 20,
+                'height': '%spx' % 20,
             },
             'aria-hidden': 'true',
         })
@@ -523,7 +511,7 @@ class SideNav(Node):
     def render_slot_title(self, values, context):
         """Render html of the slot.
         """
-        values['cleaned_title'] = strip_tags(values['child']).strip()
+        values['cleaned_title'] = clean_attr_value(values['child'])
 
         template = """
 <h2 class="bx--side-nav__title {class}" title="{cleaned_title}" {props}>
@@ -544,6 +532,7 @@ class SideNav(Node):
     {txt_switcher}
   </label>
   <select id="side-nav-switcher-{id}" class="bx--side-nav__select" {props}>
+    <option class="bx--side-nav__option" value="">{txt_switcher}</option>
     {child}
   </select>
   <div class="bx--side-nav__switcher-chevron">
@@ -555,6 +544,25 @@ class SideNav(Node):
 </div>
 """
         return self.format(template, values)
+
+
+    def render_tmpl_header(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        if set(('title_icon', 'title', 'switcher'))\
+                .intersection(self.slots.keys()):
+
+            template = """
+<header class="bx--side-nav__header {class}" {props}>
+  {slot_title_icon}
+  <div class="bx--side-nav__details">
+    {slot_title}
+    {slot_switcher}
+  </div>
+</header>
+"""
+            return self.format(template, values, context)
+        return ""
 
 
 class SideNavOption(Node):
@@ -581,8 +589,10 @@ class SideNavItem(Node):
     "Template Tag needs closing end tag."
     SLOTS = ('submenu', 'icon')
     "Named children."
-    NODE_PROPS = ('active', 'icon_size')
+    NODE_PROPS = ('active', 'current', 'icon_size')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('link',)
+    "Prepare xxx_class and xxx_props values."
 
     is_submenu = False
 
@@ -591,7 +601,7 @@ class SideNavItem(Node):
         """
         is_active = self.eval(self.kwargs.get('active'), context)
 
-        self.is_submenu = self.context.get('navitem_submenu')
+        self.is_submenu = context.get('navitem_submenu')
         if self.is_submenu:
             values['class'].append('bx--side-nav__menu-item')
             if is_active:
@@ -601,12 +611,14 @@ class SideNavItem(Node):
             if is_active:
                 values['class'].append('bx--side-nav__item--active')
 
-        if is_active:
-            values['link_class'] = 'bx--side-nav__link--current'
+        if self.eval(self.kwargs.get('current'), context):
+            values['link_class'].append('bx--side-nav__link--current')
             values['props'].append(('aria-current', 'page'))
 
         if 'submenu' in self.slots:
             context['navitem_submenu'] = True
+        else:
+            values['icon_class'].append('bx--side-nav__icon--small')
 
 
     def render_default(self, values, context):
@@ -633,6 +645,15 @@ class SideNavItem(Node):
   </ul>
 </li>
 """
+        elif self.is_submenu:
+            template = """
+<li role="none" class="{class}">
+  <a class="bx--side-nav__link {link_class}" {props}>
+    {slot_icon}
+    <span class="bx--side-nav__link-text">{child}</span>
+  </a>
+</li>
+"""
         else:
             template = """
 <li class="{class}">
@@ -651,15 +672,15 @@ class SideNavItem(Node):
         size = self.eval(self.kwargs.get('icon_size', 20), context)
         values['child'] = modify_svg(values['child'], {
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
         })
         template = """
-<div class="bx--side-nav__icon bx--side-nav__icon--small {class}">
+<div class="bx--side-nav__icon {class}" {props}>
   {child}
 </div>
 """

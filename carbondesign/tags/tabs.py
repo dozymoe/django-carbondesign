@@ -30,17 +30,16 @@ class Tabs(Node):
         """Prepare values for rendering the templates.
         """
         if self.eval(self.kwargs.get('container'), context):
-            values['wrapper_class'].append('bx--tabs-container')
+            values['class'].append('bx--tabs--container')
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<div data-tabs class="bx--tabs {wrapper_class}">
+<div data-tabs class="bx--tabs {class}" {props}>
   <div class="bx--tabs-trigger" tabindex="0">
-    <a href="javascript:void(0)" class="bx--tabs-trigger-text" tabindex="-1">
-    </a>
+    <a href="javascript:void(0)" class="bx--tabs-trigger-text" tabindex="-1"></a>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16"
         height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -65,28 +64,33 @@ class TabItem(Node):
     "Template Tag needs closing end tag."
     NODE_PROPS = ('active', 'target', 'disabled')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('tab',)
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         active = self.eval(self.kwargs.get('active'), context)
         if active:
-            values['wrapper_class'].append('bx--tabs__nav-item--selected')
-            values['wrapper_props'].append(('aria-selected', 'true'))
+            values['tab_class'].append('bx--tabs__nav-item--selected')
+            values['tab_props'].append(('aria-selected', 'true'))
 
-        values['target'] = self.eval(self.kwargs.get('target'), context)
+        target = self.eval(self.kwargs.get('target'), context)
+        values['target'] = target or ''
+        if target:
+            values['props'].append(('id', f'tab-link-{target}'))
 
         if self.eval(self.kwargs.get('disabled'), context):
-            values['wrapper_class'].append('bx--tabs__nav-item--disabled')
-            values['wrapper_props'].append(('aria-disabled', 'true'))
+            values['tab_class'].append('bx--tabs__nav-item--disabled')
+            values['tab_props'].append(('aria-disabled', 'true'))
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<li class="bx--tabs__nav-item {wrapper_class}" data-target="{target}" role="tab"
-    {wrapper_props}>
+<li class="bx--tabs__nav-item {tab_class}" data-target="#{target}"
+    role="tab" {tab_props}>
   <a tabindex="0" class="bx--tabs__nav-link {class}" href="javascript:void(0)"
       role="tab" aria-controls="{target}" {props}>
     {child}
@@ -101,7 +105,7 @@ class TabContent(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    NODE_PROPS = ('active', 'target')
+    NODE_PROPS = ('id', 'active', 'target')
     "Extended Template Tag arguments."
 
     def prepare(self, values, context):
@@ -112,7 +116,7 @@ class TabContent(Node):
             values['props'].append(('aria-hidden', 'false'))
         else:
             values['props'].append(('aria-hidden', 'true'))
-            values['props'].append(('hidden', ''))
+            values['props'].append(('hidden', True))
 
         values['target'] = self.eval(self.kwargs.get('target'), context)
 
@@ -121,7 +125,7 @@ class TabContent(Node):
         """Output html of the component.
         """
         template = """
-<div role="tabpanel" aria-labelledby="{target}" aria-hidden="false" {props}>
+<div id="{id}" role="tabpanel" aria-labelledby="tab-link-{id}" {props}>
   <div>{child}</div>
 </div>
 """

@@ -27,7 +27,7 @@ m(values.tag,
 export class AccordionItem extends Node
 {
     WANT_CHILDREN = true
-    NODE_PROPS = ['expanded']
+    NODE_PROPS = ['id', 'expanded']
     DEFAULT_TAG = 'li'
 
     prepare(vnode, values, context)
@@ -57,7 +57,7 @@ m(values.tag,
     m('button.bx--accordion__heading',
       {
         'aria-expanded': values.expanded,
-        'aria-controls': `pane-${values.id}`,
+        'aria-controls': `${values.id}`,
       },
       [
         m('svg',
@@ -73,20 +73,32 @@ m(values.tag,
             'aria-hidden': true,
           },
           m('path', {d: 'M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z'})),
-        m('div',
-          {
-            'class': `bx--accordion__title ${values.label_class}`,
-            ...values.label_props,
-          },
-          values.label),
+        this.tmpl('label', ...arguments),
       ]),
     m('div.bx--accordion__content',
       {
-        id: `pane-${values.id}`,
+        id: `${values.id}`,
       },
       values.child),
   ])
 //##
         );
+    }
+
+    render_tmpl_label(vnode, values, context)
+    {
+        if (values.label)
+        {
+            return (
+//##
+m('div',
+  {
+    'class': `bx--accordion__title ${values.label_class}`,
+    ...values.label_props,
+  },
+  values.label)
+//##
+            );
+        }
     }
 }

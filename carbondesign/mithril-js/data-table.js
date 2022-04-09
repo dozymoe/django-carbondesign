@@ -1,39 +1,43 @@
-import DOMPurify from 'dompurify';
-import { range } from 'lodash';
+import { range, uniqueId } from 'lodash';
 import m from 'mithril/hyperscript';
 import m_tostring from 'mithril-node-render';
 //-
-import { Node, modify_svg } from './base';
+import { FormNode, Node, clean_attr_value, modify_svg } from './base';
 import { Button } from './button';
-
 
 export class Table extends Node
 {
     WANT_CHILDREN = true
-    SLOTS = ['title', 'description', 'batch_actions', 'search', 'toolbar',
-            'toolbar_overflow', 'head', 'foot', 'pagination']
+    SLOTS = ['title', 'description', 'batch_actions', 'search',
+            'toolbar_actions', 'toolbar_overflow', 'head', 'foot', 'pagination']
     MODES = ['default', 'sticky']
-    NODE_PROPS = ['style', 'sortable', 'small_toolbar']
-    CLASS_AND_PROPS = ['toolbar', ...Node.CLASS_AND_PROPS]
-    AVAILABLE_STYLES = ['compact', 'short', 'tall', 'zebra']
+    NODE_PROPS = ['variant', 'sortable', 'small_toolbar', 'batch_field',
+            'visible_overflow']
+    CLASS_AND_PROPS = ['toolbar']
+    POSSIBLE_VARIANT = ['compact', 'short', 'tall', 'zebra']
     PAGER_SIZES = [10, 20, 30, 40, 50]
 
     prepare(vnode, values, context)
     {
         values.txt_batch_actions = gettext("Table Action Bar")
-        values.txt_cancel = gettext("Cancel");
         values.txt_items_selected = gettext("items selected")
         values.txt_overflow = gettext("Overflow")
 
-        if (vnode.attrs.style)
+        if (vnode.attrs.variant)
         {
-            values['class'].push('bx--data-table--' + vnode.attrs.style);
+            values['class'].push(`bx--data-table--${vnode.attrs.variant}`);
         }
+        if (vnode.attrs.compact)
+        {
+            context.compact = true;
+        }
+
         if (vnode.attrs.sortable)
         {
             values['class'].push('bx--data-table--sort');
         }
-        if (vnode.attrs.small_toolbar)
+
+        if (vnode.attrs.variant === 'compact' || vnode.attrs.small_toolbar)
         {
             values.toolbar_class.push('bx--table-toolbar--small');
 
@@ -42,6 +46,11 @@ export class Table extends Node
             this.set_child_props(context, 'search_props', null, {small: true});
             this.set_child_props(context, 'button_props', 'toolbar',
                     {small: true});
+        }
+
+        if (vnode.attrs.visible_overflow)
+        {
+            values['class'].push('bx--data-table--visible-overflow-menu');
         }
     }
 
@@ -169,7 +178,7 @@ m('tfoot', {'class': values['class'], ...values.props}, values.child)
 //##
 m('h4',
   {
-    'class': 'bx--data-table-header__title ' + values['class'],
+    'class': `bx--data-table-header__title ${values['class']}`,
     ...values.props,
   },
   values.child)
@@ -183,7 +192,7 @@ m('h4',
 //##
 m('p',
   {
-    'class': 'bx--data-table-header__description ' + values['class'],
+    'class': `bx--data-table-header__description ${values['class']}`,
     ...values.props,
   },
   values.child)
@@ -210,6 +219,7 @@ m('div',
               variant: 'primary',
               'data-event': 'action-bar-cancel',
               'class': 'bx--batch-summary__cancel',
+              'small': context.compact,
             },
             values.txt_cancel),
       ]),
@@ -244,8 +254,8 @@ m('div',
       {
         focusable: false,
         preserveAspectRatio: 'xMidYMid meet',
-        style: {'will-change': 'transform'},
         xmlns: 'http://www.w3.org/2000/svg',
+        fill: 'currentColor',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -307,8 +317,8 @@ m('div',
 //##
 m('div.bx--data-table-header', null,
   [
-    this.slot('title', vnode, values, context),
-    this.slot('description', vnode, values, context),
+    this.slot('title', ...arguments),
+    this.slot('description', ...arguments),
   ])
 //##
         );
@@ -317,7 +327,7 @@ m('div.bx--data-table-header', null,
     has_tmpl_toolbar()
     {
         return this.slots.batch_actions || this.slots.toolbar_overflow ||
-                this.slots.toolbar;
+                this.slots.toolbar_actions;
     }
 
     render_tmpl_toolbar(vnode, values, context)
@@ -339,7 +349,7 @@ m('section',
       [
         this.slot('search', ...arguments),
         this.slot('toolbar_overflow', ...arguments),
-        this.slot('toolbar', ...arguments),
+        this.slot('toolbar_actions', ...arguments),
       ]),
   ])
 //##
@@ -411,6 +421,7 @@ export class Th extends Node
     WANT_CHILDREN = true
     MODES = ['default', 'checkbox', 'sortable', 'menu', 'expandable',
             'expand_all', 'row']
+    NODE_PROPS = ['id']
 
     render_default(vnode, values, context)
     {
@@ -456,7 +467,7 @@ m('th',
 
     render_sortable(vnode, values, context)
     {
-        let cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
+        let cleaned_child = clean_attr_value(m_tostring(values.child));
 
         return (
 //##
@@ -476,8 +487,8 @@ m('th',
         {
           focusable: false,
           preserveAspectRatio: 'xMidYMid meet',
-          style: {'will-change': 'transform'},
           xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'currentColor',
           'class': 'bx--table-sort__icon',
           width: 16,
           height: 16,
@@ -493,8 +504,8 @@ m('th',
         {
           focusable: false,
           preserveAspectRatio: 'xMidYMid meet',
-          style: {'will-change': 'transform'},
           xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'currentColor',
           'class': 'bx--table-sort__icon-unsorted',
           width: 16,
           height: 16,
@@ -588,7 +599,7 @@ m('th',
 export class Td extends Node
 {
     WANT_CHILDREN = true
-    MODE = ['default', 'checkbox', 'menu', 'menu_visible']
+    MODE = ['default', 'menu', 'menu_visible']
     SLOTS = ['secondary']
 
     prepare(vnode, values, context)
@@ -608,34 +619,6 @@ m('td',
   [
     values.child,
     this.slot('secondary', ...arguments),
-  ])
-//##
-        );
-    }
-
-    render_checkbox(vnode, values, context)
-    {
-        return (
-//##
-m('td',
-  {
-    'class': `bx--table-column-checkbox ${values['class']}`,
-  },
-  [
-    m('input.bx--checkbox',
-      {
-        'data-event': 'select',
-        id: values.id,
-        type: 'checkbox',
-        ...values.props,
-      }),
-    m('label',
-      {
-        'for': values.id,
-        'class': `bx--checkbox-label ${values.label_class}`,
-        'aria-label': values.label,
-        ...values.label_props,
-      }),
   ])
 //##
         );
@@ -665,8 +648,8 @@ m('td',
         {
           focusable: false,
           preserveAspectRatio: 'xMidYMid meet',
-          style: {'will-change': 'transform'},
           xmlns: 'http://www.w3.org/2000/svg',
+          fill: 'currentColor',
           'class': 'bx--overflow-menu__icon',
           width: 16,
           height: 16,
@@ -735,7 +718,7 @@ m('td',
 //##
 m('div',
   {
-    'class': 'bx--data-table--cell-secondary-text ' + values['class'],
+    'class': `bx--data-table--cell-secondary-text ${values['class']}`,
     ...values.props,
   },
   values.child)
@@ -745,20 +728,89 @@ m('div',
 }
 
 
+export class TdCheckbox extends FormNode
+{
+    NODE_PROPS = ['id', 'value']
+    REQUIRED_PROPS = ['values']
+
+    default_id(vnode)
+    {
+        return uniqueId(this.bound_field.id_for_label + '-');
+    }
+
+    label()
+    {
+        for (let [group, val, txt] of this.choices())
+        {
+            if (val === this.value)
+            {
+                return txt;
+            }
+        }
+    }
+
+    before_prepare(vnode, values, context)
+    {
+        this.value = vnode.attrs.value;
+        super.before_prepare(...arguments);
+    }
+
+    prepare(vnode, values, context)
+    {
+        if (this.bound_value && this.bound_value.indexOf(this.value) !== -1)
+        {
+            values.props.push(['checked', '']);
+        }
+    }
+
+    render_default(vnode, values, context)
+    {
+        return (
+//##
+m('td.bx--table-column-checkbox',
+  [
+    m('input',
+      {
+        type: 'checkbox',
+        name: this.bound_field.name,
+        value: this.value,
+        id: values.id,
+        'class': `bx--checkbox ${values['class']}`,
+        'data-event': 'select',
+        ...values.props,
+      }),
+    m('label.bx--checkbox-label',
+      {
+        'for': values.id,
+        'aria-label': values.label,
+      }),
+  ])
+//##
+        );
+    }
+
+}
+
+
 export class TbSearch extends Node
 {
-    NODE_PROPS = ['expandable', 'small']
-
+    NODE_PROPS = ['id', 'expandable', 'small']
+    CLASS_AND_PROPS = ['wrapper', 'magnifier']
     CATCH_PROPS = ['search_props']
 
     prepare(vnode, values, context)
     {
         values.txt_search = gettext("Search");
         values.txt_clear = gettext("Clear search input");
+        if (!values.label)
+        {
+            values.label = values.txt_search;
+        }
 
         if (vnode.attrs.expandable)
         {
             values.wrapper_class.push('bx--toolbar-search-container-expandable');
+            values.magnifier_props.push(['tabindex', 0]);
         }
         else
         {
@@ -788,30 +840,16 @@ m('div',
       ...values.props,
     },
     [
-      m('div.bx--search-magnifier', null,
-        m('svg',
-          {
-            focusable: false,
-            preserveAspectRatio: 'xMidYMid meet',
-            style: {'will-change': 'transform'},
-            xmlns: 'http://www.w3.org/2000/svg',
-            width: 16,
-            height: 16,
-            viewBox: '0 0 16 16',
-            'aria-hidden': true,
-          },
-          m('path',
-            {
-              d: 'M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,\
-                  8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,\
-                  4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z',
-            }))),
-      m('label',
+      m('div',
         {
-          id: 'label-' + values.id,
-          'class': `bx--label ${values.label_class}`,
+          'class': `bx--search-magnifier ${values.magnifier_class}`,
+          ...values.magnifier_props,
+        },
+        this.tmpl('magnifier_icon', ...arguments)),
+      m('label.bx--label',
+        {
+          id: `label-${values.id}`,
           'for': values.id,
-          ...values.label_props,
         },
         values.label),
       m('input.bx--search-input',
@@ -831,8 +869,8 @@ m('div',
           {
             focusable: false,
             preserveAspectRatio: 'xMidYMid meet',
-            style: {'will-change': 'transform'},
             xmlns: 'http://www.w3.org/2000/svg',
+            fill: 'currentColor',
             width: 16,
             height: 16,
             viewBox: '0 0 16 16',
@@ -847,20 +885,62 @@ m('div',
 //##
         );
     }
+
+    render_tmpl_magnifier_icon(vnode, values, context)
+    {
+        return (
+//##
+m('svg',
+  {
+    focusable: false,
+    preserveAspectRatio: 'xMidYMid meet',
+    style: {'will-change': 'transform'},
+    xmlns: 'http://www.w3.org/2000/svg',
+    width: 16,
+    height: 16,
+    viewBox: '0 0 16 16',
+    'aria-hidden': true,
+  },
+  m('path',
+    {
+      d: 'M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,\
+          8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,\
+          4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z',
+    }))
+//##
+        );
+    }
 }
 
 
 export class TableOvButton extends Node
 {
     WANT_CHILDREN = true
+    NODE_PROPS = ['active']
+    CLASS_AND_PROPS = ['list']
+
+    prepare(vnode, values, context)
+    {
+        if (vnode.attrs.active)
+        {
+            values.props.push(['data-floating-menu-primary-focus', '']);
+        }
+
+        if (context.compact)
+        {
+            values.list_class.push('bx--overflow-menu--data-table');
+        }
+    }
 
     render_default(vnode, values, context)
     {
         return (
 //##
-m('li.bx--overflow-menu-options__option.bx--overflow-menu--data-table',
+m('li',
   {
+    'class': `bx--overflow-menu-options__option ${values.list_class}`,
     role: 'presentation',
+    ...values.list_props,
   },
   m('button',
     {
@@ -883,7 +963,7 @@ export class TdOvButton extends Node
 
     render_default(vnode, values, context)
     {
-        let cleaned_child = DOMPurify.sanitize(m_tostring(values.child));
+        let cleaned_child = clean_attr_value(m_tostring(values.child));
 
         return (
 //##
@@ -910,8 +990,8 @@ m('li.bx--overflow-menu-options__option.bx--table-row--menu-option',
             {
                 focusable: false,
                 preserveAspectRatio: 'xMidYMid meet',
+                fill: 'currentColor',
                 style: {
-                    'will-change': 'transform',
                     width: size,
                     height: size,
                 },

@@ -20,8 +20,8 @@ class ListBox(FormNode):
     "Available variants."
     NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
-    TEMPLATES = ('label', 'icon_invalid', 'icon_menu', *FormNode.TEMPLATES)
-    "Conditional templates. Documentation only."
+    CLASS_AND_PROPS = ('label', 'help', 'list')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -31,21 +31,20 @@ class ListBox(FormNode):
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
-            values['wrapper_class'].append('bx--list-box--disabled')
-            values['props'].append(('disabled', 'disabled'))
+            values['list_class'].append('bx--list-box--disabled')
 
         if self.eval(self.kwargs.get('light'), context):
-            values['wrapper_class'].append('bx--list-box--light')
+            values['list_class'].append('bx--list-box--light')
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
         props['aria-autocomplete'] = 'list'
         props['aria-expanded'] = 'false'
         props['autocomplete'] = 'off'
-        props['aria-owns'] = 'menu-' + self.id(context)
+        props['aria-owns'] = 'menu-' + self._id
 
 
     def render_default(self, values, context):
@@ -56,7 +55,7 @@ class ListBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     {tmpl_label}
-    <div class="bx--list-box {wrapper_class}" data-invalid>
+    <div class="bx--list-box {list_class}" data-invalid>
       {tmpl_icon_invalid}
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
@@ -79,7 +78,7 @@ class ListBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     {tmpl_label}
-    <div class="bx--list-box {wrapper_class}">
+    <div class="bx--list-box {list_class}">
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
         <span class="bx--list-box__label">{value}</span>
@@ -104,7 +103,7 @@ class ListBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
     {tmpl_label}
-    <div class="bx--list-box bx--list-box--inline {wrapper_class}" data-invalid>
+    <div class="bx--list-box bx--list-box--inline {list_class}" data-invalid>
       {tmpl_icon_invalid}
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
@@ -127,7 +126,7 @@ class ListBox(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
     {tmpl_label}
-    <div class="bx--list-box bx--list-box--inline {wrapper_class}">
+    <div class="bx--list-box bx--list-box--inline {list_class}">
       <div role="button" class="bx--list-box__field" tabindex="0"
           aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
         <span class="bx--list-box__label">{value}</span>

@@ -22,11 +22,11 @@ table display settings, and other utilities.
 # pylint:disable=too-many-lines
 
 import logging
+from uuid import uuid4
 #-
-from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 #-
-from .base import DummyNodeList, Node, modify_svg
+from .base import DummyNodeList, FormNode, Node, clean_attr_value, modify_svg
 from .button import Button
 
 _logger = logging.getLogger(__name__)
@@ -37,17 +37,17 @@ class DataTable(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('title', 'description', 'batch_actions', 'search', 'toolbar',
-            'toolbar_overflow', 'head', 'foot', 'pagination')
+    SLOTS = ('title', 'description', 'batch_actions', 'search',
+            'toolbar_actions', 'toolbar_overflow', 'head', 'foot', 'pagination')
     "Named children."
     MODES = ('default', 'sticky')
     "Available variants."
-    NODE_PROPS = ('style', 'sortable', 'small_toolbar')
+    NODE_PROPS = ('variant', 'sortable', 'small_toolbar', 'batch_field',
+            'visible_overflow')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('toolbar', *Node.CLASS_AND_PROPS)
-    TEMPLATES = ('header', 'toolbar')
-    "Conditional templates."
-    AVAILABLE_STYLES = ('compact', 'short', 'tall', 'zebra')
+    "Prepare xxx_class and xxx_props values."
+    POSSIBLE_VARIANT = ('compact', 'short', 'tall', 'zebra')
     "Documentation only."
     PAGER_SIZES = (10, 20, 30, 40, 50)
 
@@ -55,18 +55,20 @@ class DataTable(Node):
         """Prepare values for rendering the templates.
         """
         values['txt_batch_actions'] = _("Table Action Bar")
-        values['txt_cancel'] = _("Cancel")
         values['txt_items_selected'] = _("items selected")
         values['txt_overflow'] = _("Overflow")
 
-        style = self.eval(self.kwargs.get('style'), context)
-        if style:
-            values['class'].append('bx--data-table--%s' % style)
+        variant = self.eval(self.kwargs.get('variant'), context)
+        if variant:
+            values['class'].append(f'bx--data-table--{variant}')
+        if variant == 'compact':
+            context['compact'] = True
 
         if self.eval(self.kwargs.get('sortable'), context):
             values['class'].append('bx--data-table--sort')
 
-        if self.eval(self.kwargs.get('small_toolbar'), context):
+        if variant == 'compact' or\
+                self.eval(self.kwargs.get('small_toolbar'), context):
             values['toolbar_class'].append('bx--table-toolbar--small')
 
             self.set_child_props(context, 'button_props', 'batch_actions',
@@ -74,6 +76,9 @@ class DataTable(Node):
             self.set_child_props(context, 'search_props', small=True)
             self.set_child_props(context, 'button_props', 'toolbar',
                     small=True)
+
+        if self.eval(self.kwargs.get('visible_overflow'), context):
+            values['class'].append('bx--data-table--visible-overflow-menu')
 
 
     def render_default(self, values, context):
@@ -114,7 +119,7 @@ class DataTable(Node):
   {tmpl_toolbar}
   <section class="bx--data-table_inner-container">
     <table class="bx--data-table bx--data-table--sticky-header {class}" {props}>
-      {slot_head}}
+      {slot_head}
       {child}
       {slot_foot}
     </table>
@@ -126,7 +131,7 @@ class DataTable(Node):
             template = """
 <section class="bx--data-table_inner-container">
   <table class="bx--data-table bx--data-table--sticky-header {class}" {props}>
-    {slot_head}}
+    {slot_head}
     {child}
     {slot_foot}
   </table>
@@ -176,12 +181,19 @@ class DataTable(Node):
         """Render html of the slot.
         """
         cancel_btn = Button(
-                DummyNodeList(values['txt_cancel']),
+                DummyNodeList(_("Cancel")),
                 **{
                     'variant': 'primary',
                     'data-event': 'action-bar-cancel',
                     'class': 'bx--batch-summary__cancel',
+                    'small': context.get('compact'),
                 })
+
+        form_field = self.eval(self.kwargs.get('batch_field'), context)
+        if form_field and form_field.value():
+            values['count'] = len(form_field.value())
+        else:
+            values['count'] = 0
 
         template = """
 <div class="bx--batch-actions {class}" aria-label="{txt_batch_actions}" {props}>
@@ -191,7 +203,7 @@ class DataTable(Node):
   </div>
   <div class="bx--batch-summary">
     <p class="bx--batch-summary__para">
-      <span data-items-selected>0</span> {txt_items_selected}
+      <span data-items-selected>{count}</span> {txt_items_selected}
     </p>
   </div>
 </div>
@@ -208,7 +220,7 @@ class DataTable(Node):
     role="button" tabindex="0" aria-label="{txt_overflow}" aria-haspopup="true"
     aria-expanded="false" {props}>
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-      style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       class="bx--toolbar-action__icon" width="16" height="16"
       viewBox="0 0 16 16" aria-hidden="true">
     <path d="M13.5,8.4c0-0.1,0-0.3,0-0.4c0-0.1,0-0.3,0-0.4l1-0.8c0.4-0.3,0.4-0.9,0.2-1.3l-1.2-2C13.3,3.2,13,3,12.6,3	c-0.1,0-0.2,0-0.3,0.1l-1.2,0.4c-0.2-0.1-0.4-0.3-0.7-0.4l-0.3-1.3C10.1,1.3,9.7,1,9.2,1H6.8c-0.5,0-0.9,0.3-1,0.8L5.6,3.1	C5.3,3.2,5.1,3.3,4.9,3.4L3.7,3C3.6,3,3.5,3,3.4,3C3,3,2.7,3.2,2.5,3.5l-1.2,2C1.1,5.9,1.2,6.4,1.6,6.8l0.9,0.9c0,0.1,0,0.3,0,0.4	c0,0.1,0,0.3,0,0.4L1.6,9.2c-0.4,0.3-0.5,0.9-0.2,1.3l1.2,2C2.7,12.8,3,13,3.4,13c0.1,0,0.2,0,0.3-0.1l1.2-0.4	c0.2,0.1,0.4,0.3,0.7,0.4l0.3,1.3c0.1,0.5,0.5,0.8,1,0.8h2.4c0.5,0,0.9-0.3,1-0.8l0.3-1.3c0.2-0.1,0.4-0.2,0.7-0.4l1.2,0.4	c0.1,0,0.2,0.1,0.3,0.1c0.4,0,0.7-0.2,0.9-0.5l1.1-2c0.2-0.4,0.2-0.9-0.2-1.3L13.5,8.4z M12.6,12l-1.7-0.6c-0.4,0.3-0.9,0.6-1.4,0.8	L9.2,14H6.8l-0.4-1.8c-0.5-0.2-0.9-0.5-1.4-0.8L3.4,12l-1.2-2l1.4-1.2c-0.1-0.5-0.1-1.1,0-1.6L2.2,6l1.2-2l1.7,0.6	C5.5,4.2,6,4,6.5,3.8L6.8,2h2.4l0.4,1.8c0.5,0.2,0.9,0.5,1.4,0.8L12.6,4l1.2,2l-1.4,1.2c0.1,0.5,0.1,1.1,0,1.6l1.4,1.2L12.6,12z"></path>
@@ -247,7 +259,8 @@ class DataTable(Node):
         """Should render toolbar template?
         """
         return 'batch_actions' in self.slots or\
-                'toolbar_overflow' in self.slots or 'toolbar' in self.slots
+                'toolbar_overflow' in self.slots or\
+                'toolbar_actions' in self.slots
 
     def render_tmpl_toolbar(self, values, context):
         """Dynamically render a part of the component's template.
@@ -261,7 +274,7 @@ class DataTable(Node):
   <div class="bx--toolbar-content">
     {slot_search}
     {slot_toolbar_overflow}
-    {slot_toolbar}
+    {slot_toolbar_actions}
   </div>
 </section>
 """
@@ -314,6 +327,8 @@ class Th(Node):
     MODES = ('default', 'checkbox', 'sortable', 'menu', 'expandable',
             'expand_all', 'row')
     "Available variants."
+    NODE_PROPS = ('id',)
+    "Extended Template Tag arguments."
 
     def render_default(self, values, context):
         """Output html of the component.
@@ -331,10 +346,8 @@ class Th(Node):
         """
         template = """
 <th class="bx--table-column-checkbox {class}">
-  <input data-event="select-all" id="{id}" class="bx--checkbox" type="checkbox"
-      {props}>
-  <label for="{id}" class="bx--checkbox-label {label_class}"
-      aria-label="{label}" {label_props}></label>
+  <input type="checkbox" id="{id}" data-event="select-all" class="bx--checkbox" {props}>
+  <label for="{id}" class="bx--checkbox-label" aria-label="{label}"></label>
 </th>
 """
         return self.format(template, values)
@@ -343,23 +356,23 @@ class Th(Node):
     def render_sortable(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <th class="{class}" {props}>
   <button class="bx--table-sort" data-event="sort" title="{cleaned_child}">
     <span class="bx--table-header-label">{child}</span>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-        style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
         class="bx--table-sort__icon" width="16" height="16"
         viewBox="0 0 16 16" aria-hidden="true">
       <path d="M12.3 9.3L8.5 13.1 8.5 1 7.5 1 7.5 13.1 3.7 9.3 3 10 8 15 13 10z"></path>
     </svg>
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-        style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
         class="bx--table-sort__icon-unsorted" width="16" height="16"
-        viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M13.8 10.3L12 12.1 12 2 11 2 11 12.1 9.2 10.3 8.5 11 11.5 14 14.5 11zM4.5 2L1.5 5 2.2 5.7 4 3.9 4 14 5 14 5 3.9 6.8 5.7 7.5 5z"></path>
+        viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"></path>
     </svg>
   </button>
 </th>
@@ -370,7 +383,7 @@ class Th(Node):
     def render_menu(self, values, context):
         """Output html of the component.
         """
-        return '<th class="bx--table-column-menu {class}" {props}></th>'
+        return '<th class="bx--table-column-menu"></th>'
 
 
     def render_expandable(self, values, context):
@@ -414,7 +427,7 @@ class Td(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    MODES = ('default', 'checkbox', 'menu', 'menu_visible')
+    MODES = ('default', 'menu', 'menu_visible')
     "Available variants."
     SLOTS = ('secondary',)
     "Named children."
@@ -437,35 +450,20 @@ class Td(Node):
         return self.format(template, values, context)
 
 
-    def render_checkbox(self, values, context):
-        """Output html of the component.
-        """
-        template = """
-<td class="bx--table-column-checkbox {class}">
-  <input data-event="select" id="{id}" class="bx--checkbox" type="checkbox"
-      {props}>
-  <label for="{id}" class="bx--checkbox-label {label_class}"
-      aria-label="{label}" {label_props}></label>
-</td>
-"""
-        return self.format(template, values)
-
-
     def render_menu(self, values, context):
         """Output html of the component.
         """
         template = """
 <td class="bx--table-column-menu {class}" {props}>
-  <div data-overflow-menu role="menu" tabindex="0"
-      aria-label="{label}" class="bx--overflow-menu {label_class}"
-      title="{txt_menu}" {label_props}>
+  <div data-overflow-menu role="menu" tabindex="0" aria-label="{label}"
+      class="bx--overflow-menu" title="{txt_menu}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-        style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
         class="bx--overflow-menu__icon" width="16" height="16"
-        viewBox="0 0 16 16" aria-hidden="true">
-      <circle cx="8" cy="3" r="1"></circle>
-      <circle cx="8" cy="8" r="1"></circle>
-      <circle cx="8" cy="13" r="1"></circle>
+        viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="8" r="2"></circle>
+      <circle cx="16" cy="16" r="2"></circle>
+      <circle cx="16" cy="24" r="2"></circle>
     </svg>
     <ul class="bx--overflow-menu-options bx--overflow-menu--flip">
       {child}
@@ -482,8 +480,7 @@ class Td(Node):
         template = """
 <td class="bx--table-column-menu {class}" {props}>
   <div data-overflow-menu role="menu" tabindex="0"
-      aria-label="{label}" class="bx--overflow-menu {label_class}"
-      title="{txt_menu}" {label_props}>
+      aria-label="{label}" class="bx--overflow-menu" title="{txt_menu}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         fill="currentColor" xmlns="http://www.w3.org/2000/svg"
         class="bx--overflow-menu__icon" width="16" height="16"
@@ -512,10 +509,68 @@ class Td(Node):
         return self.format(template, values)
 
 
+class TdCheckBox(FormNode):
+    """Table row checkbox.
+    """
+    NODE_PROPS = ('value',)
+    "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('value',)
+    "Will raise Exception if not set."
+
+    value = None
+
+    def default_id(self):
+        """Get Django form field html id.
+        """
+        return '%s-%s' % (self.bound_field.id_for_label, uuid4().hex)
+
+
+    def label(self):
+        """Get Django form field label.
+        """
+        for _, val, txt in self.choices():
+            if val == self.value:
+                return txt
+        return ''
+
+
+    def before_prepare(self, values, context):
+        """Initialize the values meant for rendering templates.
+        """
+        self.value = self.eval(self.kwargs['value'], context)
+        super().before_prepare(values, context)
+
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        values['value'] = self.value
+        values['name'] = self.bound_field.name
+
+        if self.bound_value and self.value in self.bound_value:
+            values['props'].append(('checked', True))
+
+
+    def render_default(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<td class="bx--table-column-checkbox">
+  <input name="{name}" value="{value}" type="checkbox" id="{id}"
+      class="bx--checkbox {class}" data-event="select" {props}>
+  <label for="{id}" class="bx--checkbox-label" aria-label="{label}"></label>
+</td>
+"""
+        return self.format(template, values)
+
+
 class TableToolbarSearch(Node):
     """Table toolbar search filter.
     """
-    NODE_PROPS = ('expandable', 'small')
+    NODE_PROPS = ('id', 'expandable', 'small')
+    "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('wrapper', 'magnifier')
+    "Prepare xxx_class and xxx_props values."
 
     CATCH_PROPS = ('search_props',)
 
@@ -524,10 +579,13 @@ class TableToolbarSearch(Node):
         """
         values['txt_search'] = _("Search")
         values['txt_clear'] = _("Clear search input")
+        if not values['label']:
+            values['label'] = values['txt_search']
 
         if self.eval(self.kwargs.get('expandable'), context):
             values['wrapper_class'].append(
                     'bx--toolbar-search-container-expandable')
+            values['magnifier_props'].append(('tabindex', '0'))
         else:
             values['wrapper_class'].append(
                     'bx--toolbar-search-container-persistent')
@@ -542,15 +600,10 @@ class TableToolbarSearch(Node):
         template = """
 <div class="{wrapper_class}" {wrapper_props}>
   <div data-search class="bx--search {class}" role="search" {props}>
-    <div class="bx--search-magnifier">
-      <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-          style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-          width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
-      </svg>
+    <div class="bx--search-magnifier {magnifier_class}" {magnifier_props}>
+      {tmpl_magnifier_icon}
     </div>
-    <label id="label-{id}" class="bx--label {label_class}" for="{id}"
-        {label_props}>
+    <label id="label-{id}" class="bx--label" for="{id}">
       {label}
     </label>
     <input class="bx--search-input" type="text" id="{id}" role="search"
@@ -558,15 +611,28 @@ class TableToolbarSearch(Node):
     <button class="bx--search-close bx--search-close--hidden"
         title="{txt_clear}" aria-label="{txt_clear}">
       <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-          style="will-change: transform;" xmlns="http://www.w3.org/2000/svg"
-          width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"></path>
+          xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+          width="16" height="16" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
       </svg>
     </button>
   </div>
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
+
+
+    def render_tmpl_magnifier_icon(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        return """
+<svg focusable="false" preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+    class="bx--toolbar-action__icon" width="16" height="16" viewBox="0 0 16 16"
+    aria-hidden="true">
+  <path d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"></path>
+</svg>
+"""
 
 
 class TableToolbarOverflowButton(Node):
@@ -574,13 +640,27 @@ class TableToolbarOverflowButton(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
+    NODE_PROPS = ('active',)
+    "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('list',)
+    "Prepare xxx_class and xxx_props values."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        if self.eval(self.kwargs.get('active'), context):
+            values['props'].append(('data-floating-menu-primary-focus', True))
+
+        if not context.get('compact'):
+            values['list_class'].append('bx--overflow-menu--data-table')
+
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<li class="bx--overflow-menu-options__option bx--overflow-menu--data-table"
-    role="presentation">
+<li class="bx--overflow-menu-options__option {list_class}"
+    role="presentation" {list_props}>
   <button class="bx--overflow-menu-options__btn {class}" role="menuitem"
       {props}>
     <div class="bx--overflow-menu-options__option-content">
@@ -605,7 +685,7 @@ class TdOverflowButton(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        values['cleaned_child'] = strip_tags(values['child']).strip()
+        values['cleaned_child'] = clean_attr_value(values['child'])
 
         template = """
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
@@ -628,10 +708,10 @@ class TdOverflowButton(Node):
         return modify_svg(values['child'], {
             'focusable': 'false',
             'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
             'style': {
-                'will-change': 'transform',
-                'width': size,
-                'height': size,
+                'width': '%spx' % size,
+                'height': '%spx' % size,
             },
             'aria-hidden': 'true',
             'class': values['class'],
@@ -642,7 +722,9 @@ components = {
     'Table': DataTable,
     'Th': Th,
     'Td': Td,
+    'TdCheck': TdCheckBox,
     'TableOvButton': TableToolbarOverflowButton,
     'TdOvButton': TdOverflowButton,
     'TbSearch': TableToolbarSearch,
+    'TrExpandable': TrExpandable,
 }

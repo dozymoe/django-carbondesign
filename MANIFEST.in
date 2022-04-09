@@ -15,3 +15,4 @@ prune docsrc
 prune etc
 prune lib
 prune carbondesign/tests
+prune djangoprj

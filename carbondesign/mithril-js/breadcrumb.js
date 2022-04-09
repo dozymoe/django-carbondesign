@@ -44,6 +44,7 @@ export class BreadcrumbItem extends Node
     {
         if (vnode.attrs.current)
         {
+            values.wrapper_class.push('bx--breadcrumb-item--current');
             values.props.push(['aria-current', 'page']);
         }
     }
@@ -54,12 +55,14 @@ export class BreadcrumbItem extends Node
 //##
 m(values.tag,
   {
-    'class': `bx--breadcrumb-item ${values['class']}`,
-    ...values.props,
+    'class': `bx--breadcrumb-item ${values.wrapper_class}`,
+    ...values.wrapper_props,
   },
-  m('a.bx--link',
+  m('a',
     {
       href: vnode.attrs.href,
+      'class': `bx--link ${values['class']}`,
+      ...values.props,
     },
     values.child))
 //##

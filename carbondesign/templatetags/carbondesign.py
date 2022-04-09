@@ -14,13 +14,13 @@ from django.utils.safestring import mark_safe
 #-
 from ..tags import accordion, base, breadcrumb, button, checkbox, code_snippet
 from ..tags import combo_box, content_switcher, copy_button, data_table
-from ..tags import date_picker, dropdown, file_uploader, grid, inline_loading
-from ..tags import link, list_, list_box, loading, modal, multi_select
+from ..tags import date_picker, file_uploader, grid, inline_loading
+from ..tags import link, list_, loading, modal, multi_select
 from ..tags import notification, number_input, overflow_menu, pagination
 from ..tags import pagination_nav, progress_indicator, radio_button, search
 from ..tags import select, slider, structured_list, tabs, tag, text_area
 from ..tags import text_input, tile, time_picker, toggle, toolbar, tooltip
-from ..tags import ui_shell
+from ..tags import ui_shell, ui_shell_switcher
 
 _logger = logging.getLogger(__name__)
 register = template.Library()
@@ -38,13 +38,11 @@ MATERIAL_TAGS = {
     **copy_button.components,
     **data_table.components,
     **date_picker.components,
-    **dropdown.components,
     **file_uploader.components,
     **grid.components,
     **inline_loading.components,
     **link.components,
     **list_.components,
-    **list_box.components,
     **loading.components,
     **modal.components,
     **multi_select.components,
@@ -69,6 +67,7 @@ MATERIAL_TAGS = {
     **toolbar.components,
     **tooltip.components,
     **ui_shell.components,
+    **ui_shell_switcher.components,
 }
 
 

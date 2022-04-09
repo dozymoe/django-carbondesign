@@ -27,6 +27,8 @@ class List(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
+    NODE_PROPS = ('native',)
+    "Extended Template Tag arguments."
     DEFAULT_TAG = 'ul'
     "Rendered HTML tag."
 
@@ -35,6 +37,8 @@ class List(Node):
         """
         if values['tag'] == 'ul':
             values['class'].append('bx--list--unordered')
+        elif self.eval(self.kwargs.get('native'), context):
+            values['class'].append('bx--list--ordered--native')
         else:
             values['class'].append('bx--list--ordered')
 

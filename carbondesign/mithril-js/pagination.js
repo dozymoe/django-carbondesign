@@ -247,6 +247,9 @@ m.fragment(null,
 
     render_tmpl_pagination_num_pages(vnode, values, context)
     {
-        return interpolate(gettext("of %s pages"), [this.pager.num_pages]);
+        return interpolate(gettext("of {total} pages"),
+            {
+                total: this.pager.num_pages
+            });
     }
 }

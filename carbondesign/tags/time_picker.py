@@ -15,8 +15,10 @@ from .base import FormNode
 class TimePicker(FormNode):
     """Time Picker component.
     """
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('light', 'zones')
     "Extended Template Tag arguments."
+    CLASS_AND_PROPS = ('label', 'select')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -26,19 +28,14 @@ class TimePicker(FormNode):
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
-            values['props'].append(('disabled', ''))
-            values['select_props'] = 'disabled'
-        else:
-            values['select_props'] = ''
+            values['select_props'].append(('disabled', True))
 
         if self.eval(self.kwargs.get('light'), context):
             values['class'].append('bx--time-picker--light')
-            values['select_class'] = 'bx--select--light'
-        else:
-            values['select_class'] = ''
+            values['select_class'].append('bx--select--light')
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--text-input')
@@ -54,19 +51,50 @@ class TimePicker(FormNode):
     def render_default(self, values, context):
         """Output html of the component.
         """
+        light = self.eval(self.kwargs.get('light'), context)
         if self.bound_field.errors:
-            template = """
+            if light:
+                template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
   <div class="bx--time-picker {class}" data-invalid>
-    <div class="bx--time-picker__input">{element}</div>
+    <div class="bx--time-picker__input">
+      {tmpl_label}
+      {tmpl_element}
+    </div>
     {tmpl_select_ampm}
     {tmpl_select_zone}
   </div>
   <div class="bx--form-requirement">
-    {form_errors}
+    {tmpl_errors}
+  </div>
+  {tmpl_help}
+</div>
+"""
+            else:
+                template = """
+<div class="bx--form-item">
+  {tmpl_label}
+  <div class="bx--time-picker {class}" data-invalid>
+    <div class="bx--time-picker__input">{tmpl_element}</div>
+    {tmpl_select_ampm}
+    {tmpl_select_zone}
+  </div>
+  <div class="bx--form-requirement">
+    {tmpl_errors}
+  </div>
+  {tmpl_help}
+</div>
+"""
+        elif light and self.eval(self.kwargs.get('disabled'), context):
+            template = """
+<div class="bx--form-item">
+  <div class="bx--time-picker {class}">
+    <div class="bx--time-picker__input">
+      {tmpl_label}
+      {tmpl_element}
+    </div>
+    {tmpl_select_ampm}
+    {tmpl_select_zone}
   </div>
   {tmpl_help}
 </div>
@@ -74,11 +102,9 @@ class TimePicker(FormNode):
         else:
             template = """
 <div class="bx--form-item">
-  <label for="{id}" class="bx--label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_label}
   <div class="bx--time-picker {class}">
-    <div class="bx--time-picker__input">{element}</div>
+    <div class="bx--time-picker__input">{tmpl_element}</div>
     {tmpl_select_ampm}
     {tmpl_select_zone}
   </div>
@@ -139,9 +165,15 @@ class TimePicker(FormNode):
         template = """
 <option class="bx--select-option" value="{value}">{label}</option>
 """
+        timezones = self.eval(self.kwargs.get('zones',
+                pytz.common_timezones), context)
         items = []
-        for zone in pytz.common_timezones:
-            items.append(template.format(value=zone, label=zone))
+        for zone in timezones:
+            if isinstance(zone, str):
+                value = label = zone
+            else:
+                value, label = zone
+            items.append(template.format(value=value, label=label))
         return '\n'.join(items)
 
 

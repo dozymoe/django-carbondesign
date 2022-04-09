@@ -24,8 +24,10 @@ class CodeSnippet(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    MODES = ('default', 'single', 'inline')
+    MODES = ('inline', 'single', 'multi')
     "Available variants."
+    NODE_PROPS = ('light',)
+    "Extended Template Tag arguments."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -36,14 +38,16 @@ class CodeSnippet(Node):
         values['txt_show_more_icon'] = _("Show more icon")
         values['txt_show_less'] = _("Show less")
 
+        if self.eval(self.kwargs.get('light'), context):
+            values['class'].append('bx--snippet--light')
 
-    def render_default(self, values, context):
+
+    def render_multi(self, values, context):
         """Output html of the component.
         """
         template = """
 <{tag} class="bx--snippet bx--snippet--multi {class}" data-code-snippet {props}>
-  <div class="bx--snippet-container {label_class}" aria-label="{label}"
-      {label_props}>
+  <div class="bx--snippet-container" aria-label="{label}">
     <pre><code>{child}</code></pre>
   </div>
   <button data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
@@ -80,8 +84,7 @@ class CodeSnippet(Node):
         """
         template = """
 <{tag} class="bx--snippet bx--snippet--single {class}" {props}>
-  <div tabindex="0"  class="bx--snippet-container {label_class}"
-      aria-label="{label}" {label_props}>
+  <div tabindex="0"  class="bx--snippet-container" aria-label="{label}">
     <pre><code>{child}</code></pre>
   </div>
   <button data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
@@ -91,7 +94,7 @@ class CodeSnippet(Node):
         class="bx--snippet__icon" width="16" height="16" viewBox="0 0 32 32"
         aria-hidden="true">
       <path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"></path>
-      <path d="M5,18H2V4A2,2,0,0,1,4,2H18V4H4Z"></path>
+      <path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"></path>
     </svg>
   </button>
 </{tag}>

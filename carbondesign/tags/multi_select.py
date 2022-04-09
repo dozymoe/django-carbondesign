@@ -16,10 +16,10 @@ class MultiSelect(FormNode):
     """
     MODES = ('default', 'inline', 'filterable')
     "Available variants."
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('light', 'expanded')
     "Extended Template Tag arguments."
-    TEMPLATES = ('items', 'icon_menu', 'icon_clear', *FormNode.TEMPLATES)
-    "Conditional templates."
+    CLASS_AND_PROPS = ('help', 'list', 'trigger')
+    "Prepare xxx_class and xxx_props values."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -31,10 +31,26 @@ class MultiSelect(FormNode):
         values['txt_clear_num'] = _("Clear selection")
         values['txt_filter'] = _("Filter...")
 
-        values['values_count'] = len(self.bound_field.value())
+        if self.bound_value is None:
+            self.bound_value = []
+        elif isinstance(self.bound_value, str):
+            self.bound_value = [self.bound_value]
+        count = len(self.bound_value)
+        values['selected_count'] = count
 
         if self.eval(self.kwargs.get('light'), context):
-            values['wrapper_class'].append('bx--list-box-light')
+            values['list_class'].append('bx--list-box--light')
+
+        if self.eval(self.kwargs.get('expanded'), context):
+            values['list_class'].append('bx--list-box--expanded')
+            values['trigger_props'].append(('aria-expanded', 'true'))
+            values['txt_menu'] = values['txt_close']
+        else:
+            values['trigger_props'].append(('aria-expanded', 'false'))
+            values['txt_menu'] = values['txt_open']
+
+        if count:
+            values['list_class'].append('bx--multi-select--selected')
 
 
     def render_default(self, values, context):
@@ -43,12 +59,13 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box {wrapper_class}">
-      <div role="button" class="bx--list-box__field" tabindex="0"
-          aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
+    <div class="bx--multi-select bx--list-box {list_class}">
+      <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
+          aria-label="{txt_menu}" aria-haspopup="true" {trigger_props}>
+        {tmpl_icon_clear}
         <span class="bx--list-box__label">{txt_multi}</span>
         {tmpl_icon_menu}
       </div>
@@ -72,12 +89,13 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box bx--combo-box bx--multi-select-filterable {wrapper_class}">
-      <div role="button" class="bx--list-box__field" tabindex="0"
-          aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
+    <div class="bx--multi-select bx--list-box bx--combo-box bx--multi-select--filterable {list_class}">
+      <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
+          aria-label="{txt_menu}" aria-haspopup="true" {trigger_props}>
+        {tmpl_icon_clear}
         <input class="bx--text-input" placeholder="{txt_filter}">
         {tmpl_icon_menu}
       </div>
@@ -101,12 +119,13 @@ class MultiSelect(FormNode):
         template = """
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
-    <label class="bx--label {label_class}" {label_props}>
+    <label class="bx--label">
       {label}
     </label>
-    <div class="bx--multi-select bx--list-box bx--list-box--inline {wrapper_class}">
-      <div role="button" class="bx--list-box__field" tabindex="0"
-          aria-label="{txt_open}" aria-expanded="false" aria-haspopup="true">
+    <div class="bx--multi-select bx--list-box bx--list-box--inline {list_class}">
+      <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
+          aria-label="{txt_menu}" aria-haspopup="true" {trigger_props}>
+        {tmpl_icon_clear}
         <span class="bx--list-box__label">{txt_multi}</span>
         {tmpl_icon_menu}
       </div>
@@ -127,17 +146,19 @@ class MultiSelect(FormNode):
     def render_tmpl_icon_clear(self, values, context):
         """Dynamically render a part of the component's template.
         """
+        if not values['selected_count']:
+            return ''
         template = """
 <div role="button"
     class="bx--list-box__selection bx--list-box__selection--multi bx--tag--filter"
     tabindex="0" title="{txt_clear}">
-    {values_count}
-    <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-        aria-label="{txt_clear_num}" width="16" height="16"
-        viewBox="0 0 32 32" role="img">
-      <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
-    </svg>
+  {selected_count}
+  <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+      aria-label="{txt_clear_num}" width="16" height="16"
+      viewBox="0 0 32 32" role="img">
+    <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
+  </svg>
 </div>
 """
         return self.format(template, values)
@@ -146,7 +167,19 @@ class MultiSelect(FormNode):
     def render_tmpl_icon_menu(self, values, context):
         """Dynamically render a part of the component's template.
         """
-        template = """
+        if self.eval(self.kwargs.get('expanded'), context):
+            template = """
+<div class="bx--list-box__menu-icon">
+  <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+      aria-label="{txt_close}" width="16" height="16" viewBox="0 0 16 16"
+      role="img">
+    <path d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"></path>
+  </svg>
+</div>
+"""
+        else:
+            template = """
 <div class="bx--list-box__menu-icon">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -178,18 +211,16 @@ class MultiSelect(FormNode):
   </div>
 </div>
 """
-        values = self.bound_field.value()
-
         items = []
-        for ii, (_, val, txt) in enumerate(self.choices(context)):
+        for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
-                'id': '%s-%s' % (values.id, ii),
+                'id': '%s-%s' % (values['id'], ii + 1),
                 'value': val,
                 'child': txt,
                 'name': self.bound_field.name,
             }
             props = []
-            if val in values:
+            if val in self.bound_value:
                 props.append('checked')
             options['props'] = ' '.join(props)
             items.append(self.format(template, options))

@@ -22,22 +22,28 @@ the card pattern.
 
 from django.utils.translation import gettext as _
 #-
-from .base import Node
+from .base import ChoiceFormNode, Node
 
 class Tile(Node):
     """Tile component.
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('above',)
+    SLOTS = ('above', 'icon')
     "Named children."
-    MODES = ('default', 'clickable', 'selectable', 'expandable')
+    MODES = ('default', 'clickable', 'expandable')
     "Available variants."
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         values['txt_tile'] = _("tile")
+
+        if self.mode == 'selectable':
+            label = self.eval(self.kwargs.get('label'), context)
+            if label:
+                values['props'].append(('title', label))
+                values['label_props'].append(('aria-label', label))
 
 
     def render_default(self, values, context):
@@ -63,14 +69,81 @@ class Tile(Node):
         return self.format(template, values)
 
 
-    def render_selectable(self, values, context):
+    def render_expandable(self, values, context):
         """Output html of the component.
         """
         template = """
-<input tabindex="-1" data-tile-input id="{id}" class="bx--tile-input {class}"
-    type="checkbox" {props}/>
-<label for="{id}" aria-label="{label}"
-    class="bx--tile bx--tile--selectable {label_class}"
+<div data-tile="expandable" class="bx--tile bx--tile--expandable {class}"
+    tabindex="0" {props}>
+  <button aria-label="expand menu" class="bx--tile__chevron">
+    {tmpl_icon}
+  </button>
+  <div class="bx--tile-content">
+    {slot_above}
+    <span class="bx--tile-content__below-the-fold">
+      {child}
+    </span>
+  </div>
+</div>
+"""
+        return self.format(template, values, context)
+
+
+    def render_slot_above(self, values, context):
+        """Render html of the slot.
+        """
+        template = """
+<span data-tile-atf class="bx--tile-content__above-the-fold {class}" {props}>
+  {child}
+</span>
+"""
+        return self.format(template, values)
+
+
+    def render_tmpl_icon(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        if 'icon' in self.slots:
+            return self.format('{slot_icon}', values, context)
+        return """
+<svg focusable="false" preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16"
+    height="16" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
+</svg>
+"""
+
+
+class TileSelectable(ChoiceFormNode):
+    """Tile selectable component.
+    """
+    WANT_CHILDREN = True
+    "Template Tag needs closing end tag."
+    MODES = ('default', 'inside')
+    "Available variants."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        if values['label']:
+            values['props'].append(('title', values['label']))
+            values['label_props'].append(('aria-label', values['label']))
+
+
+    def prepare_element_props(self, props, context):
+        """Prepare html attributes for rendering the form element.
+        """
+        props['tabindex'] = '-1'
+        props['data-tile-input'] = True
+        props['class'].append('bx--tile-input')
+
+
+    def render_default(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+{tmpl_element}
+<label for="{id}" class="bx--tile bx--tile--selectable {label_class}"
     data-tile="selectable" tabindex="0" {label_props}>
   <div class="bx--tile__checkmark">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -85,33 +158,28 @@ class Tile(Node):
   </div>
 </label>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
-    def render_expandable(self, values, context):
+    def render_inside(self, values, context):
         """Output html of the component.
         """
         template = """
-<div data-tile="expandable" class="bx--tile bx--tile--expandable {class}"
-    tabindex="0" {props}>
-  <button aria-label="expand menu" class="bx--tile__chevron">
-    <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-        xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16"
-        height="16" viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
+<label class="bx--tile bx--tile--selectable {label_class}"
+    data-tile="selectable" tabindex="0" {label_props}>
+  {tmpl_element}
+  <div class="bx--tile__checkmark">
+    <svg width="16" height="16" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+        fill-rule="evenodd" />
     </svg>
-  </button>
-  <div class="bx--tile-content">
-    <span data-tile-atf class="bx--tile-content__above-the-fold">
-      {slot_above}
-    </span>
-    <span class="bx--tile-content__below-the-fold">
-      {child}
-    </span>
   </div>
-</div>
+  <div class="bx--tile-content">
+    {child}
+  </div>
+</label>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
 class TileGrid(Node):
@@ -135,5 +203,6 @@ class TileGrid(Node):
 
 components = {
     'Tile': Tile,
+    'TileSelect': TileSelectable,
     'TileGrid': TileGrid,
 }

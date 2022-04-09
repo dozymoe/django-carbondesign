@@ -16,9 +16,9 @@ checking an additional box does not affect any other selections.
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
 
-from .base import FormNode
+from .base import ChoiceFormNode
 
-class CheckBox(FormNode):
+class CheckBox(ChoiceFormNode):
     """Checkbox component.
     """
     MODES = ('default', 'inside')
@@ -29,23 +29,18 @@ class CheckBox(FormNode):
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        if self.eval(self.kwargs.get('disabled'), context):
-            values['props'].append(('disabled', 'disabled'))
+        if self.eval(self.kwargs.get('mixed'), context):
+            values['props'].append(('aria-checked', 'mixed'))
 
-        if self.eval(self.kwargs.get('mixed'), context) and \
-                self.mode == 'inside':
-
-            values['label_props'].append(('data-contained-checkbox-state',
-                    'mixed'))
+            if self.mode == 'inside':
+                values['label_props'].append(('data-contained-checkbox-state',
+                        'mixed'))
 
 
-    def prepare_element_props(self, props, default, context):
+    def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.
         """
         props['class'].append('bx--checkbox')
-
-        if self.eval(self.kwargs.get('mixed'), context):
-            props['aria-checked'] = 'mixed'
 
 
     def render_default(self, values, context):
@@ -53,13 +48,11 @@ class CheckBox(FormNode):
         """
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
-  {element}
-  <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
-    {label}
-  </label>
+  {tmpl_element}
+  {tmpl_label}
 </div>
 """
-        return self.format(template, values)
+        return self.format(template, values, context)
 
 
     def render_inside(self, values, context,):
@@ -68,10 +61,23 @@ class CheckBox(FormNode):
         template = """
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
-    {element}
+    {tmpl_element}
     {label}
   </label>
 </div>
+"""
+        return self.format(template, values, context)
+
+
+    def render_tmpl_label(self, values, context):
+        """Dynamically render a part of the component's template.
+        """
+        if not values['label']:
+            return ''
+        template = """
+<label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
+  {label}
+</label>
 """
         return self.format(template, values)
 
