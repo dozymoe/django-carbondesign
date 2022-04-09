@@ -5,8 +5,8 @@ Implements Carbon Design System as Django templatetags.
 
 Documentations:
 
-  - https://dozymoe.github.io/django-carbondesign
-  - https://www.carbondesignsystem.com/components/overview/
+- https://dozymoe.github.io/django-carbondesign
+- https://www.carbondesignsystem.com/components/overview/
 
 
 Quick Start

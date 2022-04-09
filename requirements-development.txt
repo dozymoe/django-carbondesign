@@ -1,7 +1,10 @@
 -r requirements-production.txt
 
 bs4
+build
 coverage
 Pillow
 pybuildtool
 pylint
+sphinx
+twine
