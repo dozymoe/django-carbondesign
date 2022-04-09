@@ -29,9 +29,6 @@ class CheckBox(ChoiceFormNode):
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        if self.eval(self.kwargs.get('disabled'), context):
-            values['props'].append(('disabled', True))
-
         if self.eval(self.kwargs.get('mixed'), context):
             values['props'].append(('aria-checked', 'mixed'))
 

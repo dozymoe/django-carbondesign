@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 18:29+0700\n"
+"POT-Creation-Date: 2022-04-09 10:15+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "Show less"
 msgstr "Kurangi tampilan"
 
 #: carbondesign/mithril-js/combo_box.js:12
-#: carbondesign/mithril-js/data-table.js:596
+#: carbondesign/mithril-js/data-table.js:607
 #: carbondesign/mithril-js/list_box.js:13
 #: carbondesign/mithril-js/multi_select.js:12
 #: carbondesign/mithril-js/uishell.js:18
@@ -54,29 +54,25 @@ msgstr "Buka menu"
 msgid "Clear all"
 msgstr "Hapus bersih"
 
-#: carbondesign/mithril-js/data-table.js:23
+#: carbondesign/mithril-js/data-table.js:22
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Tabel"
 
-#: carbondesign/mithril-js/data-table.js:24
-msgid "Cancel"
-msgstr "Batal"
-
-#: carbondesign/mithril-js/data-table.js:25
+#: carbondesign/mithril-js/data-table.js:23
 msgid "items selected"
 msgstr "baris dipilih"
 
-#: carbondesign/mithril-js/data-table.js:26
+#: carbondesign/mithril-js/data-table.js:24
 #: carbondesign/mithril-js/overflow_menu.js:13
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/mithril-js/data-table.js:756
+#: carbondesign/mithril-js/data-table.js:803
 #: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/mithril-js/data-table.js:757
+#: carbondesign/mithril-js/data-table.js:804
 #: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"

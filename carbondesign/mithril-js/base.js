@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { fromPairs, isArray, uniqueId } from 'lodash';
 import m from 'mithril/hyperscript';
 
@@ -16,6 +17,11 @@ export function modify_svg(xml, props)
         svg.setAttribute(attr, value);
     }
     return m.trust(tmpl.innerHTML);
+}
+
+export function clean_attr_value(value)
+{
+    return DOMPurify.sanitize(value);
 }
 
 class DummyNodeList
@@ -54,7 +60,7 @@ export class Slot
         for (let key in vnode.attrs)
         {
             if ((vnode.attrs[key] === '' || vnode.attrs[key]) &&
-                    ['name', 'class'].indexOf(key) === -1)
+                    ['name', 'class', 'label'].indexOf(key) === -1)
             {
                 props.push([key, vnode.attrs[key]]);
             }
@@ -76,8 +82,9 @@ export class Node
     MODES = []
     BASE_NODE_PROPS = ['_context', 'mode', 'tag', 'class', 'label']
     NODE_PROPS = []
+    REQUIRED_PROPS = []
     DEFAULT_TAG = 'div'
-    CLASS_AND_PROPS = ['label', 'wrapper']
+    CLASS_AND_PROPS = []
 
     // Parent Tags can set the arguments of their children Tags, in effect
     // changing their appearance.
@@ -108,7 +115,6 @@ export class Node
             }
         }
 
-        let values = {};
         let context = vnode.attrs._context || {};
 
         // Parent Tags can set the arguments of their children Tags.
@@ -126,8 +132,25 @@ export class Node
             }
         }
 
+        for (let prop of this.REQUIRED_PROPS)
+        {
+            if (!vnode.attrs[props])
+            {
+                throw `Argument ${prop} for component is required.`
+            }
+        }
+
+        let values = {};
+
         this.before_prepare(vnode, values, context);
         this.prepare(vnode, values, context);
+
+        if (this.WANT_CHILDREN)
+        {
+            values.child = m.fragment({_context: Object.assign({}, context)},
+                    this.nodelist);
+        }
+
         this.after_prepare(vnode, values, context);
 
         let method = this['render_' + this.mode];
@@ -138,18 +161,9 @@ export class Node
         return method.bind(this)(vnode, values, context);
     }
 
-    id(vnode)
+    default_id(vnode)
     {
-        if (!this._id)
-        {
-            this._id = vnode.attrs.id || uniqueId('node-');
-        }
-        return this._id
-    }
-
-    label(vnode)
-    {
-        return vnode.attrs.label;
+        return uniqueId('node-');
     }
 
     props(vnode)
@@ -185,6 +199,7 @@ export class Node
                 return method(
                         vnode,
                         {
+                            slot: name,
                             child: Slot.prototype.render(slot),
                             'class': values[name + '_class'],
                             props: values[name + '_props'],
@@ -215,9 +230,8 @@ export class Node
         {
             this.mode = 'default';
         }
-        values.id = this.id(vnode);
+        values.mode = this.mode;
         values.tag = vnode.attrs.tag || this.DEFAULT_TAG;
-        values.label = this.label(vnode);
         values.props = this.props(vnode);
         if (vnode.attrs['class'])
         {
@@ -227,6 +241,9 @@ export class Node
         {
             values['class'] = [];
         }
+        this._id = vnode.attrs.id || this.default_id(vnode);
+        values.id = this._id
+        values.label = vnode.attrs.label;
 
         for (let name of this.CLASS_AND_PROPS)
         {
@@ -237,15 +254,6 @@ export class Node
             this.before_prepare_class_props(name, vnode, values, context);
         }
         this.before_prepare_slots(vnode, values, context);
-
-        // Parent Tags can set html attributes on their childs.
-        for (let ext of this.CATCH_PROPS)
-        {
-            if (context[ext])
-            {
-                values.props.push(...context[ext]);
-            }
-        }
     }
 
     before_prepare_class_props(name, vnode, values, context)
@@ -273,15 +281,8 @@ export class Node
 
     after_prepare(vnode, values, context)
     {
-        values.props = this.join_attributes(this.prune_attributes(
-                values.props));
-
-        if (this.WANT_CHILDREN)
-        {
-            values.child = m.fragment({_context: Object.assign({}, context)},
-                    this.nodelist);
-        }
-
+        values.props_raw = this.prune_attributes(values.props);
+        values.props = this.join_attributes(values.props_raw);
         values['class'] = values['class'].join(' ');
 
         for (let name of this.CLASS_AND_PROPS)
@@ -292,7 +293,6 @@ export class Node
             }
             this.after_prepare_class_props(name, vnode, values, context);
         }
-        this.after_prepare_slots(vnode, values, context);
     }
 
     after_prepare_class_props(name, vnode, values, context)
@@ -300,15 +300,6 @@ export class Node
         values[`${name}_props`] = this.join_attributes(this.prune_attributes(
                 values[`${name}_props`]));
         values[`${name}_class`] = values[`${name}_class`].join(' ');
-    }
-
-    after_prepare_slots(vnode, values, context)
-    {
-        for (let name of this.SLOTS)
-        {
-            if (!this.slots[name]) continue;
-            this.after_prepare_class_props(name, vnode, values, context);
-        }
     }
 
     prune_attributes(attrs)
@@ -351,45 +342,32 @@ export class Node
 
 export class FormNode extends Node
 {
-    BASE_NODE_PROPS = ['field', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
-    CLASS_AND_PROPS = ['help', ...Node.CLASS_AND_PROPS]
-    RENDER_ELEMENT = true
+    BASE_NODE_PROPS = ['field', 'hidden', 'disabled',
+            ...(new Node).BASE_NODE_PROPS]
+    CLASS_AND_PROPS = ['label', 'help']
 
-    id(vnode)
+    default_id(vnode)
     {
         return this.bound_field.id_for_label;
     }
 
-    label(vnode)
+    label()
     {
-        return vnode.attrs.label || this.bound_field.label;
-    }
-
-    element(vnode, values)
-    {
+        return this.bound_field.label;
     }
 
     before_prepare(vnode, values, context)
     {
         this.bound_field = vnode.attrs.field;
+        this.bound_value = this.bound_field.value();
         super.before_prepare(vode, values, context);
-    }
-
-    after_prepare(vnode, values, context)
-    {
-        if (this.RENDER_ELEMENT)
+        if (!values.label)
         {
-            values.element = this.element(vnode, values);
-        }
-        super.after_prepare(vnode, values, context);
-
-        if (this.bound_field.errors)
-        {
-            values.form_errors = this.bound_field.errors.as_text()
+            values.label = this.label();
         }
     }
 
-    prepare_element_props(vnode, props, default_props, context)
+    prepare_element_props(vnode, props, context)
     {
     }
 
@@ -421,6 +399,28 @@ export class FormNode extends Node
         }
     }
 
+    render_tmpl_element(vnode, values, context)
+    {
+    }
+
+    render_tmpl_label(vnode, values, context)
+    {
+        if (values.label)
+        {
+            return (
+//##
+m('label',
+  {
+    'for': values.id,
+    'class': `bx--label ${values.label_class}`,
+    ...values.label_props,
+  },
+  values.label)
+//##
+            );
+        }
+    }
+
     render_tmpl_help(vnode, values, context)
     {
         if (this.bound_field.help_text)
@@ -437,12 +437,37 @@ m('div',
             );
         }
     }
+
+    render_tmpl_errors(vnode, values, context)
+    {
+        let items = [];
+        for (let error of this.bound_field.errors)
+        {
+            let pos = error.indexOf('\n');
+            if (pos >= 0)
+            {
+                items.push(m('div.bx--form-requirement__title',
+                        error.slice(0, pos)));
+                items.push(m('p.bx--form-requirement__supplement',
+                        error.slice(pos + 1)));
+            }
+            else
+            {
+                items.push(m('div.bx--form-requirement__title', error));
+            }
+        }
+        if (items.length)
+        {
+            return m.fragment(items);
+        }
+    }
 }
 
 
 export class FormNodes extends Node
 {
-    BASE_NODE_PROPS = ['fields', 'hidden', 'disabled', ...Node.BASE_NODE_PROPS]
+    BASE_NODE_PROPS = ['fields', 'hidden', 'disabled',
+            ...(new Node).BASE_NODE_PROPS]
 
     elements(vnode, values, context)
     {

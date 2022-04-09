@@ -47,8 +47,6 @@ class DataTable(Node):
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('toolbar', *Node.CLASS_AND_PROPS)
     "Prepare xxx_class and xxx_props values."
-    TEMPLATES = ('header', 'toolbar')
-    "Conditional templates."
     POSSIBLE_VARIANT = ('compact', 'short', 'tall', 'zebra')
     "Documentation only."
     PAGER_SIZES = (10, 20, 30, 40, 50)
@@ -514,7 +512,7 @@ class Td(Node):
 class TdCheckBox(FormNode):
     """Table row checkbox.
     """
-    NODE_PROPS = ('value', 'id')
+    NODE_PROPS = ('value',)
     "Extended Template Tag arguments."
     REQUIRED_PROPS = ('value',)
     "Will raise Exception if not set."

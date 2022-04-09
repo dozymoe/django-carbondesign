@@ -34,9 +34,6 @@ class Toggle(FormNode):
         values['txt_off'] = _("Off")
         values['txt_on'] = _("On")
 
-        if self.eval(self.kwargs.get('disabled'), context):
-            values['props'].append(('disabled', True))
-
 
     def prepare_element_props(self, props, context):
         """Prepare html attributes for rendering the form element.

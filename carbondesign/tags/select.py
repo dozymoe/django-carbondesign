@@ -24,7 +24,7 @@ class Select(FormNode):
     """
     MODES = ('default', 'inline')
     "Available variants."
-    NODE_PROPS = ('id', 'disabled', 'light')
+    NODE_PROPS = ('light',)
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'select')
     "Prepare xxx_class and xxx_props values."

@@ -28,7 +28,6 @@ class TimePicker(FormNode):
 
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
-            values['props'].append(('disabled', True))
             values['select_props'].append(('disabled', True))
 
         if self.eval(self.kwargs.get('light'), context):

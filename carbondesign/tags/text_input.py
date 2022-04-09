@@ -33,7 +33,6 @@ class TextInput(FormNode):
         if self.eval(self.kwargs.get('disabled'), context):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
-            values['props'].append(('disabled', True))
 
 
     def prepare_element_props(self, props, context):

@@ -32,7 +32,6 @@ class ListBox(FormNode):
             values['label_class'].append('bx--label--disabled')
             values['help_class'].append('bx--form__helper-text--disabled')
             values['list_class'].append('bx--list-box--disabled')
-            values['props'].append(('disabled', 'disabled'))
 
         if self.eval(self.kwargs.get('light'), context):
             values['list_class'].append('bx--list-box--light')

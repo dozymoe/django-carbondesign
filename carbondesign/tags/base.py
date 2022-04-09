@@ -427,7 +427,8 @@ class FormNode(Node):
 
     The first argument to the tag is the Django form field.
     """
-    BASE_NODE_PROPS = ('widget', 'hidden', 'disabled', *Node.BASE_NODE_PROPS)
+    BASE_NODE_PROPS = ('widget', 'id', 'hidden', 'disabled',
+            *Node.BASE_NODE_PROPS)
     "Base Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help')
     "Prepare xxx_class and xxx_props values."
@@ -501,6 +502,7 @@ class FormNode(Node):
         bound_field = self.bound_field
 
         attrs = dict(values['props_raw'])
+        attrs['id'] = self._id
         attrs['class'] = bound_field.field.widget.attrs.get('class', '').split()
         if bound_field.help_text or 'help' in self.slots:
             attrs['aria-controls'] = 'hint-' + values['id']
@@ -508,6 +510,9 @@ class FormNode(Node):
 
         self.prepare_element_props(attrs, context)
         attrs['class'] = ' '.join(attrs['class'])
+
+        if var_eval(self.kwargs.get('disabled'), context):
+            attrs['disabled'] = True
 
         if var_eval(self.kwargs.get('hidden'), context):
             return bound_field.as_hidden(attrs=attrs)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 21:11+0700\n"
+"POT-Creation-Date: 2022-04-09 07:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Tampilkan tambahan icon"
 msgid "Show less"
 msgstr "Kurangi tampilan"
 
-#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:440
+#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:438
 #: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
 #: carbondesign/tags/ui_shell.py:31
 msgid "Open menu"
@@ -61,28 +61,28 @@ msgstr "Tutup menu"
 msgid "Clear all"
 msgstr "Hapus bersih"
 
-#: carbondesign/tags/data_table.py:59
+#: carbondesign/tags/data_table.py:57
 msgid "Table Action Bar"
 msgstr "Bagian Aksi Tabel"
 
-#: carbondesign/tags/data_table.py:60
+#: carbondesign/tags/data_table.py:58
 msgid "items selected"
 msgstr "baris dipilih"
 
-#: carbondesign/tags/data_table.py:61 carbondesign/tags/overflow_menu.py:41
+#: carbondesign/tags/data_table.py:59 carbondesign/tags/overflow_menu.py:41
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/tags/data_table.py:186
+#: carbondesign/tags/data_table.py:184
 msgid "Cancel"
 msgstr "Batal"
 
-#: carbondesign/tags/data_table.py:582 carbondesign/tags/search.py:41
+#: carbondesign/tags/data_table.py:580 carbondesign/tags/search.py:41
 #: carbondesign/tags/toolbar.py:50 carbondesign/tags/ui_shell_switcher.py:55
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/tags/data_table.py:583 carbondesign/tags/search.py:38
+#: carbondesign/tags/data_table.py:581 carbondesign/tags/search.py:38
 #: carbondesign/tags/toolbar.py:41 carbondesign/tags/ui_shell_switcher.py:46
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Clear filter"
 msgstr "Hapus filter"
 
-#: carbondesign/tags/text_input.py:102
+#: carbondesign/tags/text_input.py:101
 msgid "Show password"
 msgstr "Tampilkan kata kunci"
 

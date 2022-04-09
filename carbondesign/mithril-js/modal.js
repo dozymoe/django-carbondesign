@@ -124,7 +124,7 @@ m('div',
 
 export class ModalTrigger extends Button
 {
-    NODE_PROPS = ['target', ...Button.NODE_PROPS]
+    NODE_PROPS = ['target', ...(new Button).NODE_PROPS]
 
     prepare(vnode, values, context)
     {
