@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -80,13 +81,11 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.text_input.html">Text Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tile.html">Tile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.time_picker.html">Time Picker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Toggle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Toggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -133,6 +132,12 @@ the user “flips the switch”. They are commonly used for “on/off” switche
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.toggle.Toggle.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('small',)</span></em><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.toggle.Toggle.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.prepare" title="Permalink to this definition"></a></dt>
@@ -141,7 +146,7 @@ the user “flips the switch”. They are commonly used for “on/off” switche
 
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.toggle.Toggle.prepare_element_props">
-<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.prepare_element_props" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.prepare_element_props" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare html attributes for rendering the form element.</p>
 </dd></dl>
 
@@ -155,6 +160,12 @@ the user “flips the switch”. They are commonly used for “on/off” switche
 <dt class="sig sig-object py" id="carbondesign.tags.toggle.Toggle.render_nolabel">
 <span class="sig-name descname"><span class="pre">render_nolabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.render_nolabel" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.toggle.Toggle.render_tmpl_icon">
+<span class="sig-name descname"><span class="pre">render_tmpl_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.toggle.Toggle.render_tmpl_icon" title="Permalink to this definition"></a></dt>
+<dd><p>Dynamically render a part of the component’s template.</p>
 </dd></dl>
 
 </dd></dl>

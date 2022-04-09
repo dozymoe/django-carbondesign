@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -77,16 +78,14 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tabs.html">Tabs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tag.html">Tag</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.text_area.html">Text Area</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Text Input</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Text Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tile.html">Tile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.time_picker.html">Time Picker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toggle.html">Toggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -133,12 +132,6 @@ reflect the length of the content you expect the user to enter.</p>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.text_input.TextInput.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('icon_invalid',</span> <span class="pre">'help')</span></em><a class="headerlink" href="#carbondesign.tags.text_input.TextInput.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates. Please sort from outer to inner subtemplates.</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.TextInput.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.TextInput.prepare" title="Permalink to this definition"></a></dt>
@@ -147,7 +140,7 @@ reflect the length of the content you expect the user to enter.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.TextInput.prepare_element_props">
-<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.TextInput.prepare_element_props" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.TextInput.prepare_element_props" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare html attributes for rendering the form element.</p>
 </dd></dl>
 
@@ -169,12 +162,6 @@ reflect the length of the content you expect the user to enter.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.PasswordInput">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.text_input.</span></span><span class="sig-name descname"><span class="pre">PasswordInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.PasswordInput" title="Permalink to this definition"></a></dt>
 <dd><p>Password Input component.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.text_input.PasswordInput.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('visibility',</span> <span class="pre">'icon_invalid',</span> <span class="pre">'help')</span></em><a class="headerlink" href="#carbondesign.tags.text_input.PasswordInput.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates. Please sort from outer to inner subtemplates.</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.PasswordInput.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.PasswordInput.prepare" title="Permalink to this definition"></a></dt>
@@ -183,7 +170,7 @@ reflect the length of the content you expect the user to enter.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.PasswordInput.prepare_element_props">
-<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.PasswordInput.prepare_element_props" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">prepare_element_props</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.text_input.PasswordInput.prepare_element_props" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare html attributes for rendering the form element.</p>
 </dd></dl>
 
@@ -209,12 +196,6 @@ reflect the length of the content you expect the user to enter.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.text_input.DumbTextInput.NODE_PROPS">
 <span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('light',)</span></em><a class="headerlink" href="#carbondesign.tags.text_input.DumbTextInput.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.text_input.DumbTextInput.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('help',</span> <span class="pre">'icon_invalid')</span></em><a class="headerlink" href="#carbondesign.tags.text_input.DumbTextInput.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates. Please sort from outer to inner subtemplates.</p>
 </dd></dl>
 
 </dd></dl>

@@ -40,15 +40,13 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.accordion.html">Accordion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.breadcrumb.html">Breadcrumb</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Button</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Button</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.checkbox.html">Checkbox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.code_snippet.html">Code Snippet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.combo_box.html">Combo Box</a></li>
@@ -87,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -142,7 +141,7 @@ the user interacts with it.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.button.Button.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('disabled',</span> <span class="pre">'variant',</span> <span class="pre">'icon_only',</span> <span class="pre">'field',</span> <span class="pre">'small',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.button.Button.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('disabled',</span> <span class="pre">'variant',</span> <span class="pre">'field',</span> <span class="pre">'small',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.button.Button.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
@@ -173,6 +172,24 @@ the user interacts with it.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.button.IconButton">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.button.</span></span><span class="sig-name descname"><span class="pre">IconButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.button.IconButton" title="Permalink to this definition"></a></dt>
+<dd><p>Button icon only component.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.button.IconButton.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.button.IconButton.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.button.IconButton.render_default">
+<span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.button.IconButton.render_default" title="Permalink to this definition"></a></dt>
+<dd><p>Output html of the component.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="carbondesign.tags.button.ButtonSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.button.</span></span><span class="sig-name descname"><span class="pre">ButtonSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.button.ButtonSet" title="Permalink to this definition"></a></dt>
 <dd><p>Button set component.</p>
@@ -180,6 +197,12 @@ the user interacts with it.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.button.ButtonSet.WANT_CHILDREN">
 <span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.button.ButtonSet.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
 <dd><p>Template Tag needs closing end tag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.button.ButtonSet.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.button.ButtonSet.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
 </dd></dl>
 
 <dl class="py method">

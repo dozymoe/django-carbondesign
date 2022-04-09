@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -51,10 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.combo_box.html">Combo Box</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.content_switcher.html">Content Switcher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.copy_button.html">Copy Button</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Table</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.date_picker.html">Date Picker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.dropdown.html">Dropdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.file_uploader.html">File Uploader</a></li>
@@ -87,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -139,7 +138,7 @@ table display settings, and other utilities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.SLOTS">
-<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title',</span> <span class="pre">'description',</span> <span class="pre">'batch_actions',</span> <span class="pre">'search',</span> <span class="pre">'toolbar',</span> <span class="pre">'toolbar_overflow',</span> <span class="pre">'head',</span> <span class="pre">'foot',</span> <span class="pre">'pagination')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.SLOTS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title',</span> <span class="pre">'description',</span> <span class="pre">'batch_actions',</span> <span class="pre">'search',</span> <span class="pre">'toolbar_actions',</span> <span class="pre">'toolbar_overflow',</span> <span class="pre">'head',</span> <span class="pre">'foot',</span> <span class="pre">'pagination')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.SLOTS" title="Permalink to this definition"></a></dt>
 <dd><p>Named children.</p>
 </dd></dl>
 
@@ -151,19 +150,19 @@ table display settings, and other utilities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('style',</span> <span class="pre">'sortable',</span> <span class="pre">'small_toolbar')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('variant',</span> <span class="pre">'sortable',</span> <span class="pre">'small_toolbar',</span> <span class="pre">'batch_field',</span> <span class="pre">'visible_overflow')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('header',</span> <span class="pre">'toolbar')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates.</p>
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('toolbar',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.AVAILABLE_STYLES">
-<span class="sig-name descname"><span class="pre">AVAILABLE_STYLES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('compact',</span> <span class="pre">'short',</span> <span class="pre">'tall',</span> <span class="pre">'zebra')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.AVAILABLE_STYLES" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.DataTable.POSSIBLE_VARIANT">
+<span class="sig-name descname"><span class="pre">POSSIBLE_VARIANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('compact',</span> <span class="pre">'short',</span> <span class="pre">'tall',</span> <span class="pre">'zebra')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.DataTable.POSSIBLE_VARIANT" title="Permalink to this definition"></a></dt>
 <dd><p>Documentation only.</p>
 </dd></dl>
 
@@ -287,6 +286,12 @@ table display settings, and other utilities.</p>
 <dd><p>Available variants.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.Th.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.Th.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.Th.render_default">
 <span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.Th.render_default" title="Permalink to this definition"></a></dt>
@@ -343,7 +348,7 @@ table display settings, and other utilities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.Td.MODES">
-<span class="sig-name descname"><span class="pre">MODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('default',</span> <span class="pre">'checkbox',</span> <span class="pre">'menu',</span> <span class="pre">'menu_visible')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.Td.MODES" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">MODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('default',</span> <span class="pre">'menu',</span> <span class="pre">'menu_visible')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.Td.MODES" title="Permalink to this definition"></a></dt>
 <dd><p>Available variants.</p>
 </dd></dl>
 
@@ -362,12 +367,6 @@ table display settings, and other utilities.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.Td.render_default">
 <span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.Td.render_default" title="Permalink to this definition"></a></dt>
-<dd><p>Output html of the component.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.data_table.Td.render_checkbox">
-<span class="sig-name descname"><span class="pre">render_checkbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.Td.render_checkbox" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
 </dd></dl>
 
@@ -392,9 +391,69 @@ table display settings, and other utilities.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.data_table.</span></span><span class="sig-name descname"><span class="pre">TdCheckBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox" title="Permalink to this definition"></a></dt>
+<dd><p>Table row checkbox.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('value',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.REQUIRED_PROPS">
+<span class="sig-name descname"><span class="pre">REQUIRED_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('value',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.REQUIRED_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Will raise Exception if not set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.default_id">
+<span class="sig-name descname"><span class="pre">default_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.default_id" title="Permalink to this definition"></a></dt>
+<dd><p>Get Django form field html id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.label">
+<span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.label" title="Permalink to this definition"></a></dt>
+<dd><p>Get Django form field label.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.before_prepare">
+<span class="sig-name descname"><span class="pre">before_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.before_prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the values meant for rendering templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TdCheckBox.render_default">
+<span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TdCheckBox.render_default" title="Permalink to this definition"></a></dt>
+<dd><p>Output html of the component.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarSearch">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.data_table.</span></span><span class="sig-name descname"><span class="pre">TableToolbarSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarSearch" title="Permalink to this definition"></a></dt>
 <dd><p>Table toolbar search filter.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarSearch.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'expandable',</span> <span class="pre">'small')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarSearch.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarSearch.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('wrapper',</span> <span class="pre">'magnifier')</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarSearch.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarSearch.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarSearch.prepare" title="Permalink to this definition"></a></dt>
@@ -407,6 +466,12 @@ table display settings, and other utilities.</p>
 <dd><p>Output html of the component.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarSearch.render_tmpl_magnifier_icon">
+<span class="sig-name descname"><span class="pre">render_tmpl_magnifier_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarSearch.render_tmpl_magnifier_icon" title="Permalink to this definition"></a></dt>
+<dd><p>Dynamically render a part of the component’s template.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -417,6 +482,24 @@ table display settings, and other utilities.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarOverflowButton.WANT_CHILDREN">
 <span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarOverflowButton.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
 <dd><p>Template Tag needs closing end tag.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarOverflowButton.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('active',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarOverflowButton.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarOverflowButton.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('list',)</span></em><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarOverflowButton.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.data_table.TableToolbarOverflowButton.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.data_table.TableToolbarOverflowButton.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
 </dd></dl>
 
 <dl class="py method">

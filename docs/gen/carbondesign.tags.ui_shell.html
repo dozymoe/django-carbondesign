@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UI Shell Switcher" href="carbondesign.tags.ui_shell_switcher.html" />
     <link rel="prev" title="Tooltip" href="carbondesign.tags.tooltip.html" /> 
 </head>
 
@@ -39,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -83,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -130,7 +133,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.UiShell.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('href',</span> <span class="pre">'label_prefix')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.UiShell.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'href',</span> <span class="pre">'label_prefix')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.UiShell.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
@@ -138,12 +141,6 @@
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.UiShell.DEFAULT_TAG">
 <span class="sig-name descname"><span class="pre">DEFAULT_TAG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'header'</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.UiShell.DEFAULT_TAG" title="Permalink to this definition"></a></dt>
 <dd><p>Rendered HTML tag.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.UiShell.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title',</span> <span class="pre">'hamburger')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.UiShell.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -212,6 +209,12 @@
 <dd><p>Named children.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Link.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('expanded',)</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.Link.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Link.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.Link.prepare" title="Permalink to this definition"></a></dt>
@@ -222,6 +225,12 @@
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Link.render_default">
 <span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.Link.render_default" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Link.render_slot_submenu">
+<span class="sig-name descname"><span class="pre">render_slot_submenu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.Link.render_slot_submenu" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
 </dd></dl>
 
 </dd></dl>
@@ -246,6 +255,12 @@
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Action.NODE_PROPS">
 <span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('target',)</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.Action.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.Action.REQUIRED_PROPS">
+<span class="sig-name descname"><span class="pre">REQUIRED_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('target',)</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.Action.REQUIRED_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Will raise Exception if not set.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -316,7 +331,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.NavItem.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('active',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.NavItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'active',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.NavItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
@@ -358,13 +373,13 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.SLOTS">
-<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('header',</span> <span class="pre">'footer',</span> <span class="pre">'title_icon',</span> <span class="pre">'title',</span> <span class="pre">'switcher')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.SLOTS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('title_icon',</span> <span class="pre">'title',</span> <span class="pre">'switcher')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.SLOTS" title="Permalink to this definition"></a></dt>
 <dd><p>Named children.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('fixed',)</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'fixed')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
@@ -387,18 +402,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.render_slot_header">
-<span class="sig-name descname"><span class="pre">render_slot_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.render_slot_header" title="Permalink to this definition"></a></dt>
-<dd><p>Render html of the slot.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.render_slot_footer">
-<span class="sig-name descname"><span class="pre">render_slot_footer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.render_slot_footer" title="Permalink to this definition"></a></dt>
-<dd><p>Render html of the slot.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.render_slot_title_icon">
 <span class="sig-name descname"><span class="pre">render_slot_title_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.render_slot_title_icon" title="Permalink to this definition"></a></dt>
 <dd><p>Render html of the slot.</p>
@@ -414,6 +417,12 @@
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.render_slot_switcher">
 <span class="sig-name descname"><span class="pre">render_slot_switcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.render_slot_switcher" title="Permalink to this definition"></a></dt>
 <dd><p>Render html of the slot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNav.render_tmpl_header">
+<span class="sig-name descname"><span class="pre">render_tmpl_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNav.render_tmpl_header" title="Permalink to this definition"></a></dt>
+<dd><p>Dynamically render a part of the component’s template.</p>
 </dd></dl>
 
 </dd></dl>
@@ -454,8 +463,14 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNavItem.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('active',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNavItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('active',</span> <span class="pre">'current',</span> <span class="pre">'icon_size')</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNavItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.ui_shell.SideNavItem.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('link',)</span></em><a class="headerlink" href="#carbondesign.tags.ui_shell.SideNavItem.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -485,6 +500,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="carbondesign.tags.tooltip.html" class="btn btn-neutral float-left" title="Tooltip" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="carbondesign.tags.ui_shell_switcher.html" class="btn btn-neutral float-right" title="UI Shell Switcher" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

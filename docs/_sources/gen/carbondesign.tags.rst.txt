@@ -52,3 +52,4 @@ Submodules
    carbondesign.tags.toolbar
    carbondesign.tags.tooltip
    carbondesign.tags.ui_shell
+   carbondesign.tags.ui_shell_switcher

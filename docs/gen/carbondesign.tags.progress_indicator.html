@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -68,10 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.overflow_menu.html">Overflow Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.pagination.html">Pagination</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.pagination_nav.html">Pagination Nav</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Progress Indicator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Progress Indicator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.radio_button.html">Radio Button</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.search.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.select.html">Select</a></li>
@@ -87,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -158,20 +157,32 @@ percentage of completeness as each task is completed.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.progress_indicator.</span></span><span class="sig-name descname"><span class="pre">ProgressIndicatorItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem" title="Permalink to this definition"></a></dt>
 <dd><p>Progress Indicator item component.</p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.WANT_CHILDREN">
+<span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
+<dd><p>Template Tag needs closing end tag.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.SLOTS">
-<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('optional',)</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.SLOTS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('help',</span> <span class="pre">'optional')</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.SLOTS" title="Permalink to this definition"></a></dt>
 <dd><p>Named children.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('variant',)</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'variant')</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.AVAILABLE_VARIANTS">
-<span class="sig-name descname"><span class="pre">AVAILABLE_VARIANTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('current',</span> <span class="pre">'complete',</span> <span class="pre">'incomplete',</span> <span class="pre">'invalid',</span> <span class="pre">'disabled')</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.AVAILABLE_VARIANTS" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('list',)</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.POSSIBLE_VARIANT">
+<span class="sig-name descname"><span class="pre">POSSIBLE_VARIANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('current',</span> <span class="pre">'complete',</span> <span class="pre">'incomplete',</span> <span class="pre">'invalid',</span> <span class="pre">'disabled')</span></em><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.POSSIBLE_VARIANT" title="Permalink to this definition"></a></dt>
 <dd><p>Documentation only.</p>
 </dd></dl>
 
@@ -185,6 +196,12 @@ percentage of completeness as each task is completed.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.render_default">
 <span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.render_default" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.progress_indicator.ProgressIndicatorItem.render_slot_help">
+<span class="sig-name descname"><span class="pre">render_slot_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.progress_indicator.ProgressIndicatorItem.render_slot_help" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
 </dd></dl>
 
 <dl class="py method">

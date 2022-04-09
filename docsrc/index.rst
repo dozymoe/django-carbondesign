@@ -3,19 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Django Carbon Design's documentation!
-==============================================
+Django Carbon Design (unofficial) documentation!
+================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents
 
    getting_started
+   advanced_usage
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Carbon Design Components
+   :titlesonly:
    :glob:
 
    gen/carbondesign.tags.*

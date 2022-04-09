@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -82,11 +83,9 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.time_picker.html">Time Picker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toggle.html">Toggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tooltip</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -123,78 +122,138 @@ information should be contextual, useful, and nonessential.</p>
 <p>A tooltip is a message box that is displayed when a user hovers over, clicks
 or gives focus to a UI element such as an icon, a highlighted word, or a button.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">Tooltip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip" title="Permalink to this definition"></a></dt>
-<dd><p>Tooltip component.</p>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">BaseTooltip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip" title="Permalink to this definition"></a></dt>
+<dd><p>Base tooltip.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.WANT_CHILDREN">
-<span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.WANT_CHILDREN">
+<span class="sig-name descname"><span class="pre">WANT_CHILDREN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.WANT_CHILDREN" title="Permalink to this definition"></a></dt>
 <dd><p>Template Tag needs closing end tag.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.SLOTS">
-<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('icon',</span> <span class="pre">'footer')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.SLOTS" title="Permalink to this definition"></a></dt>
-<dd><p>Named children.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.MODES">
-<span class="sig-name descname"><span class="pre">MODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('interactive',</span> <span class="pre">'definition',</span> <span class="pre">'icon')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.MODES" title="Permalink to this definition"></a></dt>
-<dd><p>Available variants.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.NODE_PROPS">
-<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('align',</span> <span class="pre">'position')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.NODE_PROPS" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.NODE_PROPS">
+<span class="sig-name descname"><span class="pre">NODE_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'align',</span> <span class="pre">'position')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.NODE_PROPS" title="Permalink to this definition"></a></dt>
 <dd><p>Extended Template Tag arguments.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.POSSIBLE_ALIGN">
+<span class="sig-name descname"><span class="pre">POSSIBLE_ALIGN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('start',</span> <span class="pre">'center',</span> <span class="pre">'end')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.POSSIBLE_ALIGN" title="Permalink to this definition"></a></dt>
+<dd><p>Documentation only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.POSSIBLE_POSITION">
+<span class="sig-name descname"><span class="pre">POSSIBLE_POSITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('top',</span> <span class="pre">'right',</span> <span class="pre">'bottom',</span> <span class="pre">'left')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.POSSIBLE_POSITION" title="Permalink to this definition"></a></dt>
+<dd><p>Documentation only.</p>
+</dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.prepare">
-<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.prepare" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.prepare" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare values for rendering the templates.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.render_interactive">
-<span class="sig-name descname"><span class="pre">render_interactive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.render_interactive" title="Permalink to this definition"></a></dt>
-<dd><p>Output html of the component.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.render_definition">
-<span class="sig-name descname"><span class="pre">render_definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.render_definition" title="Permalink to this definition"></a></dt>
-<dd><p>Output html of the component.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.render_icon">
-<span class="sig-name descname"><span class="pre">render_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.render_icon" title="Permalink to this definition"></a></dt>
-<dd><p>Output html of the component.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.render_slot_icon">
-<span class="sig-name descname"><span class="pre">render_slot_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.render_slot_icon" title="Permalink to this definition"></a></dt>
-<dd><p>Render html of the slot.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Tooltip.render_slot_footer">
-<span class="sig-name descname"><span class="pre">render_slot_footer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Tooltip.render_slot_footer" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.BaseTooltip.render_slot_icon">
+<span class="sig-name descname"><span class="pre">render_slot_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.BaseTooltip.render_slot_icon" title="Permalink to this definition"></a></dt>
 <dd><p>Render html of the slot.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.TooltipHeading">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">TooltipHeading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.TooltipHeading" title="Permalink to this definition"></a></dt>
-<dd><p>Tooltip heading.</p>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">Interactive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive" title="Permalink to this definition"></a></dt>
+<dd><p>Tooltip component.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.SLOTS">
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('icon',</span> <span class="pre">'footer',</span> <span class="pre">'heading')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.SLOTS" title="Permalink to this definition"></a></dt>
+<dd><p>Named children.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.MODES">
+<span class="sig-name descname"><span class="pre">MODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('interactive',</span> <span class="pre">'nolabel')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.MODES" title="Permalink to this definition"></a></dt>
+<dd><p>Available variants.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.REQUIRED_PROPS">
+<span class="sig-name descname"><span class="pre">REQUIRED_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('label',)</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.REQUIRED_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Will raise Exception if not set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('label',</span> <span class="pre">'content')</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
+</dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="carbondesign.tags.tooltip.TooltipHeading.render_default">
-<span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.TooltipHeading.render_default" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.prepare" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare values for rendering the templates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.render_interactive">
+<span class="sig-name descname"><span class="pre">render_interactive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.render_interactive" title="Permalink to this definition"></a></dt>
+<dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.render_nolabel">
+<span class="sig-name descname"><span class="pre">render_nolabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.render_nolabel" title="Permalink to this definition"></a></dt>
+<dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.render_slot_heading">
+<span class="sig-name descname"><span class="pre">render_slot_heading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.render_slot_heading" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Interactive.render_slot_footer">
+<span class="sig-name descname"><span class="pre">render_slot_footer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Interactive.render_slot_footer" title="Permalink to this definition"></a></dt>
+<dd><p>Render html of the slot.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Definition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">Definition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Definition" title="Permalink to this definition"></a></dt>
+<dd><p>Tooltip component.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Definition.REQUIRED_PROPS">
+<span class="sig-name descname"><span class="pre">REQUIRED_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('label',)</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Definition.REQUIRED_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Will raise Exception if not set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Definition.render_default">
+<span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Definition.render_default" title="Permalink to this definition"></a></dt>
+<dd><p>Output html of the component.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Icon">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">carbondesign.tags.tooltip.</span></span><span class="sig-name descname"><span class="pre">Icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Icon" title="Permalink to this definition"></a></dt>
+<dd><p>Tooltip component.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Icon.SLOTS">
+<span class="sig-name descname"><span class="pre">SLOTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('icon',)</span></em><a class="headerlink" href="#carbondesign.tags.tooltip.Icon.SLOTS" title="Permalink to this definition"></a></dt>
+<dd><p>Named children.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.tooltip.Icon.render_default">
+<span class="sig-name descname"><span class="pre">render_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.tooltip.Icon.render_default" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
 </dd></dl>
 

@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage.html">Advanced Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carbon Design Components</span></p>
 <ul class="current">
@@ -71,10 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.progress_indicator.html">Progress Indicator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.radio_button.html">Radio Button</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.search.html">Search</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Select</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Select</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.slider.html">Slider</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.structured_list.html">Structured List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tabs.html">Tabs</a></li>
@@ -87,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.toolbar.html">Toolbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.tooltip.html">Tooltip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell.html">UI Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carbondesign.tags.ui_shell_switcher.html">UI Shell Switcher</a></li>
 </ul>
 
         </div>
@@ -139,15 +138,9 @@ data and chooses one option from a list.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.select.Select.TEMPLATES">
-<span class="sig-name descname"><span class="pre">TEMPLATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('items',</span> <span class="pre">'help')</span></em><a class="headerlink" href="#carbondesign.tags.select.Select.TEMPLATES" title="Permalink to this definition"></a></dt>
-<dd><p>Conditional templates.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="carbondesign.tags.select.Select.RENDER_ELEMENT">
-<span class="sig-name descname"><span class="pre">RENDER_ELEMENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#carbondesign.tags.select.Select.RENDER_ELEMENT" title="Permalink to this definition"></a></dt>
-<dd><p>Render the form field widget.</p>
+<dt class="sig sig-object py" id="carbondesign.tags.select.Select.CLASS_AND_PROPS">
+<span class="sig-name descname"><span class="pre">CLASS_AND_PROPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('label',</span> <span class="pre">'help',</span> <span class="pre">'select')</span></em><a class="headerlink" href="#carbondesign.tags.select.Select.CLASS_AND_PROPS" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare xxx_class and xxx_props values.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -166,6 +159,12 @@ data and chooses one option from a list.</p>
 <dt class="sig sig-object py" id="carbondesign.tags.select.Select.render_inline">
 <span class="sig-name descname"><span class="pre">render_inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.select.Select.render_inline" title="Permalink to this definition"></a></dt>
 <dd><p>Output html of the component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carbondesign.tags.select.Select.render_tmpl_icon_error">
+<span class="sig-name descname"><span class="pre">render_tmpl_icon_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carbondesign.tags.select.Select.render_tmpl_icon_error" title="Permalink to this definition"></a></dt>
+<dd><p>Dynamically render a part of the component’s template.</p>
 </dd></dl>
 
 <dl class="py method">
