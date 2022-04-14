@@ -62,65 +62,65 @@ class UiShellHtmlTest(SimpleTestCase):
   {% endSlot %}
 
   {% Slot 'actions' %}
-    {% UiAction label="Action 1" target="switcher-g1bnk2iqmxd" %}
+    {% UiActionSwitcher label="Action 1" target="switcher-g1bnk2iqmxd" %}
       {% Slot 'svg_open' %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32">
-          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
-        </svg>
-      {% endSlot %}
-      {% Slot 'svg_close' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 32 32">
           <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
         </svg>
       {% endSlot %}
-    {% endUiAction %}
+      {% Slot 'svg_close' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 32 32">
+          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
+        </svg>
+      {% endSlot %}
+    {% endUiActionSwitcher %}
 
-    {% UiAction label="Action 2" target="switcher-g1bnk2iqmxd" %}
+    {% UiActionSwitcher label="Action 2" target="switcher-g1bnk2iqmxd" %}
       {% Slot 'svg_open' %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32">
-          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
-        </svg>
-      {% endSlot %}
-      {% Slot 'svg_close' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 32 32">
           <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
         </svg>
       {% endSlot %}
-    {% endUiAction %}
+      {% Slot 'svg_close' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 32 32">
+          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
+        </svg>
+      {% endSlot %}
+    {% endUiActionSwitcher %}
 
-    {% UiAction label="Action 3" target="switcher-g1bnk2iqmxd" %}
+    {% UiActionSwitcher label="Action 3" target="switcher-g1bnk2iqmxd" %}
       {% Slot 'svg_open' %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32">
-          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
-        </svg>
-      {% endSlot %}
-      {% Slot 'svg_close' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 32 32">
           <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
         </svg>
       {% endSlot %}
-    {% endUiAction %}
+      {% Slot 'svg_close' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 32 32">
+          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
+        </svg>
+      {% endSlot %}
+    {% endUiActionSwitcher %}
 
-    {% UiAction label="Action 4" target="switcher-g1bnk2iqmxd" %}
+    {% UiActionSwitcher label="Action 4" target="switcher-g1bnk2iqmxd" %}
       {% Slot 'svg_open' %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            viewBox="0 0 32 32">
-          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
-        </svg>
-      {% endSlot %}
-      {% Slot 'svg_close' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 32 32">
           <path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path>
         </svg>
       {% endSlot %}
-    {% endUiAction %}
+      {% Slot 'svg_close' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 32 32">
+          <path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path>
+        </svg>
+      {% endSlot %}
+    {% endUiActionSwitcher %}
   {% endSlot %}
 
   {% Slot 'sidenav' %}
@@ -603,25 +603,25 @@ class UiShellHtmlTest(SimpleTestCase):
   <div class="bx--header__global">
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 1"
       title="Action 1" data-navigation-menu-panel-label-expand="Action 1"
-      data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
+      data-navigation-menu-panel-label-collapse="Close menu" data-panel-switcher-target="#switcher-g1bnk2iqmxd">
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 2"
       title="Action 2" data-navigation-menu-panel-label-expand="Action 2"
-      data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
+      data-navigation-menu-panel-label-collapse="Close menu" data-panel-switcher-target="#switcher-g1bnk2iqmxd">
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 3"
       title="Action 3" data-navigation-menu-panel-label-expand="Action 3"
-      data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
+      data-navigation-menu-panel-label-collapse="Close menu" data-panel-switcher-target="#switcher-g1bnk2iqmxd">
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>
     <button class="bx--header__menu-trigger bx--header__action" aria-label="Action 4"
       title="Action 4" data-navigation-menu-panel-label-expand="Action 4"
-      data-navigation-menu-panel-label-collapse="Close menu" data-switcher-target="#switcher-g1bnk2iqmxd">
+      data-navigation-menu-panel-label-collapse="Close menu" data-panel-switcher-target="#switcher-g1bnk2iqmxd">
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-expand-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M8.24 25.14L7 26.67a13.79 13.79 0 004.18 2.44l.69-1.87A12 12 0 018.24 25.14zM4.19 18l-2 .41A14.09 14.09 0 003.86 23L5.59 22A12.44 12.44 0 014.19 18zM11.82 4.76l-.69-1.87A13.79 13.79 0 007 5.33L8.24 6.86A12 12 0 0111.82 4.76zM5.59 10L3.86 9a14.37 14.37 0 00-1.64 4.59l2 .34A12.05 12.05 0 015.59 10zM16 2V4a12 12 0 010 24v2A14 14 0 0016 2z"></path></svg>
       <svg style="width:20px;height:20px" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--navigation-menu-panel-collapse-icon" width="20" height="20" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"></path></svg>
     </button>

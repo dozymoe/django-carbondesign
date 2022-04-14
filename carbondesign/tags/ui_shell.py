@@ -242,39 +242,26 @@ class Action(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    SLOTS = ('svg_open', 'svg_close')
+    SLOTS = ('icon',)
     "Named children."
-    NODE_PROPS = ('target',)
-    "Extended Template Tag arguments."
-    REQUIRED_PROPS = ('target',)
+    REQUIRED_PROPS = ('label',)
     "Will raise Exception if not set."
     DEFAULT_TAG = 'button'
     "Rendered HTML tag."
-
-    def prepare(self, values, context):
-        """Prepare values for rendering the templates.
-        """
-        values['txt_close_menu'] = _("Close menu")
-        values['target'] = self.eval(self.kwargs['target'], context)
-
 
     def render_default(self, values, context):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--header__menu-trigger bx--header__action {class}"
-    aria-label="{label}" title="{label}"
-    data-navigation-menu-panel-label-expand="{label}"
-    data-navigation-menu-panel-label-collapse="{txt_close_menu}"
-    data-switcher-target="#{target}" {props}>
-  {slot_svg_open}
-  {slot_svg_close}
+<{tag} class="bx--header__action {class}" aria-label="{label}" title="{label}"
+    {props}>
+  {slot_icon}
 </{tag}>
 """
         return self.format(template, values, context)
 
 
-    def render_slot_svg_open(self, values, context):
+    def render_slot_icon(self, values, context):
         """Render html of the slot.
         """
         return modify_svg(values['child'], {
@@ -282,27 +269,10 @@ class Action(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % 20,
-                'height': '%spx' % 20,
+                'width': '20px',
+                'height': '20px',
             },
             'aria-hidden': 'true',
-            'class': 'bx--navigation-menu-panel-expand-icon',
-        })
-
-
-    def render_slot_svg_close(self, values, context):
-        """Render html of the slot.
-        """
-        return modify_svg(values['child'], {
-            'focusable': 'false',
-            'preserveAspectRatio': 'xMidYMid meet',
-            'fill': 'currentColor',
-            'style': {
-                'width': '%spx' % 20,
-                'height': '%spx' % 20,
-            },
-            'aria-hidden': 'true',
-            'class': 'bx--navigation-menu-panel-collapse-icon',
         })
 
 

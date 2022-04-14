@@ -51,15 +51,11 @@ class UiActionTest(SimpleTestCase):
     def test_rendered(self):
         template = """
 {% load carbondesign %}
-{% UiAction target="uid" %}
+{% UiAction label="Label" %}
 {% endUiAction %}
 """
         expected = """
-<button class="bx--header__menu-trigger bx--header__action"
-    aria-label="" title=""
-    data-navigation-menu-panel-label-expand=""
-    data-navigation-menu-panel-label-collapse="Close menu"
-    data-switcher-target="#uid">
+<button class="bx--header__action" aria-label="Label" title="Label">
 </button>
 """
         rendered = compare_template(template, expected)

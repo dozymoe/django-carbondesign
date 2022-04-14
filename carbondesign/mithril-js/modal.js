@@ -1,17 +1,56 @@
+import ModalComponent from 'carbon-components/src/components/modal/modal';
 import m from 'mithril/hyperscript';
 //-
 import { Node } from './base';
 import { Button } from './button';
 
-
 export class Modal extends Node
 {
     WANT_CHILDREN = true
     SLOTS = ['label', 'heading', 'footer']
+    NODE_PROPS = ['id', 'variant', 'has_form', 'size', 'can_scroll']
+    CLASS_AND_PROPS = ['container', 'content', 'close']
+    POSSIBLE_VARIANT = ['danger']
 
     prepare(vnode, values, context)
     {
         values.txt_close = gettext("close modal");
+
+        let variant = vnode.attrs.variant;
+        if (variant)
+        {
+            values['class'].push(`bx--modal--${variant}`);
+        }
+
+        if (this.slots.label)
+        {
+            values.props.push(['aria-labelledby', `label-${values.id}`]);
+        }
+        if (this.slots.heading)
+        {
+            values.props.push(['aria-describedby', `heading-${values.id}`]);
+        }
+
+        if (vnode.attrs.has_form)
+        {
+            values.content_class.push('bx--modal-content--with-form');
+        }
+
+        let size = vnode.attrs.size;
+        if (size)
+        {
+            values.container_class.push(`bx--modal-container--${size}`);
+        }
+
+        if (!vnode.attrs.has_form && !this.slots.footer)
+        {
+            values.close_props.push(['data-modal-primary-focus', true]);
+        }
+
+        if (vnode.attrs.can_scroll)
+        {
+            values.content_props.push(['tabindex', '0']);
+        }
     }
 
     render_default(vnode, values, context)
@@ -20,34 +59,38 @@ export class Modal extends Node
 //##
 m('div',
   {
-    'data-modal': '',
+    'data-modal': true,
     id: values.id,
-    'class': 'bx--modal ' + values['class'],
+    'class': `bx--modal ${values['class']}`,
     role: 'dialog',
-    'aria-modal': true,
-    'aria-labelledby': values.id + '-label',
-    'aria-describedby': values.id + '-heading',
+    'aria-modal': 'true',
     tabindex: -1,
     ...values.props,
   },
   [
-    m('div.bx--modal-container', null,
+    m('div.bx--modal-container',
+      {
+        'class': values.container_class,
+        ...values.container_props,
+      },
       [
         m('div.bx--modal-header', null,
           [
-            this.slot('label', vnode, values, context),
-            this.slot('heading', vnode, values, context),
-            m('button.bx--modal-close',
+            this.slot('label', ...arguments),
+            this.slot('heading', ...arguments),
+            m('button',
               {
+                'class': `bx--modal-close ${values.close_class}`,
                 type: 'button',
-                'data-modal-close': '',
+                'data-modal-close': true,
                 'aria-label': values.txt_close,
+                ...values.close_props,
               },
               m('svg.bx--modal-close__icon',
                 {
                   focusable: false,
                   preserveAspectRatio: 'xMidYMid meet',
-                  style: {'will-change': 'transform'},
+                  fill: 'currentColor',
                   xmlns: 'http://www.w3.org/2000/svg',
                   width: 16,
                   height: 16,
@@ -62,13 +105,14 @@ m('div',
                 )
               ),
           ]),
-        m('div.bx--modal-content',
+        m('div',
           {
-            tabindex: 0,
+            'class': `bx--modal-content ${values.content_class}`,
+            ...values.content_props,
           },
           values.child),
         m('div.bx--modal-content--overflow-indicator'),
-        this.slot('footer', vnode, values, context),
+        this.slot('footer', ...arguments),
       ]),
     m('span', {tabindex: 0}),
   ])
@@ -82,8 +126,8 @@ m('div',
 //##
 m('p',
   {
-    'class': 'bx--modal-header__label bx--type-delta ' + values['class'],
-    id: values.id + '-label',
+    'class': `bx--modal-header__label bx--type-delta ${values['class']}`,
+    id: `label-${values.id}`,
     ...values.props
   },
   values.child)
@@ -97,8 +141,8 @@ m('p',
 //##
 m('p',
   {
-    'class': 'bx--modal-header__heading bx--type-beta ' + values['class'],
-    id: values.id + '-heading',
+    'class': `bx--modal-header__heading bx--type-beta ${values['class']}`,
+    id: `heading-${values.id}`,
     ...values.props
   },
   values.child)
@@ -112,7 +156,7 @@ m('p',
 //##
 m('div',
   {
-    'class': 'bx--modal-footer ' + values['class'],
+    'class': `bx--modal-footer ${values['class']}`,
     ...values.props
   },
   values.child)
@@ -128,18 +172,26 @@ export class ModalTrigger extends Button
 
     prepare(vnode, values, context)
     {
-        super.prepare(vnode, values, context);
-
-        values.props.push(['data-modal-target', '#' + vnode.attrs.target]);
+        super.prepare(...arguments);
+        values.props.push(['data-modal-target', `#${vnode.attrs.target}`]);
     }
 
     after_prepare(vnode, values, context)
     {
-        super.after_prepare(vnoce, values, context);
-
-        if (!values['child'])
+        super.after_prepare(...arguments);
+        if (!values.child)
         {
-            values['child'] = gettext("Show modal");
+            values.child = gettext("Show modal");
         }
+    }
+
+    oncreate(vnode)
+    {
+        this.attached = ModalComponent.init(vnode.dom);
+    }
+
+    onremove(vnode)
+    {
+        this.attached.release();
     }
 }

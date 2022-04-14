@@ -5,6 +5,7 @@ import { Node } from './base';
 export class List extends Node
 {
     WANT_CHILDREN = true
+    NODE_PROPS = ['native']
     DEFAULT_TAG = 'ul'
 
     prepare(vnode, values, context)
@@ -13,15 +14,20 @@ export class List extends Node
         {
             values['class'].push('bx--list--unordered');
         }
+        else if (vnode.attrs.native)
+        {
+            values['class'].push('bx--list--ordered--native');
+        }
         else
         {
             values['class'].push('bx--list--ordered');
         }
+
         if (context.list_nested)
         {
             values['class'].push('bx--list--nested');
         }
-        context.list_nested: true;
+        context.list_nested = true;
     }
 
     render_default(vnode, values, context)

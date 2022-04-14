@@ -1,10 +1,13 @@
 import m from 'mithril/hyperscript';
 //-
+import { Textarea } from '../forms-js/widgets';
 import { FormNode } from './base';
 
 export class TextArea extends FormNode
 {
     NODE_PROPS = ['light']
+
+    widget_class = Textarea
 
     prepare(vnode, values, context)
     {
@@ -12,23 +15,22 @@ export class TextArea extends FormNode
         {
             values.label_class.push('bx--label--disabled');
             values.help_class.push('bx--form__helper-text--disabled');
-            values.props.push(['disabled', 'disabled']);
         }
     }
 
-    prepare_element_props(vnode, props, default_props, context)
+    prepare_element_props(vnode, props, context)
     {
         props['class'].push('bx--text-area');
         props['class'].push('bx--text-area--v2');
 
         if (vnode.attrs.light)
         {
-            props['class'].push('bx--text-input--light');
+            props['class'].push('bx--text-area--light');
         }
 
         if (this.bound_field.errors)
         {
-            props['class'].push('bx--text-input--invalid');
+            props['class'].push('bx--text-area--invalid');
         }
     }
 
@@ -40,25 +42,18 @@ export class TextArea extends FormNode
 //##
 m('div.bx--form-item', null,
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values, context),
+    this.tmpl('label', ...arguments),
     m('div.bx--text-area__wrapper',
       {
         'data-invalid': '',
       },
       [
-        values.element,
-        this.tmpl('icon_invalid', vnode, values, context),
+        this.tmpl('icon_invalid', ...arguments),
+        this.tmpl('element', ...arguments),
       ]),
-    m('div.bx--form-requirement', null, values.form_errors),
-  ]);
+    m('div.bx--form-requirement', null, this.tmpl('errors', ...arguments)),
+    this.tmpl('help', ...arguments),
+  ])
 //##
             );
         }
@@ -66,17 +61,10 @@ m('div.bx--form-item', null,
 //##
 m('div.bx--form-item', null,
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values context),
-    m('div.bx--text-area__wrapper', null, values.element),
-  ]);
+    this.tmpl('label', ...arguments),
+    m('div.bx--text-area__wrapper', null, this.tmpl('element', ...arguments)),
+    this.tmpl('help', ...arguments),
+  ])
 //##
         );
     }
@@ -87,15 +75,15 @@ m('div.bx--form-item', null,
 //##
 m('svg',
   {
-    focusable: false,
+    focusable: 'false',
     preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
+    fill: 'currentColor',
     xmlns: 'http://www.w3.org/2000/svg',
     'class': 'bx--text-area__invalid-icon',
     width: 16,
     height: 16,
     viewBox: '0 0 16 16',
-    'aria-hidden': true,
+    'aria-hidden': 'true',
   },
   [
     m('path',
@@ -111,7 +99,7 @@ m('svg',
         'data-icon-path': 'inner-path',
         opacity: 0,
       }),
-  ]);
+  ])
 //##
         );
     }

@@ -504,7 +504,7 @@ class FormNode(Node):
         attrs = dict(values['props_raw'])
         attrs['id'] = self._id
         attrs['class'] = bound_field.field.widget.attrs.get('class', '').split()
-        if bound_field.help_text or 'help' in self.slots:
+        if bound_field.help_text:
             attrs['aria-controls'] = 'hint-' + values['id']
             attrs['aria-describedby'] = 'hint-' + values['id']
 

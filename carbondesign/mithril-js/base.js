@@ -1,9 +1,14 @@
 import DOMPurify from 'dompurify';
-import { fromPairs, isArray, uniqueId } from 'lodash';
+import { fromPairs, isArray, isObject, map, uniqueId } from 'lodash';
 import m from 'mithril/hyperscript';
+import m_tostring from 'mithril-node-render';
 
 export function modify_svg(xml, props)
 {
+    if (isObject(xml) && xml.tag === '[')
+    {
+        xml = xml.children[0].children;
+    }
     let tmpl = document.createElement('template');
     tmpl.innerHTML = xml.trim();
     let svg = tmpl.content.firstChild;
@@ -12,7 +17,7 @@ export function modify_svg(xml, props)
         let value = props[attr];
         if (attr === 'style')
         {
-            value = Object.entries(attr).map(x => x.join(':')).join(';');
+            value = Object.entries(value).map(x => x.join(':')).join(';');
         }
         svg.setAttribute(attr, value);
     }
@@ -90,11 +95,6 @@ export class Node
     // changing their appearance.
     CATCH_PROPS = []
 
-    constructor(app)
-    {
-        this.app = app;
-    }
-
     view(vnode)
     {
         this.slots = {};
@@ -134,7 +134,7 @@ export class Node
 
         for (let prop of this.REQUIRED_PROPS)
         {
-            if (!vnode.attrs[props])
+            if (!vnode.attrs[prop])
             {
                 throw `Argument ${prop} for component is required.`
             }
@@ -342,7 +342,7 @@ export class Node
 
 export class FormNode extends Node
 {
-    BASE_NODE_PROPS = ['field', 'hidden', 'disabled',
+    BASE_NODE_PROPS = ['field', 'widget', 'id', 'disabled',
             ...(new Node).BASE_NODE_PROPS]
     CLASS_AND_PROPS = ['label', 'help']
 
@@ -360,7 +360,7 @@ export class FormNode extends Node
     {
         this.bound_field = vnode.attrs.field;
         this.bound_value = this.bound_field.value();
-        super.before_prepare(vode, values, context);
+        super.before_prepare(vnode, values, context);
         if (!values.label)
         {
             values.label = this.label();
@@ -371,11 +371,24 @@ export class FormNode extends Node
     {
     }
 
-    *choices(vnode, context)
+    choices(vnode)
     {
-        let group_name, choices;
+        if (this._choices)
+        {
+            return this._choices;
+        }
+        this._choices = []
 
-        for (let [option_value, option_label] of this.bound_field.field.choices)
+        let choices = this.bound_field.field.choices;
+        if (!isArray(choices))
+        {
+            let default_truthy = this.bound_value || 'on';
+            let label = this.bound_field.label
+            choices = [['', label], [default_truthy, label]]
+        }
+
+        let group_name, subchoices;
+        for (let [option_value, option_label] of choices)
         {
             if (option_value === null)
             {
@@ -384,23 +397,48 @@ export class FormNode extends Node
             if (isArray(option_label))
             {
                 group_name = option_value;
-                choices = option_label;
+                subchoices = option_label;
             }
             else
             {
                 group_name = null;
-                choices = [[option_value, option_label]];
+                subchoices = [[option_value, option_label]];
             }
 
-            for (let [subvalue, sublabel] of choices)
+            for (let [subvalue, sublabel] of subchoices)
             {
-                yield [group_name, subvalue, sublabel];
+                this._choices.push([group_name, subvalue, sublabel]);
             }
         }
+
+        return this._choices;
     }
 
     render_tmpl_element(vnode, values, context)
     {
+        let attrs = {};
+        for (let pair of values.props_raw)
+        {
+            attrs[pair[0]] = pair[1];
+        }
+        attrs.id = this._id;
+        attrs['class'] = this.bound_field.field.widget.attrs['class'] || ''
+        attrs['class'] = attrs['class'].split(/\s+/);
+        if (this.bound_field.help_text)
+        {
+            attrs['aria-controls'] = `hint-${values.id}`;
+            attrs['aria-describedby'] = `hint-${values.id}`;
+        }
+
+        this.prepare_element_props(vnode, attrs, context);
+        attrs['class'] = attrs['class'].join(' ');
+
+        if (vnode.attrs.disabled)
+        {
+            attrs['disabled'] = true;
+        }
+
+        return this.bound_field.asWidget(attrs, this.widget_class, m);
     }
 
     render_tmpl_label(vnode, values, context)
@@ -429,6 +467,7 @@ m('label',
 //##
 m('div',
   {
+    'id': `hint-${values.id}`,
     'class': `bx--form__helper-text ${values.help_class}`,
     ...values.help_props,
   },
@@ -440,26 +479,43 @@ m('div',
 
     render_tmpl_errors(vnode, values, context)
     {
-        let items = [];
-        for (let error of this.bound_field.errors)
+        return _render_errors(this.bound_field);
+    }
+}
+
+
+export function render_errors(bound_field)
+{
+    let errors = _render_errors(bound_field);
+    if (errors)
+    {
+        return m('div.bx--form-requirement', errors);
+    }
+}
+
+function _render_errors(bound_field)
+{
+    if (!bound_field.errors) return;
+
+    let items = [];
+    for (let error of bound_field.errors)
+    {
+        let pos = error.indexOf('\n');
+        if (pos >= 0)
         {
-            let pos = error.indexOf('\n');
-            if (pos >= 0)
-            {
-                items.push(m('div.bx--form-requirement__title',
-                        error.slice(0, pos)));
-                items.push(m('p.bx--form-requirement__supplement',
-                        error.slice(pos + 1)));
-            }
-            else
-            {
-                items.push(m('div.bx--form-requirement__title', error));
-            }
+            items.push(m('div.bx--form-requirement__title',
+                    error.slice(0, pos)));
+            items.push(m('p.bx--form-requirement__supplement',
+                    error.slice(pos + 1)));
         }
-        if (items.length)
+        else
         {
-            return m.fragment(items);
+            items.push(m('div.bx--form-requirement__title', error));
         }
+    }
+    if (items.length)
+    {
+        return m.fragment(items);
     }
 }
 
@@ -508,4 +564,20 @@ export class FormNodes extends Node
     prepare_element_props(vnode, field, props, default_props, context)
     {
     }
+}
+
+
+export function dom2mithril(dom)
+{
+    if (dom.tagName)
+    {
+        let attrs = {};
+        for (let attr of dom.attributes)
+        {
+            attrs[attr.name] = attr.value;
+        }
+        return m(dom.tagName.toLowerCase(), attrs,
+                map(dom.children, dom2mithril));
+    }
+    return dom;
 }

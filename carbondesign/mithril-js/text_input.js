@@ -12,11 +12,10 @@ export class TextInput extends FormNode
         {
             values.label_class.push('bx--label--disabled');
             values.help_class.push('bx--form__helper-text--disabled');
-            values.props.push(['disabled', 'disabled']);
         }
     }
 
-    prepare_element_props(vnode, props, default_props, context)
+    prepare_element_props(vnode, props, context)
     {
         props['class'].push('bx--text-input');
 
@@ -39,25 +38,18 @@ export class TextInput extends FormNode
 //##
 m('div.bx--form-item.bx--text-input-wrapper', null,
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values, context),
+    this.tmpl('label', ...arguments),
     m('div.bx--text-input__field-wrapper',
       {
         'data-invalid': '',
       },
       [
-        this.tmpl('icon_invalid', vnode, values, context),
-        values.element,
+        this.tmpl('icon_invalid', ...arguments),
+        this.tmpl('element', ...arguments),
       ]),
-    m('div.bx--form-requirement', null, values.form_errors),
-  ]);
+    m('div.bx--form-requirement', null, this.tmpl('errors', ...arguments)),
+    this.tmpl('help', ...arguments),
+  ])
 //##
             );
         }
@@ -65,17 +57,11 @@ m('div.bx--form-item.bx--text-input-wrapper', null,
 //##
 m('div.bx--form-item.bx--text-input-wrapper', null,
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values, context),
-    m('div.bx--text-input__field-wrapper', null, values.element),
-  ]);
+    this.tmpl('label', ...arguments),
+    m('div.bx--text-input__field-wrapper', null,
+        this.tmpl('element', ...arguments)),
+    this.tmpl('help', ...arguments),
+  ])
 //##
         );
     }
@@ -86,15 +72,15 @@ m('div.bx--form-item.bx--text-input-wrapper', null,
 //##
 m('svg',
   {
-    focusable: false,
+    focusable: 'false',
     preserveAspectRatio: 'xMidYMid meet',
-    style: {'will-change': 'transform'},
+    fill: 'currentColor',
     xmlns: 'http://www.w3.org/2000/svg',
     'class': 'bx--text-input__invalid-icon',
     width: 16,
     height: 16,
     viewBox: '0 0 16 16',
-    'aria-hidden': true,
+    'aria-hidden': 'true',
   },
   [
     m('path',
@@ -110,7 +96,7 @@ m('svg',
         'data-icon-path': 'inner-path',
         opacity: 0,
       }),
-  ]);
+  ])
 //##
         );
     }
@@ -124,14 +110,12 @@ export class PasswordInput extends TextInput
     prepare(vnode, values, context)
     {
         super.prepare(vnode, values, context)
-
-        values.txt_show_password = "Show password";
+        values.txt_show_password = gettext("Show password");
     }
 
-    prepare_element_props(vnode, props, default_props, context)
+    prepare_element_props(vnode, props, context)
     {
-        super.prepare_element_props(vnode, props, default_props, context)
-
+        super.prepare_element_props(vnode, props, context)
         props['class'].push('bx--password-input');
         props['data-toggle-password-visibility'] = ''
     }
@@ -144,28 +128,21 @@ export class PasswordInput extends TextInput
 //##
 m('div.bx--form-item.bx--text-input-wrapper.bx--password-input-wrapper',
   {
-    data-text-input: '',
+    'data-text-input': '',
   },
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values, context),
+    this.tmpl('label', ...arguments),
     m('div.bx--text-input__field-wrapper',
       {
         'data-invalid': '',
       },
       [
-        this.tmpl('icon_invalid', vnode, values, context),
-        values.element,
-        this.tmpl('visibility', vnode, values, context),
+        this.tmpl('icon_invalid', ...arguments),
+        this.tmpl('element', ...arguments),
+        this.tmpl('visibility', ...arguments),
       ]),
-    m('div.bx--form-requirement', null, values.form_errors),
+    m('div.bx--form-requirement', null, this.tmpl('errors', ...arguments)),
+    this.tmpl('help', ...arguments),
   ])
 //##
             );
@@ -174,24 +151,16 @@ m('div.bx--form-item.bx--text-input-wrapper.bx--password-input-wrapper',
 //##
 m('div.bx--form-item.bx--text-input-wrapper.bx--password-input-wrapper',
   {
-    data-text-input: '',
+    'data-text-input': '',
   },
   [
-    m('label',
-      {
-        'for': values.id,
-        'class': 'bx--label ' + values.label_class,
-        ...values.label_props,
-      },
-      values.label
-    ),
-    this.slot('help', vnode, values, context),
+    this.tmpl('label', ...arguments),
     m('div.bx--text-input__field-wrapper', null,
       [
-        values.element,
-        this.tmpl('visibility', vnode, values, context),
+        this.tmpl('element', ...arguments),
+        this.tmpl('visibility', ...arguments),
       ]),
-    m('div.bx--form-requirement', null, values.form_errors),
+    this.tmpl('help', ...arguments),
   ])
 //##
         );
@@ -209,15 +178,15 @@ m('button.bx--text-input--password__visibility__toggle\
     m('span.bx--assistive-text', null, values.txt_show_password),
     m('svg.bx--icon--visibility-off',
       {
-        focusable: false,
-        preserveAspectRation: 'xMidYMid meet',
-        style: {'will-change': 'transform'},
+        focusable: 'false',
+        preserveAspectRatio: 'xMidYMid meet',
+        fill: 'currentColor',
         xmlns: 'http://www.w3.org/2000/svg',
         hidden: true,
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
-        'aria-hidden': true,
+        'aria-hidden': 'true',
       },
       [
         m('path',
@@ -241,15 +210,15 @@ m('button.bx--text-input--password__visibility__toggle\
       ]),
     m('svg.bx--icon--visibility-on',
       {
-        focusable: false,
-        preserveAspectRation: 'xMidYMid meet',
-        style: {'will-change': 'transform'},
+        focusable: 'false',
+        preserveAspectRatio: 'xMidYMid meet',
+        fill: 'currentColor',
         xmlns: 'http://www.w3.org/2000/svg',
         hidden: true,
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
-        'aria-hidden': true,
+        'aria-hidden': 'true',
       },
       [
         m('path',

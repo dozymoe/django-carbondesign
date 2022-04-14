@@ -1,10 +1,31 @@
 @import "carbon-components/src/components/ui-shell/ui-shell";
 
+.bx--header,
 .bx--panel--overlay
 {
     color: #c6c6c6;
+
+    button
+    {
+        color: #c6c6c6;
+    }
 }
 .bx--panel--overlay-inner
 {
     margin: 1rem;
+}
+.bx--panel-switcher__subheader,
+.bx--panel-switcher__item
+{
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+
+    &:last-child
+    {
+        padding-bottom: 1.5rem;
+    }
+}
+.bx--panel-switcher__item label
+{
+    color: #c6c6c6;
 }

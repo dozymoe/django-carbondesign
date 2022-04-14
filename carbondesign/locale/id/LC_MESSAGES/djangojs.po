@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 10:15+0700\n"
+"POT-Creation-Date: 2022-04-14 14:05+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Kurangi tampilan"
 #: carbondesign/mithril-js/data-table.js:607
 #: carbondesign/mithril-js/list_box.js:13
 #: carbondesign/mithril-js/multi_select.js:12
-#: carbondesign/mithril-js/uishell.js:18
+#: carbondesign/mithril-js/uishell.js:17
 msgid "Open menu"
 msgstr "Buka menu"
 
@@ -69,11 +69,13 @@ msgstr "Luapan"
 
 #: carbondesign/mithril-js/data-table.js:803
 #: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
+#: carbondesign/mithril-js/uishell--switcher.js:124
 msgid "Search"
 msgstr "Pencarian"
 
 #: carbondesign/mithril-js/data-table.js:804
 #: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
+#: carbondesign/mithril-js/uishell--switcher.js:118
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
@@ -101,17 +103,17 @@ msgstr "Gagal mengambil data."
 msgid "Loading"
 msgstr "Persiapan"
 
-#: carbondesign/mithril-js/modal.js:14
+#: carbondesign/mithril-js/modal.js:17
 msgid "close modal"
 msgstr "tutup dialog"
 
-#: carbondesign/mithril-js/modal.js:142
+#: carbondesign/mithril-js/modal.js:184
 msgid "Show modal"
 msgstr "Buka dialog"
 
 #: carbondesign/mithril-js/multi_select.js:13
-#: carbondesign/mithril-js/uishell--action.js:25
-#: carbondesign/mithril-js/uishell.js:19
+#: carbondesign/mithril-js/uishell--switcher.js:17
+#: carbondesign/mithril-js/uishell.js:18
 msgid "Close menu"
 msgstr "Tutup menu"
 
@@ -183,7 +185,7 @@ msgstr "Halaman berikutnya"
 msgid "page"
 msgstr "halaman"
 
-#: carbondesign/mithril-js/select.js:13
+#: carbondesign/mithril-js/select.js:15
 msgid "Choose an option"
 msgstr "Pilih satu"
 
@@ -194,6 +196,10 @@ msgstr ""
 #: carbondesign/mithril-js/tag.js:13
 msgid "Clear filter"
 msgstr "Hapus filter"
+
+#: carbondesign/mithril-js/text_input.js:113
+msgid "Show password"
+msgstr "Tampilkan kata kunci"
 
 #: carbondesign/mithril-js/tile.js:13
 msgid "tile"
@@ -223,7 +229,7 @@ msgstr "Pencarian"
 msgid "List of options"
 msgstr "Daftar pilihan"
 
-#: carbondesign/mithril-js/uishell.js:17
+#: carbondesign/mithril-js/uishell.js:16
 msgid "Skip to main content"
 msgstr "Loncat ke konten"
 

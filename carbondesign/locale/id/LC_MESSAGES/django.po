@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 07:27+0700\n"
+"POT-Creation-Date: 2022-04-10 19:40+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgid "Open menu"
 msgstr "Buka menu"
 
 #: carbondesign/tags/combo_box.py:30 carbondesign/tags/multi_select.py:28
-#: carbondesign/tags/ui_shell.py:32 carbondesign/tags/ui_shell.py:257
+#: carbondesign/tags/ui_shell.py:32 carbondesign/tags/ui_shell_switcher.py:31
 msgid "Close menu"
 msgstr "Tutup menu"
 
@@ -78,12 +78,12 @@ msgid "Cancel"
 msgstr "Batal"
 
 #: carbondesign/tags/data_table.py:580 carbondesign/tags/search.py:41
-#: carbondesign/tags/toolbar.py:50 carbondesign/tags/ui_shell_switcher.py:55
+#: carbondesign/tags/toolbar.py:50 carbondesign/tags/ui_shell_switcher.py:124
 msgid "Search"
 msgstr "Pencarian"
 
 #: carbondesign/tags/data_table.py:581 carbondesign/tags/search.py:38
-#: carbondesign/tags/toolbar.py:41 carbondesign/tags/ui_shell_switcher.py:46
+#: carbondesign/tags/toolbar.py:41 carbondesign/tags/ui_shell_switcher.py:115
 msgid "Clear search input"
 msgstr "Bersihkan pencarian"
 
@@ -245,18 +245,18 @@ msgstr "Daftar pilihan"
 msgid "Skip to main content"
 msgstr "Loncat ke konten"
 
-#: carbondesign/tags/ui_shell.py:447
+#: carbondesign/tags/ui_shell.py:417
 msgid "Side navigation"
 msgstr "Navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:448
+#: carbondesign/tags/ui_shell.py:418
 msgid "Close the side navigation menu"
 msgstr "Tutup navigasi samping"
 
-#: carbondesign/tags/ui_shell.py:449
+#: carbondesign/tags/ui_shell.py:419
 msgid "Toggle the expansion state of the navigation"
 msgstr "Buka tutup navigasi"
 
-#: carbondesign/tags/ui_shell.py:527
+#: carbondesign/tags/ui_shell.py:497
 msgid "Switcher"
 msgstr "Penampil"

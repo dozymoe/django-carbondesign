@@ -2,7 +2,6 @@ import m from 'mithril/hyperscript';
 import DOMPurify from 'dompurify';
 //-
 import { Node, modify_svg } from './base';
-export { UiShellAction } from './uishell--action';
 
 export class UiShell extends Node
 {
@@ -444,11 +443,12 @@ m('div',
   },
   modify_svg(values.child,
     {
-      preserveAspectRation: 'xMidYMid meet',
+      focusable: 'false',
+      preserveAspectRatio: 'xMidYMid meet',
       style: {
         'will-change': 'transform',
-        width: size,
-        height: size,
+        width: `${size}px`,
+        height: `${size}px`,
       },
       'aria-hidden': true,
     }))
@@ -594,8 +594,8 @@ m('div',
       preserveAspectRatio: 'xMidYMid meet',
       style: {
         'will-change': 'transform',
-        width: 20,
-        height: 20,
+        width: '20px',
+        height: '20px',
       },
       'aria-hidden': true,
     }))

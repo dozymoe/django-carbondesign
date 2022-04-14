@@ -299,8 +299,8 @@ m('li',
                 'class': `bx--list-box__menu-item__selected-icon ${values['class']}`,
                 'style': {
                     'will-change': 'transform',
-                    width: 16,
-                    height: 16,
+                    width: '16px',
+                    height: '16px',
                 },
                 'aria-hidden': true,
             })

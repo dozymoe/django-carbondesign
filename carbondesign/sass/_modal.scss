@@ -1,1 +1,6 @@
 @import "carbon-components/src/components/modal/modal";
+
+.bx--modal-content--overflow-indicator
+{
+    background-image: linear-gradient(to bottom, transparent, transparent, #fff);
+}

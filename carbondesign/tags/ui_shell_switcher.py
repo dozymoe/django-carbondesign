@@ -11,7 +11,76 @@ from django.utils.translation import gettext as _
 #-
 from .base import FormNode, Node, clean_attr_value, modify_svg
 
-class UiShellSwitcher(Node):
+class Action(Node):
+    """Topbar action buttons.
+    """
+    WANT_CHILDREN = True
+    "Template Tag needs closing end tag."
+    SLOTS = ('svg_open', 'svg_close')
+    "Named children."
+    NODE_PROPS = ('target',)
+    "Extended Template Tag arguments."
+    REQUIRED_PROPS = ('label', 'target')
+    "Will raise Exception if not set."
+    DEFAULT_TAG = 'button'
+    "Rendered HTML tag."
+
+    def prepare(self, values, context):
+        """Prepare values for rendering the templates.
+        """
+        values['txt_close_menu'] = _("Close menu")
+        values['target'] = self.eval(self.kwargs['target'], context)
+
+
+    def render_default(self, values, context):
+        """Output html of the component.
+        """
+        template = """
+<{tag} class="bx--header__menu-trigger bx--header__action {class}"
+    aria-label="{label}" title="{label}"
+    data-navigation-menu-panel-label-expand="{label}"
+    data-navigation-menu-panel-label-collapse="{txt_close_menu}"
+    data-panel-switcher-target="#{target}" {props}>
+  {slot_svg_close}
+  {slot_svg_open}
+</{tag}>
+"""
+        return self.format(template, values, context)
+
+
+    def render_slot_svg_open(self, values, context):
+        """Render html of the slot.
+        """
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
+            'style': {
+                'width': '20px',
+                'height': '20px',
+            },
+            'aria-hidden': 'true',
+            'class': 'bx--navigation-menu-panel-collapse-icon',
+        })
+
+
+    def render_slot_svg_close(self, values, context):
+        """Render html of the slot.
+        """
+        return modify_svg(values['child'], {
+            'focusable': 'false',
+            'preserveAspectRatio': 'xMidYMid meet',
+            'fill': 'currentColor',
+            'style': {
+                'width': '20px',
+                'height': '20px',
+            },
+            'aria-hidden': 'true',
+            'class': 'bx--navigation-menu-panel-expand-icon',
+        })
+
+
+class Switcher(Node):
     """UI Shell switcher panel.
     """
     WANT_CHILDREN = True
@@ -34,7 +103,7 @@ class UiShellSwitcher(Node):
         return self.format(template, values, context)
 
 
-class UiShellSwitcherSearch(FormNode):
+class SwitcherSearch(FormNode):
     """UI Shell switcher search box.
     """
     NODE_PROPS = ('placeholder',)
@@ -82,7 +151,7 @@ class UiShellSwitcherSearch(FormNode):
         return self.format(template, values, context)
 
 
-class UiShellSwitcherHeader(Node):
+class SwitcherHeader(Node):
     """UI Shell switcher header.
     """
     WANT_CHILDREN = True
@@ -99,7 +168,7 @@ class UiShellSwitcherHeader(Node):
         return self.format(template, values)
 
 
-class UiShellSwitcherItem(Node):
+class SwitcherItem(Node):
     """UI Shell switcher item.
     """
     WANT_CHILDREN = True
@@ -112,7 +181,7 @@ class UiShellSwitcherItem(Node):
         return self.format(template, values)
 
 
-class UiShellSwitcherMenu(Node):
+class SwitcherMenu(Node):
     """UI Shell switcher menu list.
     """
     WANT_CHILDREN = True
@@ -129,7 +198,7 @@ class UiShellSwitcherMenu(Node):
         return self.format(template, values)
 
 
-class UiShellSwitcherMenuSection(Node):
+class SwitcherMenuSection(Node):
     """UI Shell switcher submenu.
     """
     WANT_CHILDREN = True
@@ -182,15 +251,15 @@ class UiShellSwitcherMenuSection(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % 20,
-                'height': '%spx' % 20,
+                'width': '20px',
+                'height': '20px',
             },
             'aria-hidden': 'true',
         })
         return self.format(template, values)
 
 
-class UiShellSwitcherMenuItem(Node):
+class SwitcherMenuItem(Node):
     """UI Shell switcher menu item.
     """
     WANT_CHILDREN = True
@@ -222,11 +291,12 @@ class UiShellSwitcherMenuItem(Node):
 
 
 components = {
-    'UiSwitcher': UiShellSwitcher,
-    'UiSwitcherSearch': UiShellSwitcherSearch,
-    'UiSwitcherHeader': UiShellSwitcherHeader,
-    'UiSwitcherItem': UiShellSwitcherItem,
-    'UiSwitcherMenu': UiShellSwitcherMenu,
-    'UiSwitcherMenuSection': UiShellSwitcherMenuSection,
-    'UiSwitcherMenuItem': UiShellSwitcherMenuItem,
+    'UiActionSwitcher': Action,
+    'UiSwitcher': Switcher,
+    'UiSwitcherSearch': SwitcherSearch,
+    'UiSwitcherHeader': SwitcherHeader,
+    'UiSwitcherItem': SwitcherItem,
+    'UiSwitcherMenu': SwitcherMenu,
+    'UiSwitcherMenuSection': SwitcherMenuSection,
+    'UiSwitcherMenuItem': SwitcherMenuItem,
 }

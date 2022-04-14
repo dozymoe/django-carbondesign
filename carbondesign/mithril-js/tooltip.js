@@ -123,8 +123,8 @@ m('button',
                 preserveAspectRatio: 'xMidYMid meet',
                 fill: 'currentColor',
                 style: {
-                    width: 16,
-                    height: 16,
+                    width: '16px',
+                    height: '16px',
                 },
                 'aria-hidden': true,
             })
