@@ -1,3 +1,4 @@
+import { isString } from 'lodash';
 import m from 'mithril/hyperscript';
 //-
 import { FormNode, Node } from './base';
@@ -15,7 +16,7 @@ m('section.bx--structured-list', null,
   [
     m('div.bx--structured-list-thead', null,
       m('div.bx--structured-list-row.bx--structured-list-row--header-row', null,
-        this.slot('header', vnode, values, context))),
+        this.slot('header', ...arguments))),
     m('div.bx--structured-list-tbody', null, values.child),
   ])
 //##
@@ -32,6 +33,7 @@ export class StructuredListSelect extends FormNode
     prepare(vnode, values, context)
     {
         context.bound_field = this.bound_field;
+        context.bound_choices = this.choices();
     }
 
     render_default(vnode, values, context)
@@ -45,7 +47,7 @@ m('section.bx--structured-list.bx--structured-list--selection',
   [
     m('div.bx--structured-list-thead', null,
       m('div.bx--structured-list-row.bx--structured-list-row--header-row', null,
-        this.slot('header', vnode, values, context))),
+        this.slot('header', ...arguments))),
     m('div.bx--structured-list-tbody', null, values.child),
   ])
 //##
@@ -107,17 +109,37 @@ export class StructuredListTr extends Node
 {
     WANT_CHILDREN = true
     NODE_PROPS = ['value']
+    CLASS_AND_PROPS = ['label']
 
     prepare(vnode, values, context)
     {
         this.bound_field = context.bound_field;
+
         if (this.bound_field)
         {
-            let selected_values = this.bound_field.value();
-            if (selected_values.indexOf(vnode.attrs.value) != -1)
+            values.name = this.bound_field.name;
+            let value = values.value = vnode.attrs.value;
+
+            let selected = this.bound_field.value();
+            if (isString(selected))
+            {
+                selected = [selected];
+            }
+            if (selected && selected.indexOf(value) != -1)
             {
                 values.label_class.push('bx--structured-list-row--selected');
-                values.props.push(['checked', '']);
+                values.props.push(['checked', true]);
+            }
+
+            let choices = context.bound_choices;
+            for (let [group, val, txt] of choices)
+            {
+                if (val === value)
+                {
+                    values.label_props.push(['aria-label', txt]);
+                    values.props.push(['title', txt]);
+                    break;
+                }
             }
         }
     }
@@ -130,7 +152,6 @@ export class StructuredListTr extends Node
 //##
 m('label',
   {
-    'aria-label': values.label,
     'class': `bx--structured-list-row ${values.label_class}`,
     tabindex: 0,
     ...values.label_props,
@@ -144,7 +165,6 @@ m('label',
         value: vnode.attrs.value,
         type: 'radio',
         name: this.bound_field.name,
-        title: values.label,
         ...values.props,
       }),
     m('div.bx--structured-list-td', null,

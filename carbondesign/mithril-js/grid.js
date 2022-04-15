@@ -78,7 +78,14 @@ export class Col extends Node
 {
     WANT_CHILDREN = true
     COL_SIZES = ['sm', 'md', 'lg', 'xlg', 'max']
-    NODE_PROPS = COL_SIZES + COL_SIZES.map(x => `offset_${x}`)
+    //NODE_PROPS = COL_SIZES + COL_SIZES.map(x => `offset_${x}`)
+
+    constructor()
+    {
+        super()
+        this.NODE_PROPS = this.COL_SIZES +
+                this.COL_SIZES.map(x => `offset_${x}`)
+    }
 
     prepare(vnode, values, context)
     {
