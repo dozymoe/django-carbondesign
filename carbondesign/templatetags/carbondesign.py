@@ -25,7 +25,6 @@ from ..tags import ui_shell, ui_shell_switcher
 _logger = logging.getLogger(__name__)
 register = template.Library()
 
-
 MATERIAL_TAGS = {
     **accordion.components,
     **base.components,
@@ -92,7 +91,7 @@ class TagParser:
             if val[0] in ('"', "'"):
                 val = val.strip('"\'')
             else:
-                val = template.Variable(val)
+                val = base.VariableInVariable(val, parser)
 
             if key:
                 kwargs[key] = val

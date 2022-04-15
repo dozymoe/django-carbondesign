@@ -8,6 +8,7 @@ from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
+from django.template.base import FilterExpression, Variable
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 from lxml import etree
@@ -18,13 +19,20 @@ _logger = logging.getLogger(__name__)
 
 SLOT_NAME_PATTERN = re.compile(r'{(tmpl|slot)_(\w+)}')
 TMPL_MULTI_PATTERN = re.compile(r'(?P<name>\w+)_(?P<index>\d+)$')
+VARIABLE_IN_ARG = re.compile(r'{{([\w.:|\'"]+)}}')
 
 
 def var_eval(value, context):
     """Evaluate argument passed to our Template Tag.
     """
-    if isinstance(value, template.Variable):
+    if isinstance(value, (VariableInVariable, FilterExpression, Variable)):
         return value.resolve(context)
+
+    if isinstance(value, str):
+        for match in VARIABLE_IN_ARG.finditer(value):
+            parsed = Variable(match.group(1)).resolve(context)
+            value = value.replace(match.group(0), parsed)
+
     return value
 
 
@@ -45,6 +53,20 @@ def clean_attr_value(value):
     """
     value = strip_tags(value).strip().replace('\n', ' ')
     return html.escape(re.sub(r'\s\s+', ' ', value))
+
+
+class VariableInVariable:
+    def __init__(self, value, parser):
+        self.value = value
+        self.parser = parser
+
+    def resolve(self, context):
+        value = self.value
+        for match in VARIABLE_IN_ARG.finditer(value):
+            expr = FilterExpression(match.group(1), self.parser)
+            parsed = expr.resolve(context)
+            value = value.replace(match.group(0), parsed)
+        return Variable(value).resolve(context)
 
 
 class IgnoreMissing(dict):
@@ -452,7 +474,7 @@ class FormNode(Node):
     def before_prepare(self, values, context):
         """Initialize the values meant for rendering templates.
         """
-        self.bound_field = self.args[0].resolve(context)
+        self.bound_field = var_eval(self.args[0], context)
         self.bound_value = self.bound_field.value()
         super().before_prepare(values, context)
         if not values['label']:
@@ -588,7 +610,7 @@ class FormNodes(Node):
     def before_prepare(self, values, context):
         """Initialize the values meant for rendering templates.
         """
-        self.bound_fields = [x.resolve(context) for x in self.args]
+        self.bound_fields = [var_eval(x, context) for x in self.args]
         for ii, field in enumerate(self.bound_fields):
             values[f'id_{ii}'] = field.id_for_label
             values[f'label_{ii}'] = field.label

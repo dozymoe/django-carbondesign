@@ -24,7 +24,7 @@ class Select(FormNode):
     """
     MODES = ('default', 'inline')
     "Available variants."
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('light', 'with_empty')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'select')
     "Prepare xxx_class and xxx_props values."
@@ -185,8 +185,9 @@ class Select(FormNode):
 <option class="bx--select-option" value="{value}" {props}>{child}</option>
 """
         items = []
-        items.append(item_tmpl.format(value='', child=values['txt_choose'],
-                props=''))
+        if self.eval(self.kwargs.get('with_empty', True), context):
+            items.append(item_tmpl.format(value='', child=values['txt_choose'],
+                    props=''))
 
         current_group = None
         for group, value, label in self.choices():
