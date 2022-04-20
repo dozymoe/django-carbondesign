@@ -67,7 +67,7 @@ class Dropdown(Node):
 <div class="bx--form-item">
   <div class="bx--dropdown__wrapper {wrapper_class}">
     <span id="label-{id}" class="bx--label {label_class}" {label_props}>
-      {label}
+      {label}{label_suffix}
     </span>
     <div data-dropdown data-value
         class="bx--dropdown bx--dropdown--invalid {class}" data-invalid
@@ -111,7 +111,7 @@ class Dropdown(Node):
 <div class="bx--form-item">
   <div class="bx--dropdown__wrapper {wrapper_class}">
     <span id="label-{id}" class="bx--label {label_class}" {label_props}>
-      {label}
+      {label}{label_suffix}
     </span>
     <div data-dropdown data-value class="bx--dropdown {class}" {dropdown_props}>
       <button class="bx--dropdown-text" aria-haspopup="true"

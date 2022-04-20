@@ -51,7 +51,8 @@ class Button(Node):
             values['class'].append('bx--btn--sm')
 
         if values['label']:
-            values['props'].append(('aria-label', values['label']))
+            values['props'].append(('aria-label',
+                    values['label'] + values['label_suffix']))
 
 
     def render_default(self, values, context):

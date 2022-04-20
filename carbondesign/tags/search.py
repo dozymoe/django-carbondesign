@@ -59,7 +59,7 @@ class Search(Node):
         template = """
   <div data-search role="search" class="bx--search {class}">
     <label for="{id}" class="bx--label {label_class}" {label_props}>
-      {label}
+      {label}{label_suffix}
     </label>
     <input class="bx--search-input" type="text" id="{id}"
         placeholder="{label}">

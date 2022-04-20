@@ -31,7 +31,7 @@ def var_eval(value, context):
     if isinstance(value, str):
         for match in VARIABLE_IN_ARG.finditer(value):
             parsed = Variable(match.group(1)).resolve(context)
-            value = value.replace(match.group(0), parsed)
+            value = value.replace(match.group(0), str(parsed))
 
     return value
 
@@ -154,7 +154,7 @@ class Node(template.Node):
     "Named children."
     MODES = ()
     "Available variants."
-    BASE_NODE_PROPS = ('mode', 'tag', 'class', 'label')
+    BASE_NODE_PROPS = ('mode', 'tag', 'class', 'label', 'label_suffix')
     "Base Template Tag arguments."
     NODE_PROPS = ()
     "Extended Template Tag arguments."
@@ -322,7 +322,11 @@ class Node(template.Node):
                 .split()
         self._id = var_eval(self.kwargs.get('id', self.default_id()), context)
         values['id'] = self._id
+
         values['label'] = var_eval(self.kwargs.get('label', ''), context)
+        values['label_suffix'] = var_eval(self.kwargs.get('label_suffix', ''),
+                    context)
+
         for name in self.CLASS_AND_PROPS:
             if name in self.SLOTS:
                 continue
@@ -556,7 +560,7 @@ class FormNode(Node):
             return ''
         tmpl = """
 <label for="{id}" class="bx--label {label_class}" {label_props}>
-  {label}
+  {label}{label_suffix}
 </label>
 """
         return self.format(tmpl, values)

@@ -39,12 +39,6 @@ class Tile(Node):
         """
         values['txt_tile'] = _("tile")
 
-        if self.mode == 'selectable':
-            label = self.eval(self.kwargs.get('label'), context)
-            if label:
-                values['props'].append(('title', label))
-                values['label_props'].append(('aria-label', label))
-
 
     def render_default(self, values, context):
         """Output html of the component.
@@ -126,8 +120,9 @@ class TileSelectable(ChoiceFormNode):
         """Prepare values for rendering the templates.
         """
         if values['label']:
-            values['props'].append(('title', values['label']))
-            values['label_props'].append(('aria-label', values['label']))
+            label = values['label'] + values['label_suffix']
+            values['props'].append(('title', label))
+            values['label_props'].append(('aria-label', label))
 
 
     def prepare_element_props(self, props, context):

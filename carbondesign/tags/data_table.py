@@ -347,7 +347,7 @@ class Th(Node):
         template = """
 <th class="bx--table-column-checkbox {class}">
   <input type="checkbox" id="{id}" data-event="select-all" class="bx--checkbox" {props}>
-  <label for="{id}" class="bx--checkbox-label" aria-label="{label}"></label>
+  <label for="{id}" class="bx--checkbox-label" aria-label="{label}{label_suffix}"></label>
 </th>
 """
         return self.format(template, values)
@@ -455,7 +455,7 @@ class Td(Node):
         """
         template = """
 <td class="bx--table-column-menu {class}" {props}>
-  <div data-overflow-menu role="menu" tabindex="0" aria-label="{label}"
+  <div data-overflow-menu role="menu" tabindex="0" aria-label="{label}{label_suffix}"
       class="bx--overflow-menu" title="{txt_menu}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -480,7 +480,7 @@ class Td(Node):
         template = """
 <td class="bx--table-column-menu {class}" {props}>
   <div data-overflow-menu role="menu" tabindex="0"
-      aria-label="{label}" class="bx--overflow-menu" title="{txt_menu}">
+      aria-label="{label}{label_suffix}" class="bx--overflow-menu" title="{txt_menu}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
         fill="currentColor" xmlns="http://www.w3.org/2000/svg"
         class="bx--overflow-menu__icon" width="16" height="16"
@@ -558,7 +558,7 @@ class TdCheckBox(FormNode):
 <td class="bx--table-column-checkbox">
   <input name="{name}" value="{value}" type="checkbox" id="{id}"
       class="bx--checkbox {class}" data-event="select" {props}>
-  <label for="{id}" class="bx--checkbox-label" aria-label="{label}"></label>
+  <label for="{id}" class="bx--checkbox-label" aria-label="{label}{label_suffix}"></label>
 </td>
 """
         return self.format(template, values)
@@ -604,7 +604,7 @@ class TableToolbarSearch(Node):
       {tmpl_magnifier_icon}
     </div>
     <label id="label-{id}" class="bx--label" for="{id}">
-      {label}
+      {label}{label_suffix}
     </label>
     <input class="bx--search-input" type="text" id="{id}" role="search"
         placeholder="{txt_search}" aria-labelledby="label-{id}">

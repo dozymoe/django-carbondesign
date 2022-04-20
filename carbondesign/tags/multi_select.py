@@ -60,7 +60,7 @@ class MultiSelect(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     <label class="bx--label">
-      {label}
+      {label}{label_suffix}
     </label>
     <div class="bx--multi-select bx--list-box {list_class}">
       <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
@@ -71,7 +71,7 @@ class MultiSelect(FormNode):
       </div>
       <fieldset class="bx--list-box__menu" role="listbox">
         <legend class="bx--assistive-text">
-          {label}
+          {label}{label_suffix}
         </legend>
         {tmpl_items}
       </fieldset>
@@ -90,7 +90,7 @@ class MultiSelect(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper">
     <label class="bx--label">
-      {label}
+      {label}{label_suffix}
     </label>
     <div class="bx--multi-select bx--list-box bx--combo-box bx--multi-select--filterable {list_class}">
       <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
@@ -101,7 +101,7 @@ class MultiSelect(FormNode):
       </div>
       <fieldset class="bx--list-box__menu" role="listbox">
         <legend class="bx--assistive-text">
-          {label}
+          {label}{label_suffix}
         </legend>
         {tmpl_items}
       </fieldset>
@@ -120,7 +120,7 @@ class MultiSelect(FormNode):
 <div class="bx--form-item">
   <div class="bx--list-box__wrapper bx--list-box__wrapper--inline">
     <label class="bx--label">
-      {label}
+      {label}{label_suffix}
     </label>
     <div class="bx--multi-select bx--list-box bx--list-box--inline {list_class}">
       <div role="button" class="bx--list-box__field {trigger_class}" tabindex="0"
@@ -131,7 +131,7 @@ class MultiSelect(FormNode):
       </div>
       <fieldset class="bx--list-box__menu" role="listbox">
         <legend class="bx--assistive-text">
-          {label}
+          {label}{label_suffix}
         </legend>
         {tmpl_items}
       </fieldset>

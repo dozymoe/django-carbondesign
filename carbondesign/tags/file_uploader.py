@@ -51,7 +51,7 @@ class FileUploader(FormNode):
             template = """
 <div class="bx--form-item">
   <strong class="bx--file--label {label_class}" {label_props}>
-    {label}
+    {label}{label_suffix}
   </strong>
   {tmpl_help}
   <div class="bx--file" data-file>
@@ -94,7 +94,7 @@ class FileUploader(FormNode):
             template = """
 <div class="bx--form-item">
   <strong class="bx--file--label {label_class}" {label_props}>
-    {label}
+    {label}{label_suffix}
   </strong>
   {tmpl_help}
   <div class="bx--file" data-file>
@@ -126,7 +126,7 @@ class FileUploader(FormNode):
             template = """
 <div class="bx--form-item">
   <strong class="bx--file--label {label_class}" {label_props}>
-    {label}
+    {label}{label_suffix}
   </strong>
   {tmpl_help}
   <div class="bx--file" data-file>
@@ -158,7 +158,7 @@ class FileUploader(FormNode):
             template = """
 <div class="bx--form-item">
   <strong class="bx--file--label {label_class}" {label_props}>
-    {label}
+    {label}{label_suffix}
   </strong>
   {tmpl_help}
   <div class="bx--file" data-file>

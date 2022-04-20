@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-20 19:26+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: carbondesign/tags/base.py:209
+#, python-brace-format
+msgid "Argument {prop} for template tag is required."
+msgstr ""
+
+#: carbondesign/tags/breadcrumb.py:36
+msgid "breadcrumb"
+msgstr ""
+
+#: carbondesign/tags/code_snippet.py:35 carbondesign/tags/copy_button.py:21
+msgid "Copied!"
+msgstr ""
+
+#: carbondesign/tags/code_snippet.py:36
+msgid "Copy code"
+msgstr ""
+
+#: carbondesign/tags/code_snippet.py:37
+msgid "Show more"
+msgstr ""
+
+#: carbondesign/tags/code_snippet.py:38
+msgid "Show more icon"
+msgstr ""
+
+#: carbondesign/tags/code_snippet.py:39
+msgid "Show less"
+msgstr ""
+
+#: carbondesign/tags/combo_box.py:29 carbondesign/tags/data_table.py:438
+#: carbondesign/tags/list_box.py:29 carbondesign/tags/multi_select.py:27
+#: carbondesign/tags/ui_shell.py:31
+msgid "Open menu"
+msgstr ""
+
+#: carbondesign/tags/combo_box.py:30 carbondesign/tags/multi_select.py:28
+#: carbondesign/tags/ui_shell.py:32 carbondesign/tags/ui_shell_switcher.py:31
+msgid "Close menu"
+msgstr ""
+
+#: carbondesign/tags/combo_box.py:31
+msgid "Clear all"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:57
+msgid "Table Action Bar"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:58
+msgid "items selected"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:59 carbondesign/tags/overflow_menu.py:41
+msgid "Overflow"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:184
+msgid "Cancel"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:580 carbondesign/tags/search.py:41
+#: carbondesign/tags/toolbar.py:50 carbondesign/tags/ui_shell_switcher.py:124
+msgid "Search"
+msgstr ""
+
+#: carbondesign/tags/data_table.py:581 carbondesign/tags/search.py:38
+#: carbondesign/tags/toolbar.py:41 carbondesign/tags/ui_shell_switcher.py:115
+msgid "Clear search input"
+msgstr ""
+
+#: carbondesign/tags/file_uploader.py:33
+msgid "Drag and drop files here or upload"
+msgstr ""
+
+#: carbondesign/tags/file_uploader.py:34
+msgid "Remove uploaded file"
+msgstr ""
+
+#: carbondesign/tags/inline_loading.py:35
+msgid "Loading data..."
+msgstr ""
+
+#: carbondesign/tags/inline_loading.py:36
+msgid "Data loaded."
+msgstr ""
+
+#: carbondesign/tags/inline_loading.py:37
+msgid "Loading data failed."
+msgstr ""
+
+#: carbondesign/tags/loading.py:36
+msgid "Loading"
+msgstr ""
+
+#: carbondesign/tags/modal.py:50
+msgid "close modal"
+msgstr ""
+
+#: carbondesign/tags/modal.py:163
+msgid "Show modal"
+msgstr ""
+
+#: carbondesign/tags/multi_select.py:29
+msgid "Multi select options"
+msgstr ""
+
+#: carbondesign/tags/multi_select.py:30
+msgid "Clear all selected items"
+msgstr ""
+
+#: carbondesign/tags/multi_select.py:31
+msgid "Clear selection"
+msgstr ""
+
+#: carbondesign/tags/multi_select.py:32
+msgid "Filter..."
+msgstr ""
+
+#: carbondesign/tags/notification.py:51
+msgid "close"
+msgstr ""
+
+#: carbondesign/tags/number_input.py:33
+msgid "increase number input"
+msgstr ""
+
+#: carbondesign/tags/number_input.py:34
+msgid "decrease number input"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:48
+msgid "Items per page"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:49
+msgid "select number of items per page"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:50
+msgid "select page number to view"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:51
+msgid "previous page"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:52
+msgid "next page"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:192
+#, python-brace-format
+msgid "{range} of {total} items"
+msgstr ""
+
+#: carbondesign/tags/pagination.py:199
+#, python-brace-format
+msgid "of {total} pages"
+msgstr ""
+
+#: carbondesign/tags/pagination_nav.py:93
+msgid "pagination"
+msgstr ""
+
+#: carbondesign/tags/pagination_nav.py:94
+msgid "Previous page"
+msgstr ""
+
+#: carbondesign/tags/pagination_nav.py:95
+msgid "Next page"
+msgstr ""
+
+#: carbondesign/tags/pagination_nav.py:96
+msgid "page"
+msgstr ""
+
+#: carbondesign/tags/pagination_nav.py:97
+msgid "select page number"
+msgstr ""
+
+#: carbondesign/tags/select.py:37
+msgid "Choose an option"
+msgstr ""
+
+#: carbondesign/tags/slider.py:42
+msgid "slider"
+msgstr ""
+
+#: carbondesign/tags/tag.py:37
+msgid "Clear filter"
+msgstr ""
+
+#: carbondesign/tags/text_input.py:101
+msgid "Show password"
+msgstr ""
+
+#: carbondesign/tags/tile.py:40
+msgid "tile"
+msgstr ""
+
+#: carbondesign/tags/time_picker.py:26
+msgid "Select AM/PM"
+msgstr ""
+
+#: carbondesign/tags/time_picker.py:27
+msgid "Select time zone"
+msgstr ""
+
+#: carbondesign/tags/toggle.py:34
+msgid "Off"
+msgstr ""
+
+#: carbondesign/tags/toggle.py:35
+msgid "On"
+msgstr ""
+
+#: carbondesign/tags/toolbar.py:40
+msgid "Toolbar Search"
+msgstr ""
+
+#: carbondesign/tags/toolbar.py:95
+msgid "List of options"
+msgstr ""
+
+#: carbondesign/tags/ui_shell.py:30
+msgid "Skip to main content"
+msgstr ""
+
+#: carbondesign/tags/ui_shell.py:417
+msgid "Side navigation"
+msgstr ""
+
+#: carbondesign/tags/ui_shell.py:418
+msgid "Close the side navigation menu"
+msgstr ""
+
+#: carbondesign/tags/ui_shell.py:419
+msgid "Toggle the expansion state of the navigation"
+msgstr ""
+
+#: carbondesign/tags/ui_shell.py:497
+msgid "Switcher"
+msgstr ""

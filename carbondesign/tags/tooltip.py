@@ -75,7 +75,8 @@ class Interactive(BaseTooltip):
             values['content_props'].append(
                     ('aria-labelledby', 'heading-' + self._id))
         elif self.mode == 'nolabel':
-            values['content_props'].append(('aria-label', values['label']))
+            values['content_props'].append(('aria-label',
+                    values['label'] + values['label_suffix']))
         else:
             values['content_props'].append(
                     ('aria-labelledby', 'label-' + self._id))
@@ -86,7 +87,7 @@ class Interactive(BaseTooltip):
         """
         template = """
 <div id="label-{id}" class="bx--tooltip__label">
-  {label}
+  {label}{label_suffix}
   <button aria-expanded="false" aria-labelledby="label-{id}"
       data-tooltip-trigger data-tooltip-target="#{id}"
       class="bx--tooltip__trigger {class}" aria-controls="{id}" {props}>
@@ -113,7 +114,7 @@ class Interactive(BaseTooltip):
         """
         template = """
 <div id="label-{id}" class="bx--tooltip__label">
-  {label}
+  {label}{label_suffix}
   <div tabindex="0" aria-expanded="false" aria-labelledby="label-{id}"
       data-tooltip-trigger data-tooltip-target="#{id}"
       role="button" class="bx--tooltip__trigger {class}" aria-controls="{id}" {props}>
@@ -169,7 +170,7 @@ class Definition(BaseTooltip):
   <button aria-describedby="{id}"
       class="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition {class}"
       {props}>
-    {label}
+    {label}{label_suffix}
   </button>
   <div class="bx--assistive-text" id="{id}" role="tooltip">
     {child}

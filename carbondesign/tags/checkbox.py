@@ -62,7 +62,7 @@ class CheckBox(ChoiceFormNode):
 <div class="bx--form-item bx--checkbox-wrapper">
   <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
     {tmpl_element}
-    {label}
+    {label}{label_suffix}
   </label>
 </div>
 """
@@ -76,7 +76,7 @@ class CheckBox(ChoiceFormNode):
             return ''
         template = """
 <label for="{id}" class="bx--checkbox-label {label_class}" {label_props}>
-  {label}
+  {label}{label_suffix}
 </label>
 """
         return self.format(template, values)

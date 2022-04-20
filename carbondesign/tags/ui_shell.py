@@ -253,7 +253,7 @@ class Action(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--header__action {class}" aria-label="{label}" title="{label}"
+<{tag} class="bx--header__action {class}" aria-label="{label}{label_suffix}" title="{label}{label_suffix}"
     {props}>
   {slot_icon}
 </{tag}>

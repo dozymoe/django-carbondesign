@@ -137,7 +137,7 @@ class ToolbarItemMultiSelect(FormNode):
         """Output html of the component.
         """
         template_header = """
-<li class="bx--toolbar-menu__title">{label}</li>
+<li class="bx--toolbar-menu__title">{label}{label_suffix}</li>
 """
         template = """
 <li class="bx--toolbar-menu__option">
@@ -188,7 +188,7 @@ class ToolbarItemRadioButton(FormNode):
         """Output html of the component.
         """
         template = """
-<li class="bx--toolbar-menu__title">{label}</li>
+<li class="bx--toolbar-menu__title">{label}{label_suffix}</li>
 <fieldset data-row-height class="bx--radio-button-group">
   <legend class="bx--visually-hidden">{legend}</legend>
   {tmpl_items}

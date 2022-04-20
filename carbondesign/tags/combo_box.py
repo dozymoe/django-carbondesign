@@ -84,7 +84,7 @@ class ComboBox(FormNode):
         {tmpl_icon_menu}
       </div>
       <ul class="bx--list-box__menu" role="listbox" id="menu-{id}"
-          aria-label="{label}">
+          aria-label="{label}{label_suffix}">
         {child}
       </ul>
     </div>
@@ -108,7 +108,7 @@ class ComboBox(FormNode):
         {tmpl_icon_menu}
       </div>
       <ul class="bx--list-box__menu" role="listbox" id="menu-{id}"
-          aria-label="{label}">
+          aria-label="{label}{label_suffix}">
         {child}
       </ul>
     </div>

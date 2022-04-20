@@ -27,7 +27,8 @@ class ContentSwitcher(Node):
         """Prepare values for rendering the templates.
         """
         if values['label']:
-            values['props'].append(('aria-label', values['label']))
+            values['props'].append(('aria-label',
+                    values['label'] + values['label_suffix']))
 
 
     def render_default(self, values, context):

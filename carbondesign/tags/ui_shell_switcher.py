@@ -37,8 +37,8 @@ class Action(Node):
         """
         template = """
 <{tag} class="bx--header__menu-trigger bx--header__action {class}"
-    aria-label="{label}" title="{label}"
-    data-navigation-menu-panel-label-expand="{label}"
+    aria-label="{label}{label_suffix}" title="{label}{label_suffix}"
+    data-navigation-menu-panel-label-expand="{label}{label_suffix}"
     data-navigation-menu-panel-label-collapse="{txt_close_menu}"
     data-panel-switcher-target="#{target}" {props}>
   {slot_svg_close}
@@ -225,7 +225,7 @@ class SwitcherMenuSection(Node):
 <li class="bx--panel-list__item">
   <a class="bx--panel-link" tabindex="0" href="javascript:void(0)">
     {slot_icon}
-    <span class="bx--panel-link__name">{label}</span>
+    <span class="bx--panel-link__name">{label}{label_suffix}</span>
   </a>
   <div data-overflow-menu tabindex="0" class="bx--overflow-menu {overflow_class}" {overflow_props}>
     <svg width="3" height="15" viewBox="0 0 3 15">

@@ -94,7 +94,7 @@ class AccordionItem(Node):
             return ''
         template = """
 <div class="bx--accordion__title">
-  {label}
+  {label}{label_suffix}
 </div>
 """
         return self.format(template, values)

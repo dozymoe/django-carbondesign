@@ -41,7 +41,7 @@ class RadioButton(FormNode):
         """
         template = """
 <fieldset class="bx--fieldset">
-  <legend class="bx--label">{label}</legend>
+  <legend class="bx--label">{label}{label_suffix}</legend>
   <div class="bx--form-item">
     <div class="bx--radio-button-group {radio_class}">
       {tmpl_items}

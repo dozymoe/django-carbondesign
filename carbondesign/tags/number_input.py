@@ -139,7 +139,7 @@ class NumberInput(FormNode):
 
         template = """
 <label for="{id}" class="bx--label {label_class}" {label_props}>
-  {label}
+  {label}{label_suffix}
 </label>
 """
         return self.format(template, values)

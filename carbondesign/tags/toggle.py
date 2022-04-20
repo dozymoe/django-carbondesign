@@ -51,7 +51,7 @@ class Toggle(FormNode):
 <div class="bx--form-item">
   {tmpl_element}
   <label class="bx--toggle-input__label" for="{id}">
-    {label}
+    {label}{label_suffix}
     <span class="bx--toggle__switch">
       {tmpl_icon}
       <span class="bx--toggle__text--off" aria-hidden="true">{txt_off}</span>
@@ -70,7 +70,7 @@ class Toggle(FormNode):
         template = """
 <div class="bx--form-item">
   {tmpl_element}
-  <label class="bx--toggle-input__label" for="{id}" aria-label="{label}">
+  <label class="bx--toggle-input__label" for="{id}" aria-label="{label}{label_suffix}">
     <span class="bx--toggle__switch">
       {tmpl_icon}
       <span class="bx--toggle__text--off" aria-hidden="true">{txt_off}</span>
