@@ -1,4 +1,7 @@
 include carbondesign/README.rst
+recursive-include carbondesign/forms-js *
+recursive-include carbondesign/js *
+recursive-include carbondesign/locale *
 recursive-include carbondesign/mithril-js *
 recursive-include carbondesign/sass *
 recursive-include carbondesign/static *

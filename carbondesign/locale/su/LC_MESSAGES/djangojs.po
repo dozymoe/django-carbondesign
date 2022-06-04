@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-04 16:17+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: carbondesign/mithril-js/breadcrumb.js:13
+msgid "breadcrumb"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:12
+#: carbondesign/mithril-js/copy_button.js:9
+msgid "Copied!"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:13
+msgid "Copy code"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:14
+msgid "Show more"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:15
+msgid "Show more icon"
+msgstr ""
+
+#: carbondesign/mithril-js/code_snippet.js:16
+msgid "Show less"
+msgstr ""
+
+#: carbondesign/mithril-js/combo_box.js:12
+#: carbondesign/mithril-js/data-table.js:607
+#: carbondesign/mithril-js/list_box.js:13
+#: carbondesign/mithril-js/multi_select.js:12
+#: carbondesign/mithril-js/uishell.js:17
+msgid "Open menu"
+msgstr ""
+
+#: carbondesign/mithril-js/combo_box.js:13
+msgid "Clear all"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:22
+msgid "Table Action Bar"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:23
+msgid "items selected"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:24
+#: carbondesign/mithril-js/overflow_menu.js:13
+msgid "Overflow"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:803
+#: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
+#: carbondesign/mithril-js/uishell--switcher.js:124
+msgid "Search"
+msgstr ""
+
+#: carbondesign/mithril-js/data-table.js:804
+#: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
+#: carbondesign/mithril-js/uishell--switcher.js:118
+msgid "Clear search input"
+msgstr ""
+
+#: carbondesign/mithril-js/file_uploader.js:9
+msgid "Drag and drop files here or upload"
+msgstr ""
+
+#: carbondesign/mithril-js/file_uploader.js:10
+msgid "Remove uploaded file"
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:9
+msgid "Loading data..."
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:10
+msgid "Data loaded."
+msgstr ""
+
+#: carbondesign/mithril-js/inline_loading.js:11
+msgid "Loading data failed."
+msgstr ""
+
+#: carbondesign/mithril-js/loading.js:11
+msgid "Loading"
+msgstr ""
+
+#: carbondesign/mithril-js/modal.js:17
+msgid "close modal"
+msgstr ""
+
+#: carbondesign/mithril-js/modal.js:184
+msgid "Show modal"
+msgstr ""
+
+#: carbondesign/mithril-js/multi_select.js:13
+#: carbondesign/mithril-js/uishell--switcher.js:17
+#: carbondesign/mithril-js/uishell.js:18
+msgid "Close menu"
+msgstr ""
+
+#: carbondesign/mithril-js/multi_select.js:14
+msgid "Multi select options"
+msgstr ""
+
+#: carbondesign/mithril-js/multi_select.js:15
+msgid "Clear all selected items"
+msgstr ""
+
+#: carbondesign/mithril-js/multi_select.js:16
+msgid "Clear selection"
+msgstr ""
+
+#: carbondesign/mithril-js/multi_select.js:17
+msgid "Filter..."
+msgstr ""
+
+#: carbondesign/mithril-js/notification.js:15
+msgid "close"
+msgstr ""
+
+#: carbondesign/mithril-js/number_input.js:12
+msgid "increase number input"
+msgstr ""
+
+#: carbondesign/mithril-js/number_input.js:13
+msgid "decrease number input"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:15
+msgid "Items per page"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:16
+msgid "select number of items per page"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:17
+msgid "select page number to view"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:18
+msgid "Backward button"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:19
+msgid "Forward button"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination.js:250
+msgid "of {total} pages"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:11
+msgid "pagination"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:12
+msgid "Previous page"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:13
+msgid "Next page"
+msgstr ""
+
+#: carbondesign/mithril-js/pagination_nav.js:14
+msgid "page"
+msgstr ""
+
+#: carbondesign/mithril-js/select.js:15
+msgid "Choose an option"
+msgstr ""
+
+#: carbondesign/mithril-js/slider.js:11
+msgid "slider"
+msgstr ""
+
+#: carbondesign/mithril-js/tag.js:13
+msgid "Clear filter"
+msgstr ""
+
+#: carbondesign/mithril-js/text_input.js:113
+msgid "Show password"
+msgstr ""
+
+#: carbondesign/mithril-js/tile.js:13
+msgid "tile"
+msgstr ""
+
+#: carbondesign/mithril-js/time_picker.js:12
+msgid "Select AM/PM"
+msgstr ""
+
+#: carbondesign/mithril-js/time_picker.js:13
+msgid "Select time zone"
+msgstr ""
+
+#: carbondesign/mithril-js/toggle.js:11
+msgid "Off"
+msgstr ""
+
+#: carbondesign/mithril-js/toggle.js:12
+msgid "on"
+msgstr ""
+
+#: carbondesign/mithril-js/toolbar.js:30
+msgid "Toolbar Search"
+msgstr ""
+
+#: carbondesign/mithril-js/toolbar.js:118
+msgid "List of options"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:16
+msgid "Skip to main content"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:470
+msgid "Side navigation"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:471
+msgid "Close the side navigation menu"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:472
+msgid "Toggle the expansion state of the navigation"
+msgstr ""
+
+#: carbondesign/mithril-js/uishell.js:473
+msgid "Switcher"
+msgstr ""

@@ -56,11 +56,15 @@ def clean_attr_value(value):
 
 
 class VariableInVariable:
+    """Evaluate expressions in tag parameters
+    """
     def __init__(self, value, parser):
         self.value = value
         self.parser = parser
 
     def resolve(self, context):
+        """Resolve stored param
+        """
         value = self.value
         for match in VARIABLE_IN_ARG.finditer(value):
             expr = FilterExpression(match.group(1), self.parser)
