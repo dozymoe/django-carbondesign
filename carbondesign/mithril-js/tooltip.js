@@ -154,7 +154,7 @@ export class TooltipHeading extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--tooltip__heading ${values['class']}`,
     ...values.props,

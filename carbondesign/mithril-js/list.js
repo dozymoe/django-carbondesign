@@ -10,7 +10,7 @@ export class List extends Node
 
     prepare(vnode, values, context)
     {
-        if (values.tag === 'ul')
+        if (values.astag === 'ul')
         {
             values['class'].push('bx--list--unordered');
         }
@@ -34,7 +34,7 @@ export class List extends Node
     {
         return (
 //##
-m(values.tag, {'class': values['class'], ...values.props}, values.child)
+m(values.astag, {'class': values['class'], ...values.props}, values.child)
 //##
         );
     }

@@ -689,13 +689,13 @@ class TdOverflowButton(Node):
 
         template = """
 <li class="bx--overflow-menu-options__option bx--table-row--menu-option">
-  <{tag} class="bx--overflow-menu-options__btn {class}"
+  <{astag} class="bx--overflow-menu-options__btn {class}"
       title="{cleaned_child}" {props}>
     <div class="bx--overflow-menu-options__option-content">
       {slot_icon}
       {child}
     </div>
-  </{tag}>
+  </{astag}>
 </li>
 """
         return self.format(template, values, context)

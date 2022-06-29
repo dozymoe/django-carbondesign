@@ -45,7 +45,7 @@ export class Button extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--btn ${values['class']}`,
     ...values.props,
@@ -92,7 +92,7 @@ export class IconButton extends Button
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--btn ${values['class']}`,
     ...values.props,
@@ -120,7 +120,7 @@ export class ButtonSet extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': 'bx--btn-set ' + values['class'],
     ...values.props,

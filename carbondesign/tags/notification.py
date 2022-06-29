@@ -176,11 +176,11 @@ class NotificationButton(Node):
         """Output html of the component.
         """
         template = """
-<{tag} tabindex="0"
+<{astag} tabindex="0"
     class="bx--inline-notification__action-button bx--btn bx--btn--sm bx--btn--ghost {class}"
     {props}>
   {child}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -198,7 +198,7 @@ class NotificationTitle(Node):
         """
         values['mode'] = context.get('mode', 'inline')
         template = """
-<{tag} class="bx--{mode}-notification__title {class}" {props}>{child}</{tag}>
+<{astag} class="bx--{mode}-notification__title {class}" {props}>{child}</{astag}>
 """
         return self.format(template, values)
 
@@ -216,7 +216,7 @@ class NotificationSubtitle(Node):
         """
         values['mode'] = context.get('mode', 'inline')
         template = """
-<{tag} class="bx--{mode}-notification__subtitle {class}" {props}>{child}</{tag}>
+<{astag} class="bx--{mode}-notification__subtitle {class}" {props}>{child}</{astag}>
 """
         return self.format(template, values)
 
@@ -234,7 +234,7 @@ class NotificationCaption(Node):
         """
         values['mode'] = context.get('mode', 'inline')
         template = """
-<{tag} class="bx--{mode}-notification__caption {class}" {props}>{child}</{tag}>
+<{astag} class="bx--{mode}-notification__caption {class}" {props}>{child}</{astag}>
 """
         return self.format(template, values)
 

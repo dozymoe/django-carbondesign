@@ -11,7 +11,7 @@ export class Accordion extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'data-accordion': '',
     'class': `bx--accordion ${values['class']}`,
@@ -47,7 +47,7 @@ export class AccordionItem extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'data-accordion-item': '',
     'class': `bx--accordion__item ${values['class']}`,

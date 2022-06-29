@@ -35,7 +35,7 @@ class List(Node):
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        if values['tag'] == 'ul':
+        if values['astag'] == 'ul':
             values['class'].append('bx--list--unordered')
         elif self.eval(self.kwargs.get('native'), context):
             values['class'].append('bx--list--ordered--native')
@@ -51,9 +51,9 @@ class List(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="{class}" {props}>
+<{astag} class="{class}" {props}>
   {child}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

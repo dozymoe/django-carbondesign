@@ -27,7 +27,7 @@ export class Grid extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--grid ${values['class']}`,
     ...values.props,
@@ -42,7 +42,7 @@ m(values.tag,
         return (
 //##
 m('div.bleed', null,
-  m(values.tag,
+  m(values.astag,
     {
       'class': `bx--grid ${values['class']}`,
       ...values.props,
@@ -62,7 +62,7 @@ export class Row extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--row ${values['class']}`,
     ...values.props,
@@ -117,7 +117,7 @@ export class Col extends Node
         {
             return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': values['class'],
     ...values.props,
@@ -130,7 +130,7 @@ m(values.tag,
 
         return (
 //##
-m(values.tag, {'class': values['class'], ...values.props}, values.child)
+m(values.astag, {'class': values['class'], ...values.props}, values.child)
 //##
         );
     }
@@ -155,7 +155,7 @@ export class AspectRatio extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--aspect-ratio ${values['class']}`,
     ...values.props,

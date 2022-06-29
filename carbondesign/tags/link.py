@@ -33,7 +33,7 @@ class Link(Node):
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        is_a = values['tag'] == 'a'
+        is_a = values['astag'] == 'a'
 
         if is_a:
             values['class'].append('bx--link')
@@ -54,7 +54,7 @@ class Link(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = '<{tag} class="{class}" {props}>{child}</{tag}>'
+        template = '<{astag} class="{class}" {props}>{child}</{astag}>'
         return self.format(template, values)
 
 

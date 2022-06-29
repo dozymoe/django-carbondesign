@@ -85,7 +85,7 @@ export class Node
     WANT_CHILDREN = false
     SLOTS = []
     MODES = []
-    BASE_NODE_PROPS = ['_context', 'mode', 'tag', 'class', 'label']
+    BASE_NODE_PROPS = ['_context', 'mode', 'astag', 'class', 'label']
     NODE_PROPS = []
     REQUIRED_PROPS = []
     DEFAULT_TAG = 'div'
@@ -231,7 +231,7 @@ export class Node
             this.mode = 'default';
         }
         values.mode = this.mode;
-        values.tag = vnode.attrs.tag || this.DEFAULT_TAG;
+        values.astag = vnode.attrs.astag || this.DEFAULT_TAG;
         values.props = this.props(vnode);
         if (vnode.attrs['class'])
         {

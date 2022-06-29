@@ -265,7 +265,7 @@ export class NotificationButton extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     tabindex: 0,
     'class': `bx--inline-notification__action-button bx--btn bx--btn--sm bx--btn--ghost ${values['class']}`,
@@ -286,7 +286,7 @@ export class NotificationTitle extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--${context.mode}-notification__title ${values['class']}`,
     ...values.props,
@@ -306,7 +306,7 @@ export class NotificationSubtitle extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--${context.mode}-notification__subtitle ${values['class']}`,
     ...values.props,
@@ -326,7 +326,7 @@ export class NotificationCaption extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--${context.mode}-notification__caption ${values['class']}`,
     ...values.props,

@@ -7,14 +7,14 @@ class ListHtmlTest(SimpleTestCase):
     def test_nesting(self):
         template = """
 {% load carbondesign %}
-{% List tag="ol" %}
+{% List astag="ol" %}
   {% Li %}
     Ordered List level 1
     {% List %}
       {% Li %}Unordered List level 2{% endLi %}
       {% Li %}
         Unordered List level 2
-        {% List tag="ol" %}
+        {% List astag="ol" %}
           {% Li %}Ordered List level 3{% endLi %}
           {% Li %}
             Ordered List level 3
@@ -42,7 +42,7 @@ class ListHtmlTest(SimpleTestCase):
 {% List %}
   {% Li %}
     Unordered List level 1
-    {% List tag="ol" %}
+    {% List astag="ol" %}
       {% Li %}Ordered List level 2{% endLi %}
       {% Li %}
         Ordered List level 2
@@ -50,7 +50,7 @@ class ListHtmlTest(SimpleTestCase):
           {% Li %}Unordered List level 3{% endLi %}
           {% Li %}
             Unordered List level 3
-            {% List tag="ol" %}
+            {% List astag="ol" %}
               {% Li %}
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 venenatis aliquet odio ut viverra. Integer sollicitudin sed mi
@@ -174,10 +174,10 @@ class ListHtmlTest(SimpleTestCase):
     def test_ordered_native(self):
         template = """
 {% load carbondesign %}
-{% List tag="ol" native=True %}
+{% List astag="ol" native=True %}
   {% Li %}
     Ordered List level 1
-    {% List tag="ol" native=True %}
+    {% List astag="ol" native=True %}
       {% Li %}Ordered List level 2{% endLi %}
       {% Li %}Ordered List level 2{% endLi %}
       {% Li %}Ordered List level 2{% endLi %}
@@ -265,10 +265,10 @@ class ListHtmlTest(SimpleTestCase):
     def test_ordered(self):
         template = """
 {% load carbondesign %}
-{% List tag="ol" %}
+{% List astag="ol" %}
   {% Li %}
     Ordered List level 1
-    {% List tag="ol" %}
+    {% List astag="ol" %}
       {% Li %}Ordered List level 2{% endLi %}
       {% Li %}Ordered List level 2{% endLi %}
       {% Li %}Ordered List level 2{% endLi %}

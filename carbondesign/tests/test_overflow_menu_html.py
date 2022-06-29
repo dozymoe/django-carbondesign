@@ -184,23 +184,23 @@ class OverflowMenuHtmlTest(SimpleTestCase):
         template = """
 {% load carbondesign %}
 {% OvMenu id="uid" flip=True position="left" %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" active=True %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" active=True %}
     An example option that is really long to show what should be done to handle
     long text
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 2
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 3
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 4
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" disabled=True %}
     Disabled
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" variant="danger" %}
     Danger option
   {% endOvMenuItem %}
 {% endOvMenu %}
@@ -454,23 +454,23 @@ class OverflowMenuHtmlTest(SimpleTestCase):
         template = """
 {% load carbondesign %}
 {% OvMenu id="uid" flip=True position="left" direction="top" %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" active=True %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" active=True %}
     An example option that is really long to show what should be done to handle
     long text
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 2
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 3
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" %}
     Option 4
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" disabled=True %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" disabled=True %}
     Disabled
   {% endOvMenuItem %}
-  {% OvMenuItem tag="a" href="https://www.ibm.com" variant="danger" %}
+  {% OvMenuItem astag="a" href="https://www.ibm.com" variant="danger" %}
     Danger option
   {% endOvMenuItem %}
 {% endOvMenu %}

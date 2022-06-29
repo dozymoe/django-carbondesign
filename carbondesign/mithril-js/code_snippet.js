@@ -20,7 +20,7 @@ export class Code extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--snippet bx--snippet--multi ${values['class']}`,
     'data-code-snippet': '',
@@ -101,7 +101,7 @@ m(values.tag,
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--snippet bx--snippet--single ${values['class']}`,
     ...values.props,

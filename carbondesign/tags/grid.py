@@ -35,7 +35,7 @@ class Grid(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = '<{tag} class="bx--grid {class}" {props}>{child}</{tag}>'
+        template = '<{astag} class="bx--grid {class}" {props}>{child}</{astag}>'
         return self.format(template, values)
 
 
@@ -44,7 +44,7 @@ class Grid(Node):
         """
         template = """
 <div class="bleed">
-  <{tag} class="bx--grid {class}" {props}>{child}</{tag}>
+  <{astag} class="bx--grid {class}" {props}>{child}</{astag}>
 </div>
 """
         return self.format(template, values)
@@ -59,7 +59,7 @@ class Row(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = '<{tag} class="bx--row {class}" {props}>{child}</{tag}>'
+        template = '<{astag} class="bx--row {class}" {props}>{child}</{astag}>'
         return self.format(template, values)
 
 
@@ -98,7 +98,7 @@ class Column(Node):
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = '<{tag} class="{class}" {props}>{child}</{tag}>'
+        template = '<{astag} class="{class}" {props}>{child}</{astag}>'
         return self.format(template, values)
 
 
@@ -106,13 +106,13 @@ class Column(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="{class}" {props}>
+<{astag} class="{class}" {props}>
   <div class="outside">
     <div class="inside">
       {child}
     </div>
   </div>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -137,11 +137,11 @@ class AspectRatio(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--aspect-ratio {class}" {props}>
+<{astag} class="bx--aspect-ratio {class}" {props}>
   <div class="bx--aspect-ratio--object">
     {child}
   </div>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

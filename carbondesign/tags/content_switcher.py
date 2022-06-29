@@ -70,10 +70,10 @@ class ContentSwitcherItem(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--content-switcher-btn {class}" data-target="{target}"
+<{astag} class="bx--content-switcher-btn {class}" data-target="{target}"
     role="tab" {props}>
   <span class="bx--content-switcher__label">{child}</span>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

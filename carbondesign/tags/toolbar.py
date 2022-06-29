@@ -243,9 +243,9 @@ class ToolbarItemButton(Node):
         """
         template = """
 <li class="bx--overflow-menu-options__option">
-  <{tag} class="bx--overflow-menu-options__btn {class}" {props}>
+  <{astag} class="bx--overflow-menu-options__btn {class}" {props}>
     {child}
-  </{tag}>
+  </{astag}>
 </li>
 """
         return self.format(template, values)

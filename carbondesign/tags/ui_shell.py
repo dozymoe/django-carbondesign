@@ -45,7 +45,7 @@ class UiShell(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--header {class}" role="banner" aria-label="{long_label}"
+<{astag} class="bx--header {class}" role="banner" aria-label="{long_label}"
     data-header {props}>
   <a class="bx--skip-to-content" href="#main-content" tabindex="0">
     {txt_skip_menu}
@@ -56,7 +56,7 @@ class UiShell(Node):
   </a>
   {slot_links}
   {slot_actions}
-</{tag}>
+</{astag}>
 
 {slot_sidenav}
 {slot_switcher}
@@ -253,10 +253,10 @@ class Action(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--header__action {class}" aria-label="{label}{label_suffix}" title="{label}{label_suffix}"
+<{astag} class="bx--header__action {class}" aria-label="{label}{label_suffix}" title="{label}{label_suffix}"
     {props}>
   {slot_icon}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
@@ -286,11 +286,11 @@ class NavSection(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--navigation-section {class}" {props}>
+<{astag} class="bx--navigation-section {class}" {props}>
   <ul class="bx--navigation-items">
     {child}
   </ul>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -426,7 +426,7 @@ class SideNav(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--side-nav {class}" data-side-nav {props}>
+<{astag} class="bx--side-nav {class}" data-side-nav {props}>
   <nav class="bx--side-nav__navigation" role="navigation"
       aria-label="{txt_label}">
     {tmpl_header}
@@ -453,7 +453,7 @@ class SideNav(Node):
       </button>
     </footer>
   </nav>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 

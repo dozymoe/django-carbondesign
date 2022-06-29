@@ -46,7 +46,7 @@ class CodeSnippet(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--snippet bx--snippet--multi {class}" data-code-snippet {props}>
+<{astag} class="bx--snippet bx--snippet--multi {class}" data-code-snippet {props}>
   <div class="bx--snippet-container" aria-label="{label}{label_suffix}">
     <pre><code>{child}</code></pre>
   </div>
@@ -74,7 +74,7 @@ class CodeSnippet(Node):
       <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
     </svg>
   </button>
-</div>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -83,7 +83,7 @@ class CodeSnippet(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--snippet bx--snippet--single {class}" {props}>
+<{astag} class="bx--snippet bx--snippet--single {class}" {props}>
   <div tabindex="0"  class="bx--snippet-container" aria-label="{label}{label_suffix}">
     <pre><code>{child}</code></pre>
   </div>
@@ -97,7 +97,7 @@ class CodeSnippet(Node):
       <path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"></path>
     </svg>
   </button>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

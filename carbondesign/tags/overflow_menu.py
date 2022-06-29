@@ -111,7 +111,7 @@ class OverflowMenuItem(Node):
         if self.eval(self.kwargs.get('disabled'), context):
             values['list_class'].append(
                     'bx--overflow-menu-options__option--disabled')
-            if values['tag'] == 'button':
+            if values['astag'] == 'button':
                 values['props'].append(('disabled', True))
             else:
                 values['props'].append(('tabindex', '-1'))
@@ -140,11 +140,11 @@ class OverflowMenuItem(Node):
         """
         template = """
 <li class="bx--overflow-menu-options__option {list_class}" {list_props}>
-  <{tag} class="bx--overflow-menu-options__btn {class}" role="menuitem" {props}>
+  <{astag} class="bx--overflow-menu-options__btn {class}" role="menuitem" {props}>
     <span class="bx--overflow-menu-options__option-content">
       {child}
     </span>
-  </{tag}>
+  </{astag}>
 </li>
 """
         return self.format(template, values)

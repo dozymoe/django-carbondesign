@@ -26,7 +26,7 @@ export class UiShell extends Node
 //##
 m.fragment(null,
   [
-    m(values.tag,
+    m(values.astag,
       {
         'class': `bx--header ${values['class']}`,
         role: 'banner',
@@ -310,7 +310,7 @@ export class UiNavSection extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--navigation-section ${values['class']}`,
     ...values.props,
@@ -482,7 +482,7 @@ export class UiSideNav extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--side-nav ${values['class']}`,
     'data-side-nav': '',

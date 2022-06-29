@@ -36,14 +36,14 @@ class Action(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--header__menu-trigger bx--header__action {class}"
+<{astag} class="bx--header__menu-trigger bx--header__action {class}"
     aria-label="{label}{label_suffix}" title="{label}{label_suffix}"
     data-navigation-menu-panel-label-expand="{label}{label_suffix}"
     data-navigation-menu-panel-label-collapse="{txt_close_menu}"
     data-panel-switcher-target="#{target}" {props}>
   {slot_svg_close}
   {slot_svg_open}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
@@ -94,11 +94,11 @@ class Switcher(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--panel--overlay" id="{id}" data-panel-switcher>
+<{astag} class="bx--panel--overlay" id="{id}" data-panel-switcher>
   <div class="bx--panel-switcher">
     {child}
   </div>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
@@ -163,7 +163,7 @@ class SwitcherHeader(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--panel-switcher__subheader {class}" {props}>{child}</{tag}>
+<{astag} class="bx--panel-switcher__subheader {class}" {props}>{child}</{astag}>
 """
         return self.format(template, values)
 
@@ -193,7 +193,7 @@ class SwitcherMenu(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--panel-switcher__panel-list {class}" {props}>{child}</{tag}>
+<{astag} class="bx--panel-switcher__panel-list {class}" {props}>{child}</{astag}>
 """
         return self.format(template, values)
 

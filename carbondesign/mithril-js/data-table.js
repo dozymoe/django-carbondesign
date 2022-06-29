@@ -968,7 +968,7 @@ export class TdOvButton extends Node
         return (
 //##
 m('li.bx--overflow-menu-options__option.bx--table-row--menu-option',
-  m(values.tag,
+  m(values.astag,
     {
       'class': `bx--overflow-menu-options__btn ${values['class']}`,
       title: cleaned_child,

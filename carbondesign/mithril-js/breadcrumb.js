@@ -22,7 +22,7 @@ export class Breadcrumb extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--breadcrumb ${values['class']}`,
     'aria-label': values.txt_breadcrumb,
@@ -53,7 +53,7 @@ export class BreadcrumbItem extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--breadcrumb-item ${values.wrapper_class}`,
     ...values.wrapper_props,

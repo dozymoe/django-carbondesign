@@ -40,7 +40,7 @@ class LinkHtmlTest(SimpleTestCase):
     def test_default_disabled_p(self):
         template = """
 {% load carbondesign %}
-{% Link tag="p" disabled=True %}Disabled Link{% endLink %}
+{% Link astag="p" disabled=True %}Disabled Link{% endLink %}
 """
         expected = """
 <p class="bx--link--disabled">Disabled Link</p>
@@ -101,7 +101,7 @@ class LinkHtmlTest(SimpleTestCase):
     def test_inline_p_disabled(self):
         template = """
 {% load carbondesign %}
-{% Link tag="p" inline=True disabled=True %}Disabled Link{% endLink %}
+{% Link astag="p" inline=True disabled=True %}Disabled Link{% endLink %}
 """
         expected = """
 <p class="bx--link--disabled bx--link--inline">Disabled Link</p>

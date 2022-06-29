@@ -13,7 +13,7 @@ export class UiAction extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--header__action ${values['class']}`,
     'aria-label': values.label,

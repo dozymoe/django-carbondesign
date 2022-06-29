@@ -59,10 +59,10 @@ class Button(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--btn {class}" {props}>
+<{astag} class="bx--btn {class}" {props}>
   {child}
   {slot_icon}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
@@ -103,10 +103,10 @@ class IconButton(Button):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--btn {class}" {props}>
+<{astag} class="bx--btn {class}" {props}>
   <span class="bx--assistive-text">{child}</span>
   {slot_icon}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
@@ -127,9 +127,9 @@ class ButtonSet(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--btn-set {class}" {props}>
+<{astag} class="bx--btn-set {class}" {props}>
   {child}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

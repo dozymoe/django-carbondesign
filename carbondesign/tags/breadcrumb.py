@@ -43,9 +43,9 @@ class Breadcrumb(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--breadcrumb {class}" aria-label="{txt_breadcrumb}" {props}>
+<{astag} class="bx--breadcrumb {class}" aria-label="{txt_breadcrumb}" {props}>
   {child}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -74,11 +74,11 @@ class BreadcrumbItem(Node):
         """Output html of the component.
         """
         template = """
-<{tag} class="bx--breadcrumb-item {wrapper_class}" {wrapper_props}>
+<{astag} class="bx--breadcrumb-item {wrapper_class}" {wrapper_props}>
   <a href="{href}" class="bx--link {class}" {props}>
     {child}
   </a>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 

@@ -21,7 +21,7 @@ export class UiActionSwitcher extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--header__menu-trigger bx--header__action ${values['class']}`,
     'aria-label': values.label,
@@ -96,7 +96,7 @@ export class UiSwitcher extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': 'bx--panel--overlay',
     id: values.id,
@@ -187,7 +187,7 @@ export class UiSwitcherHeader extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--panel-switcher__subheader ${values['class']}`,
     ...values.props,
@@ -219,7 +219,7 @@ export class UiSwitcherMenu extends Node
     {
         return (
 //##
-m(values.tag,
+m(values.astag,
   {
     'class': `bx--panel-switcher__panel-list ${values['class']}`,
     ...values.props,

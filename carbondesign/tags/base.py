@@ -158,7 +158,7 @@ class Node(template.Node):
     "Named children."
     MODES = ()
     "Available variants."
-    BASE_NODE_PROPS = ('mode', 'tag', 'class', 'label', 'label_suffix')
+    BASE_NODE_PROPS = ('mode', 'astag', 'class', 'label', 'label_suffix')
     "Base Template Tag arguments."
     NODE_PROPS = ()
     "Extended Template Tag arguments."
@@ -319,8 +319,13 @@ class Node(template.Node):
             self.mode = 'default'
 
         values['mode'] = self.mode
-        values['tag'] = var_eval(self.kwargs.get('tag', self.DEFAULT_TAG),
-                context)
+        if 'tag' in self.kwargs and 'astag' not in self.kwargs:
+            _logger.warning("tag NODE_PROPS is deprecated by astag")
+            mytag = var_eval(self.kwargs['tag'], context)
+        else:
+            mytag = var_eval(self.kwargs.get('astag', self.DEFAULT_TAG),
+                    context)
+        values['astag'] = mytag
         values['props'] = self.props(context)
         values['class'] = var_eval(self.kwargs.get('class', ''), context)\
                 .split()

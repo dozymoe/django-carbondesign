@@ -1375,7 +1375,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1384,7 +1384,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1393,7 +1393,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1402,7 +1402,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1423,7 +1423,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1432,7 +1432,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1441,7 +1441,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1450,7 +1450,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1471,7 +1471,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1480,7 +1480,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1489,7 +1489,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1498,7 +1498,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1519,7 +1519,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1528,7 +1528,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1537,7 +1537,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1546,7 +1546,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1567,7 +1567,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1576,7 +1576,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1585,7 +1585,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -1594,7 +1594,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2370,7 +2370,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2379,7 +2379,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2388,7 +2388,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2397,7 +2397,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2418,7 +2418,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2427,7 +2427,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2436,7 +2436,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2445,7 +2445,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2466,7 +2466,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2475,7 +2475,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2484,7 +2484,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2493,7 +2493,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2514,7 +2514,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2523,7 +2523,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2532,7 +2532,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2541,7 +2541,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2562,7 +2562,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2571,7 +2571,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2580,7 +2580,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2589,7 +2589,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3554,7 +3554,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3563,7 +3563,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3572,7 +3572,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3581,7 +3581,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3602,7 +3602,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3611,7 +3611,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3620,7 +3620,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3629,7 +3629,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3650,7 +3650,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3659,7 +3659,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3668,7 +3668,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3677,7 +3677,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3698,7 +3698,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3707,7 +3707,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3716,7 +3716,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3725,7 +3725,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3746,7 +3746,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3755,7 +3755,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3764,7 +3764,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3773,7 +3773,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4549,7 +4549,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4558,7 +4558,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4567,7 +4567,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4576,7 +4576,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4597,7 +4597,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4606,7 +4606,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4615,7 +4615,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4624,7 +4624,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4645,7 +4645,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4654,7 +4654,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4663,7 +4663,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4672,7 +4672,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4693,7 +4693,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4702,7 +4702,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4711,7 +4711,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4720,7 +4720,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4741,7 +4741,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4750,7 +4750,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4759,7 +4759,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -4768,7 +4768,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5740,7 +5740,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5749,7 +5749,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5758,7 +5758,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5767,7 +5767,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5793,7 +5793,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5802,7 +5802,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5811,7 +5811,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5820,7 +5820,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5841,7 +5841,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5850,7 +5850,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5859,7 +5859,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5868,7 +5868,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5889,7 +5889,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5898,7 +5898,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5907,7 +5907,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5916,7 +5916,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5937,7 +5937,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5946,7 +5946,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5955,7 +5955,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -5964,7 +5964,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -6952,7 +6952,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -6961,7 +6961,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -6970,7 +6970,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -6979,7 +6979,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7000,7 +7000,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7009,7 +7009,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7018,7 +7018,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7027,7 +7027,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7048,7 +7048,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7057,7 +7057,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7066,7 +7066,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7075,7 +7075,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7096,7 +7096,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7105,7 +7105,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7114,7 +7114,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7123,7 +7123,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7144,7 +7144,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7153,7 +7153,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7162,7 +7162,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -7171,7 +7171,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8023,7 +8023,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups Testing a really long text here{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8032,7 +8032,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8041,7 +8041,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8050,7 +8050,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8071,7 +8071,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8080,7 +8080,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8089,7 +8089,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8098,7 +8098,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8119,7 +8119,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8128,7 +8128,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8137,7 +8137,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8146,7 +8146,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8167,7 +8167,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8176,7 +8176,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8185,7 +8185,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8194,7 +8194,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8215,7 +8215,7 @@ class TableHtmlTest(SimpleTestCase):
       {% Td %}Maureen’s VM Groups{% endTd %}
       {% Td %}Active{% endTd %}
       {% Td mode="menu" label="Overflow menu description" %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Edit
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8224,7 +8224,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Download
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8233,7 +8233,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Save
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -8242,7 +8242,7 @@ class TableHtmlTest(SimpleTestCase):
             </svg>
           {% endSlot %}
         {% endTdOvButton %}
-        {% TdOvButton tag="button" onclick="console.log('keyboard action')" %}
+        {% TdOvButton astag="button" onclick="console.log('keyboard action')" %}
           Delete
           {% Slot 'icon' %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

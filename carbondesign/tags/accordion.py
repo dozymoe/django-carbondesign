@@ -37,9 +37,9 @@ class Accordion(Node):
         """Output html of the component.
         """
         template = """
-<{tag} data-accordion class="bx--accordion {class}" {props}>
+<{astag} data-accordion class="bx--accordion {class}" {props}>
   {child}
-</{tag}>
+</{astag}>
 """
         return self.format(template, values)
 
@@ -68,7 +68,7 @@ class AccordionItem(Node):
         """Output html of the component.
         """
         template = """
-<{tag} data-accordion-item class="bx--accordion__item {class}" {props}>
+<{astag} data-accordion-item class="bx--accordion__item {class}" {props}>
   <button class="bx--accordion__heading" aria-expanded="{expanded}"
       aria-controls="{id}">
     <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -82,7 +82,7 @@ class AccordionItem(Node):
   <div id="{id}" class="bx--accordion__content">
     {child}
   </div>
-</{tag}>
+</{astag}>
 """
         return self.format(template, values, context)
 
