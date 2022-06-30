@@ -539,7 +539,7 @@ m('th',
     'data-event': 'expandAll',
     ...values.props,
   },
-  m('span.bx--table-header-label')
+  m('span.bx--table-header-label'))
 //##
         );
     }
