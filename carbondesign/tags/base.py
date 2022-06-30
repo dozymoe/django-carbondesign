@@ -87,6 +87,7 @@ class DummyNodeList:
     """
     def __init__(self, text):
         self.text = text
+        self.attrs = {}
 
 
     def get_nodes_by_type(self, type_):

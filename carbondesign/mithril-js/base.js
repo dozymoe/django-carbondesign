@@ -85,7 +85,8 @@ export class Node
     WANT_CHILDREN = false
     SLOTS = []
     MODES = []
-    BASE_NODE_PROPS = ['_context', 'mode', 'astag', 'class', 'label']
+    BASE_NODE_PROPS = ['_context', 'mode', 'astag', 'class', 'label',
+        'label_suffix']
     NODE_PROPS = []
     REQUIRED_PROPS = []
     DEFAULT_TAG = 'div'
@@ -243,7 +244,9 @@ export class Node
         }
         this._id = vnode.attrs.id || this.default_id(vnode);
         values.id = this._id
+
         values.label = vnode.attrs.label;
+        values.label_suffix = vnode.attrs.label_suffix;
 
         for (let name of this.CLASS_AND_PROPS)
         {
@@ -342,7 +345,7 @@ export class Node
 
 export class FormNode extends Node
 {
-    BASE_NODE_PROPS = ['field', 'widget', 'id', 'disabled',
+    BASE_NODE_PROPS = ['field', 'widget', 'id', 'hidden', 'disabled',
             ...(new Node).BASE_NODE_PROPS]
     CLASS_AND_PROPS = ['label', 'help']
 
@@ -453,7 +456,7 @@ m('label',
     'class': `bx--label ${values.label_class}`,
     ...values.label_props,
   },
-  values.label)
+  `${values.label}${values.label_suffix}`)
 //##
             );
         }

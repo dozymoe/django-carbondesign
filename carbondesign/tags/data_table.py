@@ -45,7 +45,7 @@ class DataTable(Node):
     NODE_PROPS = ('variant', 'sortable', 'small_toolbar', 'batch_field',
             'visible_overflow')
     "Extended Template Tag arguments."
-    CLASS_AND_PROPS = ('toolbar', *Node.CLASS_AND_PROPS)
+    CLASS_AND_PROPS = ('toolbar',)
     "Prepare xxx_class and xxx_props values."
     POSSIBLE_VARIANT = ('compact', 'short', 'tall', 'zebra')
     "Documentation only."

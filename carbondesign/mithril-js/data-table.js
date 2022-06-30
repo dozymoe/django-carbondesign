@@ -1,4 +1,4 @@
-import { range, uniqueId } from 'lodash';
+import { uniqueId } from 'lodash';
 import m from 'mithril/hyperscript';
 import m_tostring from 'mithril-node-render';
 //-
@@ -202,6 +202,9 @@ m('p',
 
     render_slot_batch_actions(vnode, values, context)
     {
+        let form_field = vnode.attrs.batch_field;
+        let count = form_field && form_field.value() ?
+                form_field.value().length : 0;
         return (
 //##
 m('div',
@@ -226,7 +229,7 @@ m('div',
     m('div.bx--batch-summary', null,
       m('p.bx--batch-summary__para', null,
         [
-          m('span', {'data-items-selected': 0}),
+          m('span', {'data-items-selected': count}),
           values.txt_items_selected,
         ])),
   ])
@@ -453,12 +456,10 @@ m('th',
         type: 'checkbox',
         ...values.props,
       }),
-    m('label',
+    m('label.bx--checkbox-label',
       {
         'for': values.id,
-        'class': `bx--checkbox-label ${values.label_class}`,
-        'aria-label': values.label,
-        ...values.label_props,
+        'aria-label': `${values.label}${values.label_suffix}`,
       }),
   ])
 //##
@@ -525,15 +526,7 @@ m('th',
 
     render_menu(vnode, values, context)
     {
-        return (
-//##
-m('th',
-  {
-    'class': `bx--table-column-menu ${values['class']}`,
-    ...values.props,
-  })
-//##
-        );
+        return m('th.bx--table-column-menu');
     }
 
     render_expandable(vnode, values, context)
@@ -546,7 +539,7 @@ m('th',
     'data-event': 'expandAll',
     ...values.props,
   },
-  m('span.bx--table-header-label', null, values.child))
+  m('span.bx--table-header-label')
 //##
         );
     }
@@ -638,10 +631,9 @@ m('td',
       'data-overflow-menu': '',
       role: 'menu',
       tabindex: 0,
-      'aria-label': values.label,
-      'class': `bx--overflow-menu ${values.label_class}`,
+      'aria-label': `${values.label}${values.label_suffix}`,
+      'class': 'bx--overflow-menu',
       title: values.txt_menu,
-      ...values.label_props,
     },
     [
       m('svg',
@@ -682,10 +674,9 @@ m('td',
       'data-overflow-menu': '',
       role: 'menu',
       tabindex: 0,
-      'aria-label': values.label,
-      'class': `bx--overflow-menu ${values.label_class}`,
+      'aria-label': `${values.label}${values.label_suffix}`,
+      'class': 'bx--overflow-menu',
       title: values.txt_menu,
-      ...values.label_props,
     },
     [
       m('svg',
@@ -730,8 +721,8 @@ m('div',
 
 export class TdCheckbox extends FormNode
 {
-    NODE_PROPS = ['id', 'value']
-    REQUIRED_PROPS = ['values']
+    NODE_PROPS = ['value']
+    REQUIRED_PROPS = ['value']
 
     default_id(vnode)
     {
@@ -782,7 +773,7 @@ m('td.bx--table-column-checkbox',
     m('label.bx--checkbox-label',
       {
         'for': values.id,
-        'aria-label': values.label,
+        'aria-label': `${values.label}${values.label_suffix}`,
       }),
   ])
 //##
@@ -851,7 +842,7 @@ m('div',
           id: `label-${values.id}`,
           'for': values.id,
         },
-        values.label),
+        `${values.label}${values.label_suffix}`),
       m('input.bx--search-input',
         {
           type: 'text',

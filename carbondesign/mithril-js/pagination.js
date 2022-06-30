@@ -5,8 +5,12 @@ import { Node } from './base';
 
 export class Pagination extends Node
 {
-    NODE_PROPS = ['pager', 'pager_sizes', 'disabled']
+    NODE_PROPS = ['pager', 'pager_sizes', 'disabled', 'page_name',
+            'pagesize_name']
+    CLASS_AND_PROPS = ['navbtn']
     PAGER_SIZES = [10, 20, 30, 40, 50]
+
+    pagesize = 10
 
     prepare(vnode, values, context)
     {
@@ -15,19 +19,32 @@ export class Pagination extends Node
         values.txt_per_page = gettext("Items per page");
         values.txt_select_per_page = gettext("select number of items per page");
         values.txt_select_page_num = gettext("select page number to view");
-        values.txt_back_btn = gettext("Backward button");
-        values.txt_forw_btn = gettext("Forward button");
+        values.txt_back_btn = gettext("previous page");
+        values.txt_forw_btn = gettext("next page");
+
+        if (vnode.attrs.disabled)
+        {
+            values.navbtn_class.push('bx--pagination__button--no-index');
+        }
     }
 
     render_default(vnode, values, context)
     {
-        if (this.pager)
+        if (!this.pager)
         {
-            return (
+            return;
+        }
+        if (!this.pager.has_previous() && !this.pager.has_next())
+        {
+            return;
+        }
+        return (
 //##
 m('div.bx--pagination',
   {
     'data-pagination': '',
+    'data-page-name': vnode.attrs.page_name || 'page',
+    'data-pagesize-name': vnode.attrs.pagesize_name || 'pagesize',
   },
   [
     m('div.bx--pagination__left', null,
@@ -106,8 +123,9 @@ m('div.bx--pagination',
         'for': `select-${values.id}-pagination-page`,
       },
       this.tmpl('pagination_num_pages', vnode, values, context)),
-    m('button.bx--pagination__button.bx--pagination__button--backward',
+    m('button',
       {
+        'class': `bx--pagination__button bx--pagination__button--backward ${values.navbtn_class}`,
         tabindex: 0,
         'data-page-backward': '',
         'aria-label': values.txt_back_btn,
@@ -128,11 +146,13 @@ m('div.bx--pagination',
           {
             d: 'M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z',
           }))),
-    m('button.bx--pagination__button.bx--pagination__button--forward',
+    m('button',
       {
+        'class': `bx--pagination__button bx--pagination__button--forward ${values.navbtn_class}`,
         tabindex: 0,
         'data-page-forward': '',
         'aria-label': values.txt_next_btn,
+        ...values.navbtn_props,
       },
       m('svg',
         {
@@ -152,8 +172,7 @@ m('div.bx--pagination',
           }))),
   ])
 //##
-            );
-        }
+        );
     }
 
     render_tmpl_pagination_sizes(vnode, values, context)
@@ -193,7 +212,7 @@ m('option.bx--select-option', {selected: ''}, pager_sizes[ii])
     render_tmpl_pagination_numbers(vnode, values, context)
     {
         let items = [];
-        for (let ii = 1; ii <= this.pager.num_pages; ii++)
+        for (let ii = 1; ii <= this.pager.paginator.num_pages; ii++)
         {
             if (ii !== this.pager.number)
             {
@@ -229,17 +248,17 @@ m.fragment(null,
         'data-displayed-item-range': '',
       },
       [
-        this.pager.page_range[0],
+        this.pager.start_index(),
         '-',
-        this.pager.page_range[1],
+        this.pager.end_index(),
       ]),
-    'of',
+    '\xA0' + gettext('of') + '\xA0',
     m('span',
       {
         'data-total-items': '',
       },
-      this.pager.count),
-    'items',
+      this.pager.paginator.count),
+    '\xA0' + gettext('items'),
   ])
 //##
         );
@@ -247,9 +266,10 @@ m.fragment(null,
 
     render_tmpl_pagination_num_pages(vnode, values, context)
     {
-        return interpolate(gettext("of {total} pages"),
+        return interpolate(gettext("of %(total)s pages"),
             {
-                total: this.pager.num_pages
-            });
+                total: this.pager.paginator.num_pages
+            },
+            true);
     }
 }
