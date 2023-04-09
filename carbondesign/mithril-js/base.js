@@ -146,7 +146,7 @@ export class Node
         this.before_prepare(vnode, values, context);
         this.prepare(vnode, values, context);
 
-        if (this.WANT_CHILDREN)
+        if (this.nodelist.length)
         {
             values.child = m.fragment({_context: Object.assign({}, context)},
                     this.nodelist);
@@ -482,38 +482,35 @@ m('div',
 
     render_tmpl_errors(vnode, values, context)
     {
-        return _render_errors(this.bound_field);
+        return render_errors(this.bound_field);
     }
 }
 
-
-export function render_errors(bound_field)
+export function render_errors(bound_fields)
 {
-    let errors = _render_errors(bound_field);
-    if (errors)
+    if (!isArray(bound_fields))
     {
-        return m('div.bx--form-requirement', errors);
+        bound_fields = [bound_fields];
     }
-}
-
-function _render_errors(bound_field)
-{
-    if (!bound_field.errors) return;
-
     let items = [];
-    for (let error of bound_field.errors)
+    for (let bound_field of bound_fields)
     {
-        let pos = error.indexOf('\n');
-        if (pos >= 0)
+        if (!bound_field.errors) return;
+
+        for (let error of bound_field.errors)
         {
-            items.push(m('div.bx--form-requirement__title',
-                    error.slice(0, pos)));
-            items.push(m('p.bx--form-requirement__supplement',
-                    error.slice(pos + 1)));
-        }
-        else
-        {
-            items.push(m('div.bx--form-requirement__title', error));
+            let pos = error.indexOf('\n');
+            if (pos >= 0)
+            {
+                items.push(m('div.bx--form-requirement__title',
+                        error.slice(0, pos)));
+                items.push(m('p.bx--form-requirement__supplement',
+                        error.slice(pos + 1)));
+            }
+            else
+            {
+                items.push(m('div.bx--form-requirement__title', error));
+            }
         }
     }
     if (items.length)

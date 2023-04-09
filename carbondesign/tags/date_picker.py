@@ -14,9 +14,18 @@ Pickers are used to display past, present, or future dates or times. The kind
 of date (exact, approximate, memorable) you are requesting from the user will
 determine which picker is best to use. Each picker’s format can be customized
 depending on location or need.
+
+For available formats see:
+
+* https://flatpickr.js.org/formatting/
+* https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
+
 """ # pylint:disable=line-too-long
 # pylint:disable=too-many-lines
-
+from django.utils.formats import date_format
+#-
+from ..utils.formats import SAMPLE_DATETIME
+from ..utils.formats import dateformat_to_pattern, get_field_dateformat
 from .base import FormNode, FormNodes
 
 class DatePicker(FormNode):
@@ -24,10 +33,14 @@ class DatePicker(FormNode):
     """
     MODES = ('default', 'basic', 'nolabel')
     "Available variants."
-    NODE_PROPS = ('short', 'light')
+    NODE_PROPS = ('short', 'light', 'format')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'picker')
     "Prepare xxx_class and xxx_props values."
+
+    datefmt = None
+    placeholder = None
+    pattern = None
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
@@ -35,8 +48,25 @@ class DatePicker(FormNode):
         if self.eval(self.kwargs.get('light'), context):
             values['picker_class'].append('bx--date-picker--light')
 
-        if self.eval(self.kwargs.get('short'), context):
+        short = self.eval(self.kwargs.get('short'), context)
+        if short:
             values['picker_class'].append('bx--date-picker--short')
+
+        datefmt = self.eval(self.kwargs.get('format'), context)
+        if not datefmt and self.bound_field:
+            datefmt = get_field_dateformat(self.bound_field)
+
+        if datefmt:
+            self.datefmt = datefmt
+        elif short:
+            self.datefmt = 'm/Y'
+        else:
+            # This is the default of Carbon Design datepicker
+            self.datefmt = 'm/d/Y'
+        self.placeholder = date_format(SAMPLE_DATETIME, self.datefmt)
+        self.pattern = dateformat_to_pattern(self.datefmt)
+
+        values['picker_props'].append(('data-date-picker-format', self.datefmt))
 
 
     def prepare_element_props(self, props, context):
@@ -44,12 +74,8 @@ class DatePicker(FormNode):
         """
         props['class'].append('bx--date-picker__input')
         props['data-date-picker-input'] = ''
-        if self.eval(self.kwargs.get('short'), context):
-            props['pattern'] = r'\d{1,2}/\d{4,4}'
-            props['placeholder'] = 'mm/yyyy'
-        else:
-            props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4,4}'
-            props['placeholder'] = 'mm/dd/yyyy'
+        props['pattern'] = self.pattern
+        props['placeholder'] = self.placeholder
 
         if self.bound_field.errors:
             props['data-invalid'] = ''
@@ -197,16 +223,34 @@ class DatePicker(FormNode):
 class RangeDatePicker(FormNodes):
     """Date Picker component with range inputs.
     """
-    NODE_PROPS = ('light',)
+    NODE_PROPS = ('light', 'format')
     "Extended Template Tag arguments."
     CLASS_AND_PROPS = ('label', 'help', 'picker')
     "Prepare xxx_class and xxx_props values."
+
+    datefmt = None
+    placeholder = None
+    pattern = None
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
         if self.eval(self.kwargs.get('light'), context):
             values['picker_class'].append('bx--date-picker--light')
+
+        datefmt = self.eval(self.kwargs.get('format'), context)
+        if not datefmt and self.bound_fields:
+            datefmt = get_field_dateformat(self.bound_fields[0])
+
+        if datefmt:
+            self.datefmt = datefmt
+        else:
+            # This is the default of Carbon Design datepicker
+            self.datefmt = 'm/d/Y'
+        self.placeholder = date_format(SAMPLE_DATETIME, self.datefmt)
+        self.pattern = dateformat_to_pattern(self.datefmt)
+
+        values['picker_props'].append(('data-date-picker-format', self.datefmt))
 
 
     def prepare_element_props(self, props, context, bound_field):
@@ -215,8 +259,8 @@ class RangeDatePicker(FormNodes):
         index = self.bound_fields.index(bound_field)
 
         props['class'].append('bx--date-picker__input')
-        props['pattern'] = r'\d{1,2}/\d{1,2}/\d{4,4}'
-        props['placeholder'] = 'mm/dd/yyyy'
+        props['pattern'] = self.pattern
+        props['placeholder'] = self.placeholder
 
         if index:
             props['data-date-picker-input-to'] = ''

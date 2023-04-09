@@ -29,7 +29,7 @@ class Grid(Node):
 
         gap = self.eval(self.kwargs.get('gap'), context)
         if gap in self.GAP_SIZES:
-            values['class'].append('bx--grid--%s' % gap)
+            values['class'].append(f'bx--grid--{gap}')
 
 
     def render_default(self, values, context):
@@ -68,44 +68,34 @@ class Column(Node):
     """
     WANT_CHILDREN = True
     "Template Tag needs closing end tag."
-    MODES = ('default', 'inner')
-    "Available variants."
     COL_SIZES = ('sm', 'md', 'lg', 'xlg', 'max')
     "Column sizes."
-    NODE_PROPS = (*COL_SIZES, *['offset_%s' % x for x in COL_SIZES])
+    NODE_PROPS = (*COL_SIZES, *[f'offset_{x}' for x in COL_SIZES])
     "Extended Template Tag arguments."
+
+    has_size = False
 
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
-        if self.mode != 'inner':
-            values['class'].append('bx--col')
-
-        has_size = False
         for size in self.COL_SIZES:
             width = self.eval(self.kwargs.get(size), context)
             if width:
-                has_size = True
-                values['class'].append('bx--col-%s-%s' % (size, width))
+                self.has_size = True
+                values['class'].append(f'bx--col-{size}-{width}')
 
-            width = self.eval(self.kwargs.get('offset_%s' % size), context)
+            width = self.eval(self.kwargs.get(f'offset_{size}'), context)
             if width:
-                values['class'].append('bx--offset-%s-%s' % (size, width))
-        if not has_size:
-            values['class'].append('bx--col--auto')
+                values['class'].append(f'bx--offset-{size}-{width}')
+        if not self.has_size:
+            values['class'].append('bx--col bx--col--auto')
 
 
     def render_default(self, values, context):
         """Output html of the component.
         """
-        template = '<{astag} class="{class}" {props}>{child}</{astag}>'
-        return self.format(template, values)
-
-
-    def render_inner(self, values, context):
-        """Output html of the component.
-        """
-        template = """
+        if self.has_size:
+            template = """
 <{astag} class="{class}" {props}>
   <div class="outside">
     <div class="inside">
@@ -114,6 +104,8 @@ class Column(Node):
   </div>
 </{astag}>
 """
+        else:
+            template = '<{astag} class="{class}" {props}>{child}</{astag}>'
         return self.format(template, values)
 
 
@@ -130,7 +122,7 @@ class AspectRatio(Node):
         """
         ratio = self.eval(self.kwargs.get('ratio'), context)
         if ratio:
-            values['class'].append('bx--aspect-ratio--%s' % ratio)
+            values['class'].append(f'bx--aspect-ratio--{ratio}')
 
 
     def render_default(self, values, context):

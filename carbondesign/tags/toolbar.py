@@ -123,8 +123,8 @@ class ToolbarItem(Node):
             'fill': 'currentColor',
             'class': ' '.join(classname),
             'style': {
-                'width': '%spx' % 16,
-                'height': '%spx' % 16,
+                'width': '16px',
+                'height': '16px',
             },
             'aria-hidden': 'true',
         })
@@ -154,7 +154,7 @@ class ToolbarItemMultiSelect(FormNode):
 
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
-                'id': '%s-%s' % (values['id'], ii),
+                'id': f"{values['id']}-{ii}",
                 'index': ii,
                 'value': val,
                 'child': txt,
@@ -213,7 +213,7 @@ class ToolbarItemRadioButton(FormNode):
         items = []
         for ii, (_, val, txt) in enumerate(self.choices()):
             options = {
-                'id': '%s-%s' % (values['id'], ii),
+                'id': f"{values['id']}-{ii}",
                 'index': ii,
                 'value': val,
                 'child': txt,

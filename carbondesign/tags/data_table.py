@@ -522,7 +522,7 @@ class TdCheckBox(FormNode):
     def default_id(self):
         """Get Django form field html id.
         """
-        return '%s-%s' % (self.bound_field.id_for_label, uuid4().hex)
+        return '%s-%s' % (self.bound_field.id_for_label, uuid4().hex) # pylint:disable=consider-using-f-string
 
 
     def label(self):
@@ -710,8 +710,8 @@ class TdOverflowButton(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % size,
-                'height': '%spx' % size,
+                'width': f'{size}px',
+                'height': f'{size}px',
             },
             'aria-hidden': 'true',
             'class': values['class'],

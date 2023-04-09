@@ -200,7 +200,9 @@ class TileHtmlTest(SimpleTestCase):
 <div class="bx--grid">
   <div class="bx--tile-container" style="width: 100%">
   <div class="bx--row">
-    <div class="bx--col bx--col-md-12">
+    <div class="bx--col-md-12">
+      <div class="outside">
+        <div class="inside">
 <div data-tile="expandable" class="bx--tile bx--tile--expandable"
     tabindex="0">
   <button aria-label="expand menu" class="bx--tile__chevron">
@@ -219,10 +221,14 @@ class TileHtmlTest(SimpleTestCase):
     </span>
   </div>
 </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bx--row">
-    <div class="bx--col bx--col-sm-2">
+    <div class="bx--col-sm-2">
+      <div class="outside">
+        <div class="inside">
 <label class="bx--tile bx--tile--selectable"
     data-tile="selectable" tabindex="0" aria-label="tile">
   <input type="checkbox" name="tiles" value="tile" id="tile-id-1" title="tile" class="bx--tile-input" tabindex="-1" data-tile-input>
@@ -236,8 +242,12 @@ class TileHtmlTest(SimpleTestCase):
         <!-- Tile content here -->
   </div>
 </label>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-2">
+    <div class="bx--col-sm-2">
+      <div class="outside">
+        <div class="inside">
 <label class="bx--tile bx--tile--selectable"
     data-tile="selectable" tabindex="0" aria-label="tile-2">
   <input type="checkbox" name="tiles" value="tile-2" id="tile-id-2" title="tile-2" class="bx--tile-input" tabindex="-1" data-tile-input>
@@ -251,75 +261,133 @@ class TileHtmlTest(SimpleTestCase):
         <!-- Tile content here -->
   </div>
 </label>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bx--row">
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <a data-tile="clickable" class="bx--tile bx--tile--clickable"
     tabindex="0">
 </a>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <a data-tile="clickable" class="bx--tile bx--tile--clickable"
     tabindex="0">
 </a>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <a data-tile="clickable" class="bx--tile bx--tile--clickable"
     tabindex="0">
 </a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bx--row">
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-4 bx--col-md-4">
+    <div class="bx--col-sm-4 bx--col-md-4">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
-    </div>
-  </div>
-  <div class="bx--row">
-    <div class="bx--col bx--col-md-8 bx--col-lg-4">
-<div class="bx--tile">
-</div>
-    </div>
-    <div class="bx--col bx--col-md-8 bx--col-lg-4">
-<div class="bx--tile">
-</div>
-    </div>
-    <div class="bx--col bx--col-md-8 bx--col-lg-4">
-<div class="bx--tile">
-</div>
-    </div>
-    <div class="bx--col bx--col-md-8 bx--col-lg-4">
-<div class="bx--tile">
-</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bx--row">
-    <div class="bx--col bx--col-lg-16">
+    <div class="bx--col-md-8 bx--col-lg-4">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
+    </div>
+    <div class="bx--col-md-8 bx--col-lg-4">
+      <div class="outside">
+        <div class="inside">
+<div class="bx--tile">
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="bx--col-md-8 bx--col-lg-4">
+      <div class="outside">
+        <div class="inside">
+<div class="bx--tile">
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="bx--col-md-8 bx--col-lg-4">
+      <div class="outside">
+        <div class="inside">
+<div class="bx--tile">
+</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bx--row">
-    <div class="bx--col bx--col-sm-2 bx--col-md-5">
+    <div class="bx--col-lg-16">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
     </div>
-    <div class="bx--col bx--col-sm-2 bx--col-md-3">
+  </div>
+  <div class="bx--row">
+    <div class="bx--col-sm-2 bx--col-md-5">
+      <div class="outside">
+        <div class="inside">
 <div class="bx--tile">
 </div>
+        </div>
+      </div>
+    </div>
+    <div class="bx--col-sm-2 bx--col-md-3">
+      <div class="outside">
+        <div class="inside">
+<div class="bx--tile">
+</div>
+        </div>
+      </div>
     </div>
   </div>
   </div>

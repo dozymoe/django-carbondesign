@@ -53,19 +53,6 @@ class FileHtmlTest(SimpleTestCase):
       </div>
     </label>
     <div data-file-container id="container-id_image_multi" class="bx--file-container">
-      <div class="bx--file__selected-file">
-        <p class="bx--file-filename">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero vero sapiente illum reprehenderit molestiae perferendis voluptatem temporibus laudantium ducimus magni voluptatum veniam, odit nesciunt corporis numquam maxime sunt excepturi sint!.png</p>
-        <span data-for="prepopulated-file-uploader"
-            class="bx--file__state-container">
-          <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-              xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              class="bx--file-complete" width="16" height="16"
-              viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"></path>
-            <path d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z" data-icon-path="inner-path" opacity="0"></path>
-          </svg>
-        </span>
-      </div>
     </div>
   </div>
 </div>
@@ -96,7 +83,7 @@ class FileHtmlTest(SimpleTestCase):
     <div data-file-container id="container-id_image_invalid" class="bx--file-container">
       <div class="bx--file__selected-file bx--file__selected-file--invalid"
           data-invalid>
-        <p class="bx--file-filename">color</p>
+        <p class="bx--file-filename"></p>
         <span data-for="prepopulated-file-uploader"
             class="bx--file__state-container">
           <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -116,7 +103,7 @@ class FileHtmlTest(SimpleTestCase):
         </span>
         <div class="bx--form-requirement">
           <div class="bx--form-requirement__title">File extension “” is not allowed.</div>
-<p class="bx--form-requirement__supplement">Allowed extensions are: bmp, dib, gif, tif, tiff, jfif, jpe, jpg, jpeg, pbm, pgm, ppm, pnm, png, apng, blp, bufr, cur, pcx, dcx, dds, ps, eps, fit, fits, fli, flc, fpx, ftc, ftu, gbr, grib, h5, hdf, jp2, j2k, jpc, jpf, jpx, j2c, icns, ico, im, iim, mic, mpg, mpeg, mpo, msp, palm, pcd, pdf, pxr, psd, bw, rgb, rgba, sgi, ras, tga, icb, vda, vst, webp, wmf, emf, xbm, xpm.</p>
+<p class="bx--form-requirement__supplement">Allowed extensions are: bmp, dib, gif, jfif, jpe, jpg, jpeg, pbm, pgm, ppm, pnm, png, apng, blp, bufr, cur, pcx, dcx, dds, ps, eps, fit, fits, fli, flc, ftc, ftu, gbr, grib, h5, hdf, jp2, j2k, jpc, jpf, jpx, j2c, icns, ico, im, iim, mpg, mpeg, tif, tiff, mpo, msp, palm, pcd, pdf, pxr, psd, qoi, bw, rgb, rgba, sgi, ras, tga, icb, vda, vst, webp, wmf, emf, xbm, xpm.</p>
         </div>
       </div>
     </div>
@@ -148,7 +135,7 @@ class FileHtmlTest(SimpleTestCase):
     </label>
     <div data-file-container id="container-id_image" class="bx--file-container">
       <div class="bx--file__selected-file">
-        <p class="bx--file-filename">image.png</p>
+        <p class="bx--file-filename"></p>
         <span data-for="prepopulated-file-uploader" class="bx--file__state-container">
           <div class="bx--inline-loading__animation">
             <div data-inline-loading-spinner="" class="bx--loading bx--loading--small">

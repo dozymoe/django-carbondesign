@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:28+0700\n"
+"POT-Creation-Date: 2023-04-10 03:35+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: carbondesign/tags/base.py:209
+#: carbondesign/tags/base.py:223
 #, python-brace-format
 msgid "Argument {prop} for template tag is required."
 msgstr "Argumen {prop} harus diset untuk template tag."
@@ -197,7 +197,7 @@ msgstr "halaman"
 msgid "select page number"
 msgstr "pilih halaman"
 
-#: carbondesign/tags/select.py:37
+#: carbondesign/tags/select.py:35
 msgid "Choose an option"
 msgstr "Pilih satu"
 
@@ -216,14 +216,6 @@ msgstr "Tampilkan kata kunci"
 #: carbondesign/tags/tile.py:40
 msgid "tile"
 msgstr "ubin"
-
-#: carbondesign/tags/time_picker.py:26
-msgid "Select AM/PM"
-msgstr "Pilih sebelum/sesudah siang"
-
-#: carbondesign/tags/time_picker.py:27
-msgid "Select time zone"
-msgstr "Pilih zona waktu"
 
 #: carbondesign/tags/toggle.py:34
 msgid "Off"
@@ -260,3 +252,9 @@ msgstr "Buka tutup navigasi"
 #: carbondesign/tags/ui_shell.py:497
 msgid "Switcher"
 msgstr "Penampil"
+
+#~ msgid "Select AM/PM"
+#~ msgstr "Pilih sebelum/sesudah siang"
+
+#~ msgid "Select time zone"
+#~ msgstr "Pilih zona waktu"

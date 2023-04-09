@@ -25,19 +25,6 @@ class FileTest(SimpleTestCase):
       </div>
     </label>
     <div data-file-container id="container-id_image" class="bx--file-container">
-      <div class="bx--file__selected-file">
-        <p class="bx--file-filename">image.png</p>
-        <span data-for="prepopulated-file-uploader"
-            class="bx--file__state-container">
-          <svg focusable="false" preserveAspectRatio="xMidYMid meet"
-              xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-              class="bx--file-complete" width="16" height="16"
-              viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"></path>
-            <path d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z" data-icon-path="inner-path" opacity="0"></path>
-          </svg>
-        </span>
-      </div>
     </div>
   </div>
 </div>

@@ -34,7 +34,7 @@ class UiShell(Node):
         values['href'] = self.eval(self.kwargs.get('href', '#'), context)
 
         if 'label_prefix' in self.kwargs:
-            values['long_label'] = '%s %s' % (
+            values['long_label'] = '%s %s' % ( # pylint:disable=consider-using-f-string
                     self.eval(self.kwargs.get('label_prefix'), context),
                     values['label'])
         else:
@@ -385,8 +385,8 @@ class NavItem(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % size,
-                'height': '%spx' % size,
+                'width': f'{size}px',
+                'height': f'{size}px',
             },
             'aria-hidden': 'true',
         })
@@ -465,8 +465,8 @@ class SideNav(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % 20,
-                'height': '%spx' % 20,
+                'width': '20px',
+                'height': '20px',
             },
             'aria-hidden': 'true',
         })
@@ -644,8 +644,8 @@ class SideNavItem(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % size,
-                'height': '%spx' % size,
+                'width': f'{size}px',
+                'height': f'{size}px',
             },
             'aria-hidden': 'true',
         })

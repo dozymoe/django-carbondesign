@@ -75,8 +75,7 @@ def compare_template(template, expected, context=None):
                 'form': form,
                 'page': pager.page(3),
                 'page_first': pager.page(1),
-                'page_last': pager.page(10),
-                'timezones': TIMEZONES})
+                'page_last': pager.page(10)})
     else:
         context = Context(context)
 

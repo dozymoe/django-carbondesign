@@ -8,8 +8,6 @@ export class Select extends FormNode
     NODE_PROPS = ['light']
     CLASS_AND_PROPS = ['label', 'help', 'select']
 
-    required = false
-
     prepare(vnode, values, context)
     {
         values.txt_choose = gettext("Choose an option");
@@ -17,9 +15,9 @@ export class Select extends FormNode
         values.props.push(['id', values.id]);
         values.props.push(['name', this.bound_field.name]);
 
-        this.required = this.bound_field.field.required &&
+        required = this.bound_field.field.required &&
                 this.bound_field.form.use_required_attribute;
-        if (this.required)
+        if (required)
         {
             values.props.push(['required', '']);
         }

@@ -12,13 +12,17 @@ class DatePickerTest(SimpleTestCase):
         expected = r"""
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="single"
+      data-date-picker-format="Y-m-d H:i:s"
       class="bx--date-picker bx--date-picker--single">
     <div class="bx--date-picker-container">
 <label for="id_started_at" class="bx--label">
   Started at
 </label>
       <div class="bx--date-picker-input__wrapper">
-        <input type="text" name="started_at" value="2022-02-03 01:02:03" class="bx--date-picker__input" data-date-picker-input="" pattern="\d{1,2}/\d{1,2}/\d{4,4}" placeholder="mm/dd/yyyy" required id="id_started_at">
+        <input type="text" name="started_at" value="2022-02-03 01:02:03"
+            class="bx--date-picker__input" data-date-picker-input=""
+            pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
+            placeholder="1979-05-23 13:59:43" required id="id_started_at">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -45,13 +49,18 @@ class RangeDatePickerTest(SimpleTestCase):
         expected = r"""
 <div class="bx--form-item">
   <div data-date-picker data-date-picker-type="range"
+      data-date-picker-format="Y-m-d H:i:s"
       class="bx--date-picker bx--date-picker--range">
     <div class="bx--date-picker-container">
       <label for="id_started_at" class="bx--label">
         Started at
       </label>
       <div class="bx--date-picker-input__wrapper">
-        <input type="text" name="started_at" value="2022-02-03 01:02:03" class="bx--date-picker__input" pattern="\d{1,2}/\d{1,2}/\d{4,4}" placeholder="mm/dd/yyyy" data-date-picker-input-from="" required id="id_started_at">
+        <input type="text" name="started_at" value="2022-02-03 01:02:03"
+            class="bx--date-picker__input"
+            pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
+            placeholder="1979-05-23 13:59:43" data-date-picker-input-from=""
+            required id="id_started_at">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -65,7 +74,11 @@ class RangeDatePickerTest(SimpleTestCase):
         Stopped at
       </label>
       <div class="bx--date-picker-input__wrapper">
-        <input type="text" name="stopped_at" value="2022-10-04 11:30:40" class="bx--date-picker__input" pattern="\d{1,2}/\d{1,2}/\d{4,4}" placeholder="mm/dd/yyyy" data-date-picker-input-to="" required id="id_stopped_at">
+        <input type="text" name="stopped_at" value="2022-10-04 11:30:40"
+            class="bx--date-picker__input"
+            pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
+            placeholder="1979-05-23 13:59:43" data-date-picker-input-to=""
+            required id="id_stopped_at">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"

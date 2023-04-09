@@ -49,8 +49,8 @@ class BaseTooltip(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % 16,
-                'height': '%spx' % 16,
+                'width': '16px',
+                'height': '16px',
             },
             'aria-hidden': 'true',
         })

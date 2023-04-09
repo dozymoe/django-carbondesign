@@ -8,7 +8,8 @@ from uuid import uuid4
 #-
 from django import template
 from django.template.base import TextNode # pylint:disable=unused-import
-from django.template.base import FilterExpression, Variable
+from django.template.base import FilterExpression, NodeList, Variable
+from django.template.base import VariableDoesNotExist
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 from lxml import etree
@@ -26,7 +27,11 @@ def var_eval(value, context):
     """Evaluate argument passed to our Template Tag.
     """
     if isinstance(value, (VariableInVariable, FilterExpression, Variable)):
-        return value.resolve(context)
+        try:
+            return value.resolve(context)
+        except VariableDoesNotExist:
+            _logger.error("Missing variable %s", repr(value))
+            return ''
 
     if isinstance(value, str):
         for match in VARIABLE_IN_ARG.finditer(value):
@@ -43,7 +48,7 @@ def modify_svg(xml, props):
     root = etree.fromstring(xml)
     for attr, value in props.items():
         if attr == 'style':
-            value = ';'.join('%s:%s' % (x, y) for x, y in value.items())
+            value = ';'.join(f'{x}:{y}' for x, y in value.items())
         root.attrib[attr] = value
     return etree.tostring(root).decode()
 
@@ -71,6 +76,9 @@ class VariableInVariable:
             parsed = expr.resolve(context)
             value = value.replace(match.group(0), parsed)
         return Variable(value).resolve(context)
+
+    def __repr__(self):
+        return f"VariableInVariable('{self.value}')"
 
 
 class IgnoreMissing(dict):
@@ -189,6 +197,7 @@ class Node(template.Node):
             self.slots = {s.name: s for s in slots}
         else:
             self.args = args
+            self.nodelist = NodeList()
             self.slots = {}
 
         self.kwargs = kwargs
@@ -219,17 +228,16 @@ class Node(template.Node):
         self.before_prepare(values, context)
         self.prepare(values, context)
 
-        if self.WANT_CHILDREN:
+        if self.nodelist:
             values['child'] = self.nodelist.render(context)
         else:
             values['child'] = ''
 
         self.after_prepare(values, context)
 
-        method = getattr(self, 'render_%s' % self.mode, None)
+        method = getattr(self, f'render_{self.mode}', None)
         if not method:
-            raise NotImplementedError("Method is missing: render_%s" %\
-                    self.mode)
+            raise NotImplementedError(f"Method is missing: render_{self.mode}")
 
         result = method(values, context) # pylint:disable=not-callable
         # Destroy local context.
@@ -314,14 +322,13 @@ class Node(template.Node):
             if not self.mode:
                 self.mode = self.MODES[0]
             elif self.mode not in self.MODES:
-                raise NotImplementedError("Mode %s is not allowed." %\
-                        self.mode)
+                raise NotImplementedError(f"Mode {self.mode} is not allowed.")
         else:
             self.mode = 'default'
 
         values['mode'] = self.mode
         if 'tag' in self.kwargs and 'astag' not in self.kwargs:
-            _logger.warning("tag NODE_PROPS is deprecated by astag")
+            _logger.warning("tag in NODE_PROPS is deprecated by astag")
             mytag = var_eval(self.kwargs['tag'], context)
         else:
             mytag = var_eval(self.kwargs.get('astag', self.DEFAULT_TAG),
@@ -445,8 +452,10 @@ class Node(template.Node):
 
         try:
             return tpl.format_map(IgnoreMissing(values))
-        except ValueError as e:
-            raise e
+        except ValueError:
+            _logger.exception("Trying to render template:\n%s\nwith %s", tpl,
+                    values)
+            return ''
 
 
     def set_child_props(self, context, name, slot=None, **kwargs):
@@ -825,7 +834,7 @@ class DumbFormNode(Node):
         if var_eval(self.kwargs.get('hidden'), context):
             attrs.pop('type')
             props = self.join_attributes(self.prune_attributes(attrs))
-            return '<input type="hidden" {props}">'.format(props=props)
+            return f'<input type="hidden" {props}>'
         return self.render_form_control(attrs, context)
 
 
@@ -833,7 +842,7 @@ class DumbFormNode(Node):
         """Default to rendering input, need to be overridden by subclass.
         """
         props = self.join_attributes(self.prune_attributes(values))
-        return '<input {props}">'.format(props=props)
+        return f'<input {props}>'
 
 
     def after_prepare(self, values, context):

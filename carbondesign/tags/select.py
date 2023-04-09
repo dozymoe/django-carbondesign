@@ -29,8 +29,6 @@ class Select(FormNode):
     CLASS_AND_PROPS = ('label', 'help', 'select')
     "Prepare xxx_class and xxx_props values."
 
-    required = False
-
     def prepare(self, values, context):
         """Prepare values for rendering the templates.
         """
@@ -39,9 +37,9 @@ class Select(FormNode):
         values['props'].append(('id', values['id']))
         values['props'].append(('name', self.bound_field.name))
 
-        self.required = self.bound_field.field.required and\
+        required = self.bound_field.field.required and\
                 self.bound_field.form.use_required_attribute
-        if self.required:
+        if required:
             values['props'].append(('required', True))
 
         if self.eval(self.kwargs.get('disabled'), context):

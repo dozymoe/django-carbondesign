@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 14:05+0700\n"
+"POT-Creation-Date: 2023-04-02 15:06+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "Show less"
 msgstr "Kurangi tampilan"
 
 #: carbondesign/mithril-js/combo_box.js:12
-#: carbondesign/mithril-js/data-table.js:607
+#: carbondesign/mithril-js/data-table.js:600
 #: carbondesign/mithril-js/list_box.js:13
 #: carbondesign/mithril-js/multi_select.js:12
 #: carbondesign/mithril-js/uishell.js:17
@@ -67,13 +67,13 @@ msgstr "baris dipilih"
 msgid "Overflow"
 msgstr "Luapan"
 
-#: carbondesign/mithril-js/data-table.js:803
+#: carbondesign/mithril-js/data-table.js:794
 #: carbondesign/mithril-js/search.js:15 carbondesign/mithril-js/toolbar.js:34
 #: carbondesign/mithril-js/uishell--switcher.js:124
 msgid "Search"
 msgstr "Pencarian"
 
-#: carbondesign/mithril-js/data-table.js:804
+#: carbondesign/mithril-js/data-table.js:795
 #: carbondesign/mithril-js/search.js:12 carbondesign/mithril-js/toolbar.js:31
 #: carbondesign/mithril-js/uishell--switcher.js:118
 msgid "Clear search input"
@@ -145,33 +145,41 @@ msgstr "tambah"
 msgid "decrease number input"
 msgstr "kurangi"
 
-#: carbondesign/mithril-js/pagination.js:15
+#: carbondesign/mithril-js/pagination.js:19
 msgid "Items per page"
 msgstr "Baris per halaman"
 
-#: carbondesign/mithril-js/pagination.js:16
+#: carbondesign/mithril-js/pagination.js:20
 msgid "select number of items per page"
 msgstr "pilih jumlah baris per halaman"
 
-#: carbondesign/mithril-js/pagination.js:17
+#: carbondesign/mithril-js/pagination.js:21
 msgid "select page number to view"
 msgstr "pilihan halaman untuk ditampilkan"
 
-#: carbondesign/mithril-js/pagination.js:18
-msgid "Backward button"
-msgstr "Tombol mundur"
+#: carbondesign/mithril-js/pagination.js:22
+msgid "previous page"
+msgstr "halaman sebelumnya"
 
-#: carbondesign/mithril-js/pagination.js:19
-msgid "Forward button"
-msgstr "Tombol maju"
+#: carbondesign/mithril-js/pagination.js:23
+msgid "next page"
+msgstr "halaman berikutnya"
 
-#: carbondesign/mithril-js/pagination.js:250
-msgid "of {total} pages"
-msgstr " dari {total} halaman"
+#: carbondesign/mithril-js/pagination.js:255
+msgid "of"
+msgstr "dari"
+
+#: carbondesign/mithril-js/pagination.js:261
+msgid "items"
+msgstr "total"
+
+#: carbondesign/mithril-js/pagination.js:269
+msgid "of %(total)s pages"
+msgstr "dari %(total)s halaman"
 
 #: carbondesign/mithril-js/pagination_nav.js:11
 msgid "pagination"
-msgstr ""
+msgstr "paginasi"
 
 #: carbondesign/mithril-js/pagination_nav.js:12
 msgid "Previous page"

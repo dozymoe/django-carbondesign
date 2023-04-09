@@ -76,8 +76,8 @@ class Button(Node):
             'preserveAspectRatio': 'xMidYMid meet',
             'fill': 'currentColor',
             'style': {
-                'width': '%spx' % size,
-                'height': '%spx' % size,
+                'width': f'{size}px',
+                'height': f'{size}px',
             },
             'aria-hidden': 'true',
             'class': 'bx--btn__icon ' + values['class'],
