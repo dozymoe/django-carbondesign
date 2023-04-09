@@ -2,6 +2,7 @@
 
 bs4
 build
+chevron
 coverage
 Pillow
 pybuildtool

@@ -27,7 +27,7 @@ carbondesign:
       options:
         command: >
           ./run pybin coverage run --include=./carbondesign/tags/*
-          ../run django-manage test --testrunner="test_runner.UnitTestRunner"
+          ./run django-manage test --testrunner="test_runner.UnitTestRunner"
       rule_in:
         - "{_1}/tags/pylint"
         - "{_1}/templatetags/pylint"
@@ -48,5 +48,5 @@ mithril-js:
   dump_messages:
     raw_file_out: carbondesign/{_1}/messages.json
 
-  dump_timezones:
-    raw_file_out: carbondesign/{_1}/timezones.json
+  #dump_timezones:
+  #  raw_file_out: carbondesign/{_1}/timezones.json
