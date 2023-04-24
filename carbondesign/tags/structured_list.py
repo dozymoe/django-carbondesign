@@ -138,7 +138,7 @@ class StructuredListRow(Node):
         self.bound_field = context.get('bound_field')
 
         if self.bound_field:
-            values['name'] = self.bound_field.name
+            values['name'] = self.bound_field.html_name
             values['value'] = value = self.eval(self.kwargs.get('value'),
                     context)
 

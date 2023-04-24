@@ -22,7 +22,7 @@ class BaseSelectFormNode(FormNode):
             values['props'].append(('required', True))
 
         values['label_class'].append('bx--visually-hidden')
-        values['props'].append(('name', self.bound_field.name))
+        values['props'].append(('name', self.bound_field.html_name))
 
 
     def render_tmpl_icon_error(self, values, context):

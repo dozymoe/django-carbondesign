@@ -545,7 +545,7 @@ class TdCheckBox(FormNode):
         """Prepare values for rendering the templates.
         """
         values['value'] = self.value
-        values['name'] = self.bound_field.name
+        values['name'] = self.bound_field.html_name
 
         if self.bound_value and self.value in self.bound_value:
             values['props'].append(('checked', True))

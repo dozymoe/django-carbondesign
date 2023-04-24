@@ -158,7 +158,7 @@ class ToolbarItemMultiSelect(FormNode):
                 'index': ii,
                 'value': val,
                 'child': txt,
-                'name': self.bound_field.name,
+                'name': self.bound_field.html_name,
             }
             props = []
             if ii == 0:
@@ -217,7 +217,7 @@ class ToolbarItemRadioButton(FormNode):
                 'index': ii,
                 'value': val,
                 'child': txt,
-                'name': self.bound_field.name,
+                'name': self.bound_field.html_name,
             }
             props = []
             if ii == 0:

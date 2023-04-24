@@ -76,7 +76,7 @@ class RadioButton(FormNode):
                 'id': f"{values['id']}-{ii + 1}",
                 'value': val,
                 'child': txt,
-                'name': self.bound_field.name,
+                'name': self.bound_field.html_name,
                 'class': values['class'],
             }
             props = []

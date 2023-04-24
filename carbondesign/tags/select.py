@@ -35,7 +35,7 @@ class Select(FormNode):
         values['txt_choose'] = _("Choose an option")
 
         values['props'].append(('id', values['id']))
-        values['props'].append(('name', self.bound_field.name))
+        values['props'].append(('name', self.bound_field.html_name))
 
         required = self.bound_field.field.required and\
                 self.bound_field.form.use_required_attribute
