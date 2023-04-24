@@ -197,7 +197,7 @@ class Select(FormNode):
 
             options = {'value': value, 'child': label}
             props = []
-            if self.bound_value and value in self.bound_value:
+            if self.bound_value is not None and value == self.bound_value:
                 props.append('selected')
             options['props'] = ' '.join(props)
             items.append(self.format(item_tmpl, options))

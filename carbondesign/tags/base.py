@@ -518,7 +518,7 @@ class FormNode(Node):
         try:
             # We assume self.bound_field is set, but
             # self.bound_field.field.choices may not be.
-            choices = self.bound_field.field.choices
+            choices = self.bound_field.field.widget.choices
         except AttributeError:
             # Assume we are dealing with BooleanField
             default_truthy = self.bound_value or 'on'
