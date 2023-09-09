@@ -8,8 +8,8 @@ Material Design was because the documentation doesn't match their releases, I
 found better documentation support in Carbon Design. The documentation was meant
 for the users of the library.
 
-For the next iteration I will be using Red Hat's PatternFly Design System, the
-python module will be named django-patternfly-theme and can be found here
+For the next iteration I will be using Engie's Fluid Design System, the
+python module will be named django-fluid-design and can be found here
 https://github.com/dozymoe/django-fluid-design
 
 Hopefully it will last longer.
