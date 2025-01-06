@@ -293,7 +293,7 @@ class Node(template.Node):
 
                 # Create slot local context.
                 context.push({'slot': name})
-                slots[slot_name] = method(
+                slots[slot_name] = method( # pylint:disable=not-callable
                         {
                             # Use context to tell slot's children in which slot
                             # they are, for example when catching props from

@@ -54,12 +54,12 @@ class DummyForm(forms.Form):
     image_empty = forms.ImageField(
             required=False,
             help_text="Only .jpg and .png files. 500kb max file size.")
-    image_multi = forms.ImageField(
-            widget=forms.ClearableFileInput(attrs={'multiple': True}),
-            help_text="Only .jpg and .png files. 500kb max file size.")
-    image_multi_missing = forms.ImageField(
-            widget=forms.ClearableFileInput(attrs={'multiple': True}),
-            help_text="Only .jpg and .png files. 500kb max file size.")
+    #image_multi = forms.ImageField(
+    #        widget=forms.ClearableFileInput(attrs={'multiple': True}),
+    #        help_text="Only .jpg and .png files. 500kb max file size.")
+    #image_multi_missing = forms.ImageField(
+    #        widget=forms.ClearableFileInput(attrs={'multiple': True}),
+    #        help_text="Only .jpg and .png files. 500kb max file size.")
     image_missing = forms.ImageField(
             help_text="Only .jpg and .png files. 500kb max file size.")
     image_invalid = forms.ImageField(

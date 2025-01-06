@@ -54,7 +54,7 @@ class NumberInputHtmlTest(SimpleTestCase):
   Number input label
 </label>
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -99,7 +99,7 @@ class NumberInputHtmlTest(SimpleTestCase):
 <div class="bx--form-item">
   <div data-invalid data-numberinput class="bx--number bx--number--nolabel">
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -188,7 +188,7 @@ class NumberInputHtmlTest(SimpleTestCase):
   Number input label
 </label>
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid">
+      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -277,7 +277,7 @@ class NumberInputHtmlTest(SimpleTestCase):
   Number input label
 </label>
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -322,7 +322,7 @@ class NumberInputHtmlTest(SimpleTestCase):
 <div class="bx--form-item">
   <div data-invalid data-numberinput class="bx--number bx--number--nolabel bx--number--light">
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -411,7 +411,7 @@ class NumberInputHtmlTest(SimpleTestCase):
   Number input label
 </label>
     <div class="bx--number__input-wrapper">
-      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid">
+      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--number__invalid" width="16" height="16" viewBox="0 0 16 16"
@@ -507,7 +507,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -544,7 +544,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -623,7 +623,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" pattern="\d*" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid">
+      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" pattern="\d*" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -702,7 +702,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -739,7 +739,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid">
+      <input type="number" name="number_invalid" value="a" min="0" max="100" pattern="\d*" class="" role="alert" aria-atomic="true" id="id_number_invalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"
@@ -818,7 +818,7 @@ class NumberInputHtmlTest(SimpleTestCase):
     <path d="M8 0L4 4 0 0z"></path>
   </svg>
 </button>
-      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" pattern="\d*" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid">
+      <input type="number" name="number_helpinvalid" value="a" min="0" max="100" pattern="\d*" class="" aria-controls="hint-id_number_helpinvalid" aria-describedby="hint-id_number_helpinvalid" role="alert" aria-atomic="true" id="id_number_helpinvalid" aria-invalid="true">
 <button aria-label="increase number input" class="bx--number__control-btn up-icon"
     type="button" aria-live="polite" aria-atomic="true">
   <svg focusable="false" preserveAspectRatio="xMidYMid meet"

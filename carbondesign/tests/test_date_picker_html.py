@@ -45,7 +45,7 @@ class DatePickerHtmlTest(SimpleTestCase):
           class="bx--date-picker__input" data-date-picker-input=""
           pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
           placeholder="1979-05-23 13:59:43" data-invalid="" required
-          id="id_started_at_missing">
+          id="id_started_at_missing" aria-invalid="true">
       <div class="bx--form-requirement">
         <div class="bx--form-requirement__title">This field is required.</div>
       </div>
@@ -97,7 +97,7 @@ class DatePickerHtmlTest(SimpleTestCase):
           class="bx--date-picker__input" data-date-picker-input=""
           pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
           placeholder="1979-05-23 13:59:43" data-invalid="" required
-          id="id_started_at_missing">
+          id="id_started_at_missing" aria-invalid="true">
       <div class="bx--form-requirement">
         <div class="bx--form-requirement__title">This field is required.</div>
       </div>
@@ -258,7 +258,7 @@ class DatePickerHtmlTest(SimpleTestCase):
             class="bx--date-picker__input" data-date-picker-input=""
             pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
             placeholder="1979-05-23 13:59:43" data-invalid="" required
-            id="id_started_at_missing">
+            id="id_started_at_missing" aria-invalid="true">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -328,7 +328,7 @@ class DatePickerHtmlTest(SimpleTestCase):
             class="bx--date-picker__input" data-date-picker-input=""
             pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
             placeholder="1979-05-23 13:59:43" data-invalid="" required
-            id="id_started_at_missing">
+            id="id_started_at_missing" aria-invalid="true">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"
@@ -392,7 +392,7 @@ class DatePickerHtmlTest(SimpleTestCase):
             class="bx--date-picker__input" data-date-picker-input=""
             pattern="(\d\d\d\d)-(\d\d|\d)-(\d\d|\d) (\d\d|\d):(\d\d|\d):(\d\d|\d)"
             placeholder="1979-05-23 13:59:43" data-invalid="" required
-            id="id_started_at_missing">
+            id="id_started_at_missing" aria-invalid="true">
         <svg focusable="false" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             data-date-picker-icon="true" class="bx--date-picker__icon"

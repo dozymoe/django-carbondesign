@@ -66,7 +66,7 @@ class TextInputHtmlTest(SimpleTestCase):
   <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2	c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
   <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
-    <input type="text" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--invalid" required id="id_text_missing">
+    <input type="text" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--invalid" required id="id_text_missing" aria-invalid="true">
   </div>
   <div class="bx--form-requirement">
     <div class="bx--form-requirement__title">This field is required.</div>
@@ -190,7 +190,7 @@ class TextInputHtmlTest(SimpleTestCase):
   <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2	c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
   <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
-    <input type="text" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--light bx--text-input--invalid" required id="id_text_missing">
+    <input type="text" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--light bx--text-input--invalid" required id="id_text_missing" aria-invalid="true">
   </div>
   <div class="bx--form-requirement">
     <div class="bx--form-requirement__title">This field is required.</div>
@@ -341,7 +341,7 @@ class PasswordInputHtmlTest(SimpleTestCase):
   <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2	c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
   <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
-    <input type="password" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--invalid bx--password-input" data-toggle-password-visibility="" required id="id_text_missing">
+    <input type="password" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--invalid bx--password-input" data-toggle-password-visibility="" required id="id_text_missing" aria-invalid="true">
 <button type="button"
     class="bx--text-input--password__visibility__toggle bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center">
   <span class="bx--assistive-text">Show password</span>
@@ -560,7 +560,7 @@ class PasswordInputHtmlTest(SimpleTestCase):
   <path d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2	c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"></path>
   <path d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
-    <input type="password" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--light bx--text-input--invalid bx--password-input" data-toggle-password-visibility="" required id="id_text_missing">
+    <input type="password" name="text_missing" placeholder="Placeholder text" class="bx--text-input bx--text-input--light bx--text-input--invalid bx--password-input" data-toggle-password-visibility="" required id="id_text_missing" aria-invalid="true">
 <button type="button"
     class="bx--text-input--password__visibility__toggle bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center">
   <span class="bx--assistive-text">Show password</span>

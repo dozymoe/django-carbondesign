@@ -144,6 +144,9 @@ class Notification(Node):
   <path d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z" data-icon-path="inner-path" opacity="0"></path>
 </svg>
 """
+        else:
+            template = ''
+
         return self.format(template, values)
 
 

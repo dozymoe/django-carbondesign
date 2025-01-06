@@ -127,7 +127,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="listbox" aria-expanded="false">
-        <input type="text" name="text_missing" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" required>
+        <input type="text" name="text_missing" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" required aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--list-box__invalid-icon" width="16" height="16"
@@ -175,7 +175,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="listbox" aria-expanded="false">
-        <input type="number" name="number" value="This is not a values." id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
+        <input type="number" name="number" value="This is not a values." id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--list-box__invalid-icon" width="16" height="16"
@@ -231,7 +231,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box bx--list-box--disabled" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="true" disabled aria-expanded="false">
-        <input type="text" name="text_missing" id="downshift-input-2" placeholder="Filter..." disabled class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" required>
+        <input type="text" name="text_missing" id="downshift-input-2" placeholder="Filter..." disabled class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" required aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--list-box__invalid-icon" width="16" height="16"
@@ -279,7 +279,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box bx--list-box--disabled" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="true" disabled aria-expanded="false">
-        <input type="number" name="number" value="This is not a values." id="downshift-input-2" placeholder="Filter..." disabled class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
+        <input type="number" name="number" value="This is not a values." id="downshift-input-2" placeholder="Filter..." disabled class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--list-box__invalid-icon" width="16" height="16"
@@ -525,7 +525,7 @@ class ComboBoxHtmlTest(SimpleTestCase):
     <div class="bx--combo-box bx--list-box" data-invalid>
       <div role="combobox" class="bx--list-box__field" aria-label="Open menu"
           aria-haspopup="listbox" aria-expanded="false">
-        <input type="number" name="number" value="Option 3" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false">
+        <input type="number" name="number" value="Option 3" id="downshift-input-2" placeholder="Filter..." class="bx--text-input" aria-autocomplete="list" autocomplete="off" aria-owns="menu-downshift-input-2" aria-expanded="false" aria-invalid="true">
 <svg focusable="false" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg" fill="currentColor"
     class="bx--list-box__invalid-icon" width="16" height="16"

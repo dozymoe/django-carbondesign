@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-02 15:06+0700\n"
+"POT-Creation-Date: 2025-01-04 10:50+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,7 +193,7 @@ msgstr "Halaman berikutnya"
 msgid "page"
 msgstr "halaman"
 
-#: carbondesign/mithril-js/select.js:15
+#: carbondesign/mithril-js/select.js:13
 msgid "Choose an option"
 msgstr "Pilih satu"
 
@@ -212,14 +212,6 @@ msgstr "Tampilkan kata kunci"
 #: carbondesign/mithril-js/tile.js:13
 msgid "tile"
 msgstr "ubin"
-
-#: carbondesign/mithril-js/time_picker.js:12
-msgid "Select AM/PM"
-msgstr "Pilih sebelum/sesudah siang"
-
-#: carbondesign/mithril-js/time_picker.js:13
-msgid "Select time zone"
-msgstr "Pilih zona waktu"
 
 #: carbondesign/mithril-js/toggle.js:11
 msgid "Off"
@@ -256,3 +248,9 @@ msgstr "Buka tutup navigasi"
 #: carbondesign/mithril-js/uishell.js:473
 msgid "Switcher"
 msgstr "Penampil"
+
+#~ msgid "Select AM/PM"
+#~ msgstr "Pilih sebelum/sesudah siang"
+
+#~ msgid "Select time zone"
+#~ msgstr "Pilih zona waktu"

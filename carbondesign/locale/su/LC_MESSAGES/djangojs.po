@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-02 15:06+0700\n"
+"POT-Creation-Date: 2025-01-04 10:50+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,7 +193,7 @@ msgstr ""
 msgid "page"
 msgstr ""
 
-#: carbondesign/mithril-js/select.js:15
+#: carbondesign/mithril-js/select.js:13
 msgid "Choose an option"
 msgstr ""
 
@@ -211,14 +211,6 @@ msgstr ""
 
 #: carbondesign/mithril-js/tile.js:13
 msgid "tile"
-msgstr ""
-
-#: carbondesign/mithril-js/time_picker.js:12
-msgid "Select AM/PM"
-msgstr ""
-
-#: carbondesign/mithril-js/time_picker.js:13
-msgid "Select time zone"
 msgstr ""
 
 #: carbondesign/mithril-js/toggle.js:11

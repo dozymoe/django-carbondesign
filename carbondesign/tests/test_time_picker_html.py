@@ -34,7 +34,7 @@ class TimePickerHtmlTest(SimpleTestCase):
   Select a time
 </label>
   <div class="bx--time-picker" data-invalid>
-    <div class="bx--time-picker__input"><input type="text" name="time_tm_missing" id="time-picker-2" class="bx--text-input bx--time-picker__input-field" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required></div>
+    <div class="bx--time-picker__input"><input type="text" name="time_tm_missing" id="time-picker-2" class="bx--text-input bx--time-picker__input-field" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required aria-invalid="true"></div>
   </div>
   <div class="bx--form-requirement">
     <div class="bx--form-requirement__title">This field is required.</div>
@@ -75,7 +75,7 @@ class TimePickerHtmlTest(SimpleTestCase):
   Select a time
 </label>
   <div class="bx--time-picker" data-invalid>
-    <div class="bx--time-picker__input"><input type="text" name="time_tm_missing" id="time-picker-4" disabled class="bx--text-input bx--time-picker__input-field" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required></div>
+    <div class="bx--time-picker__input"><input type="text" name="time_tm_missing" id="time-picker-4" disabled class="bx--text-input bx--time-picker__input-field" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required aria-invalid="true"></div>
   </div>
   <div class="bx--form-requirement">
     <div class="bx--form-requirement__title">This field is required.</div>
@@ -116,7 +116,7 @@ class TimePickerHtmlTest(SimpleTestCase):
 <label for="time-picker-6" class="bx--label">
   Select a time
 </label>
-      <input type="text" name="time_tm_missing" id="time-picker-6" class="bx--text-input bx--time-picker__input-field bx--text-input--light" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required>
+      <input type="text" name="time_tm_missing" id="time-picker-6" class="bx--text-input bx--time-picker__input-field bx--text-input--light" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required aria-invalid="true">
     </div>
   </div>
   <div class="bx--form-requirement">
@@ -161,7 +161,7 @@ class TimePickerHtmlTest(SimpleTestCase):
 <label for="time-picker-8" class="bx--label bx--label--disabled">
   Select a time
 </label>
-      <input type="text" name="time_tm_missing" id="time-picker-8" disabled class="bx--text-input bx--time-picker__input-field bx--text-input--light" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required>
+      <input type="text" name="time_tm_missing" id="time-picker-8" disabled class="bx--text-input bx--time-picker__input-field bx--text-input--light" pattern="(2[0-3]|1[0-9]|0?[0-9]):([1-5][0-9]|0?[0-9])(\\s)?" placeholder="hh:mm" maxlength="5" required aria-invalid="true">
     </div>
   </div>
   <div class="bx--form-requirement">
